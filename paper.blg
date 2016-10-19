@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (Web2C 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper.aux
+The style file: splncs03.bst
+Database file #1: bibliography.bib
+I was expecting a `,' or a `}'---line 181 of file bibliography.bib
+ :   publisher={IEEE}
+ :                   @article{blum1997fast,
+I'm skipping whatever remains of this entry
+Repeated entry---line 181 of file bibliography.bib
+ :   publisher={IEEE}@article{blum1997fast
+ :                                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 813 of file bibliography.bib
+ : @article{martin2004owl
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 859 of file bibliography.bib
+ : @inproceedings{paolucci2002semantic
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 973 of file bibliography.bib
+ : @article{blum1997fast
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in mier2015integrated
+You've used 32 entries,
+            2785 wiz_defined-function locations,
+            759 strings with 10641 characters,
+and the built_in function-call counts, 19702 in all, are:
+= -- 1687
+> -- 645
+< -- 32
++ -- 270
+- -- 231
+* -- 1215
+:= -- 2519
+add.period$ -- 63
+call.type$ -- 32
+change.case$ -- 240
+chr.to.int$ -- 0
+cite$ -- 33
+duplicate$ -- 1693
+empty$ -- 1738
+format.name$ -- 260
+if$ -- 4358
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 346
+newline$ -- 101
+num.names$ -- 66
+pop$ -- 656
+preamble$ -- 1
+purify$ -- 174
+quote$ -- 0
+skip$ -- 562
+stack$ -- 0
+substring$ -- 1136
+swap$ -- 926
+text.length$ -- 32
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 120
+warning$ -- 1
+while$ -- 165
+width$ -- 34
+write$ -- 334
+(There were 5 error messages)

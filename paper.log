@@ -1,0 +1,693 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2016.6.19)  19 OCT 2016 18:02
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**paper.tex
+(./paper.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 40 language(s) loaded.
+(./llncs.cls
+Document Class: llncs 2013/09/27 v2.18 
+ LaTeX document class for Lecture Notes in Computer Science
+(/usr/pkg/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/pkg/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/pkg/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\maxbalancingoverflow=\dimen108
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\mc@col@check@num=\count95
+) (./aliascnt.sty
+Package: aliascnt 2009/09/08 v1.3 Alias counter (HO)
+
+(./remreset.sty))
+\c@chapter=\count96
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
+\tocchpnum=\dimen112
+\tocsecnum=\dimen113
+\tocsectotal=\dimen114
+\tocsubsecnum=\dimen115
+\tocsubsectotal=\dimen116
+\tocsubsubsecnum=\dimen117
+\tocsubsubsectotal=\dimen118
+\tocparanum=\dimen119
+\tocparatotal=\dimen120
+\tocsubparanum=\dimen121
+\@tempcntc=\count97
+\fnindent=\dimen122
+\c@@inst=\count98
+\c@@auth=\count99
+\c@auco=\count100
+\instindent=\dimen123
+\authrun=\box52
+\authorrunning=\toks14
+\tocauthor=\toks15
+\titrun=\box53
+\titlerunning=\toks16
+\toctitle=\toks17
+\c@theorem=\count101
+\c@case=\count102
+\c@conjecture=\count103
+\c@corollary=\count104
+\c@definition=\count105
+\c@example=\count106
+\c@exercise=\count107
+\c@lemma=\count108
+\c@note=\count109
+\c@problem=\count110
+\c@property=\count111
+\c@proposition=\count112
+\c@question=\count113
+\c@solution=\count114
+\c@remark=\count115
+\headlineindent=\dimen124
+)
+(/usr/pkg/share/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count116
+
+(/usr/pkg/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip45
+
+(/usr/pkg/share/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/pkg/share/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.1 -- october 19 2015 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+********************************************************
+\skiptotal=\skip46
+\skiplinenumber=\skip47
+\skiprule=\skip48
+\skiphlne=\skip49
+\skiptext=\skip50
+\skiplength=\skip51
+\algomargin=\skip52
+\skipalgocfslide=\skip53
+\algowidth=\dimen125
+\inoutsize=\dimen126
+\inoutindent=\dimen127
+\interspacetitleruled=\dimen128
+\interspacealgoruled=\dimen129
+\interspacetitleboxruled=\dimen130
+\algocf@ruledwidth=\skip54
+\algocf@inoutbox=\box54
+\algocf@inputbox=\box55
+\AlCapSkip=\skip55
+\AlCapHSkip=\skip56
+\algoskipindent=\skip57
+\algocf@nlbox=\box56
+\algocf@hangingbox=\box57
+\algocf@untilbox=\box58
+\algocf@skipuntil=\skip58
+\algocf@capbox=\box59
+\algoheightruledefault=\skip59
+\algoheightrule=\skip60
+\algotitleheightruledefault=\skip61
+\algotitleheightrule=\skip62
+\c@algocfline=\count117
+\c@algocfproc=\count118
+\c@algocf=\count119
+\algocf@algoframe=\box60
+\algocf@algobox=\box61
+) (/usr/pkg/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/pkg/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(/usr/pkg/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count120
+))
+(/usr/pkg/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/pkg/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(/usr/pkg/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/pkg/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/pkg/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen131
+\Gin@req@width=\dimen132
+)
+(/usr/pkg/share/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+
+(/usr/pkg/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/pkg/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/pkg/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/pkg/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/pkg/share/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count121
+\cp@tempcnt=\count122
+)
+(/usr/pkg/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip63
+
+For additional information on amsmath, use the `?' option.
+(/usr/pkg/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/pkg/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen133
+))
+(/usr/pkg/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen134
+)
+(/usr/pkg/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count123
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count124
+\leftroot@=\count125
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count126
+\DOTSCASE@=\count127
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box62
+\strutbox@=\box63
+\big@size=\dimen135
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+
+
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+\macc@depth=\count128
+\c@MaxMatrixCols=\count129
+\dotsspace@=\muskip10
+\c@parentequation=\count130
+\dspbrk@lvl=\count131
+\tag@help=\toks20
+\row@=\count132
+\column@=\count133
+\maxfields@=\count134
+\andhelp@=\toks21
+\eqnshift@=\dimen136
+\alignsep@=\dimen137
+\tagshift@=\dimen138
+\tagwidth@=\dimen139
+\totwidth@=\dimen140
+\lineht@=\dimen141
+\@envbody=\toks22
+\multlinegap=\skip64
+\multlinetaggap=\skip65
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+) (/usr/pkg/share/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen142
+)
+(/usr/pkg/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/pkg/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/pkg/share/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen143
+\Hy@linkcounter=\count135
+\Hy@pagecounter=\count136
+
+(/usr/pkg/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count137
+
+(/usr/pkg/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count138
+
+(/usr/pkg/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen144
+\Fld@menulength=\count139
+\Field@Width=\dimen145
+\Fld@charsize=\dimen146
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count140
+\c@Item=\count141
+\c@Hfootnote=\count142
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/pkg/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+\Fld@listcount=\count143
+\c@bookmark@seq@number=\count144
+
+(/usr/pkg/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip66
+) (./paper.aux)
+\openout1 = `paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+ (/usr/pkg/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count145
+\scratchdimen=\dimen147
+\scratchbox=\box64
+\nofMPsegments=\count146
+\nofMParguments=\count147
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count148
+\MPscratchDim=\dimen148
+\MPnumerator=\count149
+\makeMPintoPDFobject=\count150
+\everyMPtoPDFconversion=\toks25
+)
+\AtBeginShipoutBox=\box65
+Package hyperref Info: Link coloring OFF on input line 22.
+ (/usr/pkg/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/pkg/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count151
+)
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
+
+(./paper.out) (./paper.out)
+\@outlinefile=\write3
+\openout3 = `paper.out'.
+
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 25.
+
+LaTeX Font Info:    No file OMScmtt.fd. on input line 25.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 25.
+
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ú in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ù in font cmr9!
+
+Overfull \hbox (11.87595pt too wide) in paragraph at lines 31--32
+\OT1/cmr/m/n/10 vice Ori-ented Ar-chi-tec-ture (SOA) could ab-stractly re-alise
+ service-oriented paradigm
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \vbox (badness 5105) has occurred while \output is active []
+
+ [2]
+Overfull \hbox (6.82347pt too wide) in paragraph at lines 56--57
+\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 S[]; S[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; NF\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 S[]\OT1/cmr/m/n/10 ))$ from Ser-vice Repos-i-tory: $\OML/cmm/m/it/10
+ S\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; :::; S[]\OMS/cmsy/m/n/10 g$ \OT1
+/cmr/m/n/10 with
+ []
+
+[3]
+Overfull \hbox (2.28546pt too wide) in paragraph at lines 59--60
+\OT1/cmr/m/n/10 A se-man-tic web ser-vice is de-fined by $\OML/cmm/m/it/10 S\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[] \OMS/cmsy
+/m/n/10 2 \OML/cmm/m/it/10 C[]; S[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C[]\OT1
+/cmr/m/n/10 )\OML/cmm/m/it/10 ; NF\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr
+/m/n/10 ))$
+ []
+
+[4] <sequence.pdf, id=121, 581.17125pt x 67.0003pt>
+File: sequence.pdf Graphic file (type pdf)
+ <use sequence.pdf>
+Package pdftex.def Info: sequence.pdf used on input line 87.
+(pdftex.def)             Requested size: 144.54pt x 16.66312pt.
+
+<parallel.pdf, id=124, 420.82219pt x 225.09094pt>
+File: parallel.pdf Graphic file (type pdf)
+ <use parallel.pdf>
+Package pdftex.def Info: parallel.pdf used on input line 101.
+(pdftex.def)             Requested size: 101.17755pt x 54.11565pt.
+
+
+LaTeX Warning: Reference `sequence' on page 5 undefined on input line 108.
+
+
+LaTeX Warning: Reference `parallel' on page 5 undefined on input line 110.
+
+[5 <./sequence.pdf> <./parallel.pdf>] [6]
+<overview.pdf, id=199, 843.59564pt x 380.97934pt>
+File: overview.pdf Graphic file (type pdf)
+ <use overview.pdf>
+Package pdftex.def Info: overview.pdf used on input line 139.
+(pdftex.def)             Requested size: 341.43306pt x 154.19696pt.
+ [7 <./overview.pdf>] [8] <matchmaking.pdf, id=236, 825.0825pt x 402.75468pt>
+File: matchmaking.pdf Graphic file (type pdf)
+
+<use matchmaking.pdf>
+Package pdftex.def Info: matchmaking.pdf used on input line 198.
+(pdftex.def)             Requested size: 284.52756pt x 138.88905pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10 <./matchmaking.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `htbp') on input line 230.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
+
+ []
+
+[11]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `htbp') on input line 279.
+
+[12]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ <convergency.pdf, id=298, 844.52011pt x 585.30069pt>
+File: convergency.pdf Graphic file (type pdf)
+
+<use convergency.pdf>
+Package pdftex.def Info: convergency.pdf used on input line 302.
+(pdftex.def)             Requested size: 341.43306pt x 236.63466pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+[13] <wscs.pdf, id=309, 816.3368pt x 595.75577pt>
+File: wscs.pdf Graphic file (type pdf)
+ <use wscs.pdf>
+Package pdftex.def Info: wscs.pdf used on input line 317.
+(pdftex.def)             Requested size: 227.62204pt x 166.1105pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14 <./convergency.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `htbp') on input line 327.
+
+(./paper.bbl [15 <./wscs.pdf>] [16] [17])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
+ (./paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
+Package rerunfilecheck Info: File `paper.out' has not changed.
+(rerunfilecheck)             Checksum: F36DB8DFCE46B13A37E9ED6134000CDC;127.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 7353 strings out of 493682
+ 107257 string characters out of 6155720
+ 224835 words of memory out of 5000000
+ 10520 multiletter control sequences out of 15000+600000
+ 9354 words of font info for 34 fonts, out of 8000000 for 9000
+ 890 hyphenation exceptions out of 8191
+ 42i,18n,27p,1900b,6557s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/pkg/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/pkg/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/pkg/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cmextra/cmex9.pfb></usr/pkg/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi5.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/pkg/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/pkg/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/pkg/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr9.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
+r/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/pkg/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/pkg/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/pkg/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmtt9.pfb>
+Output written on paper.pdf (18 pages, 1228614 bytes).
+PDF statistics:
+ 443 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+
