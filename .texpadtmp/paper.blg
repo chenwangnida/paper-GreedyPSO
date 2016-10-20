@@ -7,10 +7,6 @@ I was expecting a `,' or a `}'---line 181 of file ../bibliography.bib
  :   publisher={IEEE}
  :                   @article{blum1997fast,
 I'm skipping whatever remains of this entry
-Repeated entry---line 181 of file ../bibliography.bib
- :   publisher={IEEE}@article{blum1997fast
- :                                        ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 813 of file ../bibliography.bib
  : @article{martin2004owl
  :                       ,
@@ -19,50 +15,46 @@ Repeated entry---line 859 of file ../bibliography.bib
  : @inproceedings{paolucci2002semantic
  :                                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 973 of file ../bibliography.bib
- : @article{blum1997fast
- :                      ,
-I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
-You've used 32 entries,
+You've used 31 entries,
             2785 wiz_defined-function locations,
-            759 strings with 10757 characters,
-and the built_in function-call counts, 19702 in all, are:
-= -- 1687
-> -- 645
-< -- 32
-+ -- 270
-- -- 231
-* -- 1215
-:= -- 2519
-add.period$ -- 63
-call.type$ -- 32
-change.case$ -- 240
+            752 strings with 10629 characters,
+and the built_in function-call counts, 19106 in all, are:
+= -- 1633
+> -- 633
+< -- 30
++ -- 265
+- -- 227
+* -- 1178
+:= -- 2448
+add.period$ -- 62
+call.type$ -- 31
+change.case$ -- 235
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 1693
-empty$ -- 1738
-format.name$ -- 260
-if$ -- 4358
+cite$ -- 32
+duplicate$ -- 1639
+empty$ -- 1686
+format.name$ -- 255
+if$ -- 4225
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 346
-newline$ -- 101
-num.names$ -- 66
-pop$ -- 656
+int.to.str$ -- 31
+missing$ -- 336
+newline$ -- 98
+num.names$ -- 64
+pop$ -- 642
 preamble$ -- 1
-purify$ -- 174
+purify$ -- 170
 quote$ -- 0
-skip$ -- 562
+skip$ -- 541
 stack$ -- 0
-substring$ -- 1136
-swap$ -- 926
-text.length$ -- 32
+substring$ -- 1091
+swap$ -- 890
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
+type$ -- 116
 warning$ -- 1
-while$ -- 165
-width$ -- 34
-write$ -- 334
-(There were 5 error messages)
+while$ -- 159
+width$ -- 33
+write$ -- 324
+(There were 3 error messages)

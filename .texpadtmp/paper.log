@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  20 OCT 2016 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  20 OCT 2016 16:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -491,21 +491,25 @@ File: parallel.pdf Graphic file (type pdf)
  <use parallel.pdf>
 Package pdftex.def Info: parallel.pdf used on input line 101.
 (pdftex.def)             Requested size: 101.17755pt x 54.11565pt.
- [5 <./sequence.pdf> <./parallel.pdf>] [6] <overview.pdf, id=194, 843.59564pt x 380.97934pt>
+ [5 <./sequence.pdf> <./parallel.pdf>] [6] <overview.pdf, id=194, 921.4425pt x 427.5975pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
 Package pdftex.def Info: overview.pdf used on input line 140.
-(pdftex.def)             Requested size: 341.43306pt x 154.19696pt.
+(pdftex.def)             Requested size: 341.43306pt x 158.43695pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7] [8 <./overview.pdf>] <matchmaking.pdf, id=231, 825.0825pt x 402.75468pt>
+[7] [8 <./overview.pdf>] [9] <matchmaking.pdf, id=265, 825.0825pt x 402.75468pt>
 File: matchmaking.pdf Graphic file (type pdf)
  <use matchmaking.pdf>
 Package pdftex.def Info: matchmaking.pdf used on input line 199.
 (pdftex.def)             Requested size: 284.52756pt x 138.88905pt.
- [9] [10 <./matchmaking.pdf>]
+ [10 <./matchmaking.pdf>]
+Overfull \hbox (7.93257pt too wide) in paragraph at lines 216--217
+\OT1/cmr/m/n/10 er-ties typ-i-cally re-fer pre-vi-ously dis-cussed QoS, which are given by ser-vice providers.
+ []
+
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 231.
@@ -534,7 +538,7 @@ LaTeX Warning: No positions in optional float specifier.
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- <convergency.pdf, id=291, 844.52011pt x 585.30069pt>
+ <convergency.pdf, id=317, 844.52011pt x 585.30069pt>
 File: convergency.pdf Graphic file (type pdf)
  <use convergency.pdf>
 Package pdftex.def Info: convergency.pdf used on input line 294.
@@ -546,7 +550,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-[13] <wscs.pdf, id=302, 816.3368pt x 595.75577pt>
+[13] <wscs.pdf, id=328, 816.3368pt x 595.75577pt>
 File: wscs.pdf Graphic file (type pdf)
  <use wscs.pdf>
 Package pdftex.def Info: wscs.pdf used on input line 309.
@@ -580,18 +584,18 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 349.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7334 strings out of 493014
- 108661 string characters out of 6133350
- 224815 words of memory out of 5000000
+ 7333 strings out of 493014
+ 108644 string characters out of 6133350
+ 225825 words of memory out of 5000000
  10680 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,18n,27p,1907b,6540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,18n,27p,1906b,6540s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (18 pages, 1228921 bytes).
+Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (18 pages, 1168917 bytes).
 PDF statistics:
- 436 PDF objects out of 1000 (max. 8388607)
- 321 compressed objects within 4 object streams
- 94 named destinations out of 1000 (max. 500000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 342 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
  39 words of extra memory for PDF output out of 10000 (max. 10000000)
 
