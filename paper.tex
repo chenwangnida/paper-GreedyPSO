@@ -319,15 +319,21 @@ After well-defined solutions are discussed, we will look at $Q_{mt}$, $Q_{s}$ an
 \multirow{3}{*}{Condition}            & dataset1             & $\surd$              & $\surd$                            \\ \cline{2-4} 
                                       & dataset2             & $\surd$              & $\surd$                            \\ \cline{2-4} 
                                       & dataset3             & $\surd$              & $\surd$                            \\ \hline
-\multirow{3}{*}{\shortstack{Task1\\Optimised solution}}  &$Q_{mt}$                      & .232635              & .232635                          \\ \cline{2-4} 
+\multirow{3}{*}{\shortstack{Task1\\Optimised solution}}  &$Q_{mt}$   & .232635              & .232635                          \\ \cline{2-4} 
                                       &$Q_{s}$                       & .903572              & .903572                          \\ \cline{2-4}
                                       &$Q_{QoS}$                     & .578577              & .578577                          \\ \hline
-\multirow{3}{*}{\shortstack{Task2\\Optimised solution}}  &$Q_{mt}$                      & .001828              & .000851$\downarrow$               \\ \cline{2-4} 
+\multirow{3}{*}{\shortstack{Task2\\Optimised solution}}  &$Q_{mt}$   & .001828              & .000851$\downarrow$               \\ \cline{2-4} 
                                       &$Q_{s}$                       & .917172              & .938840$\uparrow$                 \\ \cline{2-4}
                                       &$Q_{QoS}$                     & .480251              & .473002$\downarrow$               \\ \hline
-\multirow{3}{*}{\shortstack{Task3\\Optimised solution}}  &$Q_{mt}$                      & .191188              & .247836$\uparrow$                  \\ \cline{2-4} 
+\multirow{3}{*}{\shortstack{Task3\\Optimised solution}}  &$Q_{mt}$   & .191188              & .247836$\uparrow$                  \\ \cline{2-4} 
                                       &$Q_{s}$                       & .951509              & .973723$\uparrow$                  \\ \cline{2-4}
-                                      &$Q_{QoS}$                     & .493927              & .491538$\downarrow$                         \\ \hline
+                                      &$Q_{QoS}$                     & .493927              & .491538$\downarrow$                 \\ \hline
+\multirow{3}{*}{\shortstack{Task4\\Optimised solution}}  &$Q_{mt}$   & .919678              & .943406$\uparrow$                  \\ \cline{2-4} 
+                                      &$Q_{s}$                       & .000000              & .000009$\uparrow$                  \\ \cline{2-4}
+                                      &$Q_{QoS}$                     & .480818              & .472485$\downarrow$                 \\ \hline
+\multirow{3}{*}{\shortstack{Task5\\Optimised solution}}  &$Q_{mt}$   & .000094              & .000109$\uparrow$                  \\ \cline{2-4} 
+                                      &$Q_{s}$                       & .927476              & .930975$\uparrow$                  \\ \cline{2-4}
+                                      &$Q_{QoS}$                     & .476236              & .475128$\downarrow$                 \\ \hline                                                   
 \end{tabular}
 \end{table}
 From the table \ref{decisionTable}, Task 1 represents the same solution that can be observed in values of  $Q_{mt}$,$Q_{s}$ and $Q_{QoS}$ using the smallest dataset size with the lowest complexity of ontologies and valid solutions. However, we can recognise trade-offs in task2 and task3 using our evaluation model, where a 0.021668 increase and a 0.00098 decrease in similarity quality and matchType quality with weights 0.4 and 0.1 respectively so that it is still considered to be an improvement in functional quality part with a trade-off value 0.007249 in QoS. In task3, the benefit of functional part quality is clearer with an increase in both similarity quality and matchType quality of 0.056648 and 0.078862 while a slight decrease in QoS.  In conclusion, we can perceive that our evaluation could find out better functional quality with a reasonable trade off in QoS.
