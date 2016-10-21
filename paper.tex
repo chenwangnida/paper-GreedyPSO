@@ -142,54 +142,6 @@ However, the weakness of this approach for semantic link quality is that calcula
  \label{overview}
 \end{figure}
 In this paper, we model automated QoS-ware semantic service composition with graphs. PSO has shown its efficiency in solving combinatorial optimisation problems. Therefore, we will propose a PSO based approach, which is considered to be simple and efficient without penalising and repairing comparing to GP \cite{da2014graph}. Fig. \ref{overview} shows the overview of our approach with the five steps included. Step 1:The composite process is triggered by a composite goal defined in Subsection \ref{problemDes}, which describes customers requirements in terms of functional and non-functional requirement. The previous functional one is defined as $F(T_{Input}, T_{Output})$ , and the later nonfunctional one is the users' accepted level of QoS. Step 2: Those requirements are initially used to discover all relevant web services and their relationship in semantic matchmaking to get prepared for designing service composition via building graphs. This step selects relevant web services related to services request. This leads to a shrunken service repository that is used by PSO-based algorithm. Step 3: a service composition graph is randomly built up with considering the QoS and matchmaking quality. This graph building is interleaved with semantic matchmaking for services. The output of one service and its associated input of another service is calculated in the matchmaking phase where semantic matchmaking quality are measured which will be explained in Subsection \ref{qualityModel}. Step 4,5: The optimisation of service composition solution is performed over the PSO in Section \ref{pso_algorithm}, which is used to find optimised particle locations mapped back to web service for service-graph building. This approach \cite{da2016particle} is an indirect representation of web service composition that constructing a graph-based composite service composition.
-
-\subsection{QoS-aware Semantic Web Service Composition algorithm} \label{pso_algorithm}
-\begin{algorithm}[!htb]
- \setlength\hsize{0.9\linewidth}
- \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
- \let\oldnl\nl% Store \nl in \oldnl
-\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
- \LinesNumbered
-	\textbf{1.} Randomly initialise each particle in the swarm.\\
-	\nonl \While {max. iterations not met}{
-		\ForAll{particles in the swarm}{
-			\textbf{2.} Sort particle's position vector as a service queue in ascending order\\
-			\textbf{3.} Initialise OutputSet with Task Input\\
-			\textbf{4.} Initialise a graph with a startNode associated with Task Input as its output\\
-			\nonl \While {max. OutputSet not contains Task Input}{
-				\textbf{5.} Get web service from service queue\\
-				\If{All inputs of current web service satisfied with output from outputSet}{
-					\textbf{6.} Create and connect service edge associated with matchmaking quality to graph.\\
-					\textbf{7.} Create and connect node(current web service) to graph.\\
-					\textbf{8.} Remove current web service from the queue.\\
-					\textbf{9.} Update OutputSet with outputs current web service.\\
-				}
-				\textbf{10.} Get next web service from service queue\\
-			}
-			\textbf{11.} Connect endNode the graph\\
-			\textbf{12.} Remove dangle services from the graph\\
-			\textbf{13.} Remove dangle edges\\
-			\textbf{14.} Aggregation of semantic matchmaking and QoS\\
-			\textbf{15.} Calculate the particle's fitness.\\
-			\Indp $fitness_i = w_1SDst + w_2A_i + w_3R_i + w_4(1 - T_i) + w_5(1 - C_i)$ where $\sum_{i=1}^{5} w_i = 1$ \\
-			\eIf{fitness value better than pBest}{
-				\textbf{16.} Assign current fitness as new pBest.\\
-			}{
-				\textbf{17.} Keep previous pBest.\\
-			}		
-		}
-		\textbf{18.} Assign best particle's pBest value to gBest, if better than gBest.\\
-		\textbf{19.} Calculate the velocity of each particle according to the equation:\\
-		\Indp $v_{id} = v_{id} + c_1 * rand() * (p_{id} - x_{id}) + c_2 * rand() * (p_{gd} - x_{id})$\\
-		\Indm \textbf{19.} Update the position of each particle according to the equation:\\
-		\Indp $x_{id} = x_{id} + v_{id}$\\
-	}
-	
- \caption{Steps of graph-based PSO optimisation technique.}
-\label{psoSteps}
-\end{algorithm}
-The overall algorithm investigated here is a combination of a simple forward decoding PSO \cite{da2016particle} with our comprehensive quality evaluation model. The idea is to translate the particle location into a service queue as an indirect representation of service composition graph, finding the best fitness of the composite service solution is to discover the optimised location of the particle. In PSO, the dimension of the particle is set up as the same as the number of relevant web services in the shrunken service repository, each of which is mapped to a location in a particle, put services in a queue and sort in ascending order. Later on, we decode a corresponding graph built from that service queue using a forward graph-building technique from a start node to the end node. We select and connect web services to the startNode if this web service can satisfy the given Task input, and an Output Set is initialised and kept updating with outputs from new added web services in the graph, later on, we services are keeping being selected and added if services' inputs could be satisfied by any output in the Output Set, if the Output Set contains the Task's required outputs, we end up graph building. In addition, dangle service nodes and edges should be removed. At last, fitness value can be calculated by the construct-based aggregation.
-
 \subsection{Semantic matchmaking}
 The semantic matchmaking is achieved by utilising semantic annotation with OWL and OWL-S. In this paper, we use MECE ontologies \cite{bleul2008self} XWL format, which could be considered to be an alternative form of ontology for services. In OWL, semantics specifies the both concepts and individuals in the forms of classes and instances but limited to taxonomies. The semantic concepts are expressed with the their statements and relationship in RDFs (such as subClassOf ), and the semantic individuals are related to the input and output parameters of web services. The MECE is an extensive annotation to WSDL files, which defines the each parameter of services associated with their semantic individuals. The overall matching making process is demonstrated in Figure \ref{matchmaking}.
 
@@ -254,6 +206,55 @@ Fitness = w_1MT + w_2S + w_3A + w_4R + w_5(1 - T) + w_6(1 - C)
 
 \noindent where $\sum_{i=1}^{6} w_i = 1$
 
+
+\subsection{QoS-aware Semantic Web Service Composition algorithm} \label{pso_algorithm}
+\begin{algorithm}[!htb]
+ \setlength\hsize{0.9\linewidth}
+ \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+ \let\oldnl\nl% Store \nl in \oldnl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
+\textbf{Input}: I, O \\
+\textbf{Output}: G \\
+ \LinesNumbered
+	\textbf{1.} Randomly initialise each particle in the swarm.\\
+	\nonl \While {max. iterations not met}{
+		\ForAll{particles in the swarm}{
+			\textbf{2.} Sort particle's position vector as a service queue in ascending order\\
+			\textbf{3.} Initialise OutputSet with Task Input: I\\
+			\textbf{4.} Initialise a graph G with a startNode\\
+			\nonl \While {max. OutputSet not contains Task Output: O}{
+				\textbf{5.} Get web service from service queue\\
+				\If{All inputs of current web service satisfied with output from outputSet}{
+					\textbf{6.} Create and connect service edge associated with matchmaking quality to graph.\\
+					\textbf{7.} Create and connect node(current web service) to graph.\\
+					\textbf{8.} Remove current web service from the queue.\\
+					\textbf{9.} Update OutputSet with outputs current web service.\\
+				}
+				\textbf{10.} Get next web service from service queue\\
+			}
+			\textbf{11.} Connect endNode the graph G\\
+			\textbf{12.} Remove dangle services from the graph G\\
+			\textbf{13.} Remove dangle edges from graph G\\
+			\textbf{14.} Aggregation of semantic matchmaking and QoS\\
+			\textbf{15.} Calculate the particle's fitness.\\
+			\eIf{fitness value better than pBest}{
+				\textbf{16.} Assign current fitness as new pBest.\\
+			}{
+				\textbf{17.} Keep previous pBest.\\
+			}		
+		}
+		\textbf{18.} Assign best particle's pBest value to gBest, if better than gBest.\\
+		\textbf{19.} Calculate the velocity of each particle according to the equation:\\
+		\textbf{19.} Update the position of each particle according to the equation:\\
+	}
+	
+ \caption{Steps of graph-based PSO optimisation technique.}
+\label{psoSteps}
+\end{algorithm}
+The overall algorithm investigated here is a combination of a simple forward decoding PSO \cite{da2016particle} with our comprehensive quality evaluation model. The idea is to translate the particle location into a service queue as an indirect representation of service composition graph, finding the best fitness of the composite service solution is to discover the optimised location of the particle. In PSO, the dimension of the particle is set up as the same as the number of relevant web services in the shrunken service repository, each of which is mapped to a location in a particle, put services in a queue and sort in ascending order. Later on, we decode a corresponding graph built from that service queue using a forward graph-building technique from a start node to the end node. We select and connect web services to the startNode if this web service can satisfy the given Task input, and an Output Set is initialised and kept updating with outputs from new added web services in the graph, later on, we services are keeping being selected and added if services' inputs could be satisfied by any output in the Output Set, if the Output Set contains the Task's required outputs, we end up graph building. In addition, dangle service nodes and edges should be removed. At last, fitness value can be calculated by the construct-based aggregation.
+
+
+
 \section{Experiment Design}\label{experiment_design}
 In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are to measure the effectiveness of the proposed comprehensive quality model in automated semantic web service composition approach, and to explore the impact of the semantic matchmaking that contributes to overall composition quality, and to compare solutions generated by QoS-ware approach with our method.
 
@@ -303,7 +304,7 @@ Lastly, It is interesting to look at the average QoS per generation for the 30 i
 \end{figure}
 We defined our optimised web service composition as $WSC = (V, E)Graph$, where $V$ is a set of services as vertex: $V=[S1, S2...Sn]$ and $E$ is a set of service connections as edges associated matchType quality and semantic similarity quality: $E = {e_{1}, e_{2},... e_{n}}$ where $e1$ is define as $(S_{1},S_{2})={q_{mt}, q_{s}}$. Here we provide an example of the web service composition solution to task 1, which can be described in the Figure \ref{wscs}. The data of composite web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, $q_{mt}$ and $q_{s}$) are calculated for all edges ${e_{1}, e_{2},... e_{n}}$, and further aggregated in $Q_{mt}$ and $Q_{s}$ respectively.In addtion, $Q_{QoS}$ is calculated by all the non-functional attributes of $V$ using aggregation rules defined before.This standard solution model helps us to make better comparison for evaluating the results from different approaches.
 
-After a well-defined solution is discussed, we will look at $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ defined in the solution model using  black-box testing for solution comparison, where these components in both comprehensive quality evaluation approach and traditional QoS-ware one \cite{feng2013dynamic,huang2009effective,ma2015hybrid,da2014graph} are compared to reveal how good our evaluation mode is. In a decision table \ref{decisionTable}, these two models are interpreted as a rule set considering five different conditions (five independent tasks) associated with three corresponding solutions. In each solution, we compare $Q_{mt}$,$Q_{s}$ and $Q_{QoS}$, where $Q_{QoS}$ is normalised to make them comparable from 0 to 1 in our method. From the table below.
+After a well-defined solution is discussed, we will look at $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ defined in the solution model using black-box testing for solution comparison, where these components in both comprehensive quality evaluation approach and traditional QoS-ware one \cite{feng2013dynamic,huang2009effective,ma2015hybrid,da2014graph} are compared to reveal how good our evaluation mode is. In a decision table \ref{decisionTable}, optimised solution using these two evaluation models are compared under five independent tasks in WSC09 dataset. In each task solution, we compare $Q_{mt}$,$Q_{s}$ and $Q_{QoS}$, where $Q_{QoS}$ is normalised to make them comparable from 0 to 1 in our method. 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -314,7 +315,7 @@ After a well-defined solution is discussed, we will look at $Q_{mt}$, $Q_{s}$ an
 \label{decisionTable}
 \begin{tabular}{|c|c|c|c|}
 \hline
-\multicolumn{2}{|c|}{\multirow{2}{*}{}}                              & Rule 1               & Rule 2                           \\ \cline{3-4} 
+\multicolumn{2}{|c|}{\multirow{2}{*}{}}                              &Approach 1           &Approach 2                           \\ \cline{3-4} 
 \multicolumn{2}{|c|}{}                                               & \shortstack{QoS-aware \\ Evaluation} & \shortstack{Comprehensive \\ Quality Evaluation} \\ \hline
 \multirow{3}{*}{Condition}            & dataset1             & $\surd$              & $\surd$                            \\ \cline{2-4} 
                                       & dataset2             & $\surd$              & $\surd$                            \\ \cline{2-4} 
@@ -336,7 +337,7 @@ After a well-defined solution is discussed, we will look at $Q_{mt}$, $Q_{s}$ an
                                       &$Q_{QoS}$                     & .476236              & .475128$\downarrow$                 \\ \hline                                                   
 \end{tabular}
 \end{table}
-From the table \ref{decisionTable}, Task 1 represents the same solution that can be observed in values of  $Q_{mt}$,$Q_{s}$ and $Q_{QoS}$ using the smallest dataset size with the lowest complexity of ontologies and valid solutions. However, we can recognise trade-offs in task2 and task3 using our evaluation model, where a 0.021668 increase and a 0.00098 decrease in similarity quality and matchType quality with weights 0.4 and 0.1 respectively so that it is still considered to be an improvement in functional quality part with a trade-off value 0.007249 in QoS. In task3, the benefit of functional part quality is clearer with an increase in both similarity quality and matchType quality of 0.056648 and 0.078862 while a slight decrease in QoS.  In conclusion, we can perceive that our evaluation could find out better functional quality with a reasonable trade off in QoS.
+From the table \ref{decisionTable}, Task 1 represents the same solution that can be observed in values of  $Q_{mt}$,$Q_{s}$ and $Q_{QoS}$ using the smallest dataset size with the lowest size of ontologies. However, we can recognise trade-offs in task2 and task3 using our evaluation model, where a 0.021668 increase and a 0.00098 decrease in similarity quality and matchType quality with weights 0.4 and 0.1 respectively so that solution to task 2 is still considered to be an improvement in functional quality part with a trade-off value 0.007249 in QoS. In task3, the benefit of functional part quality is clearer with an increase in both similarity quality and matchType quality of 0.056648 and 0.078862 while a slight decrease in QoS. later on, the performance is the same in task 4 and task 5. In conclusion, we can perceive that our evaluation could find out better functional quality with a reasonable trade off in QoS.
 
 \section{Conclusion}\label{conclusion}
 This work introduced a more applicable and simpler evaluation model for semantic automated web service composition that relies on semantic matchmaking quality extension to QoS-aware consideration. The key idea of these evaluation model is to consider the quality of semantic matchmaking corresponding to different matchmaking types, which is simply achieved by applying the similarity measures in parameter-related concepts, and those web services are involved in further selection for dealing optimised problems. Also, the effectiveness of our model is also proved to be able to obtain a better-optimised solution in better functional quality with a reasonable trade-off in QoS. Future works in this area should investigate in multi-objective optimisation as well as consider improving efficiency in the functional quality calculation.
