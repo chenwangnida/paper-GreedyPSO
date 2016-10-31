@@ -30,6 +30,12 @@ Cardoso, J., Sheth, A., Miller, J., Arnold, J., Kochut, K.: Quality of service
 Curbera, F., Nagy, W., Weerawarana, S.: Web services: Why and how. In: Workshop
   on Object-Oriented Web Services-OOPSLA. vol. 2001 (2001)
 
+\bibitem{fanjiang2014semantic}
+FanJiang, Y.Y., Syu, Y.: Semantic-based automatic service composition with
+  functional and non-functional requirements in design time: A genetic
+  algorithm approach. Information and Software Technology  56(3),  352--373
+  (2014)
+
 \bibitem{feng2013dynamic}
 Feng, Y., Ngan, L.D., Kanagasabai, R.: Dynamic service composition with
   service-dependent qos attributes. In: Web Services (ICWS), 2013 IEEE 20th
