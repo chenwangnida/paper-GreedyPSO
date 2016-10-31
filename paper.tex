@@ -156,10 +156,7 @@ The semantic matchmaking is typically achieved by utilising OWL2 and OWL-S. In t
 
 
 \subsection{Ontology-based Index Cached Optimisation}
-In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality and mark the input-parameter concepts with a set of services. The key idea of the index is to create a mapping from the output-related concepts to matched input-related services while considering different levels of match types. Furthermore, the repository size could also be reduced by considering users' predefined acceptable semantic matching quality, which eliminates the influence of low composition accuracy.  The service repository size is further reduced to the available output parameter concepts are input-relevant and more than the threshold $\alpha$.
-
-
-This implementation contributes to less time and constant time for weighted graph building.
+In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality and mark the input-parameter concepts with a set of services. The key idea of the index is to create a mapping from the output-related concepts to matched input-related services while considering different levels of match types. Furthermore, the repository size could also be reduced by considering users' predefined acceptable semantic matching quality, which eliminates the influence of low composition accuracy.  The service repository size is further reduced to the available output parameter concepts are input-relevant and more than the threshold $\alpha$. This implementation contributes to less and constant time for weighted graph building.
 
 
 \begin{figure}[h]
