@@ -139,29 +139,36 @@ The semantic matchmaking is typically achieved by utilising OWL2 and OWL-S. In t
 \subsection{Comprehensive quality model and aggregation matrix}\label{qualityModel}
 In this paper, we propose a comprehensive quality model to evaluate the overall quality of semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware optimisation, in which quality of semantic matchmaking are not considered \cite{bansal2016generalized,mier2015integrated,da2016particle,da2015graphevol,yu2013adaptive}.
 
-\textbf{Semantic matchmaking model}. Due to the discretisational characteristics of different match types driven by the cost of  data type integration and manipulation \cite{lecue2009optimizing}. Match types are considered to be one factor for the semantic matchmaking quality. Another factor in our proposed model is concept similarity, which could be evaluate based on edge counting method defined by \cite{shet2012new}, which is a taxonomy-based measurement for ontology matching. This formula \ref{equation1} is used to estimate the similarity between output-related concept and input-related concept for selecting web services. Therefore, given the quality match type and the similarity of two parameters, the semantic matchmaking quality is defined as Formula \ref{equation4}, where the value of $q(s_ {matchType})$ is set up as the same as the quality of the semantic link in literature \cite{lecue2009optimizing} as 1 (Exact), 0.75 (Plugin), 0.5 (Subsume) or 0.25 (Intersection) while $q(s_ {similarity})$ is calculated utilising formula \ref{equation1} in subsection \ref{relatedWork}.
+\textbf{Semantic matchmaking model}. Due to the discretisational characteristics of different match types driven by the cost of  data type integration and manipulation \cite{lecue2009optimizing}, match types are considered to be one factor for the semantic matchmaking quality. Another factor in our proposed model is concept similarity, which could be evaluate based on edge counting method defined by \cite{shet2012new}, which is a taxonomy-based measurement for ontology matching. This formula \ref{equation1} is used to estimate the similarity between parameter-related output concept and parameter-related input concept for selecting web services. Therefore, given the quality match type and the similarity of two parameters-related concepts, the semantic matchmaking quality of matched parameters is defined by Formula \ref{equation2}, where the value of $q(p_ {matchType})$ is set up as the same as the quality of the semantic link in \cite{lecue2009optimizing} as 1 (Exact), 0.75 (Plugin), 0.5 (Subsume) or 0.25 (Intersection). 
+
 \begin{equation}
-q(s_ {similarity}){=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
+q(p_ {s}){=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
 \label{equation1}
 \end{equation}
 
 \begin{equation}
-\label{equation4}
-q_{sm} \stackrel{.}{=} (q(s_ {matchType}), \  q(s_ {similarity}))
+\label{equation2}
+q(p_{sm}) \stackrel{.}{=} (q(p_ {mt}), \  q(p_ {s}))
 \end{equation}
 
-\textbf{Comprehensive quality model}. Compared to QoS evaluation model, the comprehensive quality model is established to investigate both functional and non-functional requirements of composite goal. The non-functional properties typically refers to previously discussed QoS, which are given by service providers. Consequently, the comprehensive quality model integrated the semantic matchmaking quality $q(s_{sm})$ in Formula \ref{equation5}, which could be further broken down into Formula \ref{equation6}.
+Further more, edges represent services connections in our weighted graph presentations, where assigned weight value $q(e_{sm})$ is considered to be semantic matching quality on edge level according to parameter aggregations. The weight value $q(e_{sm})$ is defined in \ref{equation3}, where $q(e_ {matchType})$ and $q(e_ {similarity})$ are the mean value of concept-related parameters quality in $q(p_{mt})$ and $q(p_{s})$ respectively. 
 
+\begin{equation}
+\label{equation3}
+q(e_{sm}) \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}))
+\end{equation}
+
+\textbf{Comprehensive quality model}. Compared to QoS evaluation model, the comprehensive quality model is established to investigate both functional and non-functional requirements of a goal. The comprehensive quality of our service composition representation refers to QoS of service vertices and Semantic matching quality of Edges in weighted graphs. Consequently, the comprehensive quality model is defined in Formula \ref{equation4}, which could be further broken down into Formula \ref{equation5}. 
+\begin{equation}
+\label{equation4}
+q_{cq} \stackrel{.}{=} (q(e_ {sm}), \  q(v_ {QoS}))
+\end{equation}
 \begin{equation}
 \label{equation5}
-q_{cq} \stackrel{.}{=} (q(s_ {sm}), \  q(s_ {QoS}))
-\end{equation}
-\begin{equation}
-\label{equation6}
-q_{cq} \stackrel{.}{=} (q(s_ {mt}), \  q(s_ {s}), \  q(s_{a}),\  q(s_{r}),\  q(s_{c}),\  q(s_{t}))
+q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v_{c}),\  q(v_{t}))
 \end{equation}
 
-\textbf{Quality aggregate matrix}.The quality aggregation is defined based on the constructs of composite web services on the criteria of functional and non-functional properties. Generally, web services could have more than one concept-related parameters. In semantic matchmaking process, two levels of quality aggregation are considered --- edge level and construct level. At edge level, the edge-level quality aggregation is determined by the mean value of concept-related parameter quality in $q(s_{mt})$ and $q(s_{s})$ respectively. Meanwhile, the construct-level quality is further calculated based on the constructs following the rules in Table \ref{table1} --- a quality aggregate matrix for semantic web service composition. Both the $Q(s_{mt})$ and $Q(s_{s})$ are considered by calculating the product function of involved edge-level $q(s_{mt})$, and mean function of edge-level $q(s_{s})$ respectively. The QoS aggregation $Q(q_{QoS})$ calculation is same to \cite{cardoso2004quality}.
+\textbf{Quality aggregate matrix}. The quality aggregation is defined based on the constructs of composite web services on the criteria of functional and non-functional properties. The quality on construct level is further calculated following the rules in Table \ref{table1} --- a quality aggregate matrix for semantic web service composition. Both the $Q(s_{mt})$ and $Q(s_{s})$ are considered by calculating the product function of involved edge-level $q(s_{mt})$, and mean function of edge-level $q(s_{s})$ respectively. The QoS aggregation $Q(q_{QoS})$ calculation is same to \cite{cardoso2004quality}.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -172,12 +179,12 @@ q_{cq} \stackrel{.}{=} (q(s_ {mt}), \  q(s_ {s}), \  q(s_{a}),\  q(s_{r}),\  q(s
 \begin{tabular}{|c|c|c|c|l|}
 \hline
 \multicolumn{3}{|c|}{Composition Construct}                                      & Sequence                             & Parallel \\ \hline
-\multirow{5}{*}{QualityFactors} & \multirow{2}{*}{Functional}    & $Q(s_ {mt})$  &$\prod_{n=1}^{m} q(s_ {mt})$          &  $\prod_{n=1}^{m} q(s_ {mt})$ \\ \cline{3-5}
-                                &                                & $Q(s_ {s})$  & $(\sum_{n=1}^m q(s_ {s}))/m$        &  $(\sum_{n=1}^m q(s_ {s}))/m$  \\ \cline{2-5}   
-                                & \multirow{4}{*}{NonFunctional} & $Q(s_{a})$    & $\prod_{n=1}^{m} q(s_a)$             &  $\prod_{n=1}^{m} q(s_a)$ \\ \cline{3-5} 
-                                &                                & $Q(s_{r})$    & $\prod_{n=1}^{m} q(s_r)$             &  $\prod_{n=1}^{m} q(s_r)$ \\ \cline{3-5} 
-                                &                                & $Q(s_{c})$    & $\sum_{n=1}^m q(s_ {c})$             &  $\sum_{n=1}^m q(s_ {c})$ \\ \cline{3-5} 
-                                &                                & $Q(s_{t})$    & $\sum_{n=1}^m q(s_ {t})$             &  $max(q(s_ {t}))$ \\ \hline
+\multirow{5}{*}{QualityFactors} & \multirow{2}{*}{Functional}    & $Q(e_ {mt})$  &$\prod_{n=1}^{m} q(e_ {mt})$          &  $\prod_{n=1}^{m} q(e_ {mt})$ \\ \cline{3-5}
+                                &                                & $Q(e_ {s})$  & $(\sum_{n=1}^m q(e_ {s}))/m$        &  $(\sum_{n=1}^m q(e_ {s}))/m$  \\ \cline{2-5}   
+                                & \multirow{4}{*}{NonFunctional} & $Q(v_{a})$    & $\prod_{n=1}^{m} q(v_a)$             &  $\prod_{n=1}^{m} q(v_a)$ \\ \cline{3-5} 
+                                &                                & $Q(v_{r})$    & $\prod_{n=1}^{m} q(v_r)$             &  $\prod_{n=1}^{m} q(v_r)$ \\ \cline{3-5} 
+                                &                                & $Q(v_{c})$    & $\sum_{n=1}^m q(v_ {c})$             &  $\sum_{n=1}^m q(v_ {c})$ \\ \cline{3-5} 
+                                &                                & $Q(v_{t})$    & $\sum_{n=1}^m q(v_ {t})$             &  $max(q(v_ {t}))$ \\ \hline
 \end{tabular}
 \end{table}
 
