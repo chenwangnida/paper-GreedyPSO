@@ -134,7 +134,7 @@ In this paper, we propose a comprehensive quality model for automated semantic s
 \subsection{Semantic matchmaking} \label{semantic_matchmaking}
 To perform semantic matchmaking, we transfer a function match between $S_{1}: S_{output} \in C_{1}$ and $S_{2}:S_{output} \in S_{b}$ to a pair of concept match in \ref{semantic Web service Discovery}. The matching process attempts to determine semantic matching between the source concepts of $C_{1}$ and the target concepts of $C_{2}$. Meanwhile, the quality of matched concepts are calculated in the mode model in subSection \ref{qualityModel}. The purpose of semantic matchmaking is to find more component services that could also potentially satisfies the quality of QoS with considering its functional quality.
 
-The semantic matchmaking is typically achieved by utilising OWL2 and OWL-S. In this paper, we use MECE (Mediation Contract Extension) \cite{bleul2008self} and OWL-DL, MECE is considered to be an alternative semantic annotation for WSDL. MECE defines the service-related inputs and outputs with parameter-related concepts. OWL-DL is a sublanguage of OWL from extension of RDF. which specifies semantic information of concepts involved in MECE. 
+The semantic matchmaking is achieved by utilising OWL2 and OWL-S or other semantic markup languages for web services. In this paper, we use MECE (Mediation Contract Extension) \cite{bleul2008self} and OWL-DL, MECE is considered to be an alternative semantic annotation for WSDL. MECE defines the service-related inputs and outputs with parameter-related concepts. OWL-DL is a sublanguage of OWL from extension of RDF. which specifies semantic information of concepts involved in MECE. 
 
 \subsection{Comprehensive quality model and aggregation matrix}\label{qualityModel}
 In this paper, we propose a comprehensive quality model to evaluate the overall quality of semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware optimisation, in which quality of semantic matchmaking are not considered \cite{bansal2016generalized,mier2015integrated,da2016particle,da2015graphevol,yu2013adaptive}.
@@ -168,7 +168,7 @@ q_{cq} \stackrel{.}{=} (q(e_ {sm}), \  q(v_ {QoS}))
 q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v_{c}),\  q(v_{t}))
 \end{equation}
 
-\textbf{Quality aggregate matrix}. The quality aggregation is defined based on the constructs of composite web services on the criteria of functional and non-functional properties. The quality on construct level is further calculated following the rules in Table \ref{table1} --- a quality aggregate matrix for semantic web service composition. Both the $Q(s_{mt})$ and $Q(s_{s})$ are considered by calculating the product function of involved edge-level $q(s_{mt})$, and mean function of edge-level $q(s_{s})$ respectively. The QoS aggregation $Q(q_{QoS})$ calculation is same to \cite{cardoso2004quality}.
+\textbf{Quality aggregate matrix}. The quality aggregation is defined based on the constructs of composite web services on the criteria of functional and non-functional properties. The quality on construct level is further calculated and by following the rules summarised in Table \ref{table1}. 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -189,63 +189,74 @@ q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v
 \end{table}
 
 \subsection{Fitness Calculation}
-The fitness value is calculated from the aggregated value of quality components involved in a graph-based service composition. A weighted sum of those components is utilised in the fitness function \ref{equation7}, in which fitness value of 1 means the best comprehensive quality and 0 means the worst. As the sum of all the function weights (w1 to w6) is equal to 1, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within 0 to 1. Also, the lowest T and C value represent the best conponent quality so that the objective function is offset using $(1 - T)$ and $(1 - C)$.
+The fitness value of a service composition solution is a weighted sum of all the quality components discussed previously shown in Formula \ref{equation6}, in which fitness value of 1 means the best comprehensive quality and 0 means the worst. As the sum of all the components' weights ($w_1$ to $w_6$) equals to 1, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Also, the lowest T and C value represent the best component quality so that the objective function can be offset using $(1 - T)$ and $(1 - C)$.
 
 \begin{equation}
-\label{equation7}
+\label{equation6}
 Fitness = w_1MT + w_2S + w_3A + w_4R + w_5(1 - T) + w_6(1 - C)
 \end{equation}
-
 \noindent where $\sum_{i=1}^{6} w_i = 1$
 
-\subsection{QoS-aware Semantic Web Service Composition algorithm} \label{pso_algorithm}
+\subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
+
 \begin{algorithm}[!htb]
  \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
  \let\oldnl\nl% Store \nl in \oldnl
 \newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
-\textbf{Input}: I, O \\
-\textbf{Output}: G \\
  \LinesNumbered
-	\textbf{1.} Randomly initialise each particle in the swarm.\\
+ 	\textbf{1.} Map each relevant service to an index in the particle's position vector.\\
+	\textbf{2.} Randomly initialise each particle in the swarm.\\
 	\nonl \While {max. iterations not met}{
 		\ForAll{particles in the swarm}{
-			\textbf{2.} Sort particle's position vector as a service queue in ascending order\\
-			\textbf{3.} Initialise OutputSet with Task Input $\leftarrow I$ \\
-			\textbf{4.} Initialise a graph G with a startNode\\
-			\nonl \While {max. OutputSet not contains Task Output $\leftarrow O$}{
-				\textbf{5.} Get web service from service queue\\
-				\If{All inputs of current web service satisfied with output from outputSet}{
-					\textbf{6.} Create and connect service edge associated with matchmaking quality to graph.\\
-					\textbf{7.} Create and connect node(current web service) to graph.\\
-					\textbf{8.} Remove current web service from the queue.\\
-					\textbf{9.} Update OutputSet with outputs current web service.\\
-				}
-				\textbf{10.} Get next web service from service queue\\
-			}
-			\textbf{11.} Connect endNode the graph G\\
-			\textbf{12.} Remove dangle services from the graph G\\
-			\textbf{13.} Remove dangle edges from graph G\\
-			\textbf{14.} Aggregation of semantic matchmaking and QoS\\
-			\textbf{15.} Calculate the particle's fitness.\\
+		    \textbf{3.} Create queue of services using the particle's position vector.\\
+			\textcolor{blue}{\textbf{4.} Build a weighted graph using the queue.}\\
+			\textcolor{blue}{\textbf{5.} Calculate the fitness of the weighted graph.}\\
 			\eIf{fitness value better than pBest}{
-				\textbf{16.} Assign current fitness as new pBest.\\
+				\textbf{6a.} Assign current fitness as new pBest.\\
 			}{
-				\textbf{17.} Keep previous pBest.\\
+				\textbf{6b.} Keep previous pBest.\\
 			}		
 		}
-		\textbf{18.} Assign best particle's pBest value to gBest, if better than gBest.\\
-		\textbf{19.} Calculate the velocity of each particle according to the equation:\\
-		\textbf{19.} Update the position of each particle according to the equation:\\
+		\textbf{7.} Assign best particle's pBest value to gBest, if better than gBest.\\
+		\textbf{8.} Calculate the velocity of each particle according to the equation:\\
+		\Indp $v_{id} = v_{id} + c_1 * rand() * (p_{id} - x_{id}) + c_2 * rand() * (p_{gd} - x_{id})$\\
+		\Indm \textbf{9.} Update the position of each particle according to the equation:\\
+		\Indp $x_{id} = x_{id} + v_{id}$\\
 	}
-		\textbf{20.} return Graph in the last iteration $ \rightarrow G$.\\
 	
- \caption{Steps of graph-based PSO optimisation technique.}
-\label{psoSteps}
+ \caption{Steps of the PSO-based Web service composition technique.}
+\label{novelSteps}
 \end{algorithm}
-The overall algorithm investigated here is a simple forward decoding PSO \cite{da2016particle} with our comprehensive quality evaluation model. The idea is to translate the particle location into a service queue as an indirect representation of graph-based service composition, so finding the best fitness of the composite service solution is to discover the optimised location of the particle. In PSO, the dimension of the particle is set up as the same as the number of relevant web services in the shrunken service repository, and all the services index is mapped to the location in a particle, and we put services in a queue in ascending order, from which we decode a corresponding graph using a forward graph-building technique. The particle's fitness value can be calculated based on that built graph. During the evolutionary process, pBest and gBest value are assigned and updated in each generation with new-updated particles' position while graph-based solutions are generated at the same time. eventually, we return the graph built from the last generation as an optimised solution. In the forward graph building algorithm. We select and connect web services to the startNode from the service queue if the web service can satisfy the given $T_{input}$. Meanwhile, an Output Set is initialised and kept being updated using outputs from the new-added web services in the graph, later on, more services are connected if services' inputs could be satisfied by any output in the Output Set. At last, The end node is connected if the updated Output Set contains the $T_{output}$. In addition, dangle service nodes and edges should be removed. 
 
-Firstly, a output set is initialised and updated with found services output, which could be denoted as $Output Set(T_{input}, S_{output} \in S_1,...,S_{output} \in S_{n-k})$. The Output set is used to discover all related services until the desired $T_{Output}$ found in the updated Output Set. The discovery process normally results in more than one service compositions. Therefore, Service selection is to select one of those composite solutions considering the best QoS according to $T_{QoS}$
+
+\begin{algorithm}[!htb]
+ \setlength\hsize{0.9\linewidth}
+ \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+ \SetKwFunction{connectNode}{connectNode}\SetKwFunction{findCands}{findCands}\SetKwFunction{removeDangling}{removeDangling}
+ \LinesNumbered
+ \SetNlSty{}{}{:}
+ \Input{$I$, $O$, $queue$}
+ \Output{composition weighted graph $WG$}
+ Create $start$ vertex with outputs $I$ and $end$ vertex with inputs $O$\;
+ Create graph $WG$ containing the $start$ vertex\;
+ Create available outputs set containing $start$ outputs\;
+ \While{available outputs do not satisfy $end$ inputs}{
+ Get next candidate from queue\;
+ \If{candidate inputs are satisfied by available outputs}{
+ \textcolor{blue}{Create edge assigned with weight\;}
+ \textcolor{blue}{Connect vertex to graph with the edge\;}
+ Remove it from queue and go back to the queue's beginning\;
+ }}
+ Connect end vetex\;
+ Remove dangling vertices from graph $WG$\;
+ Remove dangling edges from graph $WG$
+ \KwRet $WG$\;
+ \caption{Create a composition weighted graph from a queue}
+\label{graph_building}
+\end{algorithm}
+
+The overall algorithm investigated here is a PSO-based web service composition algorithm \ref{novelSteps} from   \cite{da2016particle} with a different decoded algorithm \ref{graph_building} to generate a composition weighted graph from a queue. In the first algorithm, the idea is to translate the particle location into a service queue as an indirect representation of composition weighted graph, so finding the best fitness of the composite service solution is to discover the optimised location of the particle. In PSO, the dimension of the particle is set up as the same as the number of relevant web services, and all the services index is mapped to the location in a particle, and we put services in a queue in ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. We select and connect web services to the start Vetex from the service queue if the web service can satisfy the given $T_{input}$. Meanwhile, an Output Set is initialised and kept being updated using outputs from the new-added web services in the graph, later on, more services are connected if services' inputs could be satisfied by any output in the Output Set. At last, The end vetex is connected if the updated Output Set contains the $T_{output}$. In addition, dangle service nodes and edges should be removed. 
 
 \section{Experiment Design}\label{experiment_design}
 In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are to measure the effectiveness of the comprehensive quality model in automated semantic web service composition approach, and to explore the impacts of the semantic matchmaking that contributes to overall composition quality, and to compare solutions generated by QoS-ware approach with our method.

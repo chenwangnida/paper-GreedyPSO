@@ -16,45 +16,45 @@ Repeated entry---line 869 of file ../bibliography.bib
  :                                    ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
-You've used 31 entries,
+You've used 30 entries,
             2785 wiz_defined-function locations,
-            755 strings with 10658 characters,
-and the built_in function-call counts, 19260 in all, are:
-= -- 1657
-> -- 628
-< -- 31
-+ -- 263
-- -- 225
-* -- 1188
-:= -- 2460
-add.period$ -- 62
-call.type$ -- 31
-change.case$ -- 235
+            750 strings with 10424 characters,
+and the built_in function-call counts, 18544 in all, are:
+= -- 1597
+> -- 601
+< -- 29
++ -- 252
+- -- 215
+* -- 1139
+:= -- 2371
+add.period$ -- 61
+call.type$ -- 30
+change.case$ -- 227
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 1652
-empty$ -- 1695
-format.name$ -- 253
-if$ -- 4264
+cite$ -- 31
+duplicate$ -- 1592
+empty$ -- 1640
+format.name$ -- 242
+if$ -- 4110
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 335
-newline$ -- 98
-num.names$ -- 64
-pop$ -- 634
+int.to.str$ -- 30
+missing$ -- 322
+newline$ -- 95
+num.names$ -- 62
+pop$ -- 614
 preamble$ -- 1
-purify$ -- 169
+purify$ -- 162
 quote$ -- 0
-skip$ -- 553
+skip$ -- 532
 stack$ -- 0
-substring$ -- 1123
-swap$ -- 907
-text.length$ -- 31
+substring$ -- 1078
+swap$ -- 865
+text.length$ -- 29
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
+type$ -- 114
 warning$ -- 1
-while$ -- 162
-width$ -- 33
-write$ -- 324
+while$ -- 156
+width$ -- 32
+write$ -- 314
 (There were 3 error messages)
