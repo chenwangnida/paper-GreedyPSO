@@ -247,30 +247,28 @@ normalise(value) =
 \label{novelSteps}
 \end{algorithm}
 
-
 \begin{algorithm}[!htb]
  \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
- \SetKwFunction{connectNode}{connectNode}\SetKwFunction{findCands}{findCands}\SetKwFunction{removeDangling}{removeDangling}
- \LinesNumbered
- \SetNlSty{}{}{:}
+ \let\oldnl\nl% Store \nl in \oldnl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
  \Input{$I$, $O$, $queue$}
  \Output{composition weighted graph $WG$}
- Create $start$ vertex with outputs $I$ and $end$ vertex with inputs $O$\;
- Create graph $WG$ containing the $start$ vertex\;
- Create available outputs set containing $start$ outputs\;
+ \textbf{1.} Create $start$ vertex with outputs $O$ and $end$ vertex with inputs $I$.\\
+ \textbf{2.} Create graph $WG$ containing the $start$ vertex.\\
+ \textbf{3.} Create available outputs set containing $start$ outputs.\\
  \While{available outputs do not satisfy $end$ inputs}{
- Get next candidate from queue\;
+ \textbf{4.} Get next candidate from queue.\\
  \If{candidate inputs are satisfied by available outputs}{
- \textcolor{blue}{Create edge assigned with weight\;}
- \textcolor{blue}{Connect vertex to graph with the edge\;}
- Remove it from queue and go back to the queue's beginning\;
+ \textcolor{blue}{\textbf{5.} Create edge assigned with weight.\\}
+ \textcolor{blue}{\textbf{6.} Connect vertex to graph with the edge.\\}
+ \textbf{7.} Remove it from queue and go back to the queue's beginning.\\
  }}
- Connect end vetex\;
- Remove dangling vertices from graph $WG$\;
- Remove dangling edges from graph $WG$
- \KwRet $WG$\;
- \caption{Create a composition weighted graph from a queue}
+ \textbf{8.} Connect end vertex.\\
+ \textbf{9.} Remove dangling vertices from graph $WG$.\\
+ \textcolor{blue}{\textbf{10.} Remove dangling edges from graph $WG$.\\}
+ \KwRet $WG$.\\
+ \caption{Create a composition weighted graph from a queue}	
 \label{graph_building}
 \end{algorithm}
 
