@@ -189,13 +189,31 @@ q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v
 \end{table}
 
 \subsection{Fitness Calculation}
-The fitness value of a service composition solution is a weighted sum of all the quality components discussed previously shown in Formula \ref{equation6}, in which fitness value of 1 means the best comprehensive quality and 0 means the worst. As the sum of all the components' weights ($w_1$ to $w_6$) equals to 1, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Also, the lowest T and C value represent the best component quality so that the objective function can be offset using $(1 - T)$ and $(1 - C)$.
+The fitness value of a service composition solution is a weighted sum of all the quality components discussed previously shown in Formula \ref{equation6}, in which fitness value of 1 means the best comprehensive quality and 0 means the worst. As the sum of all the components' weights ($w_1$ to $w_6$) equals to 1, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Also, the lowest T and C value represent the best component quality so that the objective function can be offset using $(1 - T)$ and $(1 - C)$ using normalisation formula \ref{equation8}, and normalisation formula \ref{equation7} is for the rest components. Therefore, the whole problem is treated as a maximisation problem.
 
 \begin{equation}
 \label{equation6}
 Fitness = w_1MT + w_2S + w_3A + w_4R + w_5(1 - T) + w_6(1 - C)
 \end{equation}
 \noindent where $\sum_{i=1}^{6} w_i = 1$
+\\\\
+\begin{equation}
+\label{equation7}
+normalise(value) = 
+\begin{cases}
+	\frac{value - min}{max - min} & \text{ if }max - min \neq 0.\\
+	1 & \mathrm{ otherwise}.
+\end{cases}
+\end{equation}
+\begin{equation}
+\label{equation8}
+normalise(value) = 
+\begin{cases}
+	\frac{max - value}{max - min} & \text{ if }max - min \neq 0.\\
+	1 & \mathrm{ otherwise}.
+\end{cases}
+\end{equation}
+
 
 \subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
 
@@ -256,12 +274,12 @@ Fitness = w_1MT + w_2S + w_3A + w_4R + w_5(1 - T) + w_6(1 - C)
 \label{graph_building}
 \end{algorithm}
 
-The overall algorithm investigated here is a PSO-based web service composition algorithm \ref{novelSteps} from   \cite{da2016particle} with a different decoded algorithm \ref{graph_building} to generate a composition weighted graph from a queue. In the first algorithm, the idea is to translate the particle location into a service queue as an indirect representation of composition weighted graph, so finding the best fitness of the composite service solution is to discover the optimised location of the particle. In PSO, the dimension of the particle is set up as the same as the number of relevant web services, and all the services index is mapped to the location in a particle, and we put services in a queue in ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. We select and connect web services to the start Vetex from the service queue if the web service can satisfy the given $T_{input}$. Meanwhile, an Output Set is initialised and kept being updated using outputs from the new-added web services in the graph, later on, more services are connected if services' inputs could be satisfied by any output in the Output Set. At last, The end vetex is connected if the updated Output Set contains the $T_{output}$. In addition, dangle service nodes and edges should be removed. 
+The overall algorithm investigated here is a PSO-based web service composition algorithm \ref{novelSteps} from   \cite{da2016particle} with a different decoded algorithm \ref{graph_building} to generate a composition weighted graph from a queue. In the first algorithm, the idea is to translate the particle location into a service queue as an indirect representation of composition weighted graph, so finding the best fitness of the composite weighted graph is to discover the optimised location of the particle in the search space. In PSO, the dimension of the particle is set up as the same number as relevant web services, and the index of services is mapped to the location vectors in a particle, and we put services in a queue in ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. We select and connect  service vertex to the start vertex from the service queue if the web service can satisfy the output of start vertex. Meanwhile, an Output Set is initialised and kept being updated using outputs from the new-added service vertex in the weighted graph, later on, more services vertex are connected with edges if services' inputs could be satisfied by any output in the Output Set. At last, The end vertex is connected if the updated Output Set contains all end inputs. In addition, dangling service vertex and edges should be removed. 
 
 \section{Experiment Design}\label{experiment_design}
-In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are to measure the effectiveness of the comprehensive quality model in automated semantic web service composition approach, and to explore the impacts of the semantic matchmaking that contributes to overall composition quality, and to compare solutions generated by QoS-ware approach with our method.
+In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are $(1)$ to measure the effectiveness of the comprehensive quality model in automated semantic web service composition approach, $(2)$ to explore the impacts of the semantic matchmaking that contributes to overall composition quality, and $(3)$ to compare solutions generated by QoS-ware approach with our method.
 
-We utilise benchmark dataset web service challenge 2009 (WSC09) \cite{kona2009wsc} to perform a standard evaluation. WSC09 provides problems,  WSDL+MECE, taxonomy files in formats of xml, xml, and owl respectively, where five tasks consisted in with variable size in both services, and ontologies. Therefore, it is a proper dataset for the scalability measures in our defined quality evaluation model. Table \ref{wsc09datasetTable} presents the features of the WSC’09 dataset. The number of concepts, individuals in the ontology and services in each data set is shown in the second, third, fourth column respectively. Also, we extend all the datasets with QoS attributes from service providers to perform a comprehensive quality evaluation. 
+We utilise benchmark dataset web service challenge 2009 (WSC09) \cite{kona2009wsc} to perform a evaluation. WSC09 provides problems where five tasks consisted in with variable size in both services, and ontologies. Therefore, it is a proper dataset for the scalability measures in our defined quality evaluation model. Table \ref{wsc09datasetTable} presents the features of the WSC’09 dataset. The number of concepts, individuals in the ontology and services in each data set is shown in the second, third, fourth column respectively. Also, we extend all the datasets with QoS attributes from service providers to enable our evaluation. 
 \begin{table}[]
 \centering
 \caption{Features of the WSC09 datasets}
@@ -278,27 +296,9 @@ WSC09 05                     & 31044      &62132          &15211    \\ \hline
 \end{table}
 
 
-We run the experiment under computing grid comprising of almost 170 NetBSD (Unix operating system) workstations operated by the Sun Grid Engine. Experimentation was done using the approach explained in Section \ref{qswsc_approach}, and evaluated in the comprehensive quality model introduced in Subsection \ref{qualityModel}. The parameters were chosen based on general settings from \cite{shi2001particle} for our PSO-based approach, 30 particles evolved in 100 generations in the searching space, in which problem dimension's size equals to the relevant service size shown in graph. we run 30 times independently for each dataset. In addition, weights setting are flexibly defined by users' preferences. As part of their requirement, we configure weights of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ are equals to 0.1 and 0.4,  and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125 accordingly.
+We run the experiment under computing grid comprising of almost 170 NetBSD (Unix operating system) workstations operated by the Sun Grid Engine. Experimentation is done using the approach explained in Section \ref{qswsc_approach}, and evaluated in the comprehensive quality model introduced in Subsection \ref{qualityModel}. The parameters were chosen based on general settings from \cite{shi2001particle} for our PSO-based approach, 30 particles evolved in 100 generations in the searching space, in which problem dimension's size equals to the number of relevant services in service repository. We run 30 times independently for each dataset. In addition, weight settings are flexibly defined by users' preferences. As part of their requirement, we configure weight of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ are equals to 0.1 and 0.4,  and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125 accordingly.
 
 \section{Results and Analysis}\label{results_analysis}
-\subsection{Convergence Test}\label{convergenceTest}
-
-\begin{figure}[h]
-\centerline{
-\fbox{
-\includegraphics[width=12cm]{convergency.pdf}}}
- \caption{Average Fitness, Average MatchType Quality, Average Similarity quality and Average QoS per generation with comprehensive quality optimum}
- \label{exp_fitnessvalue}
-\end{figure}
-
-To analysis the effectiveness of our approach, we explore the convergency rate of the proposed method in this section to investigate the convergency of five tasks in WSC09. To further study an overall effectiveness of evaluation model and impacts of all involved components in the fitness function. We analysis all the performances of these components in the whole evolutionary process in Figure \ref{exp_fitnessvalue}, in which the five tasks' experiment results are arranged in four groups consisting of average fitness, average matchType quality, average similarity quality and average QoS for generation 0-99 with optimum.
-
-Firstly, the average fitness value with optimum is calculated by the average value of best fitness found in each generation over 30 independent runs. The value plotted in the first column group ranges from 0 to 1 in figure \ref{exp_fitnessvalue}, and it is considered to be more optimised if its value is closer to value 1. We can see that there is a significant increase in the fitness value (avg) with optimum between generation 0 and generation 15-25, the remained generation continues to produce a steady but moderate improvement in the fitness value and eventually reach a plateau with no further changes. The same behaviour is observed over the rest tasks. Also, there is a fast convergence of the fitness value that be observed. That is simply because of many repetitive solutions in the indirect web service composition representations in the search space.
-
-We also investigate the variation of two factors consisted in the functional quality part --- average matchType quality with optimum and average similarity quality with optimum from generation 0 to 99 in second and third column groups of Figure \ref{exp_fitnessvalue}. In these groups,  both the average matchType quality with optimum and average similarity quality with optimum are the mean value corresponding to the best fitness value found in each generation over 30 independent runs. The dominant tendency of the marked value representing a similar characteristic compared to the average fitness value group trend in five tasks. However, there are some slight fluctuations over the generations, it due to the single objective fitness function that prevents selecting the worst component quality without granting for the best.
-
-Lastly, It is interesting to look at the average QoS per generation for the 30 independent runs when the behaviour of functional quality moves upward. Here average QoS with optimum is also the value corresponding to the fitness value with optimum in each generation, and we display the results in the fourth column group in Figure \ref{exp_fitnessvalue}. It is obvious that the overall trend of QoS moves upward to a high constant level in five independent tasks. Additionally, we don't see too much trade-off from the QoS.
-
 \subsection{Comparision Test}\label{comparisionTest}
 \begin{figure}[h]
 \centerline{
@@ -343,6 +343,26 @@ Now we look at $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ defined in the solution model usi
 \end{tabular}
 \end{table}
 In Table \ref{decisionTable}, Task 1 represents the same solution using different methods where the values of $Q_{mt}$,$Q_{s}$ and $Q_{QoS}$ are all the same. It is due to the size of dataset 01 is very small in both available services and ontologies. However, As the size of dataset increase, we can recognise a trade-offs in task 2 using our evaluation approach, where a 0.021668 increase in similarity quality and a 0.00098 decrease in matchType quality with weights 0.4 and 0.1 respectively so that solution to task 2 is still considered to be an improvement in the functional quality part while a decrease value of 0.007249 in QoS. In task 3, the benefit of functional part quality is clearer with an increase value of 0.056648 and 0.078862 in  similarity quality and matchType quality respectively while a slight decrease in QoS. later on, the rest tasks perform the same behaviour in $Q_{mt}$,$Q_{s}$ and $Q_{QoS}$ as task 3. In conclusion, we can perceive that our evaluation could find out better functional quality with a reasonable trade off in QoS.
+
+
+\subsection{Convergence Test}\label{convergenceTest}
+
+\begin{figure}[h]
+\centerline{
+\fbox{
+\includegraphics[width=12cm]{convergency.pdf}}}
+ \caption{Average Fitness, Average MatchType Quality, Average Similarity quality and Average QoS per generation with comprehensive quality optimum}
+ \label{exp_fitnessvalue}
+\end{figure}
+
+To analysis the effectiveness of our approach, we explore the convergency rate of the proposed method in this section to investigate the convergency of five tasks in WSC09. To further study an overall effectiveness of evaluation model and impacts of all involved components in the fitness function. We analysis all the performances of these components in the whole evolutionary process in Figure \ref{exp_fitnessvalue}, in which the five tasks' experiment results are arranged in four groups consisting of average fitness, average matchType quality, average similarity quality and average QoS for generation 0-99 with optimum.
+
+Firstly, the average fitness value with optimum is calculated by the average value of best fitness found in each generation over 30 independent runs. The value plotted in the first column group ranges from 0 to 1 in figure \ref{exp_fitnessvalue}, and it is considered to be more optimised if its value is closer to value 1. We can see that there is a significant increase in the fitness value (avg) with optimum between generation 0 and generation 15-25, the remained generation continues to produce a steady but moderate improvement in the fitness value and eventually reach a plateau with no further changes. The same behaviour is observed over the rest tasks. Also, there is a fast convergence of the fitness value that be observed. That is simply because of many repetitive solutions in the indirect web service composition representations in the search space.
+
+We also investigate the variation of two factors consisted in the functional quality part --- average matchType quality with optimum and average similarity quality with optimum from generation 0 to 99 in second and third column groups of Figure \ref{exp_fitnessvalue}. In these groups,  both the average matchType quality with optimum and average similarity quality with optimum are the mean value corresponding to the best fitness value found in each generation over 30 independent runs. The dominant tendency of the marked value representing a similar characteristic compared to the average fitness value group trend in five tasks. However, there are some slight fluctuations over the generations, it due to the single objective fitness function that prevents selecting the worst component quality without granting for the best.
+
+Lastly, It is interesting to look at the average QoS per generation for the 30 independent runs when the behaviour of functional quality moves upward. Here average QoS with optimum is also the value corresponding to the fitness value with optimum in each generation, and we display the results in the fourth column group in Figure \ref{exp_fitnessvalue}. It is obvious that the overall trend of QoS moves upward to a high constant level in five independent tasks. Additionally, we don't see too much trade-off from the QoS.
+
 
 \section{Conclusion}\label{conclusion}
 This work introduced a more applicable and simpler evaluation model for comprehensive quality awareness semantic automated web service composition that relies on semantic matchmaking quality extension to QoS-aware consideration. The key idea of these evaluation model is to consider the quality of semantic matchmaking corresponding to different matchmaking types. Also, the effectiveness of our model is also proved to obtain better functional quality with a reasonable trade-off in QoS. Future works in this area should investigate more reasonable matching types, explore the comprehensive quality in multi-objective approach, and improve efficiency in the functional quality calculation.
