@@ -121,7 +121,7 @@ The composite web service executes each atomic service associated with a sequenc
 \subsubsection{Parallel construct}
 Web services in a parallel construct are executed in the meantime. The QoS aggregation value for total cost, availability and reliability are the same as these in sequence construct while the Total time ($T$) is delimited by the maximum time consumed path in the composite flow of the solution. This construct is presented in Figure \ref{parallel}.
 
-\section{QoS-aware Semantic Automated Web Service Composition}\label{qswsc_approach}
+\section{Comprehensive quality-aware Semantic Automated Web Service Composition}\label{qswsc_approach}
 \begin{figure}[h]
 \centerline{
 \fbox{
@@ -131,12 +131,12 @@ Web services in a parallel construct are executed in the meantime. The QoS aggre
 \end{figure}
 In this paper, we propose a comprehensive quality model for automated semantic service composition, and optimise both the quality of semantic matchmaking and QoS. PSO has shown its efficiency in solving combinatorial optimisation problems. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing comparing to GP \cite{da2014graph}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composite process is triggered by a composite goal defined in Subsection \ref{problemDes}, which describes customers requirements both functional and non-functional. A functional requirement is defined as $F(T_{Input}, T_{Output})$ , and a nonfunctional one is users' accepted level of QoS. Step 2: Those requirements are used to discover all relevant web services, which leads to a shrunken service repository that further used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up interleaving with semantic matchmaking process, where web services are discovered as graph vertices while edges are assigned with semantic matchmaking quality as weights. Step 4,5: The selection of web services performs PSO algorithm in Sect. \ref{pso_algorithm} to find best particle location. Overall, this approach is different from \cite{da2016particle}, as we use weighted graphs as particle presentation while considering a comprehensive quality.
 
-\subsection{Semantic matchmaking} \label{semantic_matchmaking}
+\subsection{Semantic Matchmaking} \label{semantic_matchmaking}
 To perform semantic matchmaking, we transfer a function match between $S_{1}: S_{output} \in C_{1}$ and $S_{2}:S_{output} \in S_{b}$ to a pair of concept match in \ref{semantic Web service Discovery}. The matching process attempts to determine semantic matching between the source concepts of $C_{1}$ and the target concepts of $C_{2}$. Meanwhile, the quality of matched concepts are calculated in the mode model in subSection \ref{qualityModel}. The purpose of semantic matchmaking is to find more component services that could also potentially satisfies the quality of QoS with considering its functional quality.
 
 The semantic matchmaking is achieved by utilising OWL2 and OWL-S or other semantic markup languages for web services. In this paper, we use MECE (Mediation Contract Extension) \cite{bleul2008self} and OWL-DL, MECE is considered to be an alternative semantic annotation for WSDL. MECE defines the service-related inputs and outputs with parameter-related concepts. OWL-DL is a sublanguage of OWL from extension of RDF. which specifies semantic information of concepts involved in MECE. 
 
-\subsection{Comprehensive quality model and aggregation matrix}\label{qualityModel}
+\subsection{Comprehensive Quality Model and Aggregation Matrix}\label{qualityModel}
 In this paper, we propose a comprehensive quality model to evaluate the overall quality of semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware optimisation, in which quality of semantic matchmaking are not considered \cite{bansal2016generalized,mier2015integrated,da2016particle,da2015graphevol,yu2013adaptive}.
 
 \textbf{Semantic matchmaking model}. Due to the discretisational characteristics of different match types driven by the cost of  data type integration and manipulation \cite{lecue2009optimizing}, match types are considered to be one factor for the semantic matchmaking quality. Another factor in our proposed model is concept similarity, which could be evaluate based on edge counting method defined by \cite{shet2012new}, which is a taxonomy-based measurement for ontology matching. This formula \ref{equation1} is used to estimate the similarity between parameter-related output concept and parameter-related input concept for selecting web services. Therefore, given the quality match type and the similarity of two parameters-related concepts, the semantic matchmaking quality of matched parameters is defined by Formula \ref{equation2}, where the value of $q(p_ {matchType})$ is set up as the same as the quality of the semantic link in \cite{lecue2009optimizing} as 1 (Exact), 0.75 (Plugin), 0.5 (Subsume) or 0.25 (Intersection). 
@@ -187,6 +187,19 @@ q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v
                                 &                                & $Q(v_{t})$    & $\sum_{n=1}^m q(v_ {t})$             &  $max(q(v_ {t}))$ \\ \hline
 \end{tabular}
 \end{table}
+
+
+
+\subsection{Composition Weighted Graph}
+We defined our semantic web service composition solution as $WG = (V, E)Graph$, where $V$ is a set of services as vertex: $V=[S1, S2...Sn]$ and $E$ is a set of edges $E = {e_{1}, e_{2},... e_{n}}$. Each $e$ is associated with $q(e_{sm})$ as weight value that mapped to a pair of quality values $q(e_{mt})$ and $q(e_{s})$ on the edge level. where $e_{m}$ is expressed as $(S_{a},S_{b})={q_{mt}, q_{s}}$. Here we provide an example of the web service composition, which can be described in the Figure \ref{wscs}. The data of composite web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, $q(s_{mt})$ and $q(s_{s})$ are calculated for all edges ${e_{1}, e_{2},... e_{n}}$, and further aggregated in $Q_{mt}$ and $Q_{s}$ respectively on the construct level. In addition, $Q_{QoS}$ is calculated by all the non-functional attributes of $V$ using aggregation rules defined previously.
+
+\begin{figure}[h]
+\centerline{
+\fbox{
+\includegraphics[width=8cm]{weigtedGraphExample.pdf}}}
+ \caption{Composition weighted graph solution}
+ \label{wscs}
+\end{figure}
 
 \subsection{Fitness Calculation}
 The fitness value of a service composition solution is a weighted sum of all the quality components discussed previously shown in Formula \ref{equation6}, in which fitness value of 1 means the best comprehensive quality and 0 means the worst. As the sum of all the components' weights ($w_1$ to $w_6$) equals to 1, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Also, the lowest T and C value represent the best component quality so that the objective function can be offset using $(1 - T)$ and $(1 - C)$ using normalisation formula \ref{equation8}, and normalisation formula \ref{equation7} is for the rest components. Therefore, the whole problem is treated as a maximisation problem.
@@ -298,14 +311,10 @@ We run the experiment under computing grid comprising of almost 170 NetBSD (Unix
 
 \section{Results and Analysis}\label{results_analysis}
 \subsection{Comparision Test}\label{comparisionTest}
-\begin{figure}[h]
-\centerline{
-\fbox{
-\includegraphics[width=8cm]{wscs.pdf}}}
- \caption{Example composition solutions for problem1 WSC'09.}
- \label{wscs}
-\end{figure}
-We defined our optimised web service composition as $WSC = (V, E)Graph$, where $V$ is a set of services as vertex: $V=[S1, S2...Sn]$ and $E$ is a set of service connections as edges associated with two values of matchType quality and semantic similarity quality: $E = {e_{1}, e_{2},... e_{n}}$ where $e1$ is define as $(S_{1},S_{2})={q_{mt}, q_{s}}$. Here we provide an example of the web service composition solution to task 1, which can be described in the Figure \ref{wscs}. The data of composite web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, $q(s_{mt})$ and $q(s_{s})$ are calculated for all edges ${e_{1}, e_{2},... e_{n}}$, and further aggregated in $Q_{mt}$ and $Q_{s}$ respectively. In addition, $Q_{QoS}$ is calculated by all the non-functional attributes of $V$ using aggregation rules defined before. The demonstration of the solution is to make better comparison of results using the same solution model from different approaches .
+
+In this section, we analyse the composition solution generated by using our approach. In particularly, we show that our proposed approach can produce solutions that results better matchmaking , which meets user's goal better.
+
+
 
 Now we look at $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ defined in the solution model using black-box testing for the comparison, where the comprehensive quality awareness approach and QoS awareness approach \cite{feng2013dynamic,huang2009effective,ma2015hybrid,da2014graph} are compared to reveal how good our evaluation mode is in a decision table shown in Table \ref{decisionTable}. Solutions to five tasks are compared using two evaluation models in WSC09. In each task, we compare $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$, and $Q_{QoS}$ is normalised to make it comparable to another method in our comprehensive awareness approach 
 
