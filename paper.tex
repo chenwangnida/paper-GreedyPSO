@@ -345,7 +345,7 @@ First, we look at mean value of $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ at optimum at th
 \end{tabular}
 \end{table}
 
-Second, to compare the results generated from two evaluation approaches, we demonstrate an example solution that shows the differences in two composition weighted graphs representations under two different methods. The Fig. \ref{comparison} shows two composition weighted graphs as the solutions to Task 3 with $(1)$ QoS-aware approach and $(2)$ Comprehensive quality-aware method. Two approaches generate exactly the same service workflow structure while some service vertex and edges denoted in red are different part. Therefore, we make a comparison of the quality among these different edges ($e_1$ to $e4$) associated service vertex in terms of quality of semantic matchmaking and QoS attributes. We also look at $\Delta Q$ which reveals the amount of variation between two methods, where the positive values means the benefits gained under our approach while the negative values means the trade-off. There is an consistency in our methods that edges are with higher values and service vertex with slightly lower QoS. To demonstrate the benefits of the positive value, we shows our methods have better quality in semantic making in Fig. \ref{}.
+Second, to compare the results generated from two evaluation approaches, we demonstrate an example solution that shows the differences in two composition weighted graphs representations under two different methods. The Fig. \ref{comparison} shows two composition weighted graphs as the solutions to Task 3 with $(1)$ QoS-aware approach and $(2)$ Comprehensive quality-aware method. Two approaches generate exactly the same service workflow structure while some service vertex and edges denoted in red are different part. Therefore, we make a comparison of the quality among these different edges ($e_1$ to $e4$) associated service vertex in terms of quality of semantic matchmaking and QoS attributes. We also look at $\Delta Q$ which reveals the amount of variation between two methods, where the positive values means the benefits gained under our approach while the negative values means the trade-off. There is an consistency in our methods that edges are with higher values and service vertex with slightly lower QoS. To demonstrate the benefits of the positive value, we analyse the smallest value $e_4$ and demonstrate how the output and required input are different in in Fig. \ref{comparisontaxonomy}. $Ser1640238160$ and $Ser1947554374$ are selected service vertex with output concept-related parameters $Inst795998200$ and $Inst582785907$ respectively under two methods while $Inst658772240$ are the required input related to $Con2113572083$. It is obviously that our approach select the service providing parameters that are closer the users' requirement, which means our methods results in better semantic matchmaking quality. 
  
 
 
@@ -362,7 +362,7 @@ Second, to compare the results generated from two evaluation approaches, we demo
 \centerline{
 \fbox{
 \includegraphics[width=4cm]{comparisontaxonomy.pdf}}}
- \caption{Example Comparison of solutions to Task 3 under different approaches.}
+ \caption{Example Comparison of Edge 4 in Task 3 solution under two methods.}
  \label{comparison}
 \end{figure}
 
@@ -372,7 +372,7 @@ Second, to compare the results generated from two evaluation approaches, we demo
 \begin{table}[]
 \centering
 \caption{Comparison of Composition Weighted Graphs}
-\label{comparisontable}
+\label{comparisontaxonomy}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 \multicolumn{2}{|l|}{\shortstack{Quality \\ Criteria}} & WG $(1)$ & WG $(2)$ &  $\Delta Q$\\ \hline
