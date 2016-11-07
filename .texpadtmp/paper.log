@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  7 NOV 2016 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  7 NOV 2016 13:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -402,7 +402,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip66
 ) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux
 
-LaTeX Warning: Label `comparison' multiply defined.
+LaTeX Warning: Label `comparisontaxonomy' multiply defined.
 
 )
 \openout1 = `paper.aux'.
@@ -475,19 +475,15 @@ Overfull \hbox (11.87595pt too wide) in paragraph at lines 31--32
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \vbox (badness 5105) has occurred while \output is active []
 
- [2]
+ [2] [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `background' on page 3 undefined on input line 49.
-
-[3]
-Underfull \vbox (badness 2158) has occurred while \output is active []
-
- [4] [5] <sequence.pdf, id=166, 581.17125pt x 67.0003pt>
+ [4] [5] <sequence.pdf, id=167, 581.17125pt x 67.0003pt>
 File: sequence.pdf Graphic file (type pdf)
  <use sequence.pdf>
 Package pdftex.def Info: sequence.pdf used on input line 99.
 (pdftex.def)             Requested size: 144.54pt x 16.66312pt.
- <parallel.pdf, id=169, 420.82219pt x 225.09094pt>
+ <parallel.pdf, id=170, 420.82219pt x 225.09094pt>
 File: parallel.pdf Graphic file (type pdf)
  <use parallel.pdf>
 Package pdftex.def Info: parallel.pdf used on input line 113.
@@ -496,7 +492,7 @@ Package pdftex.def Info: parallel.pdf used on input line 113.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<overview.pdf, id=174, 921.4425pt x 425.59pt>
+<overview.pdf, id=175, 921.4425pt x 425.59pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
 Package pdftex.def Info: overview.pdf used on input line 128.
@@ -515,7 +511,7 @@ Overfull \hbox (2.76146pt too wide) in paragraph at lines 194--195
 \OT1/cmr/m/n/10 We de-fined our se-man-tic web ser-vice com-po-si-tion so-lu-tion as $\OML/cmm/m/it/10 WG \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 V; E\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 Graph$\OT1/cmr/m/n/10 ,
  []
 
-[9] <weigtedGraphExample.pdf, id=299, 626.34pt x 457.71pt>
+[9] <weigtedGraphExample.pdf, id=300, 626.34pt x 457.71pt>
 File: weigtedGraphExample.pdf Graphic file (type pdf)
  <use weigtedGraphExample.pdf>
 Package pdftex.def Info: weigtedGraphExample.pdf used on input line 199.
@@ -544,7 +540,7 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 325.
 
-[13] <comparision.pdf, id=368, 710.655pt x 684.5575pt>
+[13] <comparision.pdf, id=370, 710.655pt x 684.5575pt>
 File: comparision.pdf Graphic file (type pdf)
  <use comparision.pdf>
 Package pdftex.def Info: comparision.pdf used on input line 360.
@@ -553,7 +549,7 @@ Package pdftex.def Info: comparision.pdf used on input line 360.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<comparisontaxonomy.pdf, id=369, 436.63126pt x 405.515pt>
+<comparisontaxonomy.pdf, id=371, 436.63126pt x 405.515pt>
 File: comparisontaxonomy.pdf Graphic file (type pdf)
  <use comparisontaxonomy.pdf>
 Package pdftex.def Info: comparisontaxonomy.pdf used on input line 368.
@@ -563,7 +559,7 @@ Package pdftex.def Info: comparisontaxonomy.pdf used on input line 368.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 376.
 
-<convergency.pdf, id=370, 2535.4725pt x 2526.43875pt>
+<convergency.pdf, id=372, 2535.4725pt x 2526.43875pt>
 File: convergency.pdf Graphic file (type pdf)
  <use convergency.pdf>
 Package pdftex.def Info: convergency.pdf used on input line 400.
@@ -572,13 +568,7 @@ Package pdftex.def Info: convergency.pdf used on input line 400.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14] [15 <./comparision.pdf> <./comparisontaxonomy.pdf>] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl
-Underfull \vbox (badness 1097) has occurred while \output is active []
-
- [16] [17 <./convergency.pdf>] [18])
+[14] [15 <./comparision.pdf> <./comparisontaxonomy.pdf>] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl [16] [17 <./convergency.pdf>] [18])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
  [19]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
@@ -592,9 +582,6 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
@@ -604,18 +591,18 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7345 strings out of 493014
- 108932 string characters out of 6133350
- 231056 words of memory out of 5000000
- 10687 multiletter control sequences out of 15000+600000
+ 7344 strings out of 493014
+ 108920 string characters out of 6133350
+ 231059 words of memory out of 5000000
+ 10686 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,15n,27p,1849b,6545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,15n,27p,1790b,6544s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (19 pages, 849394 bytes).
+Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (19 pages, 848779 bytes).
 PDF statistics:
- 624 PDF objects out of 1000 (max. 8388607)
- 444 compressed objects within 5 object streams
+ 625 PDF objects out of 1000 (max. 8388607)
+ 445 compressed objects within 5 object streams
  97 named destinations out of 1000 (max. 500000)
  44 words of extra memory for PDF output out of 10000 (max. 10000000)
 
