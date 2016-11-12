@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  12 NOV 2016 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  12 NOV 2016 20:13
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -521,12 +521,12 @@ LaTeX Warning: No positions in optional float specifier.
 [12]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 321.
+               Default added (so using `htbp') on input line 318.
 
 [13] <comparision.pdf, id=363, 1132.23pt x 684.5575pt>
 File: comparision.pdf Graphic file (type pdf)
  <use comparision.pdf>
-Package pdftex.def Info: comparision.pdf used on input line 356.
+Package pdftex.def Info: comparision.pdf used on input line 353.
 (pdftex.def)             Requested size: 227.62204pt x 137.61935pt.
 
 
@@ -535,31 +535,31 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <comparisontaxonomy.pdf, id=364, 436.63126pt x 405.515pt>
 File: comparisontaxonomy.pdf Graphic file (type pdf)
  <use comparisontaxonomy.pdf>
-Package pdftex.def Info: comparisontaxonomy.pdf used on input line 364.
+Package pdftex.def Info: comparisontaxonomy.pdf used on input line 361.
 (pdftex.def)             Requested size: 113.81102pt x 105.69748pt.
  <convergency.pdf, id=365, 2535.4725pt x 2526.43875pt>
 File: convergency.pdf Graphic file (type pdf)
  <use convergency.pdf>
-Package pdftex.def Info: convergency.pdf used on input line 377.
+Package pdftex.def Info: convergency.pdf used on input line 374.
 (pdftex.def)             Requested size: 341.43306pt x 340.2064pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14] [15 <./comparision.pdf> <./comparisontaxonomy.pdf>] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl [16 <./convergency.pdf>] [17])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 397.
+[14] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl [15 <./comparision.pdf> <./comparisontaxonomy.pdf>] [16 <./convergency.pdf>] [17])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
  [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 397.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
  (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 397.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 397.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: F36DB8DFCE46B13A37E9ED6134000CDC;127.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 397.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 392.
  )
 (\end occurred inside a group at level 1)
 
@@ -572,12 +572,12 @@ Here is how much of TeX's memory you used:
  10684 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,15n,27p,1790b,6543s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,15n,27p,1874b,6543s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (18 pages, 898589 bytes).
+Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (18 pages, 897943 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 438 compressed objects within 5 object streams
+ 617 PDF objects out of 1000 (max. 8388607)
+ 436 compressed objects within 5 object streams
  94 named destinations out of 1000 (max. 500000)
  44 words of extra memory for PDF output out of 10000 (max. 10000000)
 
