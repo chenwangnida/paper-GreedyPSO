@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  13 NOV 2016 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  14 NOV 2016 18:00
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -400,7 +400,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip66
-) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
+) (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -443,7 +443,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
 LaTeX Info: Redefining \nameref on input line 22.
- (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out)
+ (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.out) (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
@@ -466,32 +466,74 @@ Overfull \hbox (6.07036pt too wide) in paragraph at lines 32--33
 Underfull \vbox (badness 5105) has occurred while \output is active []
 
  [2] [3]
-Underfull \vbox (badness 5105) has occurred while \output is active []
+Underfull \vbox (badness 2158) has occurred while \output is active []
 
- [4] [5] <sequence.pdf, id=163, 581.17125pt x 67.0003pt>
-File: sequence.pdf Graphic file (type pdf)
- <use sequence.pdf>
-Package pdftex.def Info: sequence.pdf used on input line 96.
-(pdftex.def)             Requested size: 144.54pt x 16.66312pt.
- <parallel.pdf, id=166, 420.82219pt x 225.09094pt>
-File: parallel.pdf Graphic file (type pdf)
- <use parallel.pdf>
-Package pdftex.def Info: parallel.pdf used on input line 110.
-(pdftex.def)             Requested size: 101.17755pt x 54.11565pt.
- [6 <./sequence.pdf> <./parallel.pdf>] <overview.pdf, id=196, 921.4425pt x 425.59pt>
-File: overview.pdf Graphic file (type pdf)
- <use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 125.
-(pdftex.def)             Requested size: 341.43306pt x 157.69312pt.
- [7 <./overview.pdf>] [8]
+ [4] [5]
+Package epstopdf Info: Source file: <sequence.eps>
+(epstopdf)                    date: 2016-11-14 16:48:32
+(epstopdf)                    size: 746090 bytes
+(epstopdf)             Output file: <sequence-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-14 16:51:53
+(epstopdf)                    size: 164832 bytes
+(epstopdf)             Command: <epstopdf --outfile=sequence-eps-converted-to.pdf sequence.eps>
+(epstopdf)             \includegraphics on input line 96.
+Package epstopdf Info: Output file is already uptodate.
+ <sequence-eps-converted-to.pdf, id=165, 581.17125pt x 67.25125pt>
+File: sequence-eps-converted-to.pdf Graphic file (type pdf)
+ <use sequence-eps-converted-to.pdf>
+Package pdftex.def Info: sequence-eps-converted-to.pdf used on input line 96.
+(pdftex.def)             Requested size: 144.54pt x 16.72554pt.
+Package epstopdf Info: Source file: <parallel.eps>
+(epstopdf)                    date: 2016-11-14 16:48:19
+(epstopdf)                    size: 1207508 bytes
+(epstopdf)             Output file: <parallel-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-14 16:52:08
+(epstopdf)                    size: 260394 bytes
+(epstopdf)             Command: <epstopdf --outfile=parallel-eps-converted-to.pdf parallel.eps>
+(epstopdf)             \includegraphics on input line 110.
+Package epstopdf Info: Output file is already uptodate.
+ <parallel-eps-converted-to.pdf, id=168, 421.575pt x 225.84375pt>
+File: parallel-eps-converted-to.pdf Graphic file (type pdf)
+ <use parallel-eps-converted-to.pdf>
+Package pdftex.def Info: parallel-eps-converted-to.pdf used on input line 110.
+(pdftex.def)             Requested size: 101.17755pt x 54.20015pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package epstopdf Info: Source file: <overview.eps>
+(epstopdf)                    date: 2016-11-14 16:44:27
+(epstopdf)                    size: 4013869 bytes
+(epstopdf)             Output file: <overview-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-14 16:52:23
+(epstopdf)                    size: 980405 bytes
+(epstopdf)             Command: <epstopdf --outfile=overview-eps-converted-to.pdf overview.eps>
+(epstopdf)             \includegraphics on input line 125.
+Package epstopdf Info: Output file is already uptodate.
+<overview-eps-converted-to.pdf, id=173, 922.44624pt x 414.54875pt>
+File: overview-eps-converted-to.pdf Graphic file (type pdf)
+ <use overview-eps-converted-to.pdf>
+Package pdftex.def Info: overview-eps-converted-to.pdf used on input line 125.
+(pdftex.def)             Requested size: 341.43306pt x 153.43756pt.
+ [6] [7 <./sequence-eps-converted-to.pdf> <./parallel-eps-converted-to.pdf> <./overview-eps-converted-to.pdf>] [8]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 172.
 
-[9] <weigtedGraphExample.pdf, id=297, 626.34pt x 457.71pt>
-File: weigtedGraphExample.pdf Graphic file (type pdf)
- <use weigtedGraphExample.pdf>
-Package pdftex.def Info: weigtedGraphExample.pdf used on input line 196.
+[9]
+Package epstopdf Info: Source file: <weigtedGraphExample.eps>
+(epstopdf)                    date: 2016-11-13 17:21:38
+(epstopdf)                    size: 3592442 bytes
+(epstopdf)             Output file: <weigtedGraphExample-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-14 16:33:56
+(epstopdf)                    size: 969074 bytes
+(epstopdf)             Command: <epstopdf --outfile=weigtedGraphExample-eps-converted-to.pdf weigtedGraphExample.eps>
+(epstopdf)             \includegraphics on input line 196.
+Package epstopdf Info: Output file is already uptodate.
+ <weigtedGraphExample-eps-converted-to.pdf, id=258, 626.34pt x 457.71pt>
+File: weigtedGraphExample-eps-converted-to.pdf Graphic file (type pdf)
+ <use weigtedGraphExample-eps-converted-to.pdf>
+Package pdftex.def Info: weigtedGraphExample-eps-converted-to.pdf used on input line 196.
 (pdftex.def)             Requested size: 227.62204pt x 166.3399pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 208--211
@@ -503,7 +545,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--211
 
  []
 
-[10 <./weigtedGraphExample.pdf>] [11]
+[10 <./weigtedGraphExample-eps-converted-to.pdf>] [11]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
@@ -517,61 +559,80 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 319.
 
-[13] <comparision.pdf, id=363, 1132.23pt x 684.5575pt>
-File: comparision.pdf Graphic file (type pdf)
- <use comparision.pdf>
-Package pdftex.def Info: comparision.pdf used on input line 354.
-(pdftex.def)             Requested size: 227.62204pt x 137.61935pt.
+
+Overfull \hbox (3.55592pt too wide) in paragraph at lines 345--346
+\OT1/cmr/m/n/10 There ex-ist $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 795998200$ $\OMS/cmsy/m/n/10 2$ $\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 103314376$ $\OMS/cmsy/m/n/10 v[]$ $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 658772240$ $\OMS/cmsy/m/n/10 2$ $\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 2113572083$
+ []
+
+[13]
+Package epstopdf Info: Source file: <comparisontest.eps>
+(epstopdf)                    date: 2016-11-14 17:53:10
+(epstopdf)                    size: 21528374 bytes
+(epstopdf)             Output file: <comparisontest-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-14 17:54:07
+(epstopdf)                    size: 236003 bytes
+(epstopdf)             Command: <epstopdf --outfile=comparisontest-eps-converted-to.pdf comparisontest.eps>
+(epstopdf)             \includegraphics on input line 350.
+Package epstopdf Info: Output file is already uptodate.
+ <comparisontest-eps-converted-to.pdf, id=313, 1121.18875pt x 733.74126pt>
+File: comparisontest-eps-converted-to.pdf Graphic file (type pdf)
+ <use comparisontest-eps-converted-to.pdf>
+Package pdftex.def Info: comparisontest-eps-converted-to.pdf used on input line 350.
+(pdftex.def)             Requested size: 256.0748pt x 167.58136pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<comparisontaxonomy.pdf, id=364, 436.63126pt x 405.515pt>
-File: comparisontaxonomy.pdf Graphic file (type pdf)
- <use comparisontaxonomy.pdf>
-Package pdftex.def Info: comparisontaxonomy.pdf used on input line 362.
-(pdftex.def)             Requested size: 113.81102pt x 105.69748pt.
- <convergency.pdf, id=365, 2535.4725pt x 2526.43875pt>
-File: convergency.pdf Graphic file (type pdf)
- <use convergency.pdf>
-Package pdftex.def Info: convergency.pdf used on input line 375.
+Package epstopdf Info: Source file: <convergency.eps>
+(epstopdf)                    date: 2016-11-14 17:02:56
+(epstopdf)                    size: 12554281 bytes
+(epstopdf)             Output file: <convergency-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-14 17:03:49
+(epstopdf)                    size: 5531142 bytes
+(epstopdf)             Command: <epstopdf --outfile=convergency-eps-converted-to.pdf convergency.eps>
+(epstopdf)             \includegraphics on input line 361.
+Package epstopdf Info: Output file is already uptodate.
+<convergency-eps-converted-to.pdf, id=314, 2535.4725pt x 2526.43875pt>
+File: convergency-eps-converted-to.pdf Graphic file (type pdf)
+ <use convergency-eps-converted-to.pdf>
+Package pdftex.def Info: convergency-eps-converted-to.pdf used on input line 361.
 (pdftex.def)             Requested size: 341.43306pt x 340.2064pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl [15 <./comparision.pdf> <./comparisontaxonomy.pdf>] [16 <./convergency.pdf>] [17])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 393.
+[14] (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.bbl [15 <./comparisontest-eps-converted-to.pdf>] [16 <./convergency-eps-converted-to.pdf>] [17])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 379.
  [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 393.
- (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 393.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 393.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 379.
+ (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 379.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 379.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: F36DB8DFCE46B13A37E9ED6134000CDC;127.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 393.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 379.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7339 strings out of 493014
- 108859 string characters out of 6133350
- 230007 words of memory out of 5000000
- 10684 multiletter control sequences out of 15000+600000
+ 7333 strings out of 493014
+ 109183 string characters out of 6133350
+ 229917 words of memory out of 5000000
+ 10679 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,15n,27p,1874b,6543s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,15n,27p,1928b,6543s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (18 pages, 897587 bytes).
+Output written on /Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.pdf (18 pages, 8442140 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
- 94 named destinations out of 1000 (max. 500000)
- 44 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 39 words of extra memory for PDF output out of 10000 (max. 10000000)
 

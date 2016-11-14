@@ -24,20 +24,20 @@
 \maketitle
 
 \begin{abstract}
-Semantic web service composition has been a prevailing research area in recent years. There are two major governance challenges faced by researchers (semantic matching and QoS optimisation). Semantic matchmaking aims to discover interoperable web services that can interact with each other to provide rich functionalities through language understanding and reasoning. QoS optimisation aims to meet non-functional requirement of service users. e.g minimum cost, maximal reliability. Many scholars have looked into nonfunctional optimisation problems in QoS-aware web service composition applying AI planning and Evolution Computing techniques. To meet users' requirement, one often needs to consider both semantic matching and QoS optimisation simultaneously. Existing works on web service composition often concerns either semantic service composition or QoS-aware service composition. However, there are very few works concerns both quality of semantic matching and quality of services at the same time. Therefore, In this paper we consider two quality dimensions in a proposed more applicable comprehensive quality model for semantic web service composition, and present a automated semantic web service composition approach that can generate service composition solutions that meet both functional and non-functional requirement. We will evaluate our approach utilising a semantic benchmark dataset.
+Semantic web service composition has been a prevailing research area in recent years. There are two major governance challenges faced by researchers (semantic matching and QoS optimisation). Semantic matchmaking aims to discover interoperable web services that can interact with each other to provide rich functionalities through language understanding and reasoning. QoS optimisation aims to meet non-functional requirement of service users. e.g minimum cost, maximal reliability. Many scholars have looked into nonfunctional optimisation problems in QoS-aware web service composition applying AI planning and Evolution Computing techniques. To meet users' requirement, one often needs to consider both semantic matching and QoS optimisation simultaneously. Existing works on web service composition often concerns either semantic service composition or QoS-aware service composition. However, there are very few works concerns both quality of semantic matchmaking and quality of services at the same time. Therefore, In this paper we consider two quality dimensions in a proposed more applicable comprehensive quality model for semantic web service composition, and present a automated semantic web service composition approach that can generate service composition solutions that meet both functional and non-functional requirement. We will evaluate our approach utilising a semantic benchmark dataset.
 
 \end{abstract}
 
 \section{Introduction}\label{introduction}
 Service-oriented computing (SOC) is a novel computing paradigm that employs services as fundamental elements to achieve agile development of cost-efficient and integratable enterprise applications in heterogeneous environments \cite{papazoglou2003service}. Service Oriented Architecture (SOA) is capable of abstractly realising service-oriented computing. Since its inception, SOA has been contributing to the reuse of software components, from functions to units, and from units to services during the development in SOA \cite{booth2004web}. One of the most typical realisations of SOA is \textit{web service}, which is designated as ``modular, self-describing, self-contained applications that are available on the Internet'' \cite{curbera2001web}. Several standards play a significant role in registering, enquiring and grounding web services including particularly UDDI, WSDL and SOAP \cite{fensel2011semantic}.
 
-\textit{Web service composition} pertains to a combination of multiple web services to provide a value-added composite service that accommodates customers' arbitrarily complex requirements. This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. Due to the increase in the number of large-scale enterprise applications, the number of Web services has increased substantially and unprecedentedly. Therefore, manual and semi-automated web service composition are considered to be less efficient while automated web service composition enjoys less human intervention, less time consumption, and high productivity.
+\textit{Web service composition} pertains to a combination of multiple web services to provide a value-added composite service that accommodates customers' arbitrarily complex requirements. This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. Due to the increase of the number of large-scale enterprise applications, the number of Web services has increased substantially and unprecedentedly. Therefore, manual and semi-automated web service composition are considered to be less efficient while automated web service composition enjoys less human intervention, less time consumption, and high productivity.
 
-Two most notable challenges for web service composition are $(1)$ ensuring interoperability of services and $(2)$ achieving QoS optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge $(1)$ in syntactic and semantics dimensions \cite{fensel2011semantic}. The syntactic dimension is covered by the XML-based technologies (such as $WSDL$, $SOAP$). The semantics aspect, on the other hand, demands further research. Through ontology-based semantics \cite{o2005review}, web services can understand and better collaborate with each other. Historically, there are many ontologies languages and formats for semantic service descriptions, such as OWL-S \cite{martin2004owl}, WSML \cite{fensel2006enabling}, and SAWSDL \cite{lausen2007semantic}. The logical characteristics in reasoning makes ``machine understanding'' possible through identifying and matching semantic similarity in input/output parameters of web services in heterogeneous environments. The second challenge $(2)$ is related to finding \textit{optimised solutions} to Quality of Service ($QoS$) over composite web services. This problem gives birth to \textit{QoS-aware service composition} that considers the composition of service-level agreements \cite {sahai2002automated} involving a collection of SLA rules and policies for supporting QoS-based composition.
+Two most notable challenges for web service composition are $(1)$ ensuring interoperability of services and $(2)$ achieving QoS optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge $(1)$ in syntactic and semantics dimensions \cite{fensel2011semantic}. The syntactic dimension is covered by the XML-based technologies (such as $WSDL$, $SOAP$). The semantics aspect, on the other hand, demands further research. Through ontology-based semantics \cite{o2005review}, web services can understand and better collaborate with each other. There are many ontologies languages and formats for semantic service descriptions, such as OWL-S \cite{martin2004owl}, WSML \cite{fensel2006enabling}, and SAWSDL \cite{lausen2007semantic}, which make ``machine understanding'' possible through identifying and matching semantic similarity in input/output parameters of web services in heterogeneous environments. The second challenge $(2)$ is related to finding \textit{optimised solutions} to Quality of Service ($QoS$). This problem gives birth to \textit{QoS-aware service composition} that considers the composition of service-level agreements (SLA) \cite {sahai2002automated} involving a collection of SLA rules and policies for supporting QoS-based composition.
 
-Existing works on service composition focus mainly on addressing the two challenges above. A lot of works have been conducted to optimise the quality of compositions under a pre-defined abstract workflow, which is generally considered as \textit{semi-automated Web service composition} approach. Meanwhile, many research works consider the possibility of generating a composite plan automatically in discovering and selecting suitable web services, which are deemed to NP-hard \cite{moghaddam2014service}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, with the hope of eliminating conflicts by the semantic level of web services. In the past few years, substantial works have been done on semantic web service composition \cite{fensel2011semantic,lecue2009optimizing}. However, few works have enabled truely automatic semantic web service composition, where both QoS and quality of semantic match making will be optimised simultaneously. However, customers often prefer a service composition that best matches their requirement with highest QoS.
+Existing works on service composition focus mainly on addressing the one of challenges above. A lot of works have been conducted to optimise the quality of compositions under a pre-defined abstract workflow, which is generally considered as \textit{semi-automated Web service composition} approach. Meanwhile, many research works consider the possibility of generating a composite plan automatically in discovering and selecting suitable web services, which are deemed to NP-hard \cite{moghaddam2014service}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, with the hope of eliminating conflicts by the semantic level of web services. In the past few years, substantial works have been done on semantic web service composition \cite{fensel2011semantic,lecue2009optimizing}. However, few works have enabled truely automatic semantic web service composition, where both QoS and quality of semantic match making will be optimised simultaneously. To a given service request, the quality of service composition solution depends on both QoS and quality of semantic matchmaking. Therefore, a comprehensive quality model is needed to measure the quality of service composition solution.
 
-The overall goal of this paper is to \textit{develop an comprehensive quality-aware automated semantic web service composition that satisfactorily optimises both functional and non-functional requirements}. Particularly, this paper considers the quality of semantic matchmaking quality and QoS and two structural constructs (sequence and parallel) for building optimised composition solution using Particle Swarm Optimisation (PSO). We aim to provide a more applicable way to measure semantic matchmaking in automated semantic web service composition. We will achieve three objectives in this work as follows:
+The overall goal of this paper is to \textit{develop an comprehensive quality-aware automated semantic web service composition that satisfactorily optimises both functional and non-functional requirements}. Particularly, this paper extends existing works on semantic service composition and QoS-aware service composition by considering both QoS optimisation and semantic matching optimisation in our comprehensive quality model. Particle Swarm Optimisation (PSO) has show its promise in searching near-optimised service composition solution \cite{da2016particle}, we will propose a PSO-based service composition approach using our comprehensive quality model, which is considered to be more applicable way to measure semantic matchmaking in automated semantic web service composition. We will achieve three objectives in this work as follows:
 
 \begin{enumerate}
  \item To propose a comprehensive quality model that address QoS and semantic matchmaking quality in considering different matching types with corresponding semantic similarity. This approach is consider to be a more applicable and effective way of finding an optimised solution in semantic web service composition.
@@ -90,7 +90,7 @@ The aggregation value of QoS attributes for web services composition varies with
 \centerline{
 \fbox{
 \begin{tabular}{p{0.6\linewidth}}
-\space\hfill\includegraphics[width=2in]{sequence.pdf}\hfill\space\\[0.2cm]
+\space\hfill\includegraphics[width=2in]{sequence.eps}\hfill\space\\[0.2cm]
 $T=\sum\limits^m_{n=1}t_n$ \hfill $C=\sum\limits^m_{n=1}c_n$ \hfill
 $A=\prod\limits^m_{n=1}a_n$ \hfill $R=\prod\limits^m_{n=1}r_n$
 \end{tabular}}}
@@ -103,7 +103,7 @@ $A=\prod\limits^m_{n=1}a_n$ \hfill $R=\prod\limits^m_{n=1}r_n$
 \centerline{
 \fbox{
 \begin{tabular}{p{0.6\linewidth}}
-\space\hfill\includegraphics[width=1.4in]{parallel.pdf}\hfill\space\\[0.2cm]
+\space\hfill\includegraphics[width=1.4in]{parallel.eps}\hfill\space\\[0.2cm]
 \space\hfill$T=MAX\{t_n|n\in\{1,\ldots,m\}\}$\hfill\space\\[0.2cm]
 $C=\sum\limits^m_{n=1}c_n$ \hfill $A=\prod\limits^m_{n=1}a_n$ \hfill
 $R=\prod\limits^m_{n=1}r_n$
@@ -122,7 +122,7 @@ Web services in a parallel construct are executed concurrently. The QoS aggregat
 \begin{figure}[h]
 \centerline{
 \fbox{
-\includegraphics[width=12cm]{overview.pdf}}}
+\includegraphics[width=12cm]{overview.eps}}}
  \caption{Overview of the proposed approach.}
  \label{overview}
 \end{figure}
@@ -193,7 +193,7 @@ We defined our semantic web service composition solution as a weighted graph $WG
 \begin{figure}[h]
 \centerline{
 \fbox{
-\includegraphics[width=8cm]{weigtedGraphExample.pdf}}}
+\includegraphics[width=8cm]{weigtedGraphExample.eps}}}
  \caption{Composition weighted graph solution}
  \label{wscs}
 \end{figure}
@@ -342,28 +342,15 @@ First, we look at mean value of $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ at optimum at th
 \end{tabular}
 \end{table}
 
-Second, to compare the results generated from two evaluation approaches, we demonstrate an example solution that shows the differences in composite web services obtained through two different methods. Fig. \ref{comparison} shows two composition weighted graphs as the solutions to Task 3 with $(1)$ QoS-aware approach and $(2)$ Comprehensive quality-aware method respectively. Two approaches generate exactly the same service workflow structure where those service vertices and edges denoted in red are different. We make a comparison of the quality among these different edges ($e_1$ to $e4$) associated service vertices in terms of quality of semantic matchmaking and QoS attributes. We also look at $\Delta Q$ which reveals the amount of variation on quality between two methods, where the positive values means the benefits gained under our approach while the negative values means the trade-off. To demonstrate the benefits of the positive value, we analyse the smallest positive $\Delta Q$ corresponding to $e_4$ and demonstrate how the output and required input are different under two approaches in Fig. \ref{comparisontaxonomy}. $Ser1640238160$ and $Ser1947554374$ are selected service vertices with output concept-related parameters $Inst795998200$ and $Inst582785907$ corresponding to two concepts $Con103314376$ and $Con2037585750$ respectively, and $Inst658772240$ are the required parameter related to concept $Con2113572083$. There exist $Inst795998200$ $\in$ $Con103314376$ $\sqsubseteq_{2}$ $Inst658772240$ $\in$ $Con2113572083$ and $Inst582785907$ $\in$ $Con2037585750$ $\sqsubseteq_{3}$ $Inst658772240$ $\in$ $Con2113572083$. It is obvious that our approach selects the service providing $Inst795998200$ that are closer to the users' requirements suggesting that our method can produce better semantic matchmaking quality. 
- 
-
-
+Second, to compare the results generated from two evaluation approaches, we demonstrate an example solution that shows the differences in composite web services obtained through two different methods. Fig. \ref{comparisontest} $(1)$ and $(2)$shows two composition weighted graphs as the solutions to Task 3 with $(1)$ QoS-aware approach and $(2)$ Comprehensive quality-aware method respectively. Two approaches generate exactly the same service workflow structure where those service vertices and edges denoted in red are different. We make a comparison of the quality among these different edges ($e_1$ to $e4$) associated service vertices in terms of quality of semantic matchmaking and QoS attributes in Fig. \ref{comparisontest} $(3)$. We also look at $\Delta Q$ which reveals the amount of variation on quality between two methods, where the positive values means the benefits gained under our approach while the negative values means the trade-off. To demonstrate the benefits of the positive value, we analyse the smallest positive $\Delta Q$ corresponding to $e_4$ and demonstrate how the output and required input are different under two approaches in Fig. \ref{comparisontest} $(4)$. $Ser1640238160$ and $Ser1947554374$ are selected service vertices with output concept-related parameters $Inst795998200$ and $Inst582785907$ corresponding to two concepts $Con103314376$ and $Con2037585750$ respectively, and $Inst658772240$ are the required parameter related to concept $Con2113572083$. There exist $Inst795998200$ $\in$ $Con103314376$ $\sqsubseteq_{2}$ $Inst658772240$ $\in$ $Con2113572083$ and $Inst582785907$ $\in$ $Con2037585750$ $\sqsubseteq_{3}$ $Inst658772240$ $\in$ $Con2113572083$. It is obvious that our approach selects the service providing $Inst795998200$ that are closer to the users' requirements suggesting that our method can produce better semantic matchmaking quality.
 
 \begin{figure}[h]
 \centerline{
 \fbox{
-\includegraphics[width=8cm]{comparision.pdf}}}
+\includegraphics[width=9cm]{comparisontest.eps}}}
  \caption{Example Comparison of solutions to Task 3 under different approaches.}
- \label{comparison}
+ \label{comparisontest}
 \end{figure}
-\vspace{0.3cm}
-\begin{figure}
-\centerline{
-\fbox{
-\includegraphics[width=4cm]{comparisontaxonomy.pdf}}}
- \caption{Example Comparison of Edge 4 in Task 3 solution under two methods.}
- \label{comparisontaxonomy}
-\end{figure}
-
-
 
 
 \subsection{Convergence Test}\label{convergenceTest}
@@ -371,7 +358,7 @@ Second, to compare the results generated from two evaluation approaches, we demo
 \begin{figure}[h]
 \centerline{
 \fbox{
-\includegraphics[width=12cm]{convergency.pdf}}}
+\includegraphics[width=12cm]{convergency.eps}}}
  \caption{Average Fitness, Average MatchType Quality, Average Similarity quality and Average QoS per generation with comprehensive quality optimum}
  \label{exp_fitnessvalue}
 \end{figure}
