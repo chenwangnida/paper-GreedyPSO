@@ -11,6 +11,11 @@ Bansal, S., Bansal, A., Gupta, G., Blake, M.B.: Generalized semantic web
   service composition. Service Oriented Computing and Applications  10(2),
   111--133 (2016)
 
+\bibitem{bleul2008self}
+Bleul, S., Comes, D., Kirchhoff, M., Zapf, M.: Self-integration of web services
+  in bpel processes. In: Proceedings of the Workshop Selbstorganisierence,
+  Adaptive, Kontextsensitive verteilte Systeme (SAKS) (2008)
+
 \bibitem{fanjiang2014semantic}
 FanJiang, Y.Y., Syu, Y.: Semantic-based automatic service composition with
   functional and non-functional requirements in design time: A genetic
@@ -25,11 +30,6 @@ Feng, Y., Ngan, L.D., Kanagasabai, R.: Dynamic service composition with
 \bibitem{fensel2011semantic}
 Fensel, D., Facca, F.M., Simperl, E., Toma, I.: Semantic web services. Springer
   Science \& Business Media (2011)
-
-\bibitem{fensel2006enabling}
-Fensel, D., Lausen, H., Polleres, A., De~Bruijn, J., Stollberg, M., Roman, D.,
-  Domingue, J.: Enabling semantic web services: the web service modeling
-  ontology. Springer Science \& Business Media (2006)
 
 \bibitem{fukuyama2008fundamentals}
 Fukuyama, Y.: Fundamentals of particle swarm optimization techniques. Modern
@@ -46,10 +46,6 @@ Kona, S., Bansal, A., Blake, M.B., Bleul, S., Weise, T.: Wsc-2009: a quality of
   service-oriented web services challenge. In: 2009 IEEE Conference on Commerce
   and Enterprise Computing. pp. 487--490. IEEE (2009)
 
-\bibitem{lausen2007semantic}
-Lausen, H., Farrell, J.: Semantic annotations for wsdl and xml schema. W3C
-  recommendation, W3C pp. 749--758 (2007)
-
 \bibitem{lecue2009optimizing}
 L{\'e}cu{\'e}, F.: Optimizing qos-aware semantic web service composition. In:
   International Semantic Web Conference. pp. 375--391. Springer (2009)
@@ -59,11 +55,6 @@ Ma, H., Wang, A., Zhang, M.: A hybrid approach using genetic programming and
   greedy search for qos-aware web service composition. In: Transactions on
   Large-Scale Data-and Knowledge-Centered Systems XVIII, pp. 180--205. Springer
   (2015)
-
-\bibitem{martin2004owl}
-Martin, D., Burstein, M., Hobbs, J., Lassila, O., McDermott, D., McIlraith, S.,
-  Narayanan, S., Paolucci, M., Parsia, B., Payne, T., et~al.: Owl-s: Semantic
-  markup for web services. W3C member submission  22,  2007--04 (2004)
 
 \bibitem{mier2015integrated}
 Mier, P.R., Pedrinaci, C., Lama, M., Mucientes, M.: An integrated semantic web
@@ -82,6 +73,9 @@ O'Leary, D.: Review: Ontologies: A silver bullet for knowledge management and
 Paolucci, M., Kawamura, T., Payne, T.R., Sycara, K.: Semantic matching of web
   services capabilities. In: International Semantic Web Conference. pp.
   333--347. Springer (2002)
+
+\bibitem{petrie2016web}
+Petrie, C.J.: Web Service Composition. Springer (2016)
 
 \bibitem{sahai2002automated}
 Sahai, A., Machiraju, V., Sayal, M., Van~Moorsel, A., Casati, F.: Automated sla

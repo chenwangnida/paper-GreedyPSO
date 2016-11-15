@@ -1,60 +1,56 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.aux
+The top-level auxiliary file: /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux
 The style file: ../splncs03.bst
 Database file #1: ../bibliography.bib
 I was expecting a `,' or a `}'---line 199 of file ../bibliography.bib
  :   publisher={IEEE}
  :                   @article{blum1997fast,
 I'm skipping whatever remains of this entry
-Repeated entry---line 831 of file ../bibliography.bib
- : @article{martin2004owl
- :                       ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 877 of file ../bibliography.bib
  : @inproceedings{paolucci2002semantic
  :                                    ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
-You've used 25 entries,
+You've used 24 entries,
             2785 wiz_defined-function locations,
-            728 strings with 9537 characters,
-and the built_in function-call counts, 15721 in all, are:
-= -- 1361
-> -- 501
-< -- 26
-+ -- 210
-- -- 179
-* -- 966
-:= -- 1998
-add.period$ -- 49
-call.type$ -- 25
-change.case$ -- 184
+            718 strings with 9183 characters,
+and the built_in function-call counts, 14430 in all, are:
+= -- 1254
+> -- 424
+< -- 23
++ -- 179
+- -- 149
+* -- 869
+:= -- 1833
+add.period$ -- 48
+call.type$ -- 24
+change.case$ -- 169
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 1344
-empty$ -- 1383
-format.name$ -- 201
-if$ -- 3492
+cite$ -- 25
+duplicate$ -- 1253
+empty$ -- 1312
+format.name$ -- 169
+if$ -- 3222
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 270
-newline$ -- 80
-num.names$ -- 52
-pop$ -- 504
+int.to.str$ -- 24
+missing$ -- 246
+newline$ -- 77
+num.names$ -- 50
+pop$ -- 466
 preamble$ -- 1
-purify$ -- 134
+purify$ -- 118
 quote$ -- 0
-skip$ -- 465
+skip$ -- 429
 stack$ -- 0
-substring$ -- 953
-swap$ -- 746
-text.length$ -- 26
+substring$ -- 874
+swap$ -- 674
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
+type$ -- 90
 warning$ -- 1
-while$ -- 135
-width$ -- 27
-write$ -- 263
-(There were 3 error messages)
+while$ -- 126
+width$ -- 26
+write$ -- 252
+(There were 2 error messages)
