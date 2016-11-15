@@ -16,15 +16,6 @@ Bleul, S., Comes, D., Kirchhoff, M., Zapf, M.: Self-integration of web services
   in bpel processes. In: Proceedings of the Workshop Selbstorganisierence,
   Adaptive, Kontextsensitive verteilte Systeme (SAKS) (2008)
 
-\bibitem{booth2004web}
-Booth, D., Haas, H., McCabe, F., Newcomer, E., Champion, M., Ferris, C.,
-  Orchard, D.: Web services architecture. w3c working note. W3C Working Notes
-  (2004)
-
-\bibitem{curbera2001web}
-Curbera, F., Nagy, W., Weerawarana, S.: Web services: Why and how. In: Workshop
-  on Object-Oriented Web Services-OOPSLA. vol. 2001 (2001)
-
 \bibitem{fanjiang2014semantic}
 FanJiang, Y.Y., Syu, Y.: Semantic-based automatic service composition with
   functional and non-functional requirements in design time: A genetic
@@ -44,6 +35,11 @@ Fensel, D., Facca, F.M., Simperl, E., Toma, I.: Semantic web services. Springer
 Fensel, D., Lausen, H., Polleres, A., De~Bruijn, J., Stollberg, M., Roman, D.,
   Domingue, J.: Enabling semantic web services: the web service modeling
   ontology. Springer Science \& Business Media (2006)
+
+\bibitem{fukuyama2008fundamentals}
+Fukuyama, Y.: Fundamentals of particle swarm optimization techniques. Modern
+  heuristic optimization techniques: theory and applications to power systems
+  pp. 71--87 (2008)
 
 \bibitem{huang2009effective}
 Huang, Z., Jiang, W., Hu, S., Liu, Z.: Effective pruning algorithm for
@@ -91,11 +87,6 @@ O'Leary, D.: Review: Ontologies: A silver bullet for knowledge management and
 Paolucci, M., Kawamura, T., Payne, T.R., Sycara, K.: Semantic matching of web
   services capabilities. In: International Semantic Web Conference. pp.
   333--347. Springer (2002)
-
-\bibitem{papazoglou2003service}
-Papazoglou, M.P.: Service-oriented computing: Concepts, characteristics and
-  directions. In: Web Information Systems Engineering, 2003. WISE 2003.
-  Proceedings of the Fourth International Conference on. pp. 3--12. IEEE (2003)
 
 \bibitem{sahai2002automated}
 Sahai, A., Machiraju, V., Sayal, M., Van~Moorsel, A., Casati, F.: Automated sla
