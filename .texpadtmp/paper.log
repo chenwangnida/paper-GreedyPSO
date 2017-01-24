@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  25 JAN 2017 10:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  25 JAN 2017 12:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -283,327 +283,153 @@ LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen143
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
- (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
- (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package hobsub Info: Skipping package `ifluatex' (already loaded).
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package hobsub Info: Skipping package `etexcmds' (already loaded).
-Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
-Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
-Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
-Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
-)
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
-Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
-Package: xcolor-patch 2016/05/16 xcolor patch
-Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
-Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
-) (/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
-)
-\@linkdim=\dimen144
-\Hy@linkcounter=\count113
-\Hy@pagecounter=\count114
- (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
-)
-\Hy@SavedSpaceFactor=\count115
- (/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\write' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@unused' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\write' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@unused' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@author' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 4322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 4322.
-
-Package hyperref Info: Hyper figures OFF on input line 4446.
-Package hyperref Info: Link nesting OFF on input line 4451.
-Package hyperref Info: Hyper index ON on input line 4454.
-Package hyperref Info: Plain pages OFF on input line 4461.
-Package hyperref Info: Backreferencing OFF on input line 4466.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4691.
-\c@Hy@tempcnt=\count116
-(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 5044.
-\XeTeXLinkMargin=\dimen145
-\Fld@menulength=\count117
-\Field@Width=\dimen146
-\Fld@charsize=\dimen147
-Package hyperref Info: Hyper figures OFF on input line 6298.
-Package hyperref Info: Link nesting OFF on input line 6303.
-Package hyperref Info: Hyper index ON on input line 6306.
-Package hyperref Info: backreferencing OFF on input line 6313.
-Package hyperref Info: Link coloring OFF on input line 6318.
-Package hyperref Info: Link coloring with OCG OFF on input line 6323.
-Package hyperref Info: PDF/A mode OFF on input line 6328.
-LaTeX Info: Redefining \ref on input line 6368.
-LaTeX Info: Redefining \pageref on input line 6372.
-\Hy@abspage=\count118
-\c@Item=\count119
-\c@Hfootnote=\count120
-)
-
-Package hyperref Message: Driver (autodetected): hpdftex.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
-\Fld@listcount=\count121
-\c@bookmark@seq@number=\count122
- (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
-)
-\Hy@SectionHShift=\skip65
 ) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 -- Lines per column: 58 (exact).
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen148
+\scratchcounter=\count113
+\scratchdimen=\dimen144
 \scratchbox=\box38
-\nofMPsegments=\count124
-\nofMParguments=\count125
+\nofMPsegments=\count114
+\nofMParguments=\count115
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen149
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen145
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks22
 )
-\AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring OFF on input line 16.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
- (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
-)
-\c@section@level=\count129
-)
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
- (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out)
-\@outlinefile=\write3
-\openout3 = `paper.out'.
-
-
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
-
+** WARNING: \and is valid only when in conference or peerreviewca
+modes (line 34).
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2] <sequence.pdf, id=153, 581.17125pt x 67.0003pt>
+] [2] <sequence.pdf, id=16, 581.17125pt x 67.0003pt>
 File: sequence.pdf Graphic file (type pdf)
  <use sequence.pdf>
-Package pdftex.def Info: sequence.pdf used on input line 88.
+Package pdftex.def Info: sequence.pdf used on input line 103.
 (pdftex.def)             Requested size: 144.54pt x 16.66312pt.
- <parallel.pdf, id=155, 420.82219pt x 225.09094pt>
+ <parallel.pdf, id=17, 420.82219pt x 225.09094pt>
 File: parallel.pdf Graphic file (type pdf)
  <use parallel.pdf>
-Package pdftex.def Info: parallel.pdf used on input line 102.
+Package pdftex.def Info: parallel.pdf used on input line 117.
 (pdftex.def)             Requested size: 101.17755pt x 54.11565pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<overview.pdf, id=159, 921.4425pt x 425.59pt>
+ <overview.pdf, id=18, 921.4425pt x 425.59pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 119.
-(pdftex.def)             Requested size: 248.7928pt x 114.91083pt.
-
-Overfull \hbox (3.59279pt too wide) in paragraph at lines 119--120
- [][] 
- []
+Package pdftex.def Info: overview.pdf used on input line 131.
+(pdftex.def)             Requested size: 368.57048pt x 170.23297pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3 <./sequence.pdf> <./parallel.pdf> <./overview.pdf>]
+[3 <./sequence.pdf> <./parallel.pdf>] [4 <./overview.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 167.
+               Default added (so using `tbp') on input line 178.
 
-<weigtedGraphExample.pdf, id=246, 626.34pt x 457.71pt>
+<weigtedGraphExample.pdf, id=75, 626.34pt x 457.71pt>
 File: weigtedGraphExample.pdf Graphic file (type pdf)
  <use weigtedGraphExample.pdf>
-Package pdftex.def Info: weigtedGraphExample.pdf used on input line 190.
+Package pdftex.def Info: weigtedGraphExample.pdf used on input line 201.
 (pdftex.def)             Requested size: 181.63394pt x 132.7325pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (1.11247pt too wide) detected at line 201
-[]\OML/cmm/m/it/10 Fitness \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
+Overfull \hbox (1.11247pt too wide) detected at line 212
+\OML/cmm/m/it/10 Fitness \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
  []
 
-[4]
+[5 <./weigtedGraphExample.pdf>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [5 <./weigtedGraphExample.pdf>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 288.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 309.
+               Default added (so using `tbp') on input line 298.
 
-<comparisontest.pdf, id=305, 1121.18875pt x 733.74126pt>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 321.
+
+[6] <comparisontest.pdf, id=102, 1121.18875pt x 733.74126pt>
 File: comparisontest.pdf Graphic file (type pdf)
  <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 340.
+Package pdftex.def Info: comparisontest.pdf used on input line 352.
 (pdftex.def)             Requested size: 246.6623pt x 161.42357pt.
 
-Overfull \hbox (4.96234pt too wide) in paragraph at lines 340--341
+Overfull \hbox (4.96234pt too wide) in paragraph at lines 352--353
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<convergency.pdf, id=307, 2535.4725pt x 2526.43875pt>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 360.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 376.
+
+
+Overfull \hbox (69.01991pt too wide) in paragraph at lines 380--389
+ [][] 
+ []
+
+<convergency.pdf, id=103, 2535.4725pt x 2526.43875pt>
 File: convergency.pdf Graphic file (type pdf)
  <use convergency.pdf>
-Package pdftex.def Info: convergency.pdf used on input line 350.
+Package pdftex.def Info: convergency.pdf used on input line 399.
 (pdftex.def)             Requested size: 240.87239pt x 240.01418pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl
+[7 <./comparisontest.pdf>] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[7 <./comparisontest.pdf> <./convergency.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 363.
- [8
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 363.
- (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 363.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 363.
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F36DB8DFCE46B13A37E9ED6134000CDC;127.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 363.
- )
+) [8 <./convergency.pdf>] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7734 strings out of 493014
- 120563 string characters out of 6133350
- 241701 words of memory out of 5000000
- 11104 multiletter control sequences out of 15000+600000
- 39701 words of font info for 76 fonts, out of 8000000 for 9000
+ 4094 strings out of 493014
+ 64529 string characters out of 6133350
+ 159934 words of memory out of 5000000
+ 7581 multiletter control sequences out of 15000+600000
+ 40779 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,15n,30p,1928b,6474s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,15n,26p,1926b,3318s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (8 pages, 773663 bytes).
+Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (8 pages, 768437 bytes).
 PDF statistics:
- 527 PDF objects out of 1000 (max. 8388607)
- 420 compressed objects within 5 object streams
- 76 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
