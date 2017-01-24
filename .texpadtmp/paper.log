@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  24 JAN 2017 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  25 JAN 2017 10:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -424,7 +424,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip65
-) (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.aux)
+) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -469,7 +469,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 16.
 LaTeX Info: Redefining \pageref on input line 16.
 LaTeX Info: Redefining \nameref on input line 16.
- (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.out) (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.out)
+ (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
@@ -504,9 +504,9 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
 Package pdftex.def Info: overview.pdf used on input line 119.
-(pdftex.def)             Requested size: 322.5097pt x 148.95872pt.
+(pdftex.def)             Requested size: 248.7928pt x 114.91083pt.
 
-Overfull \hbox (77.3097pt too wide) in paragraph at lines 119--120
+Overfull \hbox (3.59279pt too wide) in paragraph at lines 119--120
  [][] 
  []
 
@@ -518,11 +518,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 167.
 
-
-Overfull \hbox (54.21033pt too wide) in paragraph at lines 171--181
- [][] 
- []
-
 <weigtedGraphExample.pdf, id=246, 626.34pt x 457.71pt>
 File: weigtedGraphExample.pdf Graphic file (type pdf)
  <use weigtedGraphExample.pdf>
@@ -533,7 +528,7 @@ Package pdftex.def Info: weigtedGraphExample.pdf used on input line 190.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (1.11247pt too wide) detected at line 202
+Overfull \hbox (1.11247pt too wide) detected at line 201
 []\OML/cmm/m/it/10 Fitness \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
  []
 
@@ -541,58 +536,56 @@ Overfull \hbox (1.11247pt too wide) detected at line 202
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+ [5 <./weigtedGraphExample.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 288.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 290.
+               Default added (so using `tbp') on input line 309.
 
-[5 <./weigtedGraphExample.pdf>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 314.
-
-<comparisontest.pdf, id=306, 1121.18875pt x 733.74126pt>
+<comparisontest.pdf, id=305, 1121.18875pt x 733.74126pt>
 File: comparisontest.pdf Graphic file (type pdf)
  <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 346.
-(pdftex.def)             Requested size: 347.56493pt x 227.45744pt.
+Package pdftex.def Info: comparisontest.pdf used on input line 340.
+(pdftex.def)             Requested size: 246.6623pt x 161.42357pt.
 
-Overfull \hbox (105.86497pt too wide) in paragraph at lines 346--347
+Overfull \hbox (4.96234pt too wide) in paragraph at lines 340--341
  [][] 
  []
 
 
-Underfull \vbox (badness 1565) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [6 <./comparisontest.pdf>] <convergency.pdf, id=342, 2535.4725pt x 2526.43875pt>
+<convergency.pdf, id=307, 2535.4725pt x 2526.43875pt>
 File: convergency.pdf Graphic file (type pdf)
  <use convergency.pdf>
-Package pdftex.def Info: convergency.pdf used on input line 357.
-(pdftex.def)             Requested size: 344.82744pt x 343.59883pt.
+Package pdftex.def Info: convergency.pdf used on input line 350.
+(pdftex.def)             Requested size: 240.87239pt x 240.01418pt.
 
-Overfull \hbox (103.12749pt too wide) in paragraph at lines 357--358
- [][] 
- []
 
-(/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.bbl
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6] (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[7 <./convergency.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 374.
+[7 <./comparisontest.pdf> <./convergency.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 363.
  [8
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 374.
- (/Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 374.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 374.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 363.
+ (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 363.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 363.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: F36DB8DFCE46B13A37E9ED6134000CDC;127.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 374.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 363.
  )
 (\end occurred inside a group at level 1)
 
@@ -600,14 +593,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 374.
 ### bottom level 
 Here is how much of TeX's memory you used:
  7734 strings out of 493014
- 120615 string characters out of 6133350
- 242701 words of memory out of 5000000
+ 120563 string characters out of 6133350
+ 241701 words of memory out of 5000000
  11104 multiletter control sequences out of 15000+600000
  39701 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,15n,30p,1928b,6476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,15n,30p,1928b,6474s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/chenwang/Documents/Papers/paper-SWSCPSP-/.texpadtmp/paper.pdf (8 pages, 773617 bytes).
+Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (8 pages, 773663 bytes).
 PDF statistics:
  527 PDF objects out of 1000 (max. 8388607)
  420 compressed objects within 5 object streams

@@ -116,7 +116,7 @@ Web services in a parallel construct are executed concurrently. The QoS aggregat
 
 \begin{figure}[h]
 \centering
-\fbox{\includegraphics[scale=.35]{overview.pdf}}
+\fbox{\includegraphics[scale=.27]{overview.pdf}}
  \caption{Overview of the proposed approach.}
  \label{overview}
 \end{figure}
@@ -171,9 +171,9 @@ q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v
 \begin{tabular}{c|c|c|c|c}
 \hline
 \multicolumn{3}{c|}{Composition Construct}                                      & Sequence                             & Parallel \\ \hline
-\multirow{5}{*}{QualityFactors} & \multirow{2}{*}{Functional}    & $Q(e_ {mt})$  &$\prod_{n=1}^{m} q(e_ {mt})$          &  $\prod_{n=1}^{m} q(e_ {mt})$ \\ \cline{3-5}
+\multirow{5}{*}{Quality} & \multirow{2}{*}{F}    & $Q(e_ {mt})$  &$\prod_{n=1}^{m} q(e_ {mt})$          &  $\prod_{n=1}^{m} q(e_ {mt})$ \\ \cline{3-5}
                                 &                                & $Q(e_ {s})$  & $(\sum_{n=1}^m q(e_ {s}))/m$        &  $(\sum_{n=1}^m q(e_ {s}))/m$  \\ \cline{2-5}   
-                                & \multirow{4}{*}{NonFunctional} & $Q(v_{a})$    & $\prod_{n=1}^{m} q(v_a)$             &  $\prod_{n=1}^{m} q(v_a)$ \\ \cline{3-5} 
+                                & \multirow{4}{*}{NF} & $Q(v_{a})$    & $\prod_{n=1}^{m} q(v_a)$             &  $\prod_{n=1}^{m} q(v_a)$ \\ \cline{3-5} 
                                 &                                & $Q(v_{r})$    & $\prod_{n=1}^{m} q(v_r)$             &  $\prod_{n=1}^{m} q(v_r)$ \\ \cline{3-5} 
                                 &                                & $Q(v_{c})$    & $\sum_{n=1}^m q(v_ {c})$             &  $\sum_{n=1}^m q(v_ {c})$ \\ \cline{3-5} 
                                 &                                & $Q(v_{t})$    & $\sum_{n=1}^m q(v_ {t})$             &  $max(q(v_ {t}))$ \\ \hline
@@ -192,7 +192,6 @@ We defined our semantic web service composition solution as a weighted graph $WG
  \label{wscs}
 \end{figure}
 
-\vspace{-1cm}
 \subsection{Fitness Calculation}
 The fitness value of a service composition solution is a weighted sum of all the quality related components in Formula (\ref{equation6}), in which fitness value of 1 means the best comprehensive quality and 0 means the worst. For this purpose, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Therefore, the service composition problem in this paper is treated as a fitness maximisation problem.
 \vspace{-0.2cm}
@@ -224,7 +223,6 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 
 
 \subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
-\vspace{-0.5cm}
 \begin{algorithm}[!htb]
  \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -253,8 +251,8 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 	
  \caption{Steps of the PSO-based Web service composition technique.}
 \label{novelSteps}
+
 \end{algorithm}
-\vspace{-1.5cm}
 \begin{algorithm}[!htb]
  \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -279,14 +277,14 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
  \caption{Create a composition weighted graph from a queue}	
 \label{graph_building}
 \end{algorithm}
-\vspace{-0.8cm}
+
 The overall algorithm investigated here is made up of a PSO-based web service composition algorithm \ref{novelSteps} and a decoding algorithm \ref{graph_building}, to generate a composition weighted graph, where code lines in blue are different from the algorithm in \cite{da2016particle}. In algorithm \ref{novelSteps}, the idea is to translate the particle location produced by PSO into a service queue as an indirect representation of weighted graph, such that finding the best fitness of the weighted graph is to discover the optimised location of the particle in the search space. In PSO, the dimension of each particle equals to the number of relevant web services. The index of each services is mapped to a separate location component in a particle. Services in a queue follow the ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. We select and connect  service vertex to the start vertex from the service queue if the web service can satisfy the output of start vertex. Meanwhile, an Output Set is initialised and kept being updated using outputs from the newly added service vertex in the weighted graph, later on, more services vertices are connected with edges if services' inputs could be satisfied by any output in the Output Set. Finally, the end vertex is connected to the graph if the updated Output Set contains all end inputs. In addition, dangling service vertex and edges will be removed. 
 \vspace{-0.5cm}
 \section{Experiment Design}\label{experiment_design}
 In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are to $(1)$ measure the effectiveness of the comprehensive quality model in automated semantic web service composition approach; $(2)$ explore the impacts of the semantic matchmaking that contributes to overall composition quality; and $(3)$ compare solutions generated by QoS-ware approach with our method.
 
 We utilise benchmark dataset web service challenge 2009 (WSC09) \cite{kona2009wsc} to perform the evaluation. WSC09 provides problems with five tasks corresponding to variable number of services, and ontologies. Therefore, it is a challenge dataset for measuring the scalability of our quality evaluation model. Table \ref{wsc09datasetTable} presents the features of the WSC’09 dataset. The number of concepts, individuals in the ontology and services in each data set is shown in the second, third, fourth column respectively. Also, we extend all the datasets with QoS attributes from service providers to enable our evaluation. 
-\vspace{-0.5cm}
+
 \begin{table}[]
 \centering
 \caption{Features of the WSC09 datasets}
@@ -302,15 +300,12 @@ WSC09 05                     & 31044      &62132          &15211    \\ \hline
 \end{tabular}
 \end{table}
 
-\vspace{-0.5cm}
 We run the experiment on computing grid comprising of 170 NetBSD (Unix operating system) workstations operated by the Sun Grid Engine. The parameters were chosen based on general settings from \cite{shi2001particle} for our PSO-based approach, In particular, PSO population size is 30 with 100 generations. We run 30 times independently for each dataset. We configure weight of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ equal to 0.1 and 0.4,  and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125 accordingly. However, the settings of these weight values does not impact the method. In general, weight settings are adjusted according to users' preferences.
 \section{Results and Analysis}\label{results_analysis}
-\vspace{-0.2cm}
 \subsection{Comparison Test}\label{comparisonTest}
 In this section, we analyse the composition solution generated by using our approach comparing with QoS-aware approach. In particularly, we show that our proposed approach can produce solutions that results in better matchmaking, which meets user's goal better.
  
 First, we look at mean value of $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ at optimum at the 100th generation for two approaches, shown in Table \ref{decisionTable}. The QoS-aware approach record $Q_{mt}$, $Q_{s}$ and utilise fitness function $Fitness = w_1 \hat{A} + w_2 \hat{R} + w_3(1 - \hat{T}) + w_4(1 - \hat{C})$ when $\sum_{i=1}^{4} w_i = 1$ without considering $MT$ and $S$, in which $Q_(QoS)$ is normalised from 0 to 0.5 to make it comparable to $Q_{QoS}$ in our approach. We observe an interesting pattern from Table \ref{decisionTable} using statistic analysis: mean value of $Q_{mt}$ and $Q_{s}$ at optimum by our approach is consistently higher than those by QoS-aware approach with one exception in Task 2 while the combination of mean $Q_{mt}$ and $Q_{s}$ at optimum in Task 2 is still significantly higher in our approach under statistical anlysis. Meanwhile, $Q_{QoS}$ generated by QoS-aware approach can obtain a slightly higher value than that of our approach. In conclusion, we can perceive that our evaluation could find out better functional quality with a reasonable trade off in QoS.
-\vspace{-0.5cm}
 \begin{table}[]
 \footnotesize
 \centering
@@ -336,38 +331,32 @@ First, we look at mean value of $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ at optimum at th
                         &$Q_{QoS}$  & 0.238189 $\pm$ 0.000240$\uparrow$      &  0.237232 $\pm$  0.000391  \\ \hline                                                   
 \end{tabular}
 \end{table}
-\vspace{-0.5cm}
 
 Second, to compare the results generated from two evaluation approaches, we demonstrate an example solution that shows the differences in composite web services obtained through two different methods. Fig. \ref{comparisontest} $(1)$ and $(2)$ show two composition weighted graphs as the solutions to Task 3 with $(1)$ QoS-aware approach and $(2)$ Comprehensive quality-aware method respectively. Two approaches generate exactly the same service workflow structure where those service vertices and edges denoted in red are different. We make a comparison of the quality among these different edges ($e_1$ to $e4$) associated service vertices in terms of quality of semantic matchmaking and QoS attributes in Fig. \ref{comparisontest} $(3)$. We also look at $\Delta Q$ which reveals the amount of variation on quality between two methods, where the positive values means the benefits gained under our approach while the negative values means the trade-off. To demonstrate the benefits of the positive value, we analyse the smallest positive $\Delta Q$ corresponding to $e_4$ and demonstrate how the output and required input are different under two approaches in Fig. \ref{comparisontest} $(4)$. $Ser1640238160$ and $Ser1947554374$ are selected service vertices with output concept-related parameters $Inst795998200$ and $Inst582785907$ corresponding to two concepts $Con103314376$ and $Con2037585750$ respectively, and $Inst658772240$ are the required parameter related to concept $Con2113572083$. There exist $Inst795998200$ $\in$ $Con103314376$ $\sqsubseteq_{2}$ $Inst658772240$ $\in$ $Con2113572083$ and $Inst582785907$ $\in$ $Con2037585750$ $\sqsubseteq_{3}$ $Inst658772240$ $\in$ $Con2113572083$. It is obvious that our approach selects the service providing $Inst795998200$ that are closer to the users' requirements suggesting that our method can produce better semantic matchmaking quality.
-\vspace{-0.5cm}
+
 \begin{figure}[h]
 \centering{
 \fbox{
-\includegraphics[scale=.31]{comparisontest.pdf}}}
+\includegraphics[scale=.22]{comparisontest.pdf}}}
  \caption{Example Comparison of solutions to Task 3 under different approaches.}
  \label{comparisontest}
 \end{figure}
-\vspace{-0.5cm}
 \subsection{Convergence Test}\label{convergenceTest}
 To analyse the effectiveness of our approach, we study the convergence rate of the proposed method in this section to understand the convergence rate of five tasks in WSC09. We analysis the performances during the whole evolutionary process in Fig. \ref{exp_fitnessvalue}, in which experiment results on five tasks are arranged in four groups consisting of average fitness, average matchType quality, average similarity quality and average QoS for generation 0-99 with optimum.
 
 \begin{figure}[h]
 \centering{
 \fbox{
-\includegraphics[scale=.136]{convergency.pdf}}}
+\includegraphics[scale=.095]{convergency.pdf}}}
  \caption{Average Fitness, Average MatchType Quality, Average Similarity quality and Average QoS per generation with comprehensive quality optimum}
  \label{exp_fitnessvalue}
 \end{figure}
-\vspace{-0.5cm}
-
 Firstly, the average fitness value with optimum is calculated by averaging the best fitness found in each generation over 30 independent runs. We can see that there is a significant increase in the fitness values towards optimum between generation 0 and generation 15-25, the remaining generation continues to produce a steady but moderate improvement in the fitness value and eventually reach a plateau with no further improvements can be observed. The same behaviour is observed over the rest tasks.
 
 We also investigate the variation of quality of semantic matchmaking where average matchType quality with optimum and average similarity quality with optimum are studied from generation 0 to 99 in second and third column groups of Fig. \ref{exp_fitnessvalue}. In these subfigures, both the average matchType quality with optimum and average similarity quality with optimum refers to the mean values of the quality values associated to the best fitness value found in each generation over 30 independent runs. Similar to the fitness values, clear evidence of fast convergence can be observed with respect to theses quality values. This observation is also consistent for the improvement of mean QoS quality with optimum shown in the last column in Fig \ref{exp_fitnessvalue}. Additionally, we don't see too much trade-off from the QoS as the a consistently increase in semantic matchmaking quality is observed.
 
-\vspace{-0.5cm}
 \section{Conclusion}\label{conclusion}
 This work introduced an evaluation model for QoS-aware automated semantic automated web service composition that combines quality of semantic matchmaking with QoS. The results shows that our comprehensive quality model is proved to obtain better functional quality with a reasonable trade-off in QoS. Future works could explore the comprehensive quality with multi-objectives to maximising the quality of matchmaking and to optimise QoS, and to improve efficiency in calculating semantic matchmaking quality.
-\vspace{-0.5cm}
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEexample}
 
