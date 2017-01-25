@@ -7,33 +7,17 @@
 \setlength{\algomargin}{0.7cm}
 
 \title{Comprehensive Quality-Aware Automated Semantic Web Service Composition}
-\author{\IEEEauthorblockN{Michael Shell}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Georgia Institute of Technology\\
-Atlanta, Georgia 30332--0250\\
-Email: http://www.michaelshell.org/contact.html}
-\and
-\IEEEauthorblockN{Homer Simpson}
-\IEEEauthorblockA{Twentieth Century Fox\\
-Springfield, USA\\
-Email: homer@thesimpsons.com}
-\and
-\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
-\IEEEauthorblockA{Starfleet Academy\\
-San Francisco, California 96678--2391\\
-Telephone: (800) 555--1212\\
-Fax: (888) 555--1212}}
-\makeatletter
-%\usepackage[pdfauthor={\@author}, pdftitle={\@title}]{hyperref}
-%\makeatother
+ \author{Chen Wang, Hui Ma, Aaron Chen\\ School of
+ Engineering and Computer Science, Victoria University of Wellington, New Zealand\\
+Email: chen.wang@ecs.vuw.ac.nz, hui.ma@ecs.vuw.ac.nz, aaron.chen@ecs.vuw.ac.nz}
+\usepackage[pdfauthor={\@author}, pdftitle={\@title}]{hyperref}
+\makeatother
 
 %\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\vspace{-1.5cm}
 
 \begin{document}
-
 \maketitle
-\vspace{-0.8cm}
-
 \begin{abstract}
 Semantic web service composition has been a prevailing research area in recent years. There are two major governance challenges faced by researchers (semantic matching and QoS optimisation). Semantic matchmaking aims to discover interoperable web services that can interact with each other to provide rich functionalities through language understanding and reasoning. QoS optimisation aims to meet non-functional requirement of service users. e.g minimum cost, maximal reliability. Many scholars have looked into nonfunctional optimisation problems in QoS-aware web service composition applying AI planning and Evolution Computing techniques. To meet users' requirement, one often needs to consider both semantic matching and QoS optimisation simultaneously. Existing works on web service composition often concerns either semantic service composition or QoS-aware service composition. However, there are very few works concerns both quality of semantic matchmaking and quality of services at the same time. Therefore, In this paper we consider two quality dimensions in a proposed more applicable comprehensive quality model for semantic web service composition, and present a automated semantic web service composition approach that can generate service composition solutions that meet both functional and non-functional requirement. We will evaluate our approach utilising a semantic benchmark dataset.
 
@@ -380,11 +364,11 @@ WSC09 05                     & 0.469424 $\pm$ 0.000800 $\pm$ $\uparrow$  &0.2564
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{c|}{Dataset} & PSO-based approach & GP-based approach  \\ \hline
-WSC09 01                     &12907.533333 $\pm$ 8105.111787      &5168.166667 $\pm$ 520.475319 $\downarrow$                \\ \hline
-WSC09 02                     &292346.400000 $\pm$  96726.846023 $\uparrow$   &27483.100000 $\pm$  3083.391833           \\ \hline
-WSC09 03                     & 12907.533333 $\pm$ 8105.111787 $\pm$ $\uparrow$  &28053.166667 $\pm$ 3202.059629            \\ \hline
-WSC09 04                     & 6553640.033333 $\pm$ 1468203.652702 $\pm$ $\uparrow$  &540418.366667 $\pm$ 186540.432797            \\ \hline
-WSC09 05                     & 1208192.500000 $\pm$ 266911.585694 $\pm$ $\uparrow$  &180408.366667 $\pm$ 435246.958095            \\ \hline
+WSC09 01                     &12907 $\pm$ 8105      &5168 $\pm$ 520 $\downarrow$                \\ \hline
+WSC09 02                     &292346 $\pm$  96727    &27483 $\pm$  3083 $\downarrow$          \\ \hline
+WSC09 03                     & 12908 $\pm$ 8105   &28053 $\pm$ 3202 $\downarrow$           \\ \hline
+WSC09 04                     & 6553640 $\pm$ 1468204   &540418 $\pm$ 186540 $\downarrow$            \\ \hline
+WSC09 05                     & 1208193 $\pm$ 266916   &180408 $\pm$ 435247 $\downarrow$           \\ \hline
 \end{tabular}
 \end{table}
 
