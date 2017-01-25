@@ -95,6 +95,12 @@ Y.-Y. FanJiang and Y.~Syu, ``Semantic-based automatic service composition with
   algorithm approach,'' \emph{Information and Software Technology}, vol.~56,
   no.~3, pp. 352--373, 2014.
 
+\bibitem{pop2009immune}
+C.~B. Pop, V.~R. Chifu, I.~Salomie, and M.~Dinsoreanu, ``Immune-inspired method
+  for selecting the optimal solution in web service composition,'' in
+  \emph{International Workshop on Resource Discovery}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 2009, pp. 1--17.
+
 \bibitem{baader2003description}
 F.~Baader, \emph{The description logic handbook: Theory, implementation and
   applications}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge university
@@ -103,6 +109,12 @@ F.~Baader, \emph{The description logic handbook: Theory, implementation and
 \bibitem{shet2012new}
 K.~Shet, U.~D. Acharya \emph{et~al.}, ``A new similarity measure for taxonomy
   based on edge counting,'' \emph{arXiv preprint arXiv:1211.4709}, 2012.
+
+\bibitem{ma2015hybrid}
+H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
+  greedy search for qos-aware web service composition,'' in \emph{Transactions
+  on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
 
 \bibitem{paolucci2002semantic}
 M.~Paolucci, T.~Kawamura, T.~R. Payne, and K.~Sycara, ``Semantic matching of
@@ -121,12 +133,6 @@ Z.~Huang, W.~Jiang, S.~Hu, and Z.~Liu, ``Effective pruning algorithm for
   qos-aware service composition,'' in \emph{2009 IEEE Conference on Commerce
   and Enterprise Computing}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2009,
   pp. 519--522.
-
-\bibitem{ma2015hybrid}
-H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
-  greedy search for qos-aware web service composition,'' in \emph{Transactions
-  on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
 
 \bibitem{da2014graph}
 A.~S. da~Silva, H.~Ma, and M.~Zhang, ``A graph-based particle swarm
