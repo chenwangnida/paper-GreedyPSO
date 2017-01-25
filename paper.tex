@@ -338,9 +338,27 @@ Second, to compare the results generated from two evaluation approaches, we demo
  \label{comparisontest}
 \end{figure}
 
+\subsection{Convergence Test}\label{convergenceTest}
+To analyse the effectiveness of our approach, we study the convergence rate of the proposed method in this section to understand the convergence rate of five tasks in WSC09. We analysis the performances during the whole evolutionary process in Fig. \ref{exp_fitnessvalue}, in which experiment results on five tasks are arranged in four groups consisting of average fitness, average matchType quality, average similarity quality and average QoS for generation 0-99 with optimum.
+
+\begin{figure}[h]
+\centering{
+\fbox{
+\includegraphics[scale=.095]{convergency.pdf}}}
+ \caption{Average Fitness, Average MatchType Quality, Average Similarity quality and Average QoS per generation with comprehensive quality optimum}
+ \label{exp_fitnessvalue}
+\end{figure}
+Firstly, the average fitness value with optimum is calculated by averaging the best fitness found in each generation over 30 independent runs. We can see that there is a significant increase in the fitness values towards optimum between generation 0 and generation 15-25, the remaining generation continues to produce a steady but moderate improvement in the fitness value and eventually reach a plateau with no further improvements can be observed. The same behaviour is observed over the rest tasks.
+
+We also investigate the variation of quality of semantic matchmaking where average matchType quality with optimum and average similarity quality with optimum are studied from generation 0 to 99 in second and third column groups of Fig. \ref{exp_fitnessvalue}. In these subfigures, both the average matchType quality with optimum and average similarity quality with optimum refers to the mean values of the quality values associated to the best fitness value found in each generation over 30 independent runs. Similar to the fitness values, clear evidence of fast convergence can be observed with respect to theses quality values. This observation is also consistent for the improvement of mean QoS quality with optimum shown in the last column in Fig \ref{exp_fitnessvalue}. Additionally, we don't see too much trade-off from the QoS as the a consistently increase in semantic matchmaking quality is observed.
+
 
 \subsection{Comparison Test with GP-based approach}\label{comparisonTestWithGP}
 We compare a GP-based approach  \cite{ma2015hybrid} with our PSO method, where the individual is a tree structure transferred from a DAG employing unfolding techniques. We further mark all the tree nodes in the representation with its outgoing edges for semantic matchmaking quality, and those edges information are maintained correctly throughout the evolutionary process. At last, we evaluate both semantic matchmaking quality and QoS simultaneously using the discussed the comprehensive quality model to investigate the performances of both GP-based approaches and PSO-based approach. To make a fair comparison with our PSO approach that the same number of evaluations (3000 times) should be considered, we adjust the parameters settings for GP approach \cite{ma2015hybrid} to 30 individual for 100 generations.
+
+The Table \ref{meanFitness} shows the mean fitness values accomplished by two approaches and Table \ref{meanTime} shows the mean execution time required by them. We employ statistical analysis to test the significant differences in mean fitness value and execution time.  The results show that the PSO-based approach performs better in four of five tasks. 
+
+
 \begin{table}[]
 \centering
 \caption{Mean fitness results for comparing GP-based approach}
@@ -366,27 +384,21 @@ WSC09 05                     & 0.469424 $\pm$ 0.000800 $\pm$ $\uparrow$  &0.2564
 \multicolumn{1}{c|}{Dataset} & PSO-based approach & GP-based approach  \\ \hline
 WSC09 01                     &12907 $\pm$ 8105      &5168 $\pm$ 520 $\downarrow$                \\ \hline
 WSC09 02                     &292346 $\pm$  96727    &27483 $\pm$  3083 $\downarrow$          \\ \hline
-WSC09 03                     & 12908 $\pm$ 8105   &28053 $\pm$ 3202 $\downarrow$           \\ \hline
+WSC09 03                     & 12908 $\pm$ 8105 $\downarrow$  &28053 $\pm$ 3202            \\ \hline
 WSC09 04                     & 6553640 $\pm$ 1468204   &540418 $\pm$ 186540 $\downarrow$            \\ \hline
 WSC09 05                     & 1208193 $\pm$ 266916   &180408 $\pm$ 435247 $\downarrow$           \\ \hline
 \end{tabular}
 \end{table}
 
 
-
-\subsection{Convergence Test}\label{convergenceTest}
-To analyse the effectiveness of our approach, we study the convergence rate of the proposed method in this section to understand the convergence rate of five tasks in WSC09. We analysis the performances during the whole evolutionary process in Fig. \ref{exp_fitnessvalue}, in which experiment results on five tasks are arranged in four groups consisting of average fitness, average matchType quality, average similarity quality and average QoS for generation 0-99 with optimum.
+We study the mean fitness value with the optimum for both PSO-based and GP-based approach over 30 independent runs. Fig. \ref{psovsgp} is an example of convergence rate performance in WSC09 03, which shows the behaviour of PSO-based approach manifests the characteristics of fast convergence and reaches a better-optimised solution, while the performance of GP is barely satisfactory.
 
 \begin{figure}[h]
-\centering{
-\fbox{
-\includegraphics[scale=.095]{convergency.pdf}}}
- \caption{Average Fitness, Average MatchType Quality, Average Similarity quality and Average QoS per generation with comprehensive quality optimum}
- \label{exp_fitnessvalue}
+\centering
+\fbox{\includegraphics[scale=.29]{psovsgp.pdf}}
+ \caption{An example of comparing convergency rate from PSO and GP approaches for task 3}
+ \label{psovsgp}
 \end{figure}
-Firstly, the average fitness value with optimum is calculated by averaging the best fitness found in each generation over 30 independent runs. We can see that there is a significant increase in the fitness values towards optimum between generation 0 and generation 15-25, the remaining generation continues to produce a steady but moderate improvement in the fitness value and eventually reach a plateau with no further improvements can be observed. The same behaviour is observed over the rest tasks.
-
-We also investigate the variation of quality of semantic matchmaking where average matchType quality with optimum and average similarity quality with optimum are studied from generation 0 to 99 in second and third column groups of Fig. \ref{exp_fitnessvalue}. In these subfigures, both the average matchType quality with optimum and average similarity quality with optimum refers to the mean values of the quality values associated to the best fitness value found in each generation over 30 independent runs. Similar to the fitness values, clear evidence of fast convergence can be observed with respect to theses quality values. This observation is also consistent for the improvement of mean QoS quality with optimum shown in the last column in Fig \ref{exp_fitnessvalue}. Additionally, we don't see too much trade-off from the QoS as the a consistently increase in semantic matchmaking quality is observed.
 
 \section{Conclusion}\label{conclusion}
 This work introduced an evaluation model for QoS-aware automated semantic automated web service composition that combines quality of semantic matchmaking with QoS. The results shows that our comprehensive quality model is proved to obtain better functional quality with a reasonable trade-off in QoS. Future works could explore the comprehensive quality with multi-objectives to maximising the quality of matchmaking and to optimise QoS, and to improve efficiency in calculating semantic matchmaking quality.
