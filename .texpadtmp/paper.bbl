@@ -110,11 +110,23 @@ F.~Baader, \emph{The description logic handbook: Theory, implementation and
 K.~Shet, U.~D. Acharya \emph{et~al.}, ``A new similarity measure for taxonomy
   based on edge counting,'' \emph{arXiv preprint arXiv:1211.4709}, 2012.
 
+\bibitem{gupta2015optimization}
+I.~K. Gupta, J.~Kumar, and P.~Rai, ``Optimization to quality-of-service-driven
+  web service composition using modified genetic algorithm,'' in
+  \emph{Computer, Communication and Control (IC4), 2015 International
+  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2015, pp. 1--6.
+
 \bibitem{ma2015hybrid}
 H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
   greedy search for qos-aware web service composition,'' in \emph{Transactions
   on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
   0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
+
+\bibitem{qi2010combining}
+L.~Qi, Y.~Tang, W.~Dou, and J.~Chen, ``Combining local optimization and
+  enumeration for qos-aware web service composition,'' in \emph{Web Services
+  (ICWS), 2010 IEEE International Conference on}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2010, pp. 34--41.
 
 \bibitem{paolucci2002semantic}
 M.~Paolucci, T.~Kawamura, T.~R. Payne, and K.~Sycara, ``Semantic matching of
