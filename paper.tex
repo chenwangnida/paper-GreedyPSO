@@ -19,10 +19,9 @@ Email: chen.wang@ecs.vuw.ac.nz, hui.ma@ecs.vuw.ac.nz, aaron.chen@ecs.vuw.ac.nz}
 \begin{document}
 \maketitle
 \begin{abstract}
-Semantic web service composition has been a prevailing research area in recent years. There are two major governance challenges faced by researchers (semantic matching and QoS optimisation). Semantic matchmaking aims to discover interoperable web services that can interact with each other to provide rich functionalities through language understanding and reasoning. QoS optimisation aims to meet non-functional requirement of service users. e.g minimum cost, maximal reliability. Many scholars have looked into nonfunctional optimisation problems in QoS-aware web service composition applying AI planning and Evolutionary Computation techniques. To meet users' requirement, one often needs to consider both semantic matching and QoS optimisation simultaneously. Existing works on web service composition often concerns either semantic service composition or QoS-aware service composition. However, there are very few works concerns both quality of semantic matchmaking and quality of services at the same time. Therefore, In this paper we consider two quality dimensions in a proposed more applicable comprehensive quality model for semantic web service composition, and present a automated semantic web service composition approach that can generate service composition solutions that meet both functional and non-functional requirement. We will evaluate our approach utilising a semantic benchmark dataset.
+Semantic web service composition has been a prevailing research area in recent years. There are two major governance challenges faced by researchers (semantic matching and QoS optimisation). Semantic matchmaking aims to discover interoperable web services that can interact with each other to provide rich functionalities through language understanding and reasoning. QoS optimisation aims to meet the non-functional requirement of service users. E.g., minimum cost, maximal reliability. Many scholars have looked into nonfunctional optimisation problems in QoS-aware web service composition applying AI planning and Evolutionary Computation techniques. To meet users' requirement, one often needs to consider both semantic matching and QoS optimisation simultaneously. Existing works on web service composition often concerns either semantic service composition or QoS-aware service composition. However, there are few works concerns both quality of semantic matchmaking and quality of services at the same time and points out the benefits clearly. Therefore, In this paper, we consider two quality dimensions in a proposed more applicable comprehensive quality model for semantic web service composition and present an automated semantic web service composition approach that can generate service composition solutions that meet both functional and non-functional requirement.  The results show our method can find better semantic matchmaking quality with a very slight trade off in QoS. Also, we comparing our PSO-based approach with one GP-based approach, our method performs better in finding optimised solution with a trade off in execution time.
 
 \end{abstract}
-\vspace{-0.8cm}
 \section{Introduction}\label{introduction}
 
 \textit{Web service composition} pertains to a combination of multiple web services to provide a value-added composite service that accommodates customers' arbitrarily complex requirements. This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. Due to the increase of the number of large-scale enterprise applications, the number of Web services has increased substantially and unprecedentedly. Therefore, manual and semi-automated web service composition are considered to be less efficient while automated web service composition enjoys less human intervention, less time consumption, and high productivity.
@@ -130,13 +129,13 @@ Web services in a parallel construct are executed concurrently. The QoS aggregat
  \label{overview}
 \end{figure*}
 
-In this section, we propose a comprehensive quality model for automated semantic service composition, and optimise both the quality of semantic matchmaking and QoS. PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing that often required by GP \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composite process is triggered by a composite goal defined in Subsection \ref{problemDes}, which describes customers requirements both functional and non-functional. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from the an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 4. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is different from \cite{da2016particle}, as we use weighted graphs as solution presentation.
+In this section, we propose a comprehensive quality model for automated semantic service composition, and optimise both the quality of semantic matchmaking and QoS. PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing that often required by GP \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composite process is triggered by a composite goal defined in Subsection \ref{problemDes}, which describes customers requirements both functional and non-functional. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from the an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process utilising ontology-based index cache. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 4. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is different from \cite{da2016particle}, as we use weighted graphs as solution presentation.
 \subsection{Semantic Matchmaking} \label{semantic_matchmaking}
 To perform semantic matchmaking, we transfer a function match between $S_{1}: S_{output} \in C_{1}$ and $S_{2}:S_{output} \in S_{b}$ to a pair of concept match demonstrated in Sect. \ref{semantic Web service Discovery}. The matching process attempts to determine semantic matching between the source concepts of $C_{1}$ and the target concepts of $C_{2}$. Meanwhile, the quality of matched concepts are calculated in the quality model in subSection \ref{qualityModel}. The purpose of semantic matchmaking is to find more component services that could also potentially satisfy the quality of QoS with good functional quality.
 
 The semantic matchmaking is achieved by utilising OWL2 and OWL-S or other semantic markup languages for web services. In this paper, we use MECE (Mediation Contract Extension) \cite{bleul2008self} and OWL-DL. MECE is considered to be an alternative semantic annotation for WSDL. MECE defines the service-related inputs and outputs with parameter-related concepts. OWL-DL is a sublanguage of OWL extended from RDF. It specifies semantic information of concepts involved in MECE. 
 
-\subsection{Ontology-based Index Cached Optimisation}
+\subsection{Ontology-based Index Cached Optimisation}\label{indexCache}
 In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality and mark the input-parameter concepts with a set of services. The key idea of the index is to create a mapping from the output-related concepts to matched input-related services while considering different levels of match types. Furthermore, this index size could also be reduced by only considering parameter-related concepts in the shrunken service repository, which contains  those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graph building for the whole evolutionary process.
 
 \subsection{Comprehensive Quality Model and Aggregation Matrix}\label{qualityModel}
@@ -204,7 +203,7 @@ We defined our semantic web service composition solution as a weighted graph $WG
 \end{figure}
 
 \subsection{Fitness Calculation}
-The fitness value of a service composition solution is a weighted sum of all the quality related components in Formula (\ref{equation6}), in which fitness value of 1 means the best comprehensive quality and 0 means the worst. For this purpose, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Therefore, the service composition problem in this paper is treated as a fitness maximisation problem.
+In real life, given a unique and optimised solution is always easier for customers choose from when many quality criteria involved in the composite solution, rather than provided a set of solutions. Therefore, it is very practical to define a single fitness as a weighted sum of all the quality related components in Formula (\ref{equation6}), where weights setting is very flexible, it could be adjusted according to users' preferences. The fitness value of 1 means the best comprehensive quality and 0 means the worst. For this purpose, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Therefore, the service composition problem in this paper is treated as a fitness maximisation problem.
 \vspace{-0.2cm}
 \begin{equation}
 \label{equation6}
@@ -234,6 +233,8 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 
 
 \subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
+
+
 \begin{algorithm}[!htb]
  \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -245,8 +246,8 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 	\nonl \While {max. iterations not met}{
 		\ForAll{particles in the swarm}{
 		    \textbf{3.} Create queue of services using the particle's position vector.\\
-			\textcolor{blue}{\textbf{4.} Build a weighted graph using the queue.}\\
-			\textcolor{blue}{\textbf{5.} Calculate the fitness of the weighted graph.}\\
+			{\textbf{4.} $WG \leftarrow$ generatedWeigthedGraph().}\\
+			{\textbf{5.} Calculate the $WG$ fitness value.}\\
 			\eIf{fitness value better than pBest}{
 				\textbf{6a.} Assign current fitness as new pBest.\\
 			}{
@@ -262,34 +263,48 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 	
  \caption{Steps of the PSO-based Web service composition technique.}
 \label{novelSteps}
-
 \end{algorithm}
-\begin{algorithm}[!htb]
+
+
+\begin{algorithm}
  \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
- \let\oldnl\nl% Store \nl in \oldnl
-\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
- \Input{$I$, $O$, $queue$}
- \Output{composition weighted graph $WG$}
- \textbf{1.} Create $start$ vertex with outputs $O$ and $end$ vertex with inputs $I$.\\
- \textbf{2.} Create graph $WG$ containing the $start$ vertex.\\
- \textbf{3.} Create available outputs set containing $start$ outputs.\\
- \While{available outputs do not satisfy $end$ inputs}{
- \textbf{4.} Get next candidate from queue.\\
- \If{candidate inputs are satisfied by available outputs}{
- \textcolor{blue}{\textbf{5.} Create edge assigned with weight.\\}
- \textcolor{blue}{\textbf{6.} Connect vertex to graph with the edge.\\}
- \textbf{7.} Remove it from queue and go back to the queue's beginning.\\
- }}
- \textbf{8.} Connect end vertex.\\
- \textbf{9.} Remove dangling vertices from graph $WG$.\\
- \textcolor{blue}{\textbf{10.} Remove dangling edges from graph $WG$.\\}
- \KwRet $WG$.\\
- \caption{Create a composition weighted graph from a queue}	
+ \SetKwFunction{generateWeightedGraph}{generateWeightedGraph}
+ \SetKwProg{Procedure}{Procedure}{}{}
+ \LinesNumbered
+ \SetNlSty{}{}{:}
+  \Procedure{\generateWeightedGraph{}}{
+ \Input{Task inputs $I$, task outputs $O$, relevant Web services $queue$, IndexCache $IndexCache$}
+ \Output{Weighted Graph $WG$}
+ $WG \leftarrow  null$\;
+ $WG \leftarrow$ new $endNode$(), new $startNode$()\;
+ $OutputSet \leftarrow$ \{$I$\}\;
+  \While {all $O$ $\notin$ $OutputSet$  and $queue !=null$}{
+     \ForEach{$ws$ in $queue$}{
+      \uIf{$ws.inputs$ $\in$ $OutputSet$ }{    
+    		 \ForEach{$I$ in $ws.inputs$}{
+    		$parameter.matchType \leftarrow$ query $IndexCache$\;
+     		$parameter.conceptSiminarity \leftarrow$ query $IndexCache$\;
+              }
+        $WG.edge \leftarrow$ new $Edge$()\;
+        $edge.weights \leftarrow$ aggregation($parameters$)\;
+        $WG \leftarrow$ new $wsNode$()\;
+         $OutputSet$ add \{$ws.outputs$\}\;    
+       $queue$.remove $ws$\;
+       }	
+     }
+  }
+ remove $dangling nodes$\; 
+ remove $dangling edges$\;
+ \KwRet $WG$\;
+ }
+ \vspace{2mm}
+ \caption{Create a composition weighted graph from a queue.}
 \label{graph_building}
-\end{algorithm}
+\end{algorithm} 
 
-The overall algorithm investigated here is made up of a PSO-based web service composition algorithm \ref{novelSteps} and a decoding algorithm \ref{graph_building}, to generate a composition weighted graph, where code lines in blue are different from the algorithm in \cite{da2016particle}. In algorithm \ref{novelSteps}, the idea is to translate the particle location produced by PSO into a service queue as an indirect representation of weighted graph, such that finding the best fitness of the weighted graph is to discover the optimised location of the particle in the search space. In PSO, the dimension of each particle equals to the number of relevant web services. The index of each services is mapped to a separate location component in a particle. Services in a queue follow the ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. We select and connect  service vertex to the start vertex from the service queue if the web service can satisfy the output of start vertex. Meanwhile, an Output Set is initialised and kept being updated using outputs from the newly added service vertex in the weighted graph, later on, more services vertices are connected with edges if services' inputs could be satisfied by any output in the Output Set. Finally, the end vertex is connected to the graph if the updated Output Set contains all end inputs. In addition, dangling service vertex and edges will be removed. 
+
+The overall algorithm investigated here is made up of a PSO-based web service composition algorithm \ref{novelSteps} and a decoding algorithm \ref{graph_building}, to generate a composition weighted graph. In algorithm \ref{novelSteps}, the idea is to translate the particle location produced by PSO into a service queue as an indirect representation of weighted graph, such that finding the best fitness of the weighted graph is to discover the optimised location of the particle in the search space. In PSO, the dimension of each particle equals to the number of relevant web services. The index of each services is mapped to a separate location component in a particle. Services in a queue follow the ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. We select and connect  service node to the start node from the service queue if the inputs of web service can satisfy the output of start node. The edge associated with two connected nodes is also created, the weight of which is also calculated as a quality aggregated value from concept-related parameters. Meanwhile, an Output Set is initialised and kept being updated using outputs from the newly added service node in the weighted graph, later on, more services vertices are connected with edges if services' inputs could be satisfied by any output in the Output Set. Finally, the end vertex is connected to the graph if the updated Output Set contains all end inputs. In addition, dangling service vertex and edges will be removed. 
 \section{Experiment Design}\label{experiment_design}
 In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are to $(1)$ measure the effectiveness of the comprehensive quality model in automated semantic web service composition approach; $(2)$ explore the impacts of the semantic matchmaking that contributes to overall composition quality; and $(3)$ compare solutions generated by QoS-ware approach with our method.
 
@@ -310,7 +325,7 @@ WSC09 05                     & 31044      &62132          &15211    \\ \hline
 \end{tabular}
 \end{table}
 
-We run the experiment on computing grid comprising of 170 NetBSD (Unix operating system) workstations operated by the Sun Grid Engine. The parameters were chosen based on general settings from \cite{shi2001particle} for our PSO-based approach, In particular, PSO population size is 30 with 100 generations. We run 30 times independently for each dataset. We configure weight of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ equal to 0.1 and 0.4,  and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125 accordingly. However, the settings of these weight values does not impact the method. In general, weight settings are adjusted according to users' preferences.
+We run the experiment on computing grid comprising of 170 NetBSD (Unix operating system) workstations operated by the Sun Grid Engine. The parameters were chosen based on general settings from \cite{shi2001particle} for our PSO-based approach, In particular, PSO population size is 30 with 100 generations. We run 30 times independently for each dataset. We configure weight of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ are set equally to 0.25, and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125 accordingly. However, the settings of these weight values does not impact the method. In general, weight settings are adjusted according to users' preferences.
 
 
 \section{Results and Analysis}\label{results_analysis}
@@ -408,14 +423,14 @@ WSC09 05                     & 1208193 $\pm$ 266916   &180408 $\pm$ 435247 $\dow
 \begin{figure}[h]
 \centering
 \fbox{\includegraphics[scale=.25]{psovsgp.pdf}}
- \caption{An example of comparing convergency rate from PSO and GP approaches for task 3}
+ \caption{An example of comparing convergency rate of PSO and GP approaches for task 3}
  \label{psovsgp}
 \end{figure}
 
 We also study the average fitness value with the optimum through the evolutionary process for both PSO-based and GP-based approach over 30 independent runs. Fig. \ref{psovsgp} is an example of convergence rate from Task 3, where the behaviour of PSO-based approach presents a very clear evidence of fast convergence and reaches a better-optimised solution, while the performance of GP is barely satisfactory, as this method improves its fitness value gradually.
 
 \section{Conclusion}\label{conclusion}
-This work introduced an evaluation model for QoS-aware automated semantic automated web service composition that combines quality of semantic matchmaking with QoS. The results shows that our comprehensive quality model is proved to obtain better functional quality with a reasonable trade-off in QoS. Future works could explore the comprehensive quality with multi-objectives to maximising the quality of matchmaking and to optimise QoS, and to improve efficiency in calculating semantic matchmaking quality.
+This work introduced a comprehensive evaluation model for QoS-aware automated semantic automated web service composition that combines the quality of semantic matchmaking with QoS. The results show that our comprehensive quality model is proved to obtain better functional quality with a reasonable trade-off in QoS. Also, we comparing one GP-approach with our PSO-based method to show our better performance in find more optimised solution. Future works could investigate other direct or indirect representations of semantic web service composition on semantic web service composition, and look into more EC techniques to evaluate their performance. Also, we could reshape the problem as providing customers with a set of solutions to choose from, rather than a single solution, so the research problem is transferred into multi-objectives or many objective problems. 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEexample}
 
