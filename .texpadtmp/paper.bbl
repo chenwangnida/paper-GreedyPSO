@@ -52,6 +52,18 @@ F.~L{\'e}cu{\'e}, ``Optimizing qos-aware semantic web service composition,'' in
   \emph{International Semantic Web Conference}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer, 2009, pp. 375--391.
 
+\bibitem{fanjiang2014semantic}
+Y.-Y. FanJiang and Y.~Syu, ``Semantic-based automatic service composition with
+  functional and non-functional requirements in design time: A genetic
+  algorithm approach,'' \emph{Information and Software Technology}, vol.~56,
+  no.~3, pp. 352--373, 2014.
+
+\bibitem{pop2009immune}
+C.~B. Pop, V.~R. Chifu, I.~Salomie, and M.~Dinsoreanu, ``Immune-inspired method
+  for selecting the optimal solution in web service composition,'' in
+  \emph{International Workshop on Resource Discovery}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 2009, pp. 1--17.
+
 \bibitem{da2016particle}
 A.~S. da~Silva, Y.~Mei, H.~Ma, and M.~Zhang, ``Particle swarm optimisation with
   sequence-like indirect representation for web service composition,'' in
@@ -89,26 +101,10 @@ Y.~Yu, H.~Ma, and M.~Zhang, ``An adaptive genetic programming approach to
   Evolutionary Computation}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013,
   pp. 1740--1747.
 
-\bibitem{fanjiang2014semantic}
-Y.-Y. FanJiang and Y.~Syu, ``Semantic-based automatic service composition with
-  functional and non-functional requirements in design time: A genetic
-  algorithm approach,'' \emph{Information and Software Technology}, vol.~56,
-  no.~3, pp. 352--373, 2014.
-
-\bibitem{pop2009immune}
-C.~B. Pop, V.~R. Chifu, I.~Salomie, and M.~Dinsoreanu, ``Immune-inspired method
-  for selecting the optimal solution in web service composition,'' in
-  \emph{International Workshop on Resource Discovery}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Springer, 2009, pp. 1--17.
-
 \bibitem{baader2003description}
 F.~Baader, \emph{The description logic handbook: Theory, implementation and
   applications}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge university
   press, 2003.
-
-\bibitem{shet2012new}
-K.~Shet, U.~D. Acharya \emph{et~al.}, ``A new similarity measure for taxonomy
-  based on edge counting,'' \emph{arXiv preprint arXiv:1211.4709}, 2012.
 
 \bibitem{gupta2015optimization}
 I.~K. Gupta, J.~Kumar, and P.~Rai, ``Optimization to quality-of-service-driven
@@ -168,6 +164,10 @@ S.~Bleul, D.~Comes, M.~Kirchhoff, and M.~Zapf, ``Self-integration of web
   services in bpel processes,'' in \emph{Proceedings of the Workshop
   Selbstorganisierence, Adaptive, Kontextsensitive verteilte Systeme (SAKS)},
   2008.
+
+\bibitem{shet2012new}
+K.~Shet, U.~D. Acharya \emph{et~al.}, ``A new similarity measure for taxonomy
+  based on edge counting,'' \emph{arXiv preprint arXiv:1211.4709}, 2012.
 
 \bibitem{shi2001particle}
 Y.~Shi \emph{et~al.}, ``Particle swarm optimization: developments, applications
