@@ -1,1 +1,21 @@
-\BOOKMARK [0][-]{chapter.1}{A Novel Comprehensive Quality Evaluation Model in Automated Semantic Web Service Composition}{}% 1
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [1][-]{section.3}{Problem Description}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Semantic Web Service matchmaking Type}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Quality of Service and Composition Constructs}{section.3}% 5
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Sequence construct}{subsection.3.2}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Parallel construct}{subsection.3.2}% 7
+\BOOKMARK [1][-]{section.4}{Comprehensive quality-aware Semantic Automated Web Service Composition}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Semantic Matchmaking}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Ontology-based Index Cached Optimisation}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Comprehensive Quality Model and Aggregation Matrix}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.4}{Composition Weighted Graph}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.5}{Fitness Calculation}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.6}{QoS-aware Semantic Web Service Composition Algorithm}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Experiment Design}{}% 15
+\BOOKMARK [1][-]{section.6}{Results and Analysis}{}% 16
+\BOOKMARK [2][-]{subsection.6.1}{Comparison Test with QoS Evaluation Model}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.2}{Convergence Test}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.3}{Comparison Test with GP-based approach}{section.6}% 19
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 20
+\BOOKMARK [1][-]{section*.1}{References}{}% 21
