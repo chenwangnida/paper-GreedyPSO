@@ -1,7 +1,7 @@
 \documentclass{IEEEtran}
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{color,graphicx,epstopdf,changepage,amsmath,multirow}
-
+\usepackage[justification=centering]{caption}
 \SetAlgoCaptionSeparator{.\space}
 \renewcommand\AlCapFnt{\normalfont\scshape}
 \setlength{\algomargin}{0.7cm}
@@ -120,7 +120,7 @@ The semantic matchmaking is achieved by utilising OWL2 and OWL-S or other semant
 \subsection{Comprehensive Quality Model}\label{qualityModel}
 In this paper, we propose a comprehensive quality model to evaluate the overall quality of semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware optimisation that ignores quality of semantic matchmaking.
 
-\textbf{Semantic web Service link}. In Fig. \ref{semanticLink}, $S_{1}$ and $S_{2}$ are linked to together if exists any parameter matchmaking between  Output of $S_1$ and Input of $S_2$.  Therefore, measuring semantic matchmaking quality ($SM$) is to measure the quality of semantic web service link ($sm_{L}$), which is aggregated from the quality of parameter matchmaking ($sm_{P}$). This semantic web service link is adopt from \cite{lecue2009optimizing}.
+\textbf{Semantic web Service link}. In Fig. \ref{semanticLink}, $S_{1}$ and $S_{2}$ are linked to together if exists any parameter matchmaking between  Output of $S_1$ and Input of $S_2$.  Therefore, measuring semantic matchmaking quality ($SM$) is to measure the overall quality of semantic web service link ($sm_{L}$), which is aggregated from the quality of parameter matchmaking ($sm_{P}$). This semantic web service link is adopt from \cite{lecue2009optimizing}.
 
 \begin{figure}[h]
 \centering

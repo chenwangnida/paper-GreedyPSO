@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2016.6.19)  29 JAN 2017 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2016.6.19)  30 JAN 2017 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,7 +328,40 @@ LaTeX Info: Redefining \] on input line 2740.
 (/usr/pkg/share/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen143
 )
-(/usr/pkg/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/pkg/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/pkg/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen144
+\captionmargin@=\dimen145
+\captionwidth=\dimen146
+\caption@tempdima=\dimen147
+\caption@indent=\dimen148
+\caption@parindent=\dimen149
+\caption@hangindent=\dimen150
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace
+ {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptio
+nsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspac
+e \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\nor
+malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
+ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
+ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
+\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
+\fi .
+\c@ContinuedFloat=\count113
+) (/usr/pkg/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
 (/usr/pkg/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -371,14 +404,14 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 (/usr/pkg/share/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen144
-\Hy@linkcounter=\count113
-\Hy@pagecounter=\count114
+\@linkdim=\dimen151
+\Hy@linkcounter=\count114
+\Hy@pagecounter=\count115
 
 (/usr/pkg/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count115
+\Hy@SavedSpaceFactor=\count116
 
 (/usr/pkg/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -406,16 +439,16 @@ Package hyperref Info: Plain pages OFF on input line 4501.
 Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
-\c@Hy@tempcnt=\count116
+\c@Hy@tempcnt=\count117
 (/usr/pkg/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5088.
-\XeTeXLinkMargin=\dimen145
-\Fld@menulength=\count117
-\Field@Width=\dimen146
-\Fld@charsize=\dimen147
+\XeTeXLinkMargin=\dimen152
+\Fld@menulength=\count118
+\Field@Width=\dimen153
+\Fld@charsize=\dimen154
 Package hyperref Info: Hyper figures OFF on input line 6342.
 Package hyperref Info: Link nesting OFF on input line 6347.
 Package hyperref Info: Hyper index ON on input line 6350.
@@ -425,17 +458,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6367.
 Package hyperref Info: PDF/A mode OFF on input line 6372.
 LaTeX Info: Redefining \ref on input line 6412.
 LaTeX Info: Redefining \pageref on input line 6416.
-\Hy@abspage=\count118
-\c@Item=\count119
-\c@Hfootnote=\count120
+\Hy@abspage=\count119
+\c@Item=\count120
+\c@Hfootnote=\count121
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/pkg/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
-\Fld@listcount=\count121
-\c@bookmark@seq@number=\count122
+\Fld@listcount=\count122
+\c@bookmark@seq@number=\count123
 
 (/usr/pkg/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
@@ -468,18 +501,21 @@ LaTeX Font Info:    ... okay on input line 21.
 -- Lines per column: 58 (exact).
 (/usr/pkg/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen148
+\scratchcounter=\count124
+\scratchdimen=\dimen155
 \scratchbox=\box38
-\nofMPsegments=\count124
-\nofMParguments=\count125
+\nofMPsegments=\count125
+\nofMParguments=\count126
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen149
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
+\MPscratchCnt=\count127
+\MPscratchDim=\dimen156
+\MPnumerator=\count128
+\makeMPintoPDFobject=\count129
 \everyMPtoPDFconversion=\toks22
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box39
 Package hyperref Info: Link coloring OFF on input line 21.
  (/usr/pkg/share/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -488,7 +524,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/pkg/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count129
+\c@section@level=\count130
 )
 LaTeX Info: Redefining \ref on input line 21.
 LaTeX Info: Redefining \pageref on input line 21.
@@ -509,28 +545,29 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 
 
 ] [2]
-<sequence.pdf, id=186, 581.17125pt x 67.0003pt>
+<sequence.pdf, id=192, 581.17125pt x 67.0003pt>
 File: sequence.pdf Graphic file (type pdf)
  <use sequence.pdf>
-Package pdftex.def Info: sequence.pdf used on input line 86.
+Package pdftex.def Info: sequence.pdf used on input line 85.
 (pdftex.def)             Requested size: 144.54pt x 16.66312pt.
 
-<parallel.pdf, id=188, 420.82219pt x 225.09094pt>
+<parallel.pdf, id=195, 420.82219pt x 225.09094pt>
 File: parallel.pdf Graphic file (type pdf)
  <use parallel.pdf>
-Package pdftex.def Info: parallel.pdf used on input line 100.
+Package pdftex.def Info: parallel.pdf used on input line 99.
 (pdftex.def)             Requested size: 101.17755pt x 54.11565pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3 <./sequence.pdf> <./parallel.pdf>]
+<semanticLink.pdf, id=222, 504.88625pt x 170.6375pt>
+File: semanticLink.pdf Graphic file (type pdf)
+ <use semanticLink.pdf>
+Package pdftex.def Info: semanticLink.pdf used on input line 127.
+(pdftex.def)             Requested size: 191.85875pt x 64.84291pt.
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 159.
-
-
-Overfull \hbox (1.11247pt too wide) detected at line 182
+Overfull \hbox (1.11247pt too wide) detected at line 180
 []\OML/cmm/m/it/10 Fitness \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[][] \OT1/cmr/m/
 n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr
 /m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[]\OT1/cmr
@@ -538,29 +575,30 @@ n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr
 cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
  []
 
-<overview.pdf, id=224, 928.46875pt x 406.51875pt>
+<overview.pdf, id=235, 926.46124pt x 394.47375pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 210.
-(pdftex.def)             Requested size: 371.38092pt x 162.60461pt.
+Package pdftex.def Info: overview.pdf used on input line 208.
+(pdftex.def)             Requested size: 370.57793pt x 157.7867pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] <weigtedGraphExample.pdf, id=253, 626.34pt x 457.71pt>
+[4 <./semanticLink.pdf>]
+<weigtedGraphExample.pdf, id=275, 666.49pt x 457.71pt>
 File: weigtedGraphExample.pdf Graphic file (type pdf)
 
 <use weigtedGraphExample.pdf>
-Package pdftex.def Info: weigtedGraphExample.pdf used on input line 228.
-(pdftex.def)             Requested size: 181.63394pt x 132.7325pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 303.
+Package pdftex.def Info: weigtedGraphExample.pdf used on input line 219.
+(pdftex.def)             Requested size: 186.61592pt x 128.15793pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 302.
 
 
 (/usr/pkg/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 303.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 302.
  [5 <./overview.pdf> <./weigtedGraphExample.pdf>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -568,43 +606,35 @@ Missing character: There is no ™ in font ptmr7t!
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 317.
+               Default added (so using `tbp') on input line 316.
 
+[6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 338.
+               Default added (so using `tbp') on input line 340.
 
-[6] <comparisontest.pdf, id=374, 1121.18875pt x 733.74126pt>
+<comparisontest.pdf, id=409, 1121.18875pt x 733.74126pt>
 File: comparisontest.pdf Graphic file (type pdf)
 
 <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 369.
+Package pdftex.def Info: comparisontest.pdf used on input line 371.
 (pdftex.def)             Requested size: 246.6623pt x 161.42357pt.
 
-Overfull \hbox (4.96234pt too wide) in paragraph at lines 369--370
+Overfull \hbox (4.96234pt too wide) in paragraph at lines 371--372
  [][] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `meanTime' on page 7 undefined on input line 377.
-
-
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 379.
+               Default added (so using `tbp') on input line 381.
 
-<psovsgp.pdf, id=378, 631.35875pt x 505.89pt>
+[7 <./comparisontest.pdf>] <psovsgp.pdf, id=452, 631.35875pt x 505.89pt>
 File: psovsgp.pdf Graphic file (type pdf)
- <use psovsgp.pdf>
-Package pdftex.def Info: psovsgp.pdf used on input line 397.
+
+<use psovsgp.pdf>
+Package pdftex.def Info: psovsgp.pdf used on input line 401.
 (pdftex.def)             Requested size: 157.8393pt x 126.47218pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./comparisontest.pdf>] (./paper.bbl
+ (./paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -612,57 +642,51 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 412.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 415.
  [8 <./psovsgp.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 412.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 415.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 412.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 412.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 415.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 415.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 2EEA198B86C3998EE24515A542C6C6C0;1457.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: B4EE9CDB5BBA58D137540696DFCE4A64;1552.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 412.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 415.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7862 strings out of 493682
- 120811 string characters out of 6155720
- 244668 words of memory out of 5000000
- 11007 multiletter control sequences out of 15000+600000
- 42627 words of font info for 81 fonts, out of 8000000 for 9000
+ 8902 strings out of 493682
+ 139909 string characters out of 6155720
+ 262400 words of memory out of 5000000
+ 12036 multiletter control sequences out of 15000+600000
+ 40903 words of font info for 79 fonts, out of 8000000 for 9000
  890 hyphenation exceptions out of 8191
- 42i,24n,37p,2146b,6712s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,24n,43p,2149b,7483s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/pkg/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/pk
 g/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/pkg/share/te
-xmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/pkg/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/pkg/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb></usr/pkg/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi6.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi7.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/pkg/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/pkg/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/pkg/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/pkg/
-share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/pkg/share/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/tim
-es/utmbi8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
-r/pkg/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (8 pages, 366482 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/pkg/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb></usr/pkg/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/pkg/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/pkg/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/pkg/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy9.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/couri
+er/ucrr8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
+/pkg/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/pkg/share/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on paper.pdf (8 pages, 343879 bytes).
 PDF statistics:
- 522 PDF objects out of 1000 (max. 8388607)
- 451 compressed objects within 5 object streams
- 112 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 473 compressed objects within 5 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
