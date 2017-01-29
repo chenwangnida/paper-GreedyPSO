@@ -41,6 +41,17 @@ A.~Sahai, V.~Machiraju, M.~Sayal, A.~Van~Moorsel, and F.~Casati, ``Automated
   Distributed Systems: Operations and Management}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer, 2002, pp. 28--41.
 
+\bibitem{parejo2008qos}
+J.~A. Parejo, P.~Fernandez, and A.~R. Cort{\'e}s, ``Qos-aware services
+  composition using tabu search and hybrid genetic algorithms,'' \emph{Actas de
+  los Talleres de las Jornadas de Ingenier{\'\i}a del Software y Bases de
+  Datos}, vol.~2, no.~1, pp. 55--66, 2008.
+
+\bibitem{bahadori2009optimal}
+S.~Bahadori, S.~Kafi, K.~Far, and M.~Khayyambashi, ``Optimal web service
+  composition using hybrid ga-tabu search,'' \emph{Journal of Theoretical and
+  Applied Information Technology}, vol.~9, no.~1, pp. 10--15, 2009.
+
 \bibitem{moghaddam2014service}
 M.~Moghaddam and J.~G. Davis, ``Service selection in web service composition: A
   comparative review of existing approaches,'' in \emph{Web Services
@@ -77,14 +88,19 @@ S.~Kona, A.~Bansal, M.~B. Blake, S.~Bleul, and T.~Weise, ``Wsc-2009: a quality
   on Commerce and Enterprise Computing}.\hskip 1em plus 0.5em minus 0.4em\relax
   IEEE, 2009, pp. 487--490.
 
-\bibitem{bansal2016generalized}
-S.~Bansal, A.~Bansal, G.~Gupta, and M.~B. Blake, ``Generalized semantic web
-  service composition,'' \emph{Service Oriented Computing and Applications},
-  vol.~10, no.~2, pp. 111--133, 2016.
+\bibitem{boustil2014semantic}
+A.~Boustil, R.~Maamri, and Z.~Sahnoun, ``A semantic selection approach for
+  composite web services using owl-dl and rules,'' \emph{Service Oriented
+  Computing and Applications}, vol.~8, no.~3, pp. 221--238, 2014.
 
 \bibitem{mier2015integrated}
 P.~R. Mier, C.~Pedrinaci, M.~Lama, and M.~Mucientes, ``An integrated semantic
   web service discovery and composition framework,'' 2015.
+
+\bibitem{bansal2016generalized}
+S.~Bansal, A.~Bansal, G.~Gupta, and M.~B. Blake, ``Generalized semantic web
+  service composition,'' \emph{Service Oriented Computing and Applications},
+  vol.~10, no.~2, pp. 111--133, 2016.
 
 \bibitem{da2015graphevol}
 A.~da~Silva, H.~Ma, and M.~Zhang, ``\BIBforeignlanguage{English}{Graphevol: A
@@ -101,22 +117,11 @@ Y.~Yu, H.~Ma, and M.~Zhang, ``An adaptive genetic programming approach to
   Evolutionary Computation}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013,
   pp. 1740--1747.
 
-\bibitem{baader2003description}
-F.~Baader, \emph{The description logic handbook: Theory, implementation and
-  applications}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge university
-  press, 2003.
-
 \bibitem{gupta2015optimization}
 I.~K. Gupta, J.~Kumar, and P.~Rai, ``Optimization to quality-of-service-driven
   web service composition using modified genetic algorithm,'' in
   \emph{Computer, Communication and Control (IC4), 2015 International
   Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2015, pp. 1--6.
-
-\bibitem{ma2015hybrid}
-H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
-  greedy search for qos-aware web service composition,'' in \emph{Transactions
-  on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
 
 \bibitem{qi2010combining}
 L.~Qi, Y.~Tang, W.~Dou, and J.~Chen, ``Combining local optimization and
@@ -124,29 +129,16 @@ L.~Qi, Y.~Tang, W.~Dou, and J.~Chen, ``Combining local optimization and
   (ICWS), 2010 IEEE International Conference on}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2010, pp. 34--41.
 
-\bibitem{paolucci2002semantic}
-M.~Paolucci, T.~Kawamura, T.~R. Payne, and K.~Sycara, ``Semantic matching of
-  web services capabilities,'' in \emph{International Semantic Web
-  Conference}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2002, pp.
-  333--347.
+\bibitem{ma2015hybrid}
+H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
+  greedy search for qos-aware web service composition,'' in \emph{Transactions
+  on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
 
-\bibitem{feng2013dynamic}
-Y.~Feng, L.~D. Ngan, and R.~Kanagasabai, ``Dynamic service composition with
-  service-dependent qos attributes,'' in \emph{Web Services (ICWS), 2013 IEEE
-  20th International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2013, pp. 10--17.
-
-\bibitem{huang2009effective}
-Z.~Huang, W.~Jiang, S.~Hu, and Z.~Liu, ``Effective pruning algorithm for
-  qos-aware service composition,'' in \emph{2009 IEEE Conference on Commerce
-  and Enterprise Computing}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2009,
-  pp. 519--522.
-
-\bibitem{da2014graph}
-A.~S. da~Silva, H.~Ma, and M.~Zhang, ``A graph-based particle swarm
-  optimisation approach to qos-aware web service composition and selection,''
-  in \emph{2014 IEEE Congress on Evolutionary Computation (CEC)}.\hskip 1em
-  plus 0.5em minus 0.4em\relax IEEE, 2014, pp. 3127--3134.
+\bibitem{fukuyama2008fundamentals}
+Y.~Fukuyama, ``Fundamentals of particle swarm optimization techniques,''
+  \emph{Modern heuristic optimization techniques: theory and applications to
+  power systems}, pp. 71--87, 2008.
 
 \bibitem{zeng2003quality}
 L.~Zeng, B.~Benatallah, M.~Dumas, J.~Kalagnanam, and Q.~Z. Sheng, ``Quality
@@ -154,10 +146,11 @@ L.~Zeng, B.~Benatallah, M.~Dumas, J.~Kalagnanam, and Q.~Z. Sheng, ``Quality
   international conference on World Wide Web}.\hskip 1em plus 0.5em minus
   0.4em\relax ACM, 2003, pp. 411--421.
 
-\bibitem{fukuyama2008fundamentals}
-Y.~Fukuyama, ``Fundamentals of particle swarm optimization techniques,''
-  \emph{Modern heuristic optimization techniques: theory and applications to
-  power systems}, pp. 71--87, 2008.
+\bibitem{paolucci2002semantic}
+M.~Paolucci, T.~Kawamura, T.~R. Payne, and K.~Sycara, ``Semantic matching of
+  web services capabilities,'' in \emph{International Semantic Web
+  Conference}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2002, pp.
+  333--347.
 
 \bibitem{bleul2008self}
 S.~Bleul, D.~Comes, M.~Kirchhoff, and M.~Zapf, ``Self-integration of web

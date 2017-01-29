@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  27 JAN 2017 01:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  29 JAN 2017 22:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -388,23 +388,27 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip65
-) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
+) (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
+
+LaTeX Warning: Label `qswsc_approach' multiply defined.
+
+)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 -- Lines per column: 58 (exact).
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -422,7 +426,7 @@ LaTeX Font Info:    ... okay on input line 20.
 \everyMPtoPDFconversion=\toks22
 )
 \AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 21.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -430,148 +434,150 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
- (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out) (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.out)
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
+ (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.out) (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 23.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
  [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2] <sequence.pdf, id=168, 581.17125pt x 67.0003pt>
+] [2] <sequence.pdf, id=190, 581.17125pt x 67.0003pt>
 File: sequence.pdf Graphic file (type pdf)
  <use sequence.pdf>
-Package pdftex.def Info: sequence.pdf used on input line 92.
+Package pdftex.def Info: sequence.pdf used on input line 86.
 (pdftex.def)             Requested size: 144.54pt x 16.66312pt.
- <parallel.pdf, id=170, 420.82219pt x 225.09094pt>
+ <parallel.pdf, id=192, 420.82219pt x 225.09094pt>
 File: parallel.pdf Graphic file (type pdf)
  <use parallel.pdf>
-Package pdftex.def Info: parallel.pdf used on input line 106.
+Package pdftex.def Info: parallel.pdf used on input line 100.
 (pdftex.def)             Requested size: 101.17755pt x 54.11565pt.
- [3 <./sequence.pdf> <./parallel.pdf>] <overview.pdf, id=199, 928.46875pt x 406.51875pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./sequence.pdf> <./parallel.pdf>] <semanticLink.pdf, id=220, 504.88625pt x 170.6375pt>
+File: semanticLink.pdf Graphic file (type pdf)
+ <use semanticLink.pdf>
+Package pdftex.def Info: semanticLink.pdf used on input line 128.
+(pdftex.def)             Requested size: 191.85875pt x 64.84291pt.
+
+Overfull \hbox (1.11247pt too wide) detected at line 181
+[]\OML/cmm/m/it/10 Fitness \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
+ []
+
+<overview.pdf, id=233, 928.46875pt x 406.51875pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 120.
+Package pdftex.def Info: overview.pdf used on input line 209.
 (pdftex.def)             Requested size: 371.38092pt x 162.60461pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 171.
-
-<weigtedGraphExample.pdf, id=230, 626.34pt x 457.71pt>
+[4 <./semanticLink.pdf>] <weigtedGraphExample.pdf, id=272, 626.34pt x 457.71pt>
 File: weigtedGraphExample.pdf Graphic file (type pdf)
  <use weigtedGraphExample.pdf>
-Package pdftex.def Info: weigtedGraphExample.pdf used on input line 194.
+Package pdftex.def Info: weigtedGraphExample.pdf used on input line 220.
 (pdftex.def)             Requested size: 181.63394pt x 132.7325pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (1.11247pt too wide) detected at line 205
-[]\OML/cmm/m/it/10 Fitness \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
- []
-
-[5 <./overview.pdf> <./weigtedGraphExample.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 297.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 302.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 297.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 297.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 302.
+
+Underfull \vbox (badness 4072) has occurred while \output is active []
+
+ [5 <./overview.pdf> <./weigtedGraphExample.pdf>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 311.
+               Default added (so using `tbp') on input line 316.
 
+[6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 332.
+               Default added (so using `tbp') on input line 337.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6] <comparisontest.pdf, id=363, 1121.18875pt x 733.74126pt>
+<comparisontest.pdf, id=399, 1121.18875pt x 733.74126pt>
 File: comparisontest.pdf Graphic file (type pdf)
  <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 363.
+Package pdftex.def Info: comparisontest.pdf used on input line 368.
 (pdftex.def)             Requested size: 246.6623pt x 161.42357pt.
 
-Overfull \hbox (4.96234pt too wide) in paragraph at lines 363--364
+Overfull \hbox (4.96234pt too wide) in paragraph at lines 368--369
  [][] 
  []
 
-<convergency.pdf, id=365, 2535.4725pt x 2526.43875pt>
-File: convergency.pdf Graphic file (type pdf)
- <use convergency.pdf>
-Package pdftex.def Info: convergency.pdf used on input line 374.
-(pdftex.def)             Requested size: 240.87239pt x 240.01418pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Reference `meanTime' on page 7 undefined on input line 376.
 
 [7 <./comparisontest.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 387.
+               Default added (so using `tbp') on input line 378.
 
-<psovsgp.pdf, id=407, 631.35875pt x 505.89pt>
+<psovsgp.pdf, id=441, 631.35875pt x 505.89pt>
 File: psovsgp.pdf Graphic file (type pdf)
  <use psovsgp.pdf>
-Package pdftex.def Info: psovsgp.pdf used on input line 418.
+Package pdftex.def Info: psovsgp.pdf used on input line 396.
 (pdftex.def)             Requested size: 157.8393pt x 126.47218pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.bbl [8 <./convergency.pdf> <./psovsgp.pdf>]
+ (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
- (/Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 433.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 433.
+[8 <./psovsgp.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
+ [9
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
+ (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F36DB8DFCE46B13A37E9ED6134000CDC;127.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 433.
+(rerunfilecheck)             Checksum: 2EEA198B86C3998EE24515A542C6C6C0;1457.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7857 strings out of 493014
- 122477 string characters out of 6133350
- 245165 words of memory out of 5000000
- 11176 multiletter control sequences out of 15000+600000
- 41294 words of font info for 79 fonts, out of 8000000 for 9000
+ 7859 strings out of 493014
+ 122480 string characters out of 6133350
+ 241759 words of memory out of 5000000
+ 11177 multiletter control sequences out of 15000+600000
+ 42627 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,24n,37p,1941b,6697s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/user/Documents/papers/paper(SWSCPSP)/.texpadtmp/paper.pdf (9 pages, 820316 bytes).
+ 42i,24n,37p,2146b,6697s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.pdf (9 pages, 353983 bytes).
 PDF statistics:
- 614 PDF objects out of 1000 (max. 8388607)
- 499 compressed objects within 5 object streams
- 117 named destinations out of 1000 (max. 500000)
+ 546 PDF objects out of 1000 (max. 8388607)
+ 471 compressed objects within 5 object streams
+ 116 named destinations out of 1000 (max. 500000)
  204 words of extra memory for PDF output out of 10000 (max. 10000000)
 

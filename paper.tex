@@ -103,7 +103,7 @@ $R=\prod\limits^m_{n=1}r_n$
 \label{parallel}
 \end{figure}
 
-\section{Comprehensive Quality-Aware Service model}\label{qswsc_approach}
+\section{Comprehensive Quality Model}\label{qswsc_approach}
 In this section, we propose a comprehensive quality-aware service model to achieve a more desirable balance in consideration of both semantic matchmaking quality and QoS for semantic web service composition.
 
 \subsection{Semantic Web Service matchmaking Type}\label{semantic Web service Discovery}
@@ -118,12 +118,20 @@ The semantic service matchmaking aims to discover appropriate services from serv
 
 The semantic matchmaking is achieved by utilising OWL2 and OWL-S or other semantic markup languages for web services. In this paper, we use MECE (Mediation Contract Extension) \cite{bleul2008self} and OWL-DL. MECE is considered to be an alternative semantic annotation for WSDL. MECE defines the service-related inputs and outputs with parameter-related concepts. OWL-DL is a sublanguage of OWL extended from RDF. It specifies semantic information of concepts involved in MECE.
 
-\subsection{Comprehensive Quality-Aware Model}\label{qualityModel}
+\subsection{Comprehensive Quality Model}\label{qualityModel}
 In this paper, we propose a comprehensive quality model to evaluate the overall quality of semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware optimisation that ignores quality of semantic matchmaking.
 
+\textbf{Semantic web Service link}. In Fig. \ref{semanticLink}, $S_{1}$ and $S_{2}$ are linked to together if exists any parameter matchmaking between  Output of $S_1$ and Input of $S_2$.  Therefore, measuring semantic matchmaking quality ($SM$) is to measure the quality of semantic web service link ($sm_{L}$), which is aggregated from the quality of parameter matchmaking ($sm_{P}$). This semantic web service link is adopt from \cite{lecue2009optimizing}.
 
-\textbf{Semantic Web Service link}
-\textbf{Semantic matchmaking model}. Due to the discretisational characteristics of different match types and values assigned to matching types that driven by the cost of data integration and manipulation \cite{lecue2009optimizing}, partial ordering match types are considered to be one factor for the semantic matchmaking quality. For example, Exact matching type demands less time for computation compared to that of Plugin match. Another factor in our proposed model is concept similarity, which could be evaluated based on the edge counting method defined in \cite{shet2012new}. This formula (\ref{equation1}) is used to estimate the similarity between concept-related parameters for selecting web services. Therefore, given the quality match type and the concept similarity of two parameters-related concepts, the semantic matchmaking quality of matched parameters is defined by Formula (\ref{equation2}), where the value of $q(p_ {mt})$ follows the same settings in \cite{lecue2009optimizing}. Particularly, 1 (Exact), 0.75 (Plugin), 0.5 (Subsume) or 0.25 (Intersection). 
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=.38]{semanticLink.pdf}}
+ \caption{ An example of semantic web service link}
+ \label{semanticLink}
+\end{figure}
+
+
+\textbf{Semantic web service link quality model}. Due to the discretisational characteristics of different match types and values assigned to matching types that driven by the cost of data integration and manipulation \cite{lecue2009optimizing}, partial ordering match types are considered to be one factor for quality of parameter matchmaking, denoted as $mt_{p}$,  For example, Exact matching type demands less time for computation compared to that of Plugin match. Another factor in our proposed model is concept similarity, which could be evaluated based on the edge counting method defined in \cite{shet2012new}. This formula (\ref{equation1}) is used to estimate the concept similarity between matching parameters, which is denoted as $s_{p}$. Therefore, given the quality of parameter matchmaking type and quality of parameter concept similarity, the quality of parameter matchmaking is defined by Formula (\ref{equation2}), where the value of $mt_{p}$ follows the same settings in \cite{lecue2009optimizing}. Particularly, 1 (Exact), 0.75 (Plugin), 0.5 (Subsume) or 0.25 (Intersection). 
 
 \begin{equation}
 q(p_ {s}){=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
@@ -132,59 +140,50 @@ q(p_ {s}){=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
 
 \begin{equation}
 \label{equation2}
-q(p_{sm}) \stackrel{.}{=} (q(p_ {mt}), \  q(p_ {s}))
+sm_{p} \stackrel{.}{=} (mt_ {p}, \  s_ {p})
 \end{equation}
 
-Further more, edges represent services connections in our weighted graph representations, where assigned weight value $q(e_{sm})$ is considered to be semantic matching quality on edge level according to parameter aggregations. The weight value $q(e_{sm})$ is defined in \ref{equation3}, where $q(e_ {mt})$ and $q(e_ {s})$ are the average value of concept-related parameters quality in $q(p_{mt})$ and $q(p_{s})$ respectively. 
+Further more, semantic web service link represent services connections, where quality of semantic web service link $sm_{L})$ is considered to be semantic matching quality on service connection level by parameter aggregations. Therefore, $sm_{L}$ is defined in formula (\ref{equation3}), where $sm_{L}$ and $s_{L}$ are the average value of concept-related parameters quality in $mt_{P}$ and $s_{P}$ respectively. 
 
 \begin{equation}
 \label{equation3}
-q(e_{sm}) \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}))
+sm_{L} \stackrel{.}{=} (mt_ {L}, \  s_ {L})
 \end{equation}
 
-\textbf{Comprehensive quality model}. Compared to QoS evaluation model, the comprehensive quality model is established to investigate both functional and non-functional requirements. The comprehensive quality of our service composition representation refers to QoS of service vertices and Semantic matching quality of Edges in weighted graphs. Consequently, the comprehensive quality model is defined in Formula (\ref{equation4}), which could be further broken down into Formula (\ref{equation5}). 
+\textbf{Comprehensive quality model}. The comprehensive quality model consider both semantic matchmaking quality and QoS. The semantic matchmaking quality refers to the quality of semantic web service link. Consequently, the comprehensive quality model is defined in Formula (\ref{equation4}), which could be further broken down into Formula (\ref{equation5}). 
 \begin{equation}
 \label{equation4}
-q_{cq} \stackrel{.}{=} (q(e_ {sm}), \  q(v_ {QoS}))
+q_{cq} \stackrel{.}{=} (sm_ {L}, \  QoS_ {s})
 \end{equation}
 \begin{equation}
 \label{equation5}
-q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v_{c}),\  q(v_{t}))
+q_{cq} \stackrel{.}{=} (mt_ {L}, \  s_ {L}, \  a_{s},\  r_{s},\  c_{s},\  t_{s})
 \end{equation}
 
-\textbf{Quality aggregate matrix}. The quality aggregation is defined based on the constructs of composition web services, in consideration of functional and non-functional properties. The quality on construct level is further calculated by following the rules summarised in Table \ref{table1}. 
+\textbf{Semantic matchmaking quality aggregation}. The quality aggregation is defined based on the constructs of composition web services, in consideration of quality semantic web service link and QoS. The quality on composition solution is further calculated by following the formula (\ref{equation6})(\ref{equation7}), and QoS aggregation are discussed in Sect. \ref{Quality of Service and Composition Constructs}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Quality aggregate matrix for semantic web service composition}
-\label{table1}
-\begin{tabular}{c|c|c|c|c}
-\hline
-\multicolumn{3}{c|}{Composition Construct}                                      & Sequence                             & Parallel \\ \hline
-\multirow{5}{*}{Quality} & \multirow{2}{*}{F}    & $Q(e_ {mt})$  &$\prod_{n=1}^{m} q(e_ {mt})$          &  $\prod_{n=1}^{m} q(e_ {mt})$ \\ \cline{3-5}
-                                &                                & $Q(e_ {s})$  & $(\sum_{n=1}^m q(e_ {s}))/m$        &  $(\sum_{n=1}^m q(e_ {s}))/m$  \\ \cline{2-5}   
-                                & \multirow{4}{*}{NF} & $Q(v_{a})$    & $\prod_{n=1}^{m} q(v_a)$             &  $\prod_{n=1}^{m} q(v_a)$ \\ \cline{3-5} 
-                                &                                & $Q(v_{r})$    & $\prod_{n=1}^{m} q(v_r)$             &  $\prod_{n=1}^{m} q(v_r)$ \\ \cline{3-5} 
-                                &                                & $Q(v_{c})$    & $\sum_{n=1}^m q(v_ {c})$             &  $\sum_{n=1}^m q(v_ {c})$ \\ \cline{3-5} 
-                                &                                & $Q(v_{t})$    & $\sum_{n=1}^m q(v_ {t})$             &  $max(q(v_ {t}))$ \\ \hline
-\end{tabular}
-\end{table}
+\begin{equation}
+\label{equation6}
+MT {=} \prod_{n=1}^{m} mt_ {L_{n}}
+\end{equation}
+\begin{equation}
+\label{equation7}
+S {=} (\sum_{n=1}^m s_ {L_{n}})/m
+\end{equation}
 
 
 \subsection{Objective Function}
-In real life, given a unique and optimised solution is always easier for customers to pick up directly when many quality criteria involved into decision making, rather than provided a set of solutions. Therefore, it is very practical to define a single fitness as a weighted sum of all the quality related components in Formula (\ref{equation6}), where weights setting is very flexible, it could be adjusted according to users' preferences. The fitness value of 1 means the best comprehensive quality and 0 means the worst. For this purpose, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Therefore, the service composition problem in this paper is treated as a fitness maximisation problem.
+In real life, given a unique and optimised solution is always easier for customers to pick up directly when many quality criteria involved into decision making, rather than provided a set of solutions. It is very practical to define a single fitness as a weighted sum of all the quality related components in Formula (\ref{equation8}). Note that weights can be adjusted according to users' preferences. The function value of 1 means the best comprehensive quality and 0 means the worst. For this purpose, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the function value falls within the range from 0 to 1. Therefore, the service composition is try to maximise the value of objective function.
 \vspace{-0.2cm}
 \begin{equation}
-\label{equation6}
+\label{equation8}
 Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{T}) + w_6(1 - \hat{C})
 \end{equation}
 \noindent where $\sum_{i=1}^{6} w_i = 1$
 \\
 \vspace{-0.2cm}
 \begin{equation}
-\label{equation7}
+\label{equation9}
 \hat{Q_k} = 
 \begin{cases}
 	\frac{Q_k - Q_{k, min}}{Q_{k, max} - Q_{k, min}} & \text{ if }Q_{k, max} - Q_{k, min} \neq 0.\\
@@ -193,7 +192,7 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 \end{equation}
 \noindent where $k$ $=$ $1$, $2$, $3$, and $4$, where $Q_1$ as $MT$, $Q_2$ as $S$, $Q_3$ as $A$, and $Q_4$ as $R$.
 \begin{equation}
-\label{equation8}
+\label{equation10}
 \hat{Q_j} = 
 \begin{cases}
 	\frac{Q_{j,max} - Q_j}{Q_{j, max} - Q_{j, min}} & \text{ if }Q_{j, max} - Q_{j, min} \neq 0.\\
@@ -203,24 +202,17 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 \noindent where $j$ $=$ $1$, and $2$, where $Q_1$ as $T$ and $Q_2$ as $C$.
 
 
-\section{PSO-based Appraoch to QoS-Aware Semantic Web Service Composition}\label{qswsc_approach}
+\section{PSO-based Approach to QoS-Aware Semantic Web Service Composition}\label{qswsc_approach}
 
 \begin{figure*}[h]
 \centering
 \fbox{\includegraphics[scale=.4]{overview.pdf}}
- \caption{Overview of POS-based automated semantic web service composition approach.}
+ \caption{Overview of POS-based approach to QoS-aware automated semantic web service composition.}
  \label{overview}
 \end{figure*}
 
-PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing that often required by GP \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composition process is triggered by a composition goal defined in Subsection \ref{problemDes}, which describes customers requirements both functional and non-functional. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from the an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process utilising ontology-based index cache. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 4. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is similar to \cite{da2016particle}, but we employ weighted graphs as a different solution presentation.
+\subsection{Weighted Graph Composition}
 
-
-\subsection{Ontology-based Index Cached Optimisation}\label{indexCache}
-In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality. The key idea of the index is to create a mapping from the output-related concepts to potentially matched input-related concepts while considering different levels of match types. Meanwhile, this index size could also be reduced by only considering the concepts related in the shrunken service repository, which means the index cache is filtered by those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graphs building through the whole evolutionary process.
-
-
-
-\subsection{Composition Weighted Graph}
 We defined our semantic web service composition solution as a weighted graph $WG = (V, E)$, where $V$ is a set of services as vertex: $V=[S1, S2...Sn]$ and $E$ is a set of edges $E = {e_{1}, e_{2},... e_{n}}$. Each $e$ is associated with $q(e_{sm})$ as weight value that mapped to a pair of quality values $q(e_{mt})$ and $q(e_{s})$ on the edge level, and $e_{m}$ is expressed as $(S_{a},S_{b})={q_{mt}, q_{s}}$. Here we provide an example of the web service composition, which is described in Fig. \ref{wscs}. The data of composition web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, $q(s_{mt})$ and $q(s_{s})$ are calculated for all edges ${e_{1}, e_{2},... e_{n}}$ assigned as weights.
 
 \begin{figure}[h]
@@ -230,6 +222,13 @@ We defined our semantic web service composition solution as a weighted graph $WG
  \label{wscs}
 \end{figure}
 
+\subsection{PSO-based Approach to QoS-Aware Semantic Web Service Composition}
+
+PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing that often required by GP \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composition process is triggered by a composition goal defined in Subsection \ref{problemDes}, which describes customers requirements both functional and non-functional. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from the an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process utilising ontology-based index cache. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 4. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is similar to \cite{da2016particle}, but we employ weighted graphs as a different solution presentation.
+
+
+\subsection{Ontology-based Index Cached Optimisation}\label{indexCache}
+In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality. The key idea of the index is to create a mapping from the output-related concepts to potentially matched input-related concepts while considering different levels of match types. Meanwhile, this index size could also be reduced by only considering the concepts related in the shrunken service repository, which means the index cache is filtered by those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graphs building through the whole evolutionary process.
 
 
 \subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
