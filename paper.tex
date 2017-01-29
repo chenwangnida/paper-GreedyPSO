@@ -213,22 +213,22 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
 
 \subsection{Weighted Graph Composition}
 
-We defined our semantic web service composition solution as a weighted graph $WG = (V, E)$, where $V$ is a set of services as vertex: $V=[S1, S2...Sn]$ and $E$ is a set of edges $E = {e_{1}, e_{2},... e_{n}}$. Each $e$ is associated with $q(e_{sm})$ as weight value that mapped to a pair of quality values $q(e_{mt})$ and $q(e_{s})$ on the edge level, and $e_{m}$ is expressed as $(S_{a},S_{b})={q_{mt}, q_{s}}$. Here we provide an example of the web service composition, which is described in Fig. \ref{wscs}. The data of composition web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, $q(s_{mt})$ and $q(s_{s})$ are calculated for all edges ${e_{1}, e_{2},... e_{n}}$ assigned as weights.
+We defined our semantic web service composition solution as a weighted graph $WG = (V, E)$, where $V$ is a set of services as vertex: $V=\{S1, S2...Sn \}$ and $E$ is a set of edges $E = \{e_{1}, e_{2},... e_{n} \}$. Each edge is mapped to a semantic web service link, so each edge $e$ is associated with $sm_{L}$ as weight value as a pair value of quality values $mt_{L}$ and $s_{L}$ on the edge level, Here we provide an example of semantic web service composition, which is described in Fig. \ref{wscs}. The data of composition web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, pair values that $mt_{L}$ and $s_{L}$ are calculated for all edges $e_{1}, e_{2},... e_{n}$ assigned as weights.
 
 \begin{figure}[h]
 \centering
-\fbox{\includegraphics[scale=.29]{weigtedGraphExample.pdf}}
+\fbox{\includegraphics[scale=.28]{weigtedGraphExample.pdf}}
  \caption{Composition weighted graph solution}
  \label{wscs}
 \end{figure}
 
 \subsection{PSO-based Approach to QoS-Aware Semantic Web Service Composition}
 
-PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing that often required by GP \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composition process is triggered by a composition goal defined in Subsection \ref{problemDes}, which describes customers requirements both functional and non-functional. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from the an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process utilising ontology-based index cache. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 4. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is similar to \cite{da2016particle}, but we employ weighted graphs as a different solution presentation.
+PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing that often required by GP \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composition process is triggered by a composition goal defined in Subsection \ref{problemDes}, which describes customers requirements both semantic matchmaking quality and QoS. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from the an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process utilising ontology-based index cache. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 4. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is similar to \cite{da2016particle}, but we employ weighted graphs as a different solution presentation with edges transferred from semantic web service links.
 
 
 \subsection{Ontology-based Index Cached Optimisation}\label{indexCache}
-In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality. The key idea of the index is to create a mapping from the output-related concepts to potentially matched input-related concepts while considering different levels of match types. Meanwhile, this index size could also be reduced by only considering the concepts related in the shrunken service repository, which means the index cache is filtered by those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graphs building through the whole evolutionary process.
+In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic web service matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality. The key idea of the index is to create a mapping from the output-related concepts to potentially matched input-related concepts while considering different levels of match types. Meanwhile, this index size could also be reduced by only considering the concepts related in the shrunken service repository, which means the index cache is filtered by those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graphs building through the whole evolutionary process.
 
 
 \subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
@@ -247,17 +247,17 @@ In PSO, particles represent weighted graphs with edges and vertices associated w
  Randomly initialise each particle in the swarm\;
   \While {max. iterations not met}{
      \ForEach{particles in the swarm}{
-     $queue \leftarrow$ particle's position vector\;
+     $queue \leftarrow$ map particle's position vector to service\;
      $WG \leftarrow$ $generateWeightedGraph$()\;
 	 Calculate the $WG$ fitness value\;
      
-      \eIf{fitness value better than pBest }{    
-        Assign current fitness as new pBest\;
+      \eIf{fitness value better than \emph{pBest}}{    
+        Assign current fitness as new \emph{pBest}\;
        }{
-        Keep previous pBest\;
+        Keep previous \emph{pBest}\;
        }	
      }
-    Assign best particle's \emph{pBest} value to \emph{gBest}, if better than gBest\;
+    Assign best particle's \emph{pBest} value to \emph{gBest}, if better than \emph{gBest}\;
  	Calculate the velocity of each particle\;
   	Update the position of each particle\;
   }
@@ -284,11 +284,12 @@ In PSO, particles represent weighted graphs with edges and vertices associated w
      \ForEach{$ws$ in $queue$}{
       \uIf{$ws.inputs$ $\in$ $OutputSet$ }{    
     		 \ForEach{$I$ in $ws.inputs$}{
-    		$p_{mt} \leftarrow$ query $IndexCache$\;
-     		$p_{s} \leftarrow$ query $IndexCache$\;
+    		$mt_{P}, s_{P} \leftarrow$ query $IndexCache$\;
+     		$mt_{L} \leftarrow$ aggregation($mt_{P}$)\;
+ 			$s_{L} \leftarrow$ aggregation($s_{P}$)\;
               }
-        $e_{sm} \leftarrow$ aggregation($p_{mt}$,$p_{s}$)\;
-        $WG.edge \leftarrow$  $e_{sm} $\;
+        $sm_{L} \leftarrow$ aggregation($mt_{L}$,$s_{L}$)\;
+        $WG.edge \leftarrow$  $sm_{L} $\;
         $WG \leftarrow$ new $wsNode$()\;
          $OutputSet$ add \{$ws.outputs$\}\;    
        $queue$.remove $ws$\;
@@ -342,21 +343,21 @@ In this section, we analyse the composition solution generated by using our appr
 \begin{tabular}{l|l|l|l}
 \hline
 \multicolumn{2}{c|}{WSC09}              & \shortstack{QoS-aware \\ Evaluation} & \shortstack{Comprehensive \\ Quality Evaluation} \\ \hline
-\multirow{3}{*}{Task1}  &$Q_{mt}$   &0.189787 $\pm$ 0.039278686            &0.221862 $\pm$ 0.009582 $\uparrow$ \\ \cline{2-4} 
-                        &$Q_{s}$    &0.884962 $\pm$ 0.014140               &0.894082 $\pm$ 0.009206 $\uparrow$ \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.278730 $\pm$ 0.007786               &0.280222 $\pm$ 0.008212                          \\ \hline
-\multirow{3}{*}{Task2}  &$Q_{mt}$   &0.001795 $\pm$ 0.000719               &0.001977 $\pm$ 0.001566 $\uparrow$ \\ \cline{2-4} 
-                        &$Q_{s}$    &0.906971 $\pm$ 0.005855               &0.923970 $\pm$ 0.006898 $\uparrow$   \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.239979 $\pm$ 0.000578 $\uparrow$    &0.238596 $\pm$ 0.001264 \\ \hline
-\multirow{3}{*}{Task3}  &$Q_{mt}$   &0.158526 $\pm$ 0.014028               &0.245830 $\pm$ 0.007761 $\uparrow$   \\ \cline{2-4} 
-                        &$Q_{s}$    &0.949109 $\pm$ 0.002331               &0.972765 $\pm$ 0.002980 $\uparrow$           \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.247002 $\pm$ 0.000661 $\uparrow$    &0.245631 $\pm$ 0.000431            \\ \hline
-\multirow{3}{*}{Task4}  &$Q_{mt}$   &0.000000 $\pm$ 0.000000               &0.000004 $\pm$ 0.000002 $\uparrow$ \\ \cline{2-4} 
-                        &$Q_{s}$    &0.879514 $\pm$ 0.007456               &0.920733 $\pm$ 0.000001 $\uparrow$ \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.242297 $\pm$ 0.000507 $\uparrow$    &0.236677 $\pm$ 0.002211  \\ \hline
-\multirow{3}{*}{Task5}  &$Q_{mt}$   &  0.000042 $\pm$ 0.000030             &0.000078 $\pm$ 0.000020 $\uparrow$           \\ \cline{2-4} 
-                        &$Q_{s}$    &  0.915933 $\pm$ 0.012888             &0.927678 $\pm$ 0.002578 $\uparrow$                 \\ \cline{2-4}
-                        &$Q_{QoS}$  & 0.238189 $\pm$ 0.000240 $\uparrow$      &  0.237485 $\pm$  0.000328  \\ \hline                                                   
+\multirow{3}{*}{Task1}  &$MT$   &0.189787 $\pm$ 0.039278686            &0.221862 $\pm$ 0.009582 $\uparrow$ \\ \cline{2-4} 
+                        &$S$    &0.884962 $\pm$ 0.014140               &0.894082 $\pm$ 0.009206 $\uparrow$ \\ \cline{2-4}
+                        &$QoS$  &0.278730 $\pm$ 0.007786               &0.280222 $\pm$ 0.008212                          \\ \hline
+\multirow{3}{*}{Task2}  &$MT$   &0.001795 $\pm$ 0.000719               &0.001977 $\pm$ 0.001566 $\uparrow$ \\ \cline{2-4} 
+                        &$S$    &0.906971 $\pm$ 0.005855               &0.923970 $\pm$ 0.006898 $\uparrow$   \\ \cline{2-4}
+                        &$QoS$  &0.239979 $\pm$ 0.000578 $\uparrow$    &0.238596 $\pm$ 0.001264 \\ \hline
+\multirow{3}{*}{Task3}  &$MT$   &0.158526 $\pm$ 0.014028               &0.245830 $\pm$ 0.007761 $\uparrow$   \\ \cline{2-4} 
+                        &$S$    &0.949109 $\pm$ 0.002331               &0.972765 $\pm$ 0.002980 $\uparrow$           \\ \cline{2-4}
+                        &$QoS$  &0.247002 $\pm$ 0.000661 $\uparrow$    &0.245631 $\pm$ 0.000431            \\ \hline
+\multirow{3}{*}{Task4}  &$MT$   &0.000000 $\pm$ 0.000000               &0.000004 $\pm$ 0.000002 $\uparrow$ \\ \cline{2-4} 
+                        &$S$    &0.879514 $\pm$ 0.007456               &0.920733 $\pm$ 0.000001 $\uparrow$ \\ \cline{2-4}
+                        &$QoS$  &0.242297 $\pm$ 0.000507 $\uparrow$    &0.236677 $\pm$ 0.002211  \\ \hline
+\multirow{3}{*}{Task5}  &$MT$   &  0.000042 $\pm$ 0.000030             &0.000078 $\pm$ 0.000020 $\uparrow$           \\ \cline{2-4} 
+                        &$S$    &  0.915933 $\pm$ 0.012888             &0.927678 $\pm$ 0.002578 $\uparrow$                 \\ \cline{2-4}
+                        &$QoS$  & 0.238189 $\pm$ 0.000240 $\uparrow$      &  0.237485 $\pm$  0.000328  \\ \hline                                                   
 \end{tabular}
 \end{table}
 
