@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2016.6.19)  30 JAN 2017 13:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2016.6.19)  30 JAN 2017 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,13 +545,13 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 
 
 ] [2]
-<sequence.pdf, id=192, 581.17125pt x 67.0003pt>
+<sequence.pdf, id=193, 581.17125pt x 67.0003pt>
 File: sequence.pdf Graphic file (type pdf)
  <use sequence.pdf>
 Package pdftex.def Info: sequence.pdf used on input line 85.
 (pdftex.def)             Requested size: 144.54pt x 16.66312pt.
 
-<parallel.pdf, id=195, 420.82219pt x 225.09094pt>
+<parallel.pdf, id=196, 420.82219pt x 225.09094pt>
 File: parallel.pdf Graphic file (type pdf)
  <use parallel.pdf>
 Package pdftex.def Info: parallel.pdf used on input line 99.
@@ -561,7 +561,7 @@ Package pdftex.def Info: parallel.pdf used on input line 99.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3 <./sequence.pdf> <./parallel.pdf>]
-<semanticLink.pdf, id=222, 504.88625pt x 170.6375pt>
+<semanticLink.pdf, id=224, 504.88625pt x 170.6375pt>
 File: semanticLink.pdf Graphic file (type pdf)
  <use semanticLink.pdf>
 Package pdftex.def Info: semanticLink.pdf used on input line 127.
@@ -575,7 +575,7 @@ n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr
 cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
  []
 
-<overview.pdf, id=235, 926.46124pt x 394.47375pt>
+<overview.pdf, id=237, 926.46124pt x 394.47375pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
 Package pdftex.def Info: overview.pdf used on input line 208.
@@ -585,7 +585,7 @@ Package pdftex.def Info: overview.pdf used on input line 208.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4 <./semanticLink.pdf>]
-<weigtedGraphExample.pdf, id=275, 666.49pt x 457.71pt>
+<weigtedGraphExample.pdf, id=276, 666.49pt x 457.71pt>
 File: weigtedGraphExample.pdf Graphic file (type pdf)
 
 <use weigtedGraphExample.pdf>
@@ -608,12 +608,15 @@ Missing character: There is no ™ in font ptmr7t!
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 316.
 
-[6]
+
+Underfull \vbox (badness 1888) has occurred while \output is active []
+
+ [6]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 340.
 
-<comparisontest.pdf, id=409, 1121.18875pt x 733.74126pt>
+<comparisontest.pdf, id=411, 1121.18875pt x 733.74126pt>
 File: comparisontest.pdf Graphic file (type pdf)
 
 <use comparisontest.pdf>
@@ -628,7 +631,7 @@ Overfull \hbox (4.96234pt too wide) in paragraph at lines 371--372
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 381.
 
-[7 <./comparisontest.pdf>] <psovsgp.pdf, id=452, 631.35875pt x 505.89pt>
+[7 <./comparisontest.pdf>] <psovsgp.pdf, id=454, 631.35875pt x 505.89pt>
 File: psovsgp.pdf Graphic file (type pdf)
 
 <use psovsgp.pdf>
@@ -667,26 +670,27 @@ Here is how much of TeX's memory you used:
  12036 multiletter control sequences out of 15000+600000
  40903 words of font info for 79 fonts, out of 8000000 for 9000
  890 hyphenation exceptions out of 8191
- 42i,24n,43p,2149b,7483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,24n,43p,2121b,7483s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/pkg/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/pk
 g/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/pkg/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/pkg/share/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmmi5.pfb></usr/pkg/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmmi7.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmmi8.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/pkg/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/pkg/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/pkg/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy9.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/couri
-er/ucrr8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
-/pkg/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/pkg/share/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on paper.pdf (8 pages, 343861 bytes).
+10.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr
+/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/pkg/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/pkg/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/pkg/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy9.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pf
+b></usr/pkg/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/pkg/share/t
+exmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/pkg/share/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on paper.pdf (8 pages, 350703 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 473 compressed objects within 5 object streams
+ 553 PDF objects out of 1000 (max. 8388607)
+ 477 compressed objects within 5 object streams
  117 named destinations out of 1000 (max. 500000)
  204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
