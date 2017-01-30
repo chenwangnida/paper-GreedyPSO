@@ -58,36 +58,6 @@ M.~Moghaddam and J.~G. Davis, ``Service selection in web service composition: A
   Foundations}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2014, pp.
   321--346.
 
-\bibitem{lecue2009optimizing}
-F.~L{\'e}cu{\'e}, ``Optimizing qos-aware semantic web service composition,'' in
-  \emph{International Semantic Web Conference}.\hskip 1em plus 0.5em minus
-  0.4em\relax Springer, 2009, pp. 375--391.
-
-\bibitem{fanjiang2014semantic}
-Y.-Y. FanJiang and Y.~Syu, ``Semantic-based automatic service composition with
-  functional and non-functional requirements in design time: A genetic
-  algorithm approach,'' \emph{Information and Software Technology}, vol.~56,
-  no.~3, pp. 352--373, 2014.
-
-\bibitem{pop2009immune}
-C.~B. Pop, V.~R. Chifu, I.~Salomie, and M.~Dinsoreanu, ``Immune-inspired method
-  for selecting the optimal solution in web service composition,'' in
-  \emph{International Workshop on Resource Discovery}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Springer, 2009, pp. 1--17.
-
-\bibitem{da2016particle}
-A.~S. da~Silva, Y.~Mei, H.~Ma, and M.~Zhang, ``Particle swarm optimisation with
-  sequence-like indirect representation for web service composition,'' in
-  \emph{European Conference on Evolutionary Computation in Combinatorial
-  Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2016, pp.
-  202--218.
-
-\bibitem{kona2009wsc}
-S.~Kona, A.~Bansal, M.~B. Blake, S.~Bleul, and T.~Weise, ``Wsc-2009: a quality
-  of service-oriented web services challenge,'' in \emph{2009 IEEE Conference
-  on Commerce and Enterprise Computing}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2009, pp. 487--490.
-
 \bibitem{boustil2014semantic}
 A.~Boustil, R.~Maamri, and Z.~Sahnoun, ``A semantic selection approach for
   composite web services using owl-dl and rules,'' \emph{Service Oriented
@@ -101,6 +71,19 @@ P.~R. Mier, C.~Pedrinaci, M.~Lama, and M.~Mucientes, ``An integrated semantic
 S.~Bansal, A.~Bansal, G.~Gupta, and M.~B. Blake, ``Generalized semantic web
   service composition,'' \emph{Service Oriented Computing and Applications},
   vol.~10, no.~2, pp. 111--133, 2016.
+
+\bibitem{da2016particle}
+A.~S. da~Silva, Y.~Mei, H.~Ma, and M.~Zhang, ``Particle swarm optimisation with
+  sequence-like indirect representation for web service composition,'' in
+  \emph{European Conference on Evolutionary Computation in Combinatorial
+  Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2016, pp.
+  202--218.
+
+\bibitem{kona2009wsc}
+S.~Kona, A.~Bansal, M.~B. Blake, S.~Bleul, and T.~Weise, ``Wsc-2009: a quality
+  of service-oriented web services challenge,'' in \emph{2009 IEEE Conference
+  on Commerce and Enterprise Computing}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2009, pp. 487--490.
 
 \bibitem{da2015graphevol}
 A.~da~Silva, H.~Ma, and M.~Zhang, ``\BIBforeignlanguage{English}{Graphevol: A
@@ -134,6 +117,23 @@ H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
   greedy search for qos-aware web service composition,'' in \emph{Transactions
   on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
   0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
+
+\bibitem{lecue2009optimizing}
+F.~L{\'e}cu{\'e}, ``Optimizing qos-aware semantic web service composition,'' in
+  \emph{International Semantic Web Conference}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2009, pp. 375--391.
+
+\bibitem{fanjiang2014semantic}
+Y.-Y. FanJiang and Y.~Syu, ``Semantic-based automatic service composition with
+  functional and non-functional requirements in design time: A genetic
+  algorithm approach,'' \emph{Information and Software Technology}, vol.~56,
+  no.~3, pp. 352--373, 2014.
+
+\bibitem{pop2009immune}
+C.~B. Pop, V.~R. Chifu, I.~Salomie, and M.~Dinsoreanu, ``Immune-inspired method
+  for selecting the optimal solution in web service composition,'' in
+  \emph{International Workshop on Resource Discovery}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 2009, pp. 1--17.
 
 \bibitem{fukuyama2008fundamentals}
 Y.~Fukuyama, ``Fundamentals of particle swarm optimization techniques,''
