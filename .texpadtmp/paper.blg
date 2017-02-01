@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
+The top-level auxiliary file: /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
 The style file: ../IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -24,7 +24,7 @@ Warning--empty journal in mier2015integrated
 Done.
 You've used 26 entries,
             4024 wiz_defined-function locations,
-            955 strings with 12632 characters,
+            955 strings with 12624 characters,
 and the built_in function-call counts, 21145 in all, are:
 = -- 1647
 > -- 519
