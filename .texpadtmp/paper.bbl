@@ -79,6 +79,12 @@ A.~S. da~Silva, Y.~Mei, H.~Ma, and M.~Zhang, ``Particle swarm optimisation with
   Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2016, pp.
   202--218.
 
+\bibitem{ma2015hybrid}
+H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
+  greedy search for qos-aware web service composition,'' in \emph{Transactions
+  on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
+
 \bibitem{kona2009wsc}
 S.~Kona, A.~Bansal, M.~B. Blake, S.~Bleul, and T.~Weise, ``Wsc-2009: a quality
   of service-oriented web services challenge,'' in \emph{2009 IEEE Conference
@@ -112,12 +118,6 @@ L.~Qi, Y.~Tang, W.~Dou, and J.~Chen, ``Combining local optimization and
   (ICWS), 2010 IEEE International Conference on}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2010, pp. 34--41.
 
-\bibitem{ma2015hybrid}
-H.~Ma, A.~Wang, and M.~Zhang, ``A hybrid approach using genetic programming and
-  greedy search for qos-aware web service composition,'' in \emph{Transactions
-  on Large-Scale Data-and Knowledge-Centered Systems XVIII}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer, 2015, pp. 180--205.
-
 \bibitem{lecue2009optimizing}
 F.~L{\'e}cu{\'e}, ``Optimizing qos-aware semantic web service composition,'' in
   \emph{International Semantic Web Conference}.\hskip 1em plus 0.5em minus
@@ -140,12 +140,6 @@ Y.~Fukuyama, ``Fundamentals of particle swarm optimization techniques,''
   \emph{Modern heuristic optimization techniques: theory and applications to
   power systems}, pp. 71--87, 2008.
 
-\bibitem{zeng2003quality}
-L.~Zeng, B.~Benatallah, M.~Dumas, J.~Kalagnanam, and Q.~Z. Sheng, ``Quality
-  driven web services composition,'' in \emph{Proceedings of the 12th
-  international conference on World Wide Web}.\hskip 1em plus 0.5em minus
-  0.4em\relax ACM, 2003, pp. 411--421.
-
 \bibitem{paolucci2002semantic}
 M.~Paolucci, T.~Kawamura, T.~R. Payne, and K.~Sycara, ``Semantic matching of
   web services capabilities,'' in \emph{International Semantic Web
@@ -157,6 +151,12 @@ S.~Bleul, D.~Comes, M.~Kirchhoff, and M.~Zapf, ``Self-integration of web
   services in bpel processes,'' in \emph{Proceedings of the Workshop
   Selbstorganisierence, Adaptive, Kontextsensitive verteilte Systeme (SAKS)},
   2008.
+
+\bibitem{zeng2003quality}
+L.~Zeng, B.~Benatallah, M.~Dumas, J.~Kalagnanam, and Q.~Z. Sheng, ``Quality
+  driven web services composition,'' in \emph{Proceedings of the 12th
+  international conference on World Wide Web}.\hskip 1em plus 0.5em minus
+  0.4em\relax ACM, 2003, pp. 411--421.
 
 \bibitem{shet2012new}
 K.~Shet, U.~D. Acharya \emph{et~al.}, ``A new similarity measure for taxonomy
