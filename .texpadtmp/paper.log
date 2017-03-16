@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  16 MAR 2017 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  16 MAR 2017 18:09
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -491,7 +491,7 @@ Overfull \hbox (1.11247pt too wide) detected at line 186
 []\OML/cmm/m/it/10 Fitness \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 )
  []
 
-<overview.pdf, id=239, 926.46124pt x 394.47375pt>
+<overview.pdf, id=238, 926.46124pt x 394.47375pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
 Package pdftex.def Info: overview.pdf used on input line 214.
@@ -500,7 +500,7 @@ Package pdftex.def Info: overview.pdf used on input line 214.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4 <./semanticLink.pdf>] <weigtedGraphExample.pdf, id=278, 666.49pt x 457.71pt>
+[4 <./semanticLink.pdf>] <weigtedGraphExample.pdf, id=277, 666.49pt x 457.71pt>
 File: weigtedGraphExample.pdf Graphic file (type pdf)
  <use weigtedGraphExample.pdf>
 Package pdftex.def Info: weigtedGraphExample.pdf used on input line 225.
@@ -520,12 +520,15 @@ Missing character: There is no ™ in font ptmr7t!
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 322.
 
-[6]
+
+Underfull \vbox (badness 1888) has occurred while \output is active []
+
+ [6]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 346.
 
-<comparisontest.pdf, id=414, 1121.18875pt x 733.74126pt>
+<comparisontest.pdf, id=412, 1121.18875pt x 733.74126pt>
 File: comparisontest.pdf Graphic file (type pdf)
  <use comparisontest.pdf>
 Package pdftex.def Info: comparisontest.pdf used on input line 377.
@@ -544,16 +547,12 @@ Overfull \hbox (44.2585pt too wide) in paragraph at lines 391--400
  [][] 
  []
 
-<psovsgp.pdf, id=419, 631.35875pt x 506.89375pt>
+[7 <./comparisontest.pdf>] <psovsgp.pdf, id=455, 631.35875pt x 506.89375pt>
 File: psovsgp.pdf Graphic file (type pdf)
  <use psovsgp.pdf>
 Package pdftex.def Info: psovsgp.pdf used on input line 407.
 (pdftex.def)             Requested size: 157.8393pt x 126.72313pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./comparisontest.pdf>] (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.bbl
+ (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -578,16 +577,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
 Here is how much of TeX's memory you used:
  8884 strings out of 493014
  141417 string characters out of 6133350
- 261413 words of memory out of 5000000
+ 263413 words of memory out of 5000000
  12196 multiletter control sequences out of 15000+600000
  40903 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,24n,43p,2121b,7468s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.pdf (8 pages, 371486 bytes).
+Output written on /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.pdf (8 pages, 371998 bytes).
 PDF statistics:
- 559 PDF objects out of 1000 (max. 8388607)
- 481 compressed objects within 5 object streams
+ 558 PDF objects out of 1000 (max. 8388607)
+ 480 compressed objects within 5 object streams
  117 named destinations out of 1000 (max. 500000)
  204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
