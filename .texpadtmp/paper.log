@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  16 MAR 2017 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  16 MAR 2017 22:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -410,7 +410,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip65
-) (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux)
+) (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -458,7 +458,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 21.
 LaTeX Info: Redefining \pageref on input line 21.
 LaTeX Info: Redefining \nameref on input line 21.
- (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.out) (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.out)
+ (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.out) (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
@@ -528,31 +528,61 @@ Underfull \vbox (badness 1888) has occurred while \output is active []
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 346.
 
-<comparisontest.pdf, id=412, 1121.18875pt x 733.74126pt>
+<comparisontest.pdf, id=412, 1120.185pt x 734.745pt>
 File: comparisontest.pdf Graphic file (type pdf)
  <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 377.
-(pdftex.def)             Requested size: 246.6623pt x 161.42357pt.
+Package pdftex.def Info: comparisontest.pdf used on input line 376.
+(pdftex.def)             Requested size: 246.44145pt x 161.6444pt.
 
-Overfull \hbox (4.96234pt too wide) in paragraph at lines 377--378
+Overfull \hbox (4.7415pt too wide) in paragraph at lines 376--377
  [][] 
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 372--380
+\OT1/ptm/m/n/10 gen-er-ate so-lu-tions hav-ing bet-ter se-man-tic match-mak-ing
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 372--380
+\OT1/ptm/m/n/10 two weighted DAGs as two so-lu-tions em-ploy-ing QoS-
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 372--380
+\OT1/ptm/m/n/10 re-spec-tively. Two ap-proaches gen-er-ate ex-actly the same
+ []
+
+
+Underfull \hbox (badness 6944) in paragraph at lines 372--380
+\OT1/ptm/m/n/10 with out-put concept-related pa-ram-e-ters $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 795998200$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--380
+\OT1/ptm/m/n/10 and $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 582785907$ \OT1/ptm/m/n/10 cor-re-spond-ing to two con-cepts
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--380
+\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 103314376$ \OT1/ptm/m/n/10 and $\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 2037585750$ \OT1/ptm/m/n/10 re-spec-tively, and
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 372--380
+\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 658772240$ \OT1/ptm/m/n/10 are the re-quired pa-ram-e-ter for the $\OML/cmm/m/it/10 end$
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 387.
+               Default added (so using `tbp') on input line 386.
 
-
-Overfull \hbox (44.2585pt too wide) in paragraph at lines 391--400
- [][] 
- []
-
-[7 <./comparisontest.pdf>] <psovsgp.pdf, id=455, 631.35875pt x 506.89375pt>
+[7 <./comparisontest.pdf>] <psovsgp.pdf, id=454, 631.35875pt x 506.89375pt>
 File: psovsgp.pdf Graphic file (type pdf)
  <use psovsgp.pdf>
-Package pdftex.def Info: psovsgp.pdf used on input line 407.
+Package pdftex.def Info: psovsgp.pdf used on input line 406.
 (pdftex.def)             Requested size: 157.8393pt x 126.72313pt.
- (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.bbl
+ (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -560,15 +590,15 @@ Package pdftex.def Info: psovsgp.pdf used on input line 407.
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 421.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
  [8 <./psovsgp.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 421.
- (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 421.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 421.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
+ (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 420.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: B4EE9CDB5BBA58D137540696DFCE4A64;1552.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
  )
 (\end occurred inside a group at level 1)
 
@@ -576,14 +606,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
 ### bottom level 
 Here is how much of TeX's memory you used:
  8884 strings out of 493014
- 141417 string characters out of 6133350
- 263413 words of memory out of 5000000
+ 141365 string characters out of 6133350
+ 263423 words of memory out of 5000000
  12196 multiletter control sequences out of 15000+600000
  40903 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,24n,43p,2121b,7468s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.pdf (8 pages, 371998 bytes).
+Output written on /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.pdf (8 pages, 369113 bytes).
 PDF statistics:
  558 PDF objects out of 1000 (max. 8388607)
  480 compressed objects within 5 object streams
