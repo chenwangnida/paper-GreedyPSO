@@ -162,6 +162,10 @@ L.~Zeng, B.~Benatallah, M.~Dumas, J.~Kalagnanam, and Q.~Z. Sheng, ``Quality
 K.~Shet, U.~D. Acharya \emph{et~al.}, ``A new similarity measure for taxonomy
   based on edge counting,'' \emph{arXiv preprint arXiv:1211.4709}, 2012.
 
+\bibitem{da2016genetic}
+A.~S. da~Silva, H.~Ma, and M.~Zhang, ``Genetic programming for qos-aware web
+  service composition and selection,'' \emph{Soft Computing}, pp. 1--17, 2016.
+
 \bibitem{shi2001particle}
 Y.~Shi \emph{et~al.}, ``Particle swarm optimization: developments, applications
   and resources,'' in \emph{evolutionary computation, 2001. Proceedings of the

@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
+The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
 The style file: ../IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -22,45 +22,45 @@ I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
 
 Done.
-You've used 26 entries,
+You've used 27 entries,
             4024 wiz_defined-function locations,
-            955 strings with 12624 characters,
-and the built_in function-call counts, 21145 in all, are:
-= -- 1647
-> -- 519
-< -- 185
-+ -- 282
-- -- 87
-* -- 1024
-:= -- 3051
-add.period$ -- 66
-call.type$ -- 26
-change.case$ -- 26
-chr.to.int$ -- 450
-cite$ -- 27
-duplicate$ -- 1492
-empty$ -- 1815
-format.name$ -- 110
-if$ -- 4929
+            959 strings with 12788 characters,
+and the built_in function-call counts, 21847 in all, are:
+= -- 1705
+> -- 537
+< -- 191
++ -- 291
+- -- 90
+* -- 1057
+:= -- 3160
+add.period$ -- 68
+call.type$ -- 27
+change.case$ -- 27
+chr.to.int$ -- 465
+cite$ -- 28
+duplicate$ -- 1543
+empty$ -- 1869
+format.name$ -- 114
+if$ -- 5089
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 254
-newline$ -- 101
-num.names$ -- 28
-pop$ -- 623
+int.to.str$ -- 27
+missing$ -- 262
+newline$ -- 104
+num.names$ -- 29
+pop$ -- 643
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1620
+skip$ -- 1672
 stack$ -- 0
-substring$ -- 1073
-swap$ -- 1212
-text.length$ -- 35
+substring$ -- 1108
+swap$ -- 1252
+text.length$ -- 36
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 26
+type$ -- 27
 warning$ -- 1
-while$ -- 110
-width$ -- 28
-write$ -- 264
+while$ -- 115
+width$ -- 29
+write$ -- 273
 (There were 2 error messages)
