@@ -1,12 +1,7 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
-The style file: ../IEEEtran.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+The style file: ../splncs03.bst
 Database file #1: ../IEEEexample.bib
 I was expecting a `,' or a `}'---line 353 of file ../IEEEexample.bib
  :   publisher={IEEE}
@@ -16,51 +11,46 @@ Repeated entry---line 1031 of file ../IEEEexample.bib
  : @inproceedings{paolucci2002semantic
  :                                    ,
 I'm skipping whatever remains of this entry
--- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
--- http://www.michaelshell.org/tex/ieeetran/bibtex/
--- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty journal in mier2015integrated
-
-Done.
 You've used 27 entries,
-            4024 wiz_defined-function locations,
-            959 strings with 12788 characters,
-and the built_in function-call counts, 21847 in all, are:
-= -- 1705
-> -- 537
-< -- 191
-+ -- 291
-- -- 90
-* -- 1057
-:= -- 3160
-add.period$ -- 68
+            2785 wiz_defined-function locations,
+            736 strings with 9961 characters,
+and the built_in function-call counts, 16377 in all, are:
+= -- 1416
+> -- 495
+< -- 30
++ -- 207
+- -- 175
+* -- 1004
+:= -- 2082
+add.period$ -- 51
 call.type$ -- 27
-change.case$ -- 27
-chr.to.int$ -- 465
+change.case$ -- 192
+chr.to.int$ -- 0
 cite$ -- 28
-duplicate$ -- 1543
-empty$ -- 1869
-format.name$ -- 114
-if$ -- 5089
+duplicate$ -- 1428
+empty$ -- 1459
+format.name$ -- 199
+if$ -- 3633
 int.to.chr$ -- 0
 int.to.str$ -- 27
-missing$ -- 262
-newline$ -- 104
-num.names$ -- 29
-pop$ -- 643
+missing$ -- 284
+newline$ -- 86
+num.names$ -- 56
+pop$ -- 523
 preamble$ -- 1
-purify$ -- 0
-quote$ -- 2
-skip$ -- 1672
+purify$ -- 137
+quote$ -- 0
+skip$ -- 477
 stack$ -- 0
-substring$ -- 1108
-swap$ -- 1252
-text.length$ -- 36
+substring$ -- 974
+swap$ -- 792
+text.length$ -- 30
 text.prefix$ -- 0
-top$ -- 5
-type$ -- 27
+top$ -- 0
+type$ -- 104
 warning$ -- 1
-while$ -- 115
+while$ -- 147
 width$ -- 29
-write$ -- 273
+write$ -- 283
 (There were 2 error messages)
