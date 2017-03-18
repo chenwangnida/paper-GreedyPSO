@@ -55,29 +55,30 @@ Few works \cite{fanjiang2014semantic,lecue2009optimizing,pop2009immune} employ E
 
 In summary, despite a large number of approaches for semantic web service composition and QoS-aware service composition approaches. There is a lack of a general approaches that achieve a more desirable balance in consideration of both semantic matchmaking quality and QoS. Therefore, we proposed a general comprehensive quality model to fill the gaps, and then we proposed a POS-based method with explicit support for the comprehensive model to find optimal compositions.
 
-\section{Problem Description}\label{problemDes}
+\section{Motivation and Problem Description}\label{problemDes}
 
-The aim of web service composition considered in this paper is to automatically select the optimal solutions in both QoS and semantic matchmaking quality by a user's request. The request is to provide inputs and obtain outputs that should meet the optimal requirements above. A motivating example of this problem is shown in Fig \ref{motivation}
-
-
+The aim of web service composition considered in this paper is to automatically select the optimal solutions in considering both QoS and semantic matchmaking quality by a user's request. The request is to provide inputs and obtain outputs, the composition results that should meet the optimal requirements above. A motivating example of this problem is shown in Fig \ref{motivation}. The figure is a DAG represent a solution with four web services involved for a request $R$ as a composition task, where inputs of the task are \{TravelDepartureDate, HomeCity, ConferenceCity, TravelReturnDate \} and outputs are \{BusTicket, FlightTicket, TouristMap, HotelReservation \}. This is a classic example of travel planning from a scholar who seeks for booking services of airplanes, buses and hotels reservation, and also the  tourist map for the conference city. The graph also contains edges that marked with connecting outputs and inputs, which represent valid semantic matches where the outputs of a web service can be passed as the inputs of its successors.
 
 \begin{figure}[h]
 \centering
-\fbox{\includegraphics[scale=.28]{motivation.pdf}}
- \caption{ An example of web service composition}
+\fbox{\includegraphics[scale=.25]{motivation.pdf}}
+ \caption{ An example of a web service composition}
  \label{motivation}
 \end{figure}
 
+Although obtaining a correct combination of web service is essential, there are many ways to chain web services to reach users' needs with different web services in a service repository. These web services have different QoS (such as availability, price, reliability and response time ). Moreover, the valid semantic matches between two web services could be associated with different semantic matchmaking quality. For example, Generate Map service produce StreetMap which is considered to be a valid semantic match to TouristMap required by users. Fig .\ref{taxonomy} represents a taxonomy of all the inputs and  the outputs described in Fig. \ref{motivation} for a travel planning domain, where the concept Map and its sub-concept urbanMap are assigned with a touristMap instance and streetMap instance respectively. The valid semantic match is considered that an instance of urban Map must be an instance of Map, not vice versa. If a web service $GenerateTouristMap$ found in the service repository that produces TouristMap as an output. I consider its semantic matchmaking quality is higher than that of $GenerateMap$. However, $GenerateTouristMap$ might have a very bad QoS.
 
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=.28]{taxonomy.pdf}}
+ \caption{ A taxonomy of a travel planning domain}
+ \label{taxonomy}
+\end{figure}
 
-
-
-
-
-
-
-
+We herein formalise the assumptions and concepts utilised in our approach
 which could be denoted as a composition goal: $Comp.G(F(I_{T}, O_{T}), NF(QoS_{T}))$. This overall composition goal is demonstrated in two parts: functional part and non-functional part. The functional part is defined by given task inputs and desired task outputs. The nonfunctional part specifies overall QoS requirements. To accomplish the composition goal, two stages are involved, services discovery and service selection. Service discovery is to find matching web services: $S_{n}(F(I_{S}, O_{S}), NF(QoS_{S}))$ from a Service Repository: $\mathcal{S}$ $=  \{S_{1}, S_{2},..., S_{n} \}$ for the given $I_{T}$. If no atomic web service could satisfy the composition goal, a composition of web services will be found to meet $Comp.G$. To ensure the composition solution returns the desired $Comp.G$ that considers a higher degree of matching $O_{T}$ and a near-optimised $QoS_{T}$, We first demonstrate the concepts in both semantic matchmaking types and $QoS$ as follows, and then propose a quality model that take care of semantic matchmaking quality and QoS simultaneously in Sect. \ref{Comprehensive_Quality_Model}.
+
+We defined our semantic web service composition representation as a weighted graph $WG = (V, E)$, where $V$ is a set of services as vertex: $V=\{S1, S2...Sn \}$ and $E$ is a set of edges $E = \{e_{1}, e_{2},... e_{n} \}$. Each edge is considered to be a semantic web service link $sm_{L}$ , so each edge $e$ is consisting of a pair of quality values, $mt_{L}$ and $s_{L}$ as weigths. Here we provide an example of semantic web service composition, which is described in Fig. \ref{wscs}. The data of composition web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, weights are calculated for all edges $e_{1}, e_{2},... e_{n}$.
 
 
 \subsection{Semantic Web Service matchmaking Type}\label{semantic Web service Discovery}
@@ -235,16 +236,6 @@ Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{
  \label{overview}
 \end{figure*}
 
-\subsection{Weighted Graph Composition}
-
-We defined our semantic web service composition representation as a weighted graph $WG = (V, E)$, where $V$ is a set of services as vertex: $V=\{S1, S2...Sn \}$ and $E$ is a set of edges $E = \{e_{1}, e_{2},... e_{n} \}$. Each edge is considered to be a semantic web service link $sm_{L}$ , so each edge $e$ is consisting of a pair of quality values, $mt_{L}$ and $s_{L}$ as weigths. Here we provide an example of semantic web service composition, which is described in Fig. \ref{wscs}. The data of composition web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, weights are calculated for all edges $e_{1}, e_{2},... e_{n}$.
-
-\begin{figure}[h]
-\centering
-\fbox{\includegraphics[scale=.28]{weigtedGraphExample.pdf}}
- \caption{Composition weighted graph solution}
- \label{wscs}
-\end{figure}
 
 \subsection{PSO-based Approach to QoS-Aware Semantic Web Service Composition}
 
