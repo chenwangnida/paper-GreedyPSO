@@ -57,7 +57,27 @@ In summary, despite a large number of approaches for semantic web service compos
 
 \section{Problem Description}\label{problemDes}
 
-The aim of web service composition is to fulfil customers' requirements, which could be denoted as a composition goal: $Comp.G(F(I_{T}, O_{T}), NF(QoS_{T}))$. This overall composition goal is demonstrated in two parts: functional part and non-functional part. The functional part is defined by given task inputs and desired task outputs. The nonfunctional part specifies overall QoS requirements. To accomplish the composition goal, two stages are involved, services discovery and service selection. Service discovery is to find matching web services: $S_{n}(F(I_{S}, O_{S}), NF(QoS_{S}))$ from a Service Repository: $\mathcal{S}$ $=  \{S_{1}, S_{2},..., S_{n} \}$ for the given $I_{T}$. If no atomic web service could satisfy the composition goal, a composition of web services will be found to meet $Comp.G$. To ensure the composition solution returns the desired $Comp.G$ that considers a higher degree of matching $O_{T}$ and a near-optimised $QoS_{T}$, We first demonstrate the concepts in both semantic matchmaking types and $QoS$ as follows, and then propose a quality model that take care of semantic matchmaking quality and QoS simultaneously in Sect. \ref{Comprehensive_Quality_Model}.
+The aim of web service composition considered in this paper is to automatically select the optimal solutions in both QoS and semantic matchmaking quality by a user's request. The request is to provide inputs and obtain outputs that should meet the optimal requirements above. A motivating example of this problem is shown in Fig \ref{motivation}
+
+
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=.28]{motivation.pdf}}
+ \caption{ An example of web service composition}
+ \label{motivation}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+which could be denoted as a composition goal: $Comp.G(F(I_{T}, O_{T}), NF(QoS_{T}))$. This overall composition goal is demonstrated in two parts: functional part and non-functional part. The functional part is defined by given task inputs and desired task outputs. The nonfunctional part specifies overall QoS requirements. To accomplish the composition goal, two stages are involved, services discovery and service selection. Service discovery is to find matching web services: $S_{n}(F(I_{S}, O_{S}), NF(QoS_{S}))$ from a Service Repository: $\mathcal{S}$ $=  \{S_{1}, S_{2},..., S_{n} \}$ for the given $I_{T}$. If no atomic web service could satisfy the composition goal, a composition of web services will be found to meet $Comp.G$. To ensure the composition solution returns the desired $Comp.G$ that considers a higher degree of matching $O_{T}$ and a near-optimised $QoS_{T}$, We first demonstrate the concepts in both semantic matchmaking types and $QoS$ as follows, and then propose a quality model that take care of semantic matchmaking quality and QoS simultaneously in Sect. \ref{Comprehensive_Quality_Model}.
 
 
 \subsection{Semantic Web Service matchmaking Type}\label{semantic Web service Discovery}
