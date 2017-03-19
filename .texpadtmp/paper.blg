@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
+The top-level auxiliary file: /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
 The style file: ../splncs03.bst
 Database file #1: ../IEEEexample.bib
 I was expecting a `,' or a `}'---line 353 of file ../IEEEexample.bib
@@ -14,7 +14,7 @@ I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
 You've used 27 entries,
             2785 wiz_defined-function locations,
-            736 strings with 9961 characters,
+            736 strings with 9953 characters,
 and the built_in function-call counts, 16377 in all, are:
 = -- 1416
 > -- 495
