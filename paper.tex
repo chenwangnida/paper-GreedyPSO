@@ -89,30 +89,22 @@ We herein give formal definitions of the assumptions the concepts regarding the 
 
 \textbf{Semantic Matchmaking Model}. The mechanism to compose web services relays on the semantic inputs and outputs, which enable inputs to be matched by outputs. To measure the quality of these matches, we utilise different matchmaking types (\textit{exact, plugin subsumes and fail} \cite{paolucci2002semantic} ) into consideration for exploiting the semantics of inputs and outputs.
 
-\textbf{Definition 3.} Given $a, b \in C$, $type(a, b)$ returns the matchmaking types of between two concepts related to outputs and inputs of two difference web services, and this matchmaking type is determined by the logic described in the $O$. 
+\textbf{Definition 3.} Given $a, b \in C$, $type(a, b)$ returns the matchmaking types of two concepts, and this matchmaking type is determined by the logic described in the $O$. If both $a$ and $b$ are equivalent, $exact$ type ($a \equiv b$) is returned. If the concept of $a$ is a sub-concept of the concept of $b$ type ($a \sqsubseteq b$) is returned. If the concept of $a$ is a super-concept of the concept of $b$, $subsumes$ type ($a \sqsupseteq b$) is returned. If none of previous matchmaking types are returned, $fail$ type ($a \perp b$) is returned.
 
-If both $a$ and $b$ are equivalent, $exact$ type ($a \equiv b$) is returned.
-If the concept of $a$ is a sub-concept of the concept of $b$ type ($a \sqsubseteq b$) is returned. 
-If the concept of $a$ is a super-concept of the concept of $b$, $subsumes$ type ($a \sqsupseteq b$) is returned. 
-If none of previous matchmaking types are returned, $fail$ type ($a \perp b$) is returned.
+We use the $type(a, b)$ to define full matchmaking between two concept-related input and output of two services.
 
-\textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \rightarrow b)$ holds if $type(a, b) \neq subsumes \mid fail$. The operator ``$ \rightarrow$'' means $a$ is passed to $b$. The full match is a guarantee of completely valid  ``$ \rightarrow$'' operation as $b$ is fully satisfied by $a$.
+\textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \rightarrow b)$ holds if $type(a, b)$ returns $exact$ or $plugin$. The operator ``$ \rightarrow$'' means $a$ is passed to $b$, and $b$ is fully satisfied by $a$. The full match is a guarantee of completely valid  ``$ \rightarrow$'' operation, whereas, partial matches are not considered in this paper.
+
 
 \textbf{Weighted DAG Composition Model}. web service composition is considered to be a data workflow, where services are chained together by their inputs and outputs using the two models defined before. Naturally, all these concepts can be captured in a weighted DAG as $WG = (V, E)$ , where:
 
 $V=\{Start, S1, S2...Sn, End\}$ is a set of services, where $Start$ and $End$ are two special services defined as $Start = \{ \phi, I_T, \phi \}$ and $End  = \{ O_T, \phi, \phi \}$. 
 
-$E = \{e_{1}, e_{2},... e_{n} \}$ is a set of edges. where $e = O_{S_{m}} \cup I_{S_{n}} \cup $ $fullmatch(O_{m} \rightarrow I_{n})$ is source service $S_m$ and target service $s_n$
+$E = \{e_{1}, e_{2},... e_{n} \}$ is a set of edges, where each edge has a set of incoming outputs $O_{S_{src}}$ from source service $S_{src}$ and a set of outgoing inputs $I_{S_{src}}$ from target service $S_{tar}$. 
 
+$e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \rightarrow i) \}$
 
-
-
-
-
-
-
-\subsection{Semantic Web Service matchmaking Type}\label{semantic Web service Discovery}
-
+\textbf{QoS Model in Weighted DAG}
 
 \subsection{Quality of Service}\label{Quality of Service and Composition Constructs}
 According to \cite{zeng2003quality}, four most often considered QoS parameters are response time, cost, reliability and availability described as follows:
