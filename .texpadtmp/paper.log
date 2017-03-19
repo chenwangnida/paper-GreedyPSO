@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  19 MAR 2017 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  19 MAR 2017 18:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -438,7 +438,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip66
-) (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
+) (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
 
 LaTeX Warning: Label `Motivation' multiply defined.
 
@@ -488,7 +488,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
 LaTeX Info: Redefining \nameref on input line 22.
- (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.out) (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.out)
+ (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.out) (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
@@ -527,115 +527,116 @@ Underfull \vbox (badness 1371) has occurred while \output is active []
 
  [5 <./motivation.pdf> <./taxonomy.pdf>]
 Overfull \hbox (4.48901pt too wide) in paragraph at lines 87--88
-[]\OT1/cmr/bx/n/10 Definition 2. \OT1/cmr/m/n/10 A se-man-tic web ser-vice is de-fined as a tu-ple $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 I[]; O[]; QoS[]\OMS/cmsy/m/n/10 g$ 
+[]\OT1/cmr/bx/n/10 Definition 2. \OT1/cmr/m/n/10 A se-man-tic web ser-vice is de-fined as a tu-ple $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 I[]; O[]; QoS[]\OMS/cmsy/m/n/10 g$
  []
 
-
-Overfull \hbox (9.48135pt too wide) in paragraph at lines 96--97
-\OT1/cmr/m/n/10 ser-vices: $\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 I[]; O[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; NF\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 QoS[]\OT1/cmr/m/n/10 ))$ from a Ser-vice Repos-i-tory: $\OMS/cmsy/m/n/10 S$ $\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; :::; S[]\OMS/cmsy/m/n/10 g$
- []
-
-
-LaTeX Warning: Reference `wscs' on page 6 undefined on input line 98.
-
-
-Overfull \hbox (0.76582pt too wide) in paragraph at lines 98--99
-[]\OT1/cmr/m/n/10 We de-fined our se-man-tic web ser-vice com-po-si-tion rep-re-sen-ta-tion as a weighted
- []
-
-[6] [7] <sequence.pdf, id=242, 581.17125pt x 67.0003pt>
+[6] <sequence.pdf, id=232, 581.17125pt x 67.0003pt>
 File: sequence.pdf Graphic file (type pdf)
  <use sequence.pdf>
-Package pdftex.def Info: sequence.pdf used on input line 135.
+Package pdftex.def Info: sequence.pdf used on input line 138.
 (pdftex.def)             Requested size: 144.54pt x 16.66312pt.
- <parallel.pdf, id=247, 420.82219pt x 225.09094pt>
+ <parallel.pdf, id=237, 420.82219pt x 225.09094pt>
 File: parallel.pdf Graphic file (type pdf)
  <use parallel.pdf>
-Package pdftex.def Info: parallel.pdf used on input line 149.
+Package pdftex.def Info: parallel.pdf used on input line 152.
 (pdftex.def)             Requested size: 101.17755pt x 54.11565pt.
- [8 <./sequence.pdf> <./parallel.pdf>] <semanticLink.pdf, id=276, 504.88625pt x 170.6375pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<semanticLink.pdf, id=245, 504.88625pt x 170.6375pt>
 File: semanticLink.pdf Graphic file (type pdf)
  <use semanticLink.pdf>
-Package pdftex.def Info: semanticLink.pdf used on input line 169.
+Package pdftex.def Info: semanticLink.pdf used on input line 172.
 (pdftex.def)             Requested size: 191.85875pt x 64.84291pt.
- [9 <./semanticLink.pdf>] <overview.pdf, id=321, 926.46124pt x 394.47375pt>
+ [7] [8 <./sequence.pdf> <./parallel.pdf> <./semanticLink.pdf>] [9] <overview.pdf, id=324, 926.46124pt x 394.47375pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 251.
+Package pdftex.def Info: overview.pdf used on input line 254.
 (pdftex.def)             Requested size: 370.57793pt x 157.7867pt.
 
-Overfull \hbox (30.25438pt too wide) in paragraph at lines 251--252
+Overfull \hbox (30.25438pt too wide) in paragraph at lines 254--255
  [][] 
  []
 
-[10] [11 <./overview.pdf>] [12] [13]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10]
+Underfull \vbox (badness 3635) has occurred while \output is active []
+
+ [11 <./overview.pdf>] [12]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 349.
+               Default added (so using `htbp') on input line 352.
 
-[14]
-Overfull \hbox (2.34926pt too wide) in paragraph at lines 369--370
+[13]
+Overfull \hbox (2.34926pt too wide) in paragraph at lines 372--373
 \OT1/cmr/m/n/10 QoS-aware web ser-vice com-po-si-tion [[],[],[],[]] do con-sider two se-man-tic match-
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 373.
+               Default added (so using `htbp') on input line 376.
 
-<comparisontest.pdf, id=490, 1120.185pt x 734.745pt>
+<comparisontest.pdf, id=483, 1120.185pt x 734.745pt>
 File: comparisontest.pdf Graphic file (type pdf)
  <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 403.
+Package pdftex.def Info: comparisontest.pdf used on input line 406.
 (pdftex.def)             Requested size: 246.44145pt x 161.6444pt.
- [15] [16 <./comparisontest.pdf>]
+ [14]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 413.
+               Default added (so using `htbp') on input line 416.
 
-<psovsgp.pdf, id=537, 631.35875pt x 506.89375pt>
+<psovsgp.pdf, id=499, 631.35875pt x 506.89375pt>
 File: psovsgp.pdf Graphic file (type pdf)
  <use psovsgp.pdf>
-Package pdftex.def Info: psovsgp.pdf used on input line 433.
+Package pdftex.def Info: psovsgp.pdf used on input line 436.
 (pdftex.def)             Requested size: 157.8393pt x 126.72313pt.
- [17 <./psovsgp.pdf>] (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.bbl [18])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 447.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 447.
- (/Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 447.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 447.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.bbl [16 <./comparisontest.pdf>] [17 <./psovsgp.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+ (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: B4EE9CDB5BBA58D137540696DFCE4A64;1552.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 447.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8436 strings out of 493014
- 128817 string characters out of 6133350
- 249649 words of memory out of 5000000
- 11734 multiletter control sequences out of 15000+600000
+ 8432 strings out of 493014
+ 128823 string characters out of 6133350
+ 249609 words of memory out of 5000000
+ 11732 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,24n,43p,2275b,7519s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.pdf (19 pages, 487426 bytes).
+ 42i,24n,43p,2275b,7520s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.pdf (18 pages, 479678 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
- 495 compressed objects within 5 object streams
- 133 named destinations out of 1000 (max. 500000)
+ 658 PDF objects out of 1000 (max. 8388607)
+ 485 compressed objects within 5 object streams
+ 131 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

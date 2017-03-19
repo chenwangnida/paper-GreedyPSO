@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
+The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
 The style file: ../splncs03.bst
 Database file #1: ../IEEEexample.bib
 I was expecting a `,' or a `}'---line 353 of file ../IEEEexample.bib
@@ -12,45 +12,45 @@ Repeated entry---line 1031 of file ../IEEEexample.bib
  :                                    ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
-You've used 27 entries,
+You've used 26 entries,
             2785 wiz_defined-function locations,
-            736 strings with 9953 characters,
-and the built_in function-call counts, 16377 in all, are:
-= -- 1416
-> -- 495
+            732 strings with 9728 characters,
+and the built_in function-call counts, 15885 in all, are:
+= -- 1380
+> -- 473
 < -- 30
-+ -- 207
-- -- 175
-* -- 1004
-:= -- 2082
-add.period$ -- 51
-call.type$ -- 27
-change.case$ -- 192
++ -- 198
+- -- 167
+* -- 974
+:= -- 2013
+add.period$ -- 50
+call.type$ -- 26
+change.case$ -- 183
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 1428
-empty$ -- 1459
-format.name$ -- 199
-if$ -- 3633
+cite$ -- 27
+duplicate$ -- 1383
+empty$ -- 1414
+format.name$ -- 190
+if$ -- 3530
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 284
-newline$ -- 86
-num.names$ -- 56
-pop$ -- 523
+int.to.str$ -- 26
+missing$ -- 274
+newline$ -- 83
+num.names$ -- 54
+pop$ -- 500
 preamble$ -- 1
-purify$ -- 137
+purify$ -- 131
 quote$ -- 0
-skip$ -- 477
+skip$ -- 467
 stack$ -- 0
-substring$ -- 974
-swap$ -- 792
+substring$ -- 961
+swap$ -- 773
 text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 104
+type$ -- 100
 warning$ -- 1
-while$ -- 147
-width$ -- 29
-write$ -- 283
+while$ -- 144
+width$ -- 28
+write$ -- 274
 (There were 2 error messages)

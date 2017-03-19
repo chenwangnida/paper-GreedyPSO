@@ -78,37 +78,40 @@ Although obtaining a correct combination of web service is essential, there are 
 
 \subsection{Problem Formulation}\label{Motivation}
 
-We herein give formal definitions of the concepts regarding the semantic web service composition problem utilised in our approach that consists of three main concepts: a semantic web service model, a weighted DAG composition model, and QoS calculation model.
+We herein give formal definitions of the assumptions the concepts regarding the semantic web service composition problem utilised in our approach that consists of three main concepts: a semantic web service model, a semantic matchmaking model, a weighted DAG composition model, and QoS calculation model.
 
 \textbf{Semantic Web Service Model}. The semantic web service model represent web services with functional descriptions, and how interoperability of web services enable matchmaking to automatically generate composition solutions.
 
-\textbf{Definition 1.} A request from users is defined as a composition task in a tuple: $Comp.T = \{I_{T}, O_{T}\}$ by giving task inputs $I_{T}$ and expecting desired task outputs $O_{T}$, where $I_{T}$ and $O_{T}$ are linked to the concepts $C$ in an ontology $O = \{C, Taxonomy\}$.
+\textbf{Definition 1.} A request from users is defined as a composition task in a tuple: $Comp.T = \{I_{T}, O_{T}\}$ by giving a set of task inputs $I_{T}$ and expecting  a set of desired task outputs $O_{T}$, where $I_{T}$ and $O_{T}$ are associated with related concepts $I^{C}_{T}$ and $O^{C}_{T}$ respectively in an ontology $O = \{C, Taxonomy \mid I^{C}_{T}, O^{C}_{T}  \subseteq C \}$.
 
-\textbf{Definition 2.} A semantic web service is defined as a tuple $S = \{ I_{S}, O_{S}, QoS_S \}$  
-
-
+\textbf{Definition 2.} A semantic web service is defined as a tuple $S = \{ I_{S}, O_{S}, QoS_S \}$ $\in$ $\mathcal{SR}$, where $I_{S}$ is a set of service inputs that must be satisfied to invoke $S$, and $O_{S}$ is a set of service outputs returned by the execution of $S$. $I_{S}$ and $O_{S}$ are concept-related instances that are linked to the concepts $I^{C}_{S}$ and $O^{C}_{S}$, where $ I^{C}_{S}, O^{C}_{S}  \subseteq C$. $QoS_S = \{ t_s, c_s, r_s, a_s, ... \} $ is a set of non-functional attributes of $S$, it typically refers to response time $t_s$, cost $c_s$, reliability $r_s$, and availability $a_s$ \cite{zeng2003quality}. $\mathcal{SR}$ is a set of $S$, where all the $S$ are registered.
 
 
+\textbf{Semantic Matchmaking Model}. The mechanism to compose web services relays on the semantic inputs and outputs, which enable inputs to be matched by outputs. To measure the quality of these matches, we utilise different matchmaking types (\textit{exact, plugin subsumes and fail} \cite{paolucci2002semantic} ) into consideration for exploiting the semantics of inputs and outputs.
 
-The nonfunctional part specifies overall QoS 
- 
- 
- requirements. To accomplish the composition goal, two stages are involved, services discovery and service selection. Service discovery is to find matching web services: $S_{n}(F(I_{S}, O_{S}), NF(QoS_{S}))$ from a Service Repository: $\mathcal{S}$ $=  \{S_{1}, S_{2},..., S_{n} \}$ for the given $I_{T}$. If no atomic web service could satisfy the composition goal, a composition of web services will be found to meet $Comp.G$. To ensure the composition solution returns the desired $Comp.G$ that considers a higher degree of matching $O_{T}$ and a near-optimised $QoS_{T}$, We first demonstrate the concepts in both semantic matchmaking types and $QoS$ as follows, and then propose a quality model that take care of semantic matchmaking quality and QoS simultaneously in Sect. \ref{Comprehensive_Quality_Model}.
+\textbf{Definition 3.} Given $a, b \in C$, $type(a, b)$ returns the matchmaking types of between two concepts related to outputs and inputs of two difference web services, and this matchmaking type is determined by the logic described in the $O$. 
 
-We defined our semantic web service composition representation as a weighted graph $WG = (V, E)$, where $V$ is a set of services as vertex: $V=\{S1, S2...Sn \}$ and $E$ is a set of edges $E = \{e_{1}, e_{2},... e_{n} \}$. Each edge is considered to be a semantic web service link $sm_{L}$ , so each edge $e$ is consisting of a pair of quality values, $mt_{L}$ and $s_{L}$ as weigths. Here we provide an example of semantic web service composition, which is described in Fig. \ref{wscs}. The data of composition web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, weights are calculated for all edges $e_{1}, e_{2},... e_{n}$.
+If both $a$ and $b$ are equivalent, $exact$ type ($a \equiv b$) is returned.
+If the concept of $a$ is a sub-concept of the concept of $b$ type ($a \sqsubseteq b$) is returned. 
+If the concept of $a$ is a super-concept of the concept of $b$, $subsumes$ type ($a \sqsupseteq b$) is returned. 
+If none of previous matchmaking types are returned, $fail$ type ($a \perp b$) is returned.
+
+\textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \rightarrow b)$ holds if $type(a, b) \neq subsumes \mid fail$. The operator ``$ \rightarrow$'' means $a$ is passed to $b$. The full match is a guarantee of completely valid  ``$ \rightarrow$'' operation as $b$ is fully satisfied by $a$.
+
+\textbf{Weighted DAG Composition Model}. web service composition is considered to be a data workflow, where services are chained together by their inputs and outputs using the two models defined before. Naturally, all these concepts can be captured in a weighted DAG as $WG = (V, E)$ , where:
+
+$V=\{Start, S1, S2...Sn, End\}$ is a set of services, where $Start$ and $End$ are two special services defined as $Start = \{ \phi, I_T, \phi \}$ and $End  = \{ O_T, \phi, \phi \}$. 
+
+$E = \{e_{1}, e_{2},... e_{n} \}$ is a set of edges. where $e = O_{S_{m}} \cup I_{S_{n}} \cup $ $fullmatch(O_{m} \rightarrow I_{n})$ is source service $S_m$ and target service $s_n$
+
+
+
+
+
+
 
 
 \subsection{Semantic Web Service matchmaking Type}\label{semantic Web service Discovery}
-The semantic service matchmaking aims to discover appropriate services from service repository. A semantic web service is defined by $S(F(I_{S}\in C_{1}, O_{S}\in C_{2}), NF(QoS_{S}))$, where both Input and Output are linked to concept $C_{1}$ and $C_{2}$ in an ontology $O$ respectively, satisfying $O=\{C, Taxonomy\}$. A web service matching process is to match the output and input concepts of two services according to the Taxonomy within an ontology. To measure the quality of semantic matchmaking, different matching levels are typically considered in the literature \cite{paolucci2002semantic}. To understand these levels, let us define two web services associated with concept-related parameters in a particular domain. $S_{1}$ $(F(I_{S_1}\in C_{1}, O_{S_1}\in C_{2}), NF(QoS_{S_1}))$ and  $S_{2}$ $(F(I_{S_2}\in C_{3}, O_{S_2}\in C_{4}), NF(QoS_{S_2}))$ and an ontology($O$) with $C_{1},C_{2},C_{3}$, and $C_{4}$. The matching levels to be considered are:
-
-\begin{itemize}
-\item \textit{Exact} ($\equiv$): Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are Exact match ($ O_{S_1} \in S_{1} \equiv I_{S_2} \in S_{2}$), if  Concept $C_{2}$ and Concept $C_{3}$ are equivalent.
-\item \textit{Plugin} ($\sqsubseteq_{n}$): Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are Plugin match ($O_{S_1} \in S_{1} \sqsubseteq_{n} I_{S_2} \in S_{2}$), if  Concept $C_{2}$ is a sub-concept of Concept $C_{3}$, and $n = \{1,2,...,n \}$ presents the levels of children concepts ($n=1$ stands for direct children).
-\item \textit{Subsume} ($\sqsupseteq_{n}$): Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are Subsume matched($O_{S_1} \in S_{1} \sqsupseteq_{n} I_{S_2} \in S_{2}$), if  Concept $C_{2}$ is a super-concept of  Concept $C_{3}$, and $n = \{1,2,...,n \}$ presents the levels of parent concepts ($n=1$ stands for direct parent).
-\item \textit{Fail} ($\perp$). Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are not matched (Fail) ($O_{S_1} \in S_{1} \perp I_{S_2} \in S_{2}$), if none of the previous matches discovered.
-\end{itemize}
-
-The semantic matchmaking is achieved by utilising OWL2 and OWL-S or other semantic markup languages for web services. In this paper, we use MECE (Mediation Contract Extension) \cite{bleul2008self} and OWL-DL. MECE is considered to be an alternative semantic annotation for WSDL. MECE defines the service-related inputs and outputs with parameter-related concepts. OWL-DL is a sublanguage of OWL extended from RDF. It specifies semantic information of concepts involved in MECE.
 
 
 \subsection{Quality of Service}\label{Quality of Service and Composition Constructs}
