@@ -79,13 +79,14 @@ Although obtaining a correct combination of web service is essential, there are 
 \subsection{Problem Formulation}\label{Motivation}
 
 We herein give formal definitions of the assumptions the concepts regarding the semantic web service composition problem utilised in our approach that consists of three main concepts: a semantic web service model, a semantic matchmaking model, a weighted DAG composition model, and QoS calculation model.
+\vspace{0.3cm}
 
 \textbf{Semantic Web Service Model}. The semantic web service model represent web services with functional descriptions, and how interoperability of web services enable matchmaking to automatically generate composition solutions.
 
 \textbf{Definition 1.} A request from users is defined as a composition task in a tuple: $Comp.T = \{I_{T}, O_{T}\}$ by giving a set of task inputs $I_{T}$ and expecting  a set of desired task outputs $O_{T}$, where $I_{T}$ and $O_{T}$ are associated with related concepts $I^{C}_{T}$ and $O^{C}_{T}$ respectively in an ontology $O = \{C, Taxonomy \mid I^{C}_{T}, O^{C}_{T}  \subseteq C \}$.
 
 \textbf{Definition 2.} A semantic web service is defined as a tuple $S = \{ I_{S}, O_{S}, QoS_S \}$ $\in$ $\mathcal{SR}$, where $I_{S}$ is a set of service inputs that must be satisfied to invoke $S$, and $O_{S}$ is a set of service outputs returned by the execution of $S$. $I_{S}$ and $O_{S}$ are concept-related instances that are linked to the concepts $I^{C}_{S}$ and $O^{C}_{S}$, where $ I^{C}_{S}, O^{C}_{S}  \subseteq C$. $QoS_S = \{ t_s, c_s, r_s, a_s, ... \} $ is a set of non-functional attributes of $S$, it typically refers to response time $t_s$, cost $c_s$, reliability $r_s$, and availability $a_s$ \cite{zeng2003quality}. $\mathcal{SR}$ is a set of $S$, where all the $S$ are registered.
-
+\vspace{0.3cm}
 
 \textbf{Semantic Matchmaking Model}. The mechanism to compose web services relays on the semantic inputs and outputs, which enable inputs to be matched by outputs. To measure the quality of these matches, we utilise different matchmaking types (\textit{exact, plugin subsumes and fail} \cite{paolucci2002semantic} ) into consideration for exploiting the semantics of inputs and outputs.
 
@@ -94,58 +95,41 @@ We herein give formal definitions of the assumptions the concepts regarding the 
 We use the $type(a, b)$ to define full matchmaking between two concept-related input and output of two services.
 
 \textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \rightarrow b)$ holds if $type(a, b)$ returns $exact$ or $plugin$. The operator ``$ \rightarrow$'' means $a$ is passed to $b$, and $b$ is fully satisfied by $a$. The full match is a guarantee of completely valid  ``$ \rightarrow$'' operation, whereas, partial matches are not considered in this paper.
-
+\vspace{0.3cm}
 
 \textbf{Weighted DAG Composition Model}. web service composition is considered to be a data workflow, where services are chained together by their inputs and outputs using the two models defined before. Naturally, all these concepts can be captured in a weighted DAG as $WG = (V, E)$ , where:
 
 $V=\{Start, S1, S2...Sn, End\}$ is a set of services, where $Start$ and $End$ are two special services defined as $Start = \{ \phi, I_T, \phi \}$ and $End  = \{ O_T, \phi, \phi \}$. 
 
-$E = \{e_{1}, e_{2},... e_{n} \}$ is a set of edges, where each edge has a set of incoming outputs $O_{S_{src}}$ from source service $S_{src}$ and a set of outgoing inputs $I_{S_{src}}$ from target service $S_{tar}$. 
+$E = \{e_{1}, e_{2},... e_{m} \}$ is a set of edges, where each edge has a set of incoming outputs $O_{S_{src}}$ from source service $S_{src}$ and a set of outgoing inputs $I_{S_{src}}$ from target service $S_{tar}$. 
 
 $e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \rightarrow i) \}$
+\vspace{0.5cm}
 
-\textbf{QoS Model in Weighted DAG}
+\textbf{QoS Model in a Weighted DAG}
+Four most often considered QoS parameters \cite{zeng2003quality} are response time, cost, reliability and availability described as follows:\textit{Response time} ($T$) measures the expected delay in seconds between the moment when a request is sent and the moment when the results are received.\textit{Cost} ($C$) is the amount of money that a service requester has to pay for executing the web service. \textit{Reliability} ($R$) is the probability that a request is correctly responded within the maximum expected time frame. \textit{Availability} ($A$) is the probability that a web service is accessible.
 
-\subsection{Quality of Service}\label{Quality of Service and Composition Constructs}
-According to \cite{zeng2003quality}, four most often considered QoS parameters are response time, cost, reliability and availability described as follows:
-\begin{itemize}
-\item \textit{Response time} ($T$) measures the expected delay in seconds between the moment when a request is sent and the moment when the results are received.
-\item \textit{Cost} ($C$) is the amount of money that a service requester has to pay for executing the web service
-\item \textit{Reliability} ($R$) is the probability that a request is correctly responded within the maximum expected time frame.
-\item \textit{Availability} ($A$) is the probability that a web service is accessible.
-\end{itemize}
-The aggregation value of QoS attributes for a composite service varies with respect to different constructs, which reflects how services associated with each other in a service composition \cite{zeng2003quality}. Here we consider two composition constructs: sequence and parallel constructs, in building the composition web service. The QoS calculation models are described as follows:
-\subsubsection{Sequence construct}
-all involved atomic services associated with a sequence construct are executed in a definite sequence order. The aggregation value for total time ($T$) and total cost ($C$) is as the sum of time and cost of web services involved respectively. The overall availability and reliability in a sequence construct are calculated by multiplying their corresponding availability and reliability of each web service in probability theory. This construct is shown in Fig. \ref{sequence}.
-\subsubsection{Parallel construct}
-Web services in a parallel construct are executed concurrently. The QoS aggregation value for total cost, availability and reliability are the same as these in sequence construct while the Total time ($T$) is determined by the most time-consuming path in the composition flow of the solution. This construct is presented in Fig. \ref{parallel}.
+	The aggregation value of QoS in a DAG with respect to different constructs, which reflects how services associated with each other in a service composition. Here we consider two composition constructs: sequence and parallel constructs, in building the composition web service. The QoS calculation models are described as follows:
 
-\begin{figure}[h]
-\centerline{
-\fbox{
-\begin{tabular}{p{0.6\linewidth}}
-\space\hfill\includegraphics[width=2in]{sequence.pdf}\hfill\space\\[0.2cm]
-$T=\sum\limits^m_{n=1}t_n$ \hfill $C=\sum\limits^m_{n=1}c_n$ \hfill
-$A=\prod\limits^m_{n=1}a_n$ \hfill $R=\prod\limits^m_{n=1}r_n$
-\end{tabular}}}
-\caption{Sequence construct and calculation of its QoS properties
-\cite{yu2013adaptive}.}
-\label{sequence}
-%\end{figure}
-\vspace{0.2cm}
-%\begin{figure}
-\centerline{
-\fbox{
-\begin{tabular}{p{0.6\linewidth}}
-\space\hfill\includegraphics[width=1.4in]{parallel.pdf}\hfill\space\\[0.2cm]
-\space\hfill$T=MAX\{t_n|n\in\{1,\ldots,m\}\}$\hfill\space\\[0.2cm]
-$C=\sum\limits^m_{n=1}c_n$ \hfill $A=\prod\limits^m_{n=1}a_n$ \hfill
-$R=\prod\limits^m_{n=1}r_n$
-\end{tabular}}}
-\caption{Parallel construct and calculation of its QoS properties
-\cite{yu2013adaptive}.}
-\label{parallel}
-\end{figure}
+
+\textbf{Definition 5.} $V_{A}(WG)$ is a function that given a $WG$, a aggregated $availability$ value is returned, which is defined as :
+$V_{A}(WG)=\prod\limits^n_{k=1}a_k$, for all ${S_1, S_2, ... S_n} \subset V$.
+
+\textbf{Definition 6.} $V_{R}(WG)$ is a function that given a $WG$, a aggregated $reliability$ value is returned, which is defined as :
+$V_{R}(WG)=\prod\limits^n_{k=1}r_k$, for all ${S_1, S_2, ... S_n} \subset V$.
+
+\textbf{Definition 7.} $V_{C}(WG)$ is a function that given a $WG$, a aggregated cost value is returned, which is defined as :
+$V_{C}(WG)=\sum\limits^n_{k=1}c_k$, for all ${S_1, S_2, ... S_n} \subset V$.
+
+
+\textbf{Definition 8.} $V_{T}(WG)$ is a function that given a $WG$, a aggregated time value is returned, where  $T$ is determined by the most time-consuming path in the composition flow of the solution, which is defined as :
+$V_{T}(WG)$ $=MAX\{timePath(WG)_n$ $|n\in\{1,\ldots,m\}\}$, where m is the number of $timePath$.
+
+\vspace{0.5cm}
+
+\textbf{Composition Problem}
+A set of semantic web services $S$ are chained as a weighted DAG composition mode $WG$ when a composition task $Comp.T$ is requested by users. The composition problem considered in this paper satisfying the follows:
+
 
 
 
