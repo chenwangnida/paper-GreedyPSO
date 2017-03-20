@@ -83,7 +83,7 @@ We herein give formal definitions of the assumptions the concepts regarding the 
 
 \textbf{Semantic Web Service Model}. The semantic web service model represent web services with functional descriptions, and how interoperability of web services enable matchmaking to automatically generate composition solutions.
 
-\textbf{Definition 1.} A request from users is defined as a composition task in a tuple: $Comp.T = \{I_{T}, O_{T}\}$ by giving a set of task inputs $I_{T}$ and expecting  a set of desired task outputs $O_{T}$, where $I_{T}$ and $O_{T}$ are associated with related concepts $I^{C}_{T}$ and $O^{C}_{T}$ respectively in an ontology $O = \{C, Taxonomy \mid I^{C}_{T}, O^{C}_{T}  \subseteq C \}$.
+\textbf{Definition 1.} A request from users is defined as a composition task in a tuple: $Comp.T = \{I_{T}, O_{T}\}$ by giving a set of task inputs $I_{T}$ and expecting  a set of desired task outputs $O_{T}$, where $I_{T}$ and $O_{T}$ are associated with related concepts $I^{C}_{T}$ and $O^{C}_{T}$ respectively in an ontology $O = \{(C, Taxonomy) \mid I^{C}_{T}, O^{C}_{T}  \subseteq C \}$.
 
 \textbf{Definition 2.} A semantic web service is defined as a tuple $S = \{ I_{S}, O_{S}, QoS_S \}$ $\in$ $\mathcal{SR}$, where $I_{S}$ is a set of service inputs that must be satisfied to invoke $S$, and $O_{S}$ is a set of service outputs returned by the execution of $S$. $I_{S}$ and $O_{S}$ are concept-related instances that are linked to the concepts $I^{C}_{S}$ and $O^{C}_{S}$, where $ I^{C}_{S}, O^{C}_{S}  \subseteq C$. $QoS_S = \{ t_s, c_s, r_s, a_s, ... \} $ is a set of non-functional attributes of $S$, it typically refers to response time $t_s$, cost $c_s$, reliability $r_s$, and availability $a_s$ \cite{zeng2003quality}. $\mathcal{SR}$ is a set of $S$, where all the $S$ are registered.
 \vspace{0.3cm}
@@ -94,7 +94,9 @@ We herein give formal definitions of the assumptions the concepts regarding the 
 
 We use the $type(a, b)$ to define full matchmaking between two concept-related input and output of two services.
 
-\textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \rightarrow b)$ holds if $type(a, b)$ returns $exact$ or $plugin$. The operator ``$ \rightarrow$'' means $a$ is passed to $b$, and $b$ is fully satisfied by $a$. The full match is a guarantee of completely valid  ``$ \rightarrow$'' operation, whereas, partial matches are not considered in this paper.
+\textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \Rightarrow b)$ holds if $type(a, b)$ returns $exact$ or $plugin$. The operator ``$ \Rightarrow$'' means $a$ is passed to $b$, and $b$ is fully satisfied by $a$. The full match is a guarantee of completely valid  ``$ \Rightarrow$'' operation, whereas, partial matches are not considered in this paper.
+
+\textbf{Definition 5.} Given $full match(a \Rightarrow b)$, $q(a \Rightarrow b)$ is a function that given a output-related concept of a service and a input-related concept of another service, it returns the concept similarities between them.
 \vspace{0.3cm}
 
 \textbf{Weighted DAG Composition Model}. web service composition is considered to be a data workflow, where services are chained together by their inputs and outputs using the two models defined before. Naturally, all these concepts can be captured in a weighted DAG as $WG = (V, E)$ , where:
@@ -103,7 +105,7 @@ $V=\{Start, S1, S2...Sn, End\}$ is a set of services, where $Start$ and $End$ ar
 
 $E = \{e_{1}, e_{2},... e_{m} \}$ is a set of edges, where each edge has a set of incoming outputs $O_{S_{src}}$ from source service $S_{src}$ and a set of outgoing inputs $I_{S_{src}}$ from target service $S_{tar}$. 
 
-$e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \rightarrow i) \}$
+$e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \Rightarrow i) \}$
 \vspace{0.5cm}
 
 \textbf{QoS Model in a Weighted DAG}
@@ -112,24 +114,25 @@ Four most often considered QoS parameters \cite{zeng2003quality} are response ti
 	The aggregation value of QoS in a DAG with respect to different constructs, which reflects how services associated with each other in a service composition. Here we consider two composition constructs: sequence and parallel constructs, in building the composition web service. The QoS calculation models are described as follows:
 
 
-\textbf{Definition 5.} $V_{A}(WG)$ is a function that given a $WG$, a aggregated $availability$ value is returned, which is defined as :
+\textbf{Definition 6.} $V_{A}(WG)$ is a function that given a $WG$, a aggregated $availability$ value is returned, which is defined as :
 $V_{A}(WG)=\prod\limits^n_{k=1}a_k$, for all ${S_1, S_2, ... S_n} \subset V$.
 
-\textbf{Definition 6.} $V_{R}(WG)$ is a function that given a $WG$, a aggregated $reliability$ value is returned, which is defined as :
+\textbf{Definition 7.} $V_{R}(WG)$ is a function that given a $WG$, a aggregated $reliability$ value is returned, which is defined as :
 $V_{R}(WG)=\prod\limits^n_{k=1}r_k$, for all ${S_1, S_2, ... S_n} \subset V$.
 
-\textbf{Definition 7.} $V_{C}(WG)$ is a function that given a $WG$, a aggregated cost value is returned, which is defined as :
+\textbf{Definition 8.} $V_{C}(WG)$ is a function that given a $WG$, a aggregated cost value is returned, which is defined as :
 $V_{C}(WG)=\sum\limits^n_{k=1}c_k$, for all ${S_1, S_2, ... S_n} \subset V$.
 
 
-\textbf{Definition 8.} $V_{T}(WG)$ is a function that given a $WG$, a aggregated time value is returned, where  $T$ is determined by the most time-consuming path in the composition flow of the solution, which is defined as :
+\textbf{Definition 9.} $V_{T}(WG)$ is a function that given a $WG$, a aggregated time value is returned, where  $T$ is determined by the most time-consuming path in the composition flow of the solution, which is defined as :
 $V_{T}(WG)$ $=MAX\{timePath(WG)_n$ $|n\in\{1,\ldots,m\}\}$, where m is the number of $timePath$.
 
 \vspace{0.5cm}
 
 \textbf{Composition Problem}
-A set of semantic web services $S$ are chained as a weighted DAG composition mode $WG$ when a composition task $Comp.T$ is requested by users. The composition problem considered in this paper satisfying the follows:
+A set of semantic web services $S$ are chained as a weighted DAG composition mode $WG$ when a composition task $Comp.T$ is requested by users. The composition problem considered in this paper to automatically generate $WG$, satisfying the follows:
 
+$\forall WG^{'}$ , $q(a \Rightarrow b) \cup V_{A}(WG^{'}) \cup V_{R}(WG^{'}) \cup V_{C}(WG^{'}) \cup V_{T}(WG^{'})  \leq q(a \Rightarrow b) \cup V_{A}(WG) \cup V_{R}(WG) \cup V_{C}(WG) \cup V_{T}(WG) $ 
 
 
 
