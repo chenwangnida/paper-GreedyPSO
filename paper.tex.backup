@@ -1,14 +1,15 @@
-\documentclass{IEEEtran}
+\documentclass{llncs}
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{color,graphicx,epstopdf,changepage,amsmath,multirow}
-
+\usepackage[justification=centering]{caption}
 \SetAlgoCaptionSeparator{.\space}
 \renewcommand\AlCapFnt{\normalfont\scshape}
 \setlength{\algomargin}{0.7cm}
 
-\title{Comprehensive Quality-Aware Automated Semantic Web Service Composition}
-\author{Chen Wang, Hui Ma, Aaron Chen\\ \small School of
-Engineering and Computer Science, Victoria University of Wellington, New Zealand\\
+\title{Comprehensive Quality Awareness Automated Semantic Web Service Composition}
+\author{Chen Wang, Hui Ma, and Aaron Chen}
+\institute{School of Engineering and Computer Science,
+\\Victoria University of Wellington, New Zealand \\
 Email: \{chen.wang, hui.ma, aaron.chen\}@ecs.vuw.ac.nz}
 
 
@@ -21,215 +22,225 @@ Email: \{chen.wang, hui.ma, aaron.chen\}@ecs.vuw.ac.nz}
 \begin{document}
 \maketitle
 \begin{abstract}
-Semantic web service composition has been a prevailing research area in recent years. There are two major challenges faced by researchers, semantic matchmaking and QoS optimisation. Semantic matchmaking aims to discover interoperable web services that can interact with each other to provide rich functionalities through language understanding and reasoning. QoS optimisation aims to optimise the non-functional requirement of service users, e.g., minimum cost, maximal reliability. Many scholars have looked into QoS optimisation problems in QoS-aware web service composition applying AI planning and Evolutionary Computation techniques. To meet users' requirement, one often needs to consider both semantic matchmaking quality and QoS simultaneously. Existing works on web service composition often concerns either semantic service composition or QoS-aware service composition. However, there are few works concerns both semantic matchmaking quality and QoS at the same time and achieve a more 
-desirable tradeoff in consideration of both sides. Therefore, In this paper, proposed a genral comprehensive quality model that can achieve a more desirable balance in consideration of both semantic matchmaking quality and QoS. This model is also suitable to be tackled through EC algorithms, and we develope a PSO-based service composition approach with explicit support for the comprehensive model, which can generate more desiable balanced web service composition that meet both senmantic matchmaking quality and QoS requirement by comparing existing QoS evaluation model using benchmark dataset. We also conduct an experiment shows our PSO-based mehtod performs better in finding more optimised solution by comparing one existing GP-based method.
+Semantic web service composition has been a prevailing research area in recent years. There are two major challenges faced by researchers, semantic matchmaking and Quality of Service (QoS) optimisation. Semantic matchmaking aims to discover interoperable web services that can interact with each other to provide rich functionalities through language understanding and reasoning. QoS optimisation aims to optimise the non-functional requirements of service users, e.g., minimum cost, maximal reliability. Many scholars have looked into QoS optimisation problems in QoS-aware web service composition, applying AI planning and Evolutionary Computation techniques. To meet users' requirements, one often needs to consider both semantic matchmaking quality and QoS simultaneously. Existing works on web service composition often concern either semantic web  service composition or QoS-aware web service composition. Therefore, we propose a general comprehensive quality model considering semantic matchmaking quality and QoS simultaneously that can achieve a more desirable trade-off in consideration of both sides. Further more, we develop a PSO-based service composition approach with explicit support for the comprehensive model. We compare this model with a promising QoS-aware model, and also compare our PSO-based method with one recent GP-based method to show its performance in finding a more optimised solution.
 
 \end{abstract}
 \section{Introduction}\label{introduction}
 
-\textit{Web service composition} pertains to a combination of multiple web services to provide a value-added composition service that accommodates customers' arbitrarily complex requirements. This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. Due to the increase of the number of large-scale enterprise applications, the number of Web services has increased substantially and unprecedentedly. Therefore, manual and semi-automated web service composition are considered to be less efficient while automated web service composition enjoys less human intervention, less time consumption, and high productivity.
+\textit{Web service composition} pertains to a combination of multiple web services to provide a value-added composition service that accommodates customers' arbitrarily complex requirements. This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. Due to the increasing number of large-scale enterprise applications, the number of Web services has increased substantially and unprecedentedly. Therefore, manual and semi-automated web service compositions are considered to be less efficient while automated web service composition has less human intervention, less time consumption, and high productivity.
 
-Two most notable challenges for web service composition are $(1)$ ensuring interoperability of services and $(2)$ achieving QoS optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge $(1)$ in syntactic and semantics dimensions. The syntactic dimension is covered by the XML-based technologies (such as $WSDL$, $SOAP$). The semantics aspect, on the other hand, demands further research. Through ontology-based semantics \cite{o2005review}, web services can understand and better collaborate with each other. There are many ontology languages and formats for semantic service descriptions, such as OWL-S, WSML, and SAWSDL \cite{petrie2016web}, which make ``machine understanding'' possible through identifying and matching semantic similarity in input/output parameters of web services in heterogeneous environments. The second challenge $(2)$ is related to finding \textit{optimised solutions} to Quality of Service ($QoS$). This problem gives birth to \textit{QoS-aware service composition} that considers the composition of service-level agreements (SLA) \cite {sahai2002automated} involving a collection of SLA rules and policies for supporting QoS-based composition.
+Two most notable challenges for web service composition are ensuring interoperability of services and achieving Quality of Service (QoS) optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge in syntactic and semantic dimensions. The syntactic dimension is covered by the XML-based technologies (such as $WSDL$, $SOAP$). The semantic aspect, on the other hand, demands further research. Through ontology-based semantics \cite{o2005review}, web services can understand and better collaborate with each other. There are many ontology languages and formats for semantic service descriptions, such as OWL-S, WSML, and SAWSDL \cite{petrie2016web}, which make ``machine understanding'' possible through identifying and matching semantic similarities in input/output parameters of web services in heterogeneous environments. The second challenge $(2)$ is related to finding \textit{optimised solutions} to QoS. This problem gives birth to \textit{QoS-aware service composition} that considers the composition of service-level agreements (SLA) \cite {sahai2002automated} involving a collection of SLA rules and policies for supporting QoS-based composition.
 
-Existing works on service composition focus mainly on addressing the one of challenges above. A lot of works have been conducted to optimise the quality of compositions under a pre-defined abstract workflow, which is generally considered as \textit{semi-automated Web service composition} approach \cite{parejo2008qos,bahadori2009optimal}. Meanwhile, many research works consider the possibility of generating a composition plan automatically in discovering and selecting suitable web services, which are considered to be NP-hard \cite{moghaddam2014service}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, with the hope of eliminating conflicts by the semantic level of web services. In the past few years, substantial works have been done on semantic web service composition \cite{lecue2009optimizing,fanjiang2014semantic,pop2009immune}. However, few works have enabled truely automatic semantic web service composition, where both QoS and quality of semantic match making will be optimised simultaneously. To a given service request, the quality of service composition solution depends on both QoS and quality of semantic matchmaking.
+Existing works on service composition focus mainly on addressing one of challenges above. Many works have been conducted to optimise the quality of compositions under a pre-defined abstract workflow, which is generally considered as a \textit{semi-automated Web service composition} approach \cite{bahadori2009optimal,parejo2008qos}. Meanwhile, many research works consider the possibility of generating a composition plan automatically in discovering and selecting suitable web services, which are considered to be NP-hard \cite{moghaddam2014service}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, which supplements well defined semantic descriptions from the concept of ontologies, instead of parameters value. In the past few years, substantial works have been done on semantic web service composition \cite{bansal2016generalized,boustil2014semantic,mier2015integrated}. However, few works have enabled truely automatic semantic web service composition, where both QoS and quality of semantic match making will be optimised simultaneously and achieved a desired balance.
 
-The overall goal of this paper is to \textit{develop an comprehensive appraoch to automated QoS-aware semantic web service composition that satisfactorily optimises both QoS and semantic matchmaking quality}. Particularly, this paper extends existing works of QoS-aware service composition by considering both QoS optimisation and semantic matchmaking quality optimisation in our proposed comprehensive quality model. Particle Swarm Optimisation (PSO) has show its promise in searching near-optimised service composition solutions \cite{da2016particle}. We will propose a PSO-based service composition approach using our comprehensive quality model to measure semantic matchmaking in automated semantic web service composition. We will achieve three objectives in this work as follows:
+The overall goal of this paper is to \textit{develop a general comprehensive approach to automated QoS-aware semantic web service composition that satisfactorily optimises both QoS and semantic matchmaking quality}. Particularly, this paper extends existing works of QoS-aware service composition by considering both QoS optimisation and semantic matchmaking quality optimisation in our proposed comprehensive quality model. Particle Swarm Optimisation (PSO) has shown its promise in searching for near-optimised service composition solutions \cite{da2016particle}. We will propose a PSO-based service composition approach with explicit support for our proposed quality model. We will achieve three objectives in this work as follows:
 
 \begin{enumerate}
- \item To propose a general comprehensive quality model that address QoS and semantic matchmaking quality in considering different matching types with corresponding concept similarity.
+ \item To propose a general comprehensive quality model that addresses QoS and semantic matchmaking quality in considering different matching types with corresponding concept similarities.
   
- \item To propose a PSO-based service composition algorithm that utilises the proposed quality model. To do that we will first propose a representation of semantic service composition, which can model the quality of semantic matchmaking and QoS together. A particle is then used to represent a queue of services that can be used to decoded into a near-optimised semantic service composition solution.
+ \item To propose a PSO-based service composition algorithm that utilises the proposed quality model. To do that we will first propose a representation of semantic service composition, which can model the quality of semantic matchmaking and QoS together.
   
- \item To evaluate our proposed approach, we conduct experiment to compare our comphensive quality model with QoS evaluation model, we also compare an one existing GP approach with our appraoch using our comprehensive model. Both comparison utilise benchmark datasets from Web Services Challenge 2009 (WSC09) \cite{kona2009wsc} 
+ \item To evaluate our proposed approach, we conduct experiments to compare our comprehensive quality model with one widely used QoS evaluation model. We also compare one recent GP approach \cite{ma2015hybrid} with our PSO-based approach using our proposed model. Both comparisons utilise benchmark datasets from Web Services Challenge 2009 (WSC09) \cite{kona2009wsc} 
   
 \end{enumerate}
 
 \section{Related Work} \label{relatedWork}
-Substantial work on web service composition either focused on semantic web service composiiton \cite{boustil2014semantic,mier2015integrated, bansal2016generalized} or QoS-aware web service composiiton \cite{da2016particle,da2015graphevol,yu2013adaptive, gupta2015optimization,qi2010combining}, However few researchers addressed both semantic mathmaking quality and QoS requirements at the same time for web service composition problems. To the best of our knowledge, \cite{lecue2009optimizing,fanjiang2014semantic,pop2009immune} reported some recent attempts on service composition that considers both aspects.
+Substantial works on web service composition focus on either semantic web service composition \cite{boustil2014semantic,bansal2016generalized,mier2015integrated} or QoS-aware web service composition \cite{gupta2015optimization,qi2010combining,ma2015hybrid,da2016particle,da2015graphevol,yu2013adaptive}, However, few researchers address both semantic matchmaking quality and QoS requirements for web service composition problems. To the best of our knowledge, \cite{fanjiang2014semantic,lecue2009optimizing,pop2009immune} reported some attempts on service composition that considers both aspects.
 
-\cite{boustil2014semantic,mier2015integrated, bansal2016generalized} captures the semantics of the parameters of web services using some kind of logic (e.g., description logic) for enabling semantic web service composition, where the number of web servces or length of the graph is minimised to reach the optimised graph-based compositin solutions. However, these approaches always need to improve their scalability for a large number of web services, and the evalution method does not fit for today's customers' requirements properly.
+Semantic web service composition \cite{boustil2014semantic,bansal2016generalized,mier2015integrated} captures the semantic description of web services' parameters using some kind of logic (e.g., description logic) for enabling the interoperability of web services, where the number of web services or length of a graph is minimised to reach the optimised graph-based composition solutions. However, this evaluation approach does not guarantee optimised qualities of composition solutions for QoS.
 
-A heuristic service composition method is proposed by Qi et al. \cite{qi2010combining}for QoS-aware web service composiiton, where a small number of promising candidates related to each task are considered by local selection, and composition solutions are enumerated to reach the near-to-optimal for QoS consideration. but obviously there exists scalability problem for enumeration techniques. 
+QoS-aware web service composition is studied using traditional approaches or Evolutionary Computation (EC) techniques. Qi et al. \cite{qi2010combining} propose a heuristic service composition method, where a small number of promising candidates related to each task are considered by local selection, and composition solutions are enumerated to reach the near-to-optimal QoS. but there exists a scalability problem for the enumeration technique. EC techniques are used to automatically generate solutions with optimal QoS, which is considered to a NP-hard problem. Gupta et al. \cite{gupta2015optimization} employ an Genetic Algorithm using a set of binary strings as individuals, which demands to be decoded into composition solutions. Genetic Programming (GP) are used by \cite{yu2013adaptive} to find optimal solutions, which is reached by penalising infeasible solutions using a fitness function. A hybird approach employs both greedy search algorithm and GP is introduced in \cite{ma2015hybrid} to generate solutions with functional correctness. In particularly, a greedy search is used to generate  directed acyclic graphs (DAGs) as composition solutions that is further transferred to tree structures for initialisation and mutation. To eliminating the transformation process from DAGs, A promising GraphEvol is proposed in \cite{da2015graphevol}, where web service composition are in a form of DAGs employing Graph-based evolutionary operators like crossover and mutation. An indirect PSO-based approach was introduced in \cite{da2016particle}. An optimised queue is used as an indirect representation that is decoded into a DAG-based solution. These QoS-aware approaches \cite{gupta2015optimization,qi2010combining,ma2015hybrid,da2016particle,da2015graphevol,yu2013adaptive} do not consider semantic matchmaking quality, which could lead to too specific outputs produced by the selected services, The finding is supported by our first comparison experiment.
 
-Evolutionary Computation (EC) techniques are used to improve the scalability for solving NP-hard problems. Gupta et al. \cite{gupta2015optimization} employ an Genetic Algorithm to the problem of QoS-ware web service composition, and a set of binary strings are used as individuals, which demands to be decoded into composition solutions. Genetic Programming are employed by  \cite{yu2013adaptive} with direct reprentation of compsotion solutions, the overall quality of solutions are measured by a fitness function that is liable for penalising infeasible solutions. A hyper approach employs both a greedy search algorithm and Genetic Programming (GP) is introduced in \cite{ma2015hybrid} to generate locally optimised solution with functionality correctness. In particularly, the greedy search is used to generate directed acrylic graph as composition solutions, which is further transferred to tree structure using unfolding techniques for initialisation and mutation during the evolutionary process. To eliminating the transformation process from DAG, A promising GraphEvol is proposed in \cite{da2015graphevol}, where web service composition are in a form of Directed Acyclic Graph(DAG) employing Graph-based evolutionary operators like crossover and mutation. PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}, an indirect PSO-based approach was introduced in \cite{da2016particle}. An opimised queue is used as indirect representation as composition solution that decoding into Direct Acyclic Graph (DAG). These QoS-aware appraoches does not consider semantic matchmaking quality, which could lead to over-general outputs to be produced by selected services, The finding is evidently supported by our first comparision experiment. In fact, customers' perspectives, application domains and ontology granularity all could have significant impact on the outputs requested by users. In some scenarios, the output is too broad to bear any specific meaning for the customers, even though those web services selected leads to a very good overall QoS.
+Few works \cite{fanjiang2014semantic,lecue2009optimizing,pop2009immune} employ EC technique for considering both semantic matchmaking quality and QoS simultaneously. Lecue et al. \cite{lecue2009optimizing} employ Genetic Algorithm for semi-automated web service composition considering semantic matchmaking quality and QoS, where the semantic matchmaking quality is measured through evaluating semantic links, which requires a formal definition of ontology in Description Logic. This evaluation method takes huge cost and time for the domain experts to establish required ontology. Another GA-based approach work \cite{fanjiang2014semantic} employs a sequence of fitness functions are used in the binary selection of chromosomes, where semantic matchmaking quality is evaluate in two fitness functions considering concept similarity and parameter similarity respectively, but different semantic matchmaking types are ignored in the evaluation model. The work \cite{pop2009immune} as an immune-inspired web service composition approach employ indirect representation that a binary alphabet to encode a planning graph, where the semantic matchmaking quality is measured by the similarity using information retrieval technique.
 
-Few works \cite{lecue2009optimizing,fanjiang2014semantic,pop2009immune} employ EC technique for considering both semantic matchmaking quality and QoS simultaneously. Lecue et al. \cite{lecue2009optimizing} employ Genetic Algorithm for semi-automated web service composition considering semantic matchmaking quality and QoS, where the semantic matchmaking quality is measured the quality of semantic links that requires formal definition of ontology in Description logic. This evaluation takes huge cost and time for the domain experts to establish required ontology. Another GA-based appraoch work \cite{fanjiang2014semantic} employs a sequence of fitness functions are used in the binary selection of chromosomes, where semantic matchmaking quality is evaluate in two fitness functions considering concept similarity and parameter similarity respectively, However, different semantic matchmaking types are ignored in evaluation model. The work \cite{pop2009immune} as an immune-inspired web service composition approach employ indirect reprentation that a binary alphabet to encode a planning graph, where the semantic matchmaking quality is measured  by the similarity using information retrieval technique.
+In summary, despite a large number of approaches for semantic web service composition and QoS-aware service composition approaches. There is a lack of a general approaches that achieve a more desirable balance in consideration of both semantic matchmaking quality and QoS. Therefore, we proposed a general comprehensive quality model to fill the gaps, and then we proposed a PSO-based method with explicit support for the comprehensive model to find optimal compositions.
 
+\section{Motivation and Problem Description}\label{problemDes}
+\subsection{Motivation}\label{Motivation}
 
-In summary, composition solutions from semantic web service composition does not consier QoS \cite{boustil2014semantic,mier2015integrated, bansal2016generalized}, and QoS-aware web service composiiton \cite{da2016particle,da2015graphevol,yu2013adaptive, gupta2015optimization,qi2010combining} does not consider distinguished matchmaking quality in their fitness function. Few works do consider both quality aspects, but some limitatins lie in semi-automated approach \cite{lecue2009optimizing}, less general semantic quality measurement \cite{lecue2009optimizing, pop2009immune}, or semantic matchmaking types ignorance \cite{pop2009immune}. In addition, experiments design for  \cite{lecue2009optimizing,fanjiang2014semantic,pop2009immune} are not conducted using benchamark dataset for the scalability, only small datasets are utilised that might suffer scalability. Results analysis for \cite{lecue2009optimizing,fanjiang2014semantic,pop2009immune} also do not evidently point out what desired balance could be rearched by considering semantic matchmaking quality and QoS. Therefore, we proposed a general comprehensive quality model which achieve a more desirable balance in consideration of both semantic matchmaking quality and QoS to fill the gaps dissussed above, and then we proposed a POS-based method with explicit support for the comprehensive model, and evaluate its performace by comparing with one existing GP-based approach.
-
-\section{Problem Description}\label{problemDes}
-
-The aim of web service composition is to fulfil customers' requirements, which could be denoted as a composition goal: $Comp.G(F(T_{Input}, T_{Output}), NF(T_{QoS}))$. This overall composition goal is demonstrated in two parts: functional part and non-functional part. The functional part is defined by a given task input and a desired task output. The nonfunctional part specifies QoS. To accomplish the composition goal, two stages are involved, services discovery and service selection. Service discovery is to find matching web services: $S_{n}(F(I_{S}, O_{S}), NF(S_{QoS}))$ from a Service Repository: $\mathcal{S}$ $=  \{S_{1}, S_{2},..., S_{n} \}$ for the given $T_{Input}$. If no atomic web service could satisfy the composition goal, a composition of web services will be found to meet $Comp.G$. To ensure the composition solution returns the desired $Comp.G$, we use a quality model that take care of QoS and semantic matchmaking quality.
-
-\subsection{Quality of Service and Composition Constructs}\label{Quality of Service and Composition Constructs}
-According to \cite{zeng2003quality}, four most often considered QoS parameters are response time, cost, reliability and availability decribed as follows:
-\begin{itemize}
-\item \textit{Response time} ($T$) measures the expected delay in seconds between the moment when a request is sent and the moment when the results are received.
-\item \textit{Cost} ($C$) is the amount of money that a service requester has to pay for executing the web service
-\item \textit{Reliability} ($R$) is the probability that a request is correctly responded within the maximum expected time frame.
-\item \textit{Availability} ($A$) is the probability that a web service is accessible.
-\end{itemize}
-The aggregation value of QoS attributes for a composite service varies with respect to different constructs, which reflects how services associated with each other in a service composition \cite{zeng2003quality}. Here we consider two composition constructs: sequence and parallel constructs, in building the composition web service. The QoS calculation models are described as follows:
-\subsubsection{Sequence construct}
-The composition web service executes each atomic service associated with a sequence construct in a definite sequence order. The aggregation value for total time ($T$) and total cost ($C$) is as the sum of time and cost of web services involved respectively. The overall availability and reliability in a sequence construct are calculated by multiplying their corresponding availability and reliability of each web service in probability theory. This construct is shown in Fig. \ref{sequence}.
-\subsubsection{Parallel construct}
-Web services in a parallel construct are executed concurrently. The QoS aggregation value for total cost, availability and reliability are the same as these in sequence construct while the Total time ($T$) is determined by the most time-consuming path in the composition flow of the solution. This construct is presented in Fig. \ref{parallel}.
+The aim of web service composition considered in this paper is to automatically select the optimal solutions in considering both QoS and semantic matchmaking quality by a user's request. The request is to provide inputs and obtain outputs, the composition results that should meet the optimal requirements above. A motivating example of this problem is shown in Fig \ref{motivation}. The figure is a DAG represent a solution with four web services involved for a request $R$ as a composition task, where inputs of the task are \{TravelDepartureDate, HomeCity, ConferenceCity, TravelReturnDate \} and outputs are \{BusTicket, FlightTicket, TouristMap, HotelReservation \}. This is a classic example of travel planning problem for scholars who seek for booking services of airplanes, buses and hotels reservation, and also generating tourist maps for the conference city. The graph also contains edges that marked with connecting outputs and inputs, which represent valid semantic matches where the outputs of a web service can be passed as the inputs of its successors.
 
 \begin{figure}[h]
-\centerline{
-\fbox{
-\begin{tabular}{p{0.6\linewidth}}
-\space\hfill\includegraphics[width=2in]{sequence.pdf}\hfill\space\\[0.2cm]
-$T=\sum\limits^m_{n=1}t_n$ \hfill $C=\sum\limits^m_{n=1}c_n$ \hfill
-$A=\prod\limits^m_{n=1}a_n$ \hfill $R=\prod\limits^m_{n=1}r_n$
-\end{tabular}}}
-\caption{Sequence construct and calculation of its QoS properties
-\cite{yu2013adaptive}.}
-\label{sequence}
-%\end{figure}
-\vspace{0.2cm}
-%\begin{figure}
-\centerline{
-\fbox{
-\begin{tabular}{p{0.6\linewidth}}
-\space\hfill\includegraphics[width=1.4in]{parallel.pdf}\hfill\space\\[0.2cm]
-\space\hfill$T=MAX\{t_n|n\in\{1,\ldots,m\}\}$\hfill\space\\[0.2cm]
-$C=\sum\limits^m_{n=1}c_n$ \hfill $A=\prod\limits^m_{n=1}a_n$ \hfill
-$R=\prod\limits^m_{n=1}r_n$
-\end{tabular}}}
-\caption{Parallel construct and calculation of its QoS properties
-\cite{yu2013adaptive}.}
-\label{parallel}
+\centering
+\fbox{\includegraphics[scale=.25]{motivation.pdf}}
+ \caption{ An example of a web service composition}
+ \label{motivation}
 \end{figure}
 
-\section{Comprehensive Quality-Aware Service model}\label{qswsc_approach}
-In this section, we propose a comprehensive quality-aware service model to achieve a more desirable balance in consideration of both semantic matchmaking quality and QoS for semantic web service composition.
+Although obtaining a correct combination of web service is essential, there are many ways to chain web services to reach users' needs with different web services from a service repository. These web services have different QoS in terms of different availability, price, reliability and response time. Moreover, valid semantic matches between two web services could also have different matchmaking quality. For example, Generate Map service produce StreetMap which is considered to be a valid semantic match to TouristMap from users' perspectives. These perspectives are captured in a taxonomy Fig .\ref{taxonomy}, where all the inputs and the outputs related to the web services are described for a travel planning domain. For example, the concept Map and its sub-concept urbanMap are assigned with a touristMap instance and streetMap instance respectively in Fig .\ref{taxonomy}. The valid semantic match is considered that an instance of urban Map can be an instance of Map, but not vice versa. However, if a web service $GenerateTouristMap$ is found in the service repository that produces TouristMap as an output, but price is "16.87". I consider its semantic matchmaking quality is higher than the service $GenerateMap$, but price negatively contributes to the overall QoS. Therefore, automatically generating solutions in considering both QoS and matchmaking quality is a very challenging problem.  
 
-\subsection{Semantic Web Service matchmaking Type}\label{semantic Web service Discovery}
-The semantic service matchmaking aims to discover appropriate services from service repository. A semantic web service is defined by $S(F(I_{S}\in C_{1}, O_{S}\in C_{2}), NF(S_{QoS}))$, where both Input and Output are linked to concept $C_{1}$ and $C_{2}$ in an ontology $O$ respectively, satisfying $O=\{C, Taxonomy\}$. A web service matching process is to match the output and input concepts of two services according to the Taxonomy within an ontology. To measure the quality of semantic matchmaking, different matching levels are typically considered in the literature \cite{paolucci2002semantic}. To understand these levels, let us define two web services associated with concept-related parameters in a particular domain. $S_{1}$ $(F(I_{S}\in C_{1}, O_{S}\in C_{2}), NF(S_{QoS}))$ and  $S_{2}$ $(F(I_{S}\in C_{3}, O_{S}\in C_{4}), NF(S_{QoS}))$ and an ontology($O$) with $C_{1},C_{2},C_{3}$, and $C_{4}$. The matching levels to be considered are:
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=.28]{taxonomy.pdf}}
+ \caption{ A taxonomy of a travel planning domain}
+ \label{taxonomy}
+\end{figure}
 
-\begin{itemize}
-\item \textit{Exact} ($\equiv$): Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are Exact match ($ O_{S} \in S_{1} \equiv I_{S} \in S_{2}$), if  Concept $C_{2}$ and Concept $C_{3}$ are equivalent.
-\item \textit{Plugin} ($\sqsubseteq_{n}$): Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are Plugin match ($O_{S} \in S_{1} \sqsubseteq_{n} I_{S} \in S_{2}$), if  Concept $C_{2}$ is a sub-concept of Concept $C_{3}$, and $n = \{1,2,...,n \}$ presents the levels of children concepts ($n=1$ stands for direct children).
-\item \textit{Subsume} ($\sqsupseteq_{n}$): Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are Subsume matched($O_{S} \in S_{1} \sqsupseteq_{n} I_{S} \in S_{2}$), if  Concept $C_{2}$ is a sub-concept of  Concept $C_{3}$, and $n = \{1,2,...,n \}$ presents the levels of parent concepts ($n=1$ stands for direct parent).
-\item \textit{Fail} ($\perp$). Output of Web service $S_{1}$ and Input of Web service $S_{2}$ are not matched (Fail) ($O_{S} \in S_{1} \perp I_{S} \in S_{2}$), if none of the previous matches discovered.
-\end{itemize}
+\subsection{Problem Formulation}\label{Motivation}
 
-The semantic matchmaking is achieved by utilising OWL2 and OWL-S or other semantic markup languages for web services. In this paper, we use MECE (Mediation Contract Extension) \cite{bleul2008self} and OWL-DL. MECE is considered to be an alternative semantic annotation for WSDL. MECE defines the service-related inputs and outputs with parameter-related concepts. OWL-DL is a sublanguage of OWL extended from RDF. It specifies semantic information of concepts involved in MECE.
+We herein give formal definitions of the assumptions the concepts regarding the semantic web service composition problem utilised in our approach that consists of four main concepts: a semantic web service model, a semantic matchmaking model, a weighted DAG composition model, and QoS calculation model, and composition problem model.
+\vspace{0.3cm}
 
-\subsection{Comprehensive Quality-Aware Model}\label{qualityModel}
-In this paper, we propose a comprehensive quality model to evaluate the overall quality of semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware optimisation that ignores quality of semantic matchmaking.
+\textbf{Semantic Web Service Model}. The semantic web service model represents web services with functional descriptions, and how interoperability of web services enables matchmaking for automatically generating composition solutions.
+
+\textbf{Definition 1.} A request from users is defined as a composition task in a tuple: $Comp.T = \{I_{T}, O_{T}\}$ by giving a set of task inputs $I_{T}$ and expecting  a set of desired task outputs $O_{T}$, where $I_{T}$ and $O_{T}$ are associated with related concepts $I^{C}_{T}$ and $O^{C}_{T}$ respectively in an ontology $O = \{(C, Taxonomy) \mid I^{C}_{T}, O^{C}_{T}  \subseteq C \}$.
+
+\textbf{Definition 2.} A semantic web service is defined as a tuple $S = \{ I_{S}, O_{S}, QoS_S \}$ $\in$ $\mathcal{SR}$, where $I_{S}$ is a set of service inputs that must be satisfied to invoke $S$, and $O_{S}$ is a set of service outputs returned by the execution of $S$. $I_{S}$ and $O_{S}$ are concept-related instances that are linked to the concepts $I^{C}_{S}$ and $O^{C}_{S}$, where $ I^{C}_{S}, O^{C}_{S}  \subseteq C$. $QoS_S = \{ t_s, c_s, r_s, a_s, ... \} $ is a set of non-functional attributes of $S$, it typically refers to response time $t_s$, cost $c_s$, reliability $r_s$, and availability $a_s$ \cite{zeng2003quality}. $\mathcal{SR}$ is a service repository consisting of a set of $S$, where all the $S$ are registered.
+\vspace{0.3cm}
+
+\textbf{Semantic Matchmaking Model}. The mechanism to compose web services relays on the semantic descriptions of inputs and outputs, which enable inputs of a service to be matched by outputs of another. To measure the quality of these matches, we utilise different matchmaking types (\textit{exact, plugin subsumes and fail} \cite{paolucci2002semantic} ) into consideration for exploiting the semantics of inputs and outputs.
+
+\textbf{Definition 3.} Given $a, b \in C$, $type(a, b)$ returns the matchmaking types of two concepts, and this matchmaking type is determined by the logic described in the $O$. If both $a$ and $b$ are equivalent, $exact$ type ($a \equiv b$) is returned. If the concept of $a$ is a sub-concept of the concept of $b$ type ($a \sqsubseteq b$) is returned. If the concept of $a$ is a super-concept of the concept of $b$, $subsumes$ type ($a \sqsupseteq b$) is returned. If none of previous matchmaking types are returned, $fail$ type ($a \perp b$) is returned.
+
+We use the $type(a, b)$ to define full matchmaking between two concept-related input and output of two services.
+
+\textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \Rightarrow b)$ holds if $type(a, b)$ returns $exact$ or $plugin$. The operator ``$ \Rightarrow$'' means $a$ is passed to $b$, and $b$ is fully satisfied by $a$. The full match is a guarantee of completely valid  ``$ \Rightarrow$'' operation, whereas, partial matches are not considered in this paper.
+
+\textbf{Definition 5.} Given $full match(a \Rightarrow b)$, $q(a \Rightarrow b)$ is a function that given a output-related concept of a service and a input-related concept of another service, it returns the concept similarities between them.
+\vspace{0.3cm}
+
+\textbf{Weighted DAG Composition Model}. web service composition is considered to be a data workflow, where services are chained together by their inputs and outputs using the two models defined before. Naturally, all these concepts can be captured in a weighted DAG as $WG = (V, E)$ , where:
+
+$V=\{Start, S1, S2...Sn, End\}$ is a set of services, where $Start$ and $End$ are two special services defined as $Start = \{ \phi, I_T, \phi \}$ and $End  = \{ O_T, \phi, \phi \}$. 
+
+$E = \{e_{1}, e_{2},... e_{m} \}$ is a set of edges, where each edge has a set of incoming outputs $O_{S_{src}}$ from source service $S_{src}$ and a set of outgoing inputs $I_{S_{src}}$ from target service $S_{tar}$. 
+
+$e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \Rightarrow i) \}$
+\vspace{0.5cm}
+
+\textbf{QoS Model in a Weighted DAG}
+Four most often considered QoS parameters \cite{zeng2003quality} are response time, cost, reliability and availability described as follows:\textit{Response time} ($T$) measures the expected delay in seconds between the moment when a request is sent and the moment when the results are received.\textit{Cost} ($C$) is the amount of money that a service requester has to pay for executing the web service. \textit{Reliability} ($R$) is the probability that a request is correctly responded within the maximum expected time frame. \textit{Availability} ($A$) is the probability that a web service is accessible. The aggregation value of QoS in a DAG respect to the structures of DAG, which reflects how services associated with each other in a service composition. The QoS calculation models are described as follows:
 
 
-\textbf{Semantic Web Service link}
-\textbf{Semantic matchmaking model}. Due to the discretisational characteristics of different match types and values assigned to matching types that driven by the cost of data integration and manipulation \cite{lecue2009optimizing}, partial ordering match types are considered to be one factor for the semantic matchmaking quality. For example, Exact matching type demands less time for computation compared to that of Plugin match. Another factor in our proposed model is concept similarity, which could be evaluated based on the edge counting method defined in \cite{shet2012new}. This formula (\ref{equation1}) is used to estimate the similarity between concept-related parameters for selecting web services. Therefore, given the quality match type and the concept similarity of two parameters-related concepts, the semantic matchmaking quality of matched parameters is defined by Formula (\ref{equation2}), where the value of $q(p_ {mt})$ follows the same settings in \cite{lecue2009optimizing}. Particularly, 1 (Exact), 0.75 (Plugin), 0.5 (Subsume) or 0.25 (Intersection). 
+\textbf{Definition 6.} $V_{A}(WG)$ is a function that given a $WG$, a aggregated $availability$ value is returned defined as :
+$V_{A}(WG)=\prod\limits^n_{k=1}a_k$, for all $\{S_1, S_2, ... S_n\} \subset V$.
+
+\textbf{Definition 7.} $V_{R}(WG)$ is a function that given a $WG$, a aggregated $reliability$ value is returned defined as :
+$V_{R}(WG)=\prod\limits^n_{k=1}r_k$, for all $\{S_1, S_2, ... S_n\} \subset V$.
+
+\textbf{Definition 8.} $V_{C}(WG)$ is a function that given a $WG$, a aggregated cost value is returned defined as :
+$V_{C}(WG)=\sum\limits^n_{k=1}c_k$, for all $\{S_1, S_2, ... S_n\} \subset V$.
+
+
+\textbf{Definition 9.} $V_{T}(WG)$ is a function that given a $WG$, a aggregated time value is returned, where  $T$ is determined by the most time-consuming path in the composition flow of the solution, which is defined as :
+$V_{T}(WG)$ $=MAX\{timePath(WG)_n$ $|n\in\{1,\ldots,m\}\}$, where m is the number of $timePath$.
+
+\vspace{0.5cm}
+
+\textbf{Composition Problem}
+A set of semantic web services $S$ are chained as a weighted DAG composition mode $WG$ when a composition task $Comp.T$ is requested by users. The composition problem considered in this paper to automatically generate $WG$, satisfying the follows:
+
+$\forall WG^{'}$ , $\{q(a \Rightarrow b) \} \cup V_{A}(WG^{'}) \cup V_{R}(WG^{'}) \cup V_{C}(WG^{'}) \cup V_{T}(WG^{'})  \leq \{ q(a \Rightarrow b) \} \cup V_{A}(WG) \cup V_{R}(WG) \cup V_{C}(WG) \cup V_{T}(WG) $ 
+
+
+
+
+
+\section{Comprehensive Quality Model}\label{Comprehensive_Quality_Model}
+In this section, we propose a general comprehensive quality-aware service model in consideration of both semantic matchmaking quality and QoS for semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware quality model that ignores quality of semantic matchmaking.
+
+
+\subsection{Comprehensive Quality Model}\label{qualityModel}
+
+\textbf{Semantic web Service link}. In Fig. \ref{semanticLink}, $S_{1}$ and $S_{2}$ are linked to together if exists any parameter matchmaking between  Output of $S_1$ and Input of $S_2$.  Therefore, measuring semantic matchmaking quality ($SM$) is to measure the overall quality of semantic web service link ($sm_{L}$), which is aggregated from the quality of parameter matchmaking ($sm_{P}$). This semantic web service link is adopt from \cite{lecue2009optimizing}.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=.38]{semanticLink.pdf}}
+ \caption{ An example of semantic web service link}
+ \label{semanticLink}
+\end{figure}
+
+
+\textbf{Semantic web matchmaking quality model}. Due to that the discretisational characteristics of different match types and values assigned to matching types are driven by the cost of data integration and manipulation \cite{lecue2009optimizing}, partial ordering match types are considered to be one factor for quality of parameter matchmaking, denoted as $mt_{p}$,  For example, Exact matching type demands less time for computation compared to that of Plugin match. Another factor in our proposed model is concept similarity, which could be evaluated based on the edge counting method defined in \cite{shet2012new}. This formula (\ref{equation1}) is used to estimate the concept similarity between matching parameters, which is denoted as $s_{p}$. N1 and N2 measure the distances from an output-related concept and an input-related concept to the top node of a taxonomy respectively, and N measure the distances from the closest common ancestor of these two matched input-related and output-related concepts. $\lambda$ is set to 0 if we do not measure the similarities of neighbourhood concepts that is not the matching levels considered in this paper. Consequently, given the quality of parameter matchmaking type and quality of parameter concept similarity, the quality of parameter matchmaking is defined by Formula (\ref{equation2}).
 
 \begin{equation}
-q(p_ {s}){=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
+s_{p}{=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
 \label{equation1}
 \end{equation}
 
 \begin{equation}
 \label{equation2}
-q(p_{sm}) \stackrel{.}{=} (q(p_ {mt}), \  q(p_ {s}))
+sm_{p} \stackrel{.}{=} (mt_ {p}, \  s_ {p})
 \end{equation}
 
-Further more, edges represent services connections in our weighted graph representations, where assigned weight value $q(e_{sm})$ is considered to be semantic matching quality on edge level according to parameter aggregations. The weight value $q(e_{sm})$ is defined in \ref{equation3}, where $q(e_ {mt})$ and $q(e_ {s})$ are the average value of concept-related parameters quality in $q(p_{mt})$ and $q(p_{s})$ respectively. 
+Further more, since semantic web service link represent services connections, where quality of semantic web service link $(sm_{L})$ is considered to be semantic matching quality on service level by the aggregation of parameter matchmaking quality. Therefore, $sm_{L}$ is defined in formula (\ref{equation3}), where $sm_{L}$ and $s_{L}$ are the average value of all involved $mt_{p}$ and $s_{p}$ respectively. 
 
 \begin{equation}
 \label{equation3}
-q(e_{sm}) \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}))
+sm_{L} \stackrel{.}{=} (mt_ {L}, \  s_ {L})
 \end{equation}
 
-\textbf{Comprehensive quality model}. Compared to QoS evaluation model, the comprehensive quality model is established to investigate both functional and non-functional requirements. The comprehensive quality of our service composition representation refers to QoS of service vertices and Semantic matching quality of Edges in weighted graphs. Consequently, the comprehensive quality model is defined in Formula (\ref{equation4}), which could be further broken down into Formula (\ref{equation5}). 
+\textbf{Comprehensive quality model}. The comprehensive quality model consider both semantic matchmaking quality and QoS. The semantic matchmaking quality refers to $sm_{L}$. Consequently, the comprehensive quality model is defined in Formula (\ref{equation4}), which could be further broken down into Formula (\ref{equation5}). 
 \begin{equation}
 \label{equation4}
-q_{cq} \stackrel{.}{=} (q(e_ {sm}), \  q(v_ {QoS}))
+cq \stackrel{.}{=} (sm_ {L}, \  QoS_ {s})
 \end{equation}
 \begin{equation}
 \label{equation5}
-q_{cq} \stackrel{.}{=} (q(e_ {mt}), \  q(e_ {s}), \  q(v_{a}),\  q(v_{r}),\  q(v_{c}),\  q(v_{t}))
+cq \stackrel{.}{=} (mt_ {L}, \  s_ {L}, \  a_{s},\  r_{s},\  c_{s},\  t_{s})
 \end{equation}
 
-\textbf{Quality aggregate matrix}. The quality aggregation is defined based on the constructs of composition web services, in consideration of functional and non-functional properties. The quality on construct level is further calculated by following the rules summarised in Table \ref{table1}. 
+\textbf{Semantic matchmaking quality aggregation}. The quality aggregation is defined based on the constructs of composition web services in consideration of semantic matchmaking quality and QoS. The quality on composition solution is further calculated by following the formula (\ref{equation6})(\ref{equation7}), and QoS aggregation are discussed in Sect. \ref{Quality of Service and Composition Constructs}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Quality aggregate matrix for semantic web service composition}
-\label{table1}
-\begin{tabular}{c|c|c|c|c}
-\hline
-\multicolumn{3}{c|}{Composition Construct}                                      & Sequence                             & Parallel \\ \hline
-\multirow{5}{*}{Quality} & \multirow{2}{*}{F}    & $Q(e_ {mt})$  &$\prod_{n=1}^{m} q(e_ {mt})$          &  $\prod_{n=1}^{m} q(e_ {mt})$ \\ \cline{3-5}
-                                &                                & $Q(e_ {s})$  & $(\sum_{n=1}^m q(e_ {s}))/m$        &  $(\sum_{n=1}^m q(e_ {s}))/m$  \\ \cline{2-5}   
-                                & \multirow{4}{*}{NF} & $Q(v_{a})$    & $\prod_{n=1}^{m} q(v_a)$             &  $\prod_{n=1}^{m} q(v_a)$ \\ \cline{3-5} 
-                                &                                & $Q(v_{r})$    & $\prod_{n=1}^{m} q(v_r)$             &  $\prod_{n=1}^{m} q(v_r)$ \\ \cline{3-5} 
-                                &                                & $Q(v_{c})$    & $\sum_{n=1}^m q(v_ {c})$             &  $\sum_{n=1}^m q(v_ {c})$ \\ \cline{3-5} 
-                                &                                & $Q(v_{t})$    & $\sum_{n=1}^m q(v_ {t})$             &  $max(q(v_ {t}))$ \\ \hline
-\end{tabular}
-\end{table}
+\begin{equation}
+\label{equation6}
+MT {=} \prod_{n=1}^{m} mt_ {L_{n}}
+\end{equation}
+\begin{equation}
+\label{equation7}
+S {=} (\sum_{n=1}^m s_ {L_{n}})/m
+\end{equation}
 
 
 \subsection{Objective Function}
-In real life, given a unique and optimised solution is always easier for customers to pick up directly when many quality criteria involved into decision making, rather than provided a set of solutions. Therefore, it is very practical to define a single fitness as a weighted sum of all the quality related components in Formula (\ref{equation6}), where weights setting is very flexible, it could be adjusted according to users' preferences. The fitness value of 1 means the best comprehensive quality and 0 means the worst. For this purpose, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the fitness value falls within the range from 0 to 1. Therefore, the service composition problem in this paper is treated as a fitness maximisation problem.
+In real life, given a unique and optimised solution is always easier for customers to pick up directly when many quality criteria involved into decision making, rather than provided a set of solutions. It is very practical to define a single fitness as a weighted sum of all the quality related components in Formula (\ref{equation8}). Note that weights can be adjusted according to users' preferences. The function value of 1 means the best comprehensive quality and 0 means the worst. For this purpose, $MT$, $S$, $A$, $R$, $T$, and $C$ must be normalised so that the function value falls within the range from 0 to 1 using Formula (\ref{equation9}) and (\ref{equation10}), where the maximum and minimum value of $A$, $R$, $T$, and $C$ are calculated by all web services related to the composition task. $MT$ and $S$ are using a bound from 0 to 1. Therefore, the composition task is try to find maximised value of objective function associated to the solutions.
+
 \vspace{-0.2cm}
 \begin{equation}
-\label{equation6}
+\label{equation8}
 Fitness = w_1 \hat{MT} + w_2 \hat{S} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{T}) + w_6(1 - \hat{C})
 \end{equation}
 \noindent where $\sum_{i=1}^{6} w_i = 1$
 \\
 \vspace{-0.2cm}
 \begin{equation}
-\label{equation7}
+\label{equation9}
 \hat{Q_k} = 
 \begin{cases}
 	\frac{Q_k - Q_{k, min}}{Q_{k, max} - Q_{k, min}} & \text{ if }Q_{k, max} - Q_{k, min} \neq 0.\\
 	1 & \mathrm{ otherwise}.
 \end{cases}
 \end{equation}
-\noindent where $k$ $=$ $1$, $2$, $3$, and $4$, where $Q_1$ as $MT$, $Q_2$ as $S$, $Q_3$ as $A$, and $Q_4$ as $R$.
+\noindent where $k$ $=$ $1$, $2$, $3$, and $4$, where $Q_1$ is $MT$, $Q_2$ is $S$, $Q_3$ is $A$, and $Q_4$ is $R$.
 \begin{equation}
-\label{equation8}
+\label{equation10}
 \hat{Q_j} = 
 \begin{cases}
 	\frac{Q_{j,max} - Q_j}{Q_{j, max} - Q_{j, min}} & \text{ if }Q_{j, max} - Q_{j, min} \neq 0.\\
 	1 & \mathrm{ otherwise}.
 \end{cases}
 \end{equation}
-\noindent where $j$ $=$ $1$, and $2$, where $Q_1$ as $T$ and $Q_2$ as $C$.
+\noindent where $j$ $=$ $1$, and $2$, where $Q_1$ is $T$ and $Q_2$ is $C$.
 
 
-\section{PSO-based Appraoch to QoS-Aware Semantic Web Service Composition}\label{qswsc_approach}
+\section{PSO-based Approach to Comprehensive Quality-Aware Automated Semantic Web Service Composition}\label{qswsc_approach}
 
 \begin{figure*}[h]
 \centering
 \fbox{\includegraphics[scale=.4]{overview.pdf}}
- \caption{Overview of POS-based automated semantic web service composition approach.}
+ \caption{Overview of POS-based approach to QoS-aware automated semantic web service composition.}
  \label{overview}
 \end{figure*}
 
-PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be simple and efficient without penalising or repairing that often required by GP \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composition process is triggered by a composition goal defined in Subsection \ref{problemDes}, which describes customers requirements both functional and non-functional. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from the an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process utilising ontology-based index cache. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 4. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is similar to \cite{da2016particle}, but we employ weighted graphs as a different solution presentation.
+
+\subsection{PSO-based Approach to QoS-Aware Semantic Web Service Composition}
+
+PSO has shown its efficiency in solving combinatorial optimisation problems \cite{fukuyama2008fundamentals}. Therefore, we will employ a PSO-based approach, which is considered to be easier to maintain the correctness of solutions compared to GP-based approaches that often require repairing or penalising the solutions \cite{da2016particle}. Fig. \ref{overview} shows the overview of our approach with five steps. Step 1: The composition process is triggered by a composition goal defined in Subsection \ref{problemDes}, which describes customers requirements both semantic matchmaking quality and QoS. Step 2: This composition goal are used to discover all relevant web services, which lead to a shrunken service repository that is subsequently used by PSO as a searching space. Step 3: A weighted graph representation is randomly built up from an initial service queue that mapped to the particle's location, interleaving with semantic matchmaking process utilising ontology-based index cache. In the weighted graph, graph edges are assigned with semantic matchmaking quality as weights. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 5. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is similar to \cite{da2016particle}, but we employ weighted graphs as a different solution presentation with explicit support for the proposed quality model.
 
 
 \subsection{Ontology-based Index Cached Optimisation}\label{indexCache}
-In PSO, particles represent weighted graphs with edges and vertices associated with quality of semantic matchmaking and QoS respectively, the bottlenecks of generating weighted graph lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted graphs, we pre-calculate semantic matchmaking quality. The key idea of the index is to create a mapping from the output-related concepts to potentially matched input-related concepts while considering different levels of match types. Meanwhile, this index size could also be reduced by only considering the concepts related in the shrunken service repository, which means the index cache is filtered by those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graphs building through the whole evolutionary process.
-
-
-
-\subsection{Composition Weighted Graph}
-We defined our semantic web service composition solution as a weighted graph $WG = (V, E)$, where $V$ is a set of services as vertex: $V=[S1, S2...Sn]$ and $E$ is a set of edges $E = {e_{1}, e_{2},... e_{n}}$. Each $e$ is associated with $q(e_{sm})$ as weight value that mapped to a pair of quality values $q(e_{mt})$ and $q(e_{s})$ on the edge level, and $e_{m}$ is expressed as $(S_{a},S_{b})={q_{mt}, q_{s}}$. Here we provide an example of the web service composition, which is described in Fig. \ref{wscs}. The data of composition web service flows from the start to the end, where five web services involved and linked with each other using edge connections. Besides that, $q(s_{mt})$ and $q(s_{s})$ are calculated for all edges ${e_{1}, e_{2},... e_{n}}$ assigned as weights.
-
-\begin{figure}[h]
-\centering
-\fbox{\includegraphics[scale=.29]{weigtedGraphExample.pdf}}
- \caption{Composition weighted graph solution}
- \label{wscs}
-\end{figure}
-
+our PSO-based approach demands decoding processes from optimised queues to weighted DAGs, the bottlenecks of efficiently generating weighted DAGs lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted DAGs, we pre-calculate semantic matchmaking quality. The key idea of the index is to create a map using a pair of keys, output-related concepts and potentially matched input-related concepts with considering different levels of match types, and the map values stored $mt_{p}$ and $mt_{s}$. Meanwhile, this index size could also be reduced by only considering the concepts related in the shrunken service repository, which means the index cache is filtered by those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graphs building through the whole evolutionary process.
 
 
 \subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
@@ -244,21 +255,21 @@ We defined our semantic web service composition solution as a weighted graph $WG
  \SetNlSty{}{}{:}
  \Input{relevant Web services $rws$}
  \Output{Optimised service queue $queue$,Optimised Weighted Graph $OPTWG$}
- Map each relevant service to an index in the particle's position vector\;
+ Map each relevant service to an index in the particle's position vector\;https://www.facebook.com/
  Randomly initialise each particle in the swarm\;
   \While {max. iterations not met}{
      \ForEach{particles in the swarm}{
-     $queue \leftarrow$ particle's position vector\;
+     $queue \leftarrow$ map service in a descending order by particle's position vector\;
      $WG \leftarrow$ $generateWeightedGraph$()\;
 	 Calculate the $WG$ fitness value\;
      
-      \eIf{fitness value better than pBest }{    
-        Assign current fitness as new pBest\;
+      \eIf{fitness value better than \emph{pBest}}{    
+        Assign current fitness as new \emph{pBest}\;
        }{
-        Keep previous pBest\;
+        Keep previous \emph{pBest}\;
        }	
      }
-    Assign best particle's \emph{pBest} value to \emph{gBest}, if better than gBest\;
+    Assign best particle's \emph{pBest} value to \emph{gBest}, if better than \emph{gBest}\;
  	Calculate the velocity of each particle\;
   	Update the position of each particle\;
   }
@@ -285,11 +296,12 @@ We defined our semantic web service composition solution as a weighted graph $WG
      \ForEach{$ws$ in $queue$}{
       \uIf{$ws.inputs$ $\in$ $OutputSet$ }{    
     		 \ForEach{$I$ in $ws.inputs$}{
-    		$p_{mt} \leftarrow$ query $IndexCache$\;
-     		$p_{s} \leftarrow$ query $IndexCache$\;
+    		$mt_{P}, s_{P} \leftarrow$ query $IndexCache$\;
+     		$mt_{L} \leftarrow$ aggregation($mt_{p}$)\;
+ 			$s_{L} \leftarrow$ aggregation($s_{p}$)\;
               }
-        $e_{sm} \leftarrow$ aggregation($p_{mt}$,$p_{s}$)\;
-        $WG.edge \leftarrow$  $e_{sm} $\;
+        $sm_{L} \leftarrow$ \{ $mt_{L}$,$s_{L}$ \}\;
+        $WG.edge \leftarrow$  $sm_{L} $\;
         $WG \leftarrow$ new $wsNode$()\;
          $OutputSet$ add \{$ws.outputs$\}\;    
        $queue$.remove $ws$\;
@@ -305,11 +317,11 @@ We defined our semantic web service composition solution as a weighted graph $WG
 \end{algorithm} 
 
 
-The overall algorithm investigated here is made up of the PSO-based web service composition algorithm \ref{novelSteps} and the decoding algorithm \ref{graph_building}. In algorithm \ref{novelSteps}, the idea is to translate the particle location produced by PSO into a service queue as an indirect representation, such that finding the best fitness of the weighted graph is to discover the optimised location of the particle in the search space. In PSO, the dimension of each particle equals to the number of relevant web services. The index of each services is mapped to a separate location component in a particle. Services in a queue follow the ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. It is a simple forward graph building algorithm, and this method can lead to more services and edges connected to the graph as redundancies that must be removed. Also, semantic quality value are assigned to all the edges, which is calculated from a quality aggregation function from all involved concept-related parameters.
+The overall algorithm investigated here is made up of the PSO-based web service composition algorithm \ref{novelSteps} and the decoding algorithm \ref{graph_building}. In algorithm \ref{novelSteps}, the idea is to translate the particle location produced by PSO into a service queue as an indirect representation, such that finding the best fitness of the weighted graph is to discover the optimised location of the particle in the search space. In PSO, the dimension of each particle equals to the number of relevant web services. The index of each services is mapped to a separate location component in a particle. Then services queue is sorted by the particles' position vector in the ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. It is a simple forward graph building algorithm, and this method can lead to more services and edges connected to the graph that must be removed. Also, semantic quality value are assigned to all the edges, which is calculated from quality aggregation function with given parameter matchmaking quality.
 
 
 \section{Experiment Design}\label{experiment_design}
-In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are to $(1)$ measure the effectiveness of the comprehensive quality model in automated semantic web service composition approach; $(2)$ explore the impacts of the semantic matchmaking that contributes to overall composition quality; and $(3)$ compare solutions generated by QoS-ware approach with our method; and $(4)$ compare our method with one existing GP-based approach.
+In this section, a quantitative evaluation approach is adopted in our experiment design. The objectives of the evaluation are to $(1)$ measure the effectiveness of the comprehensive quality model in automated semantic web service composition approach; and $(2)$ compare solutions generated by a recent QoS-ware evaluation approach \cite{ma2015hybrid,da2016genetic} with our evaluation method proposed in the paper; and $(3)$ compare our PSP-based method with one existing GP-based approach \cite{ma2015hybrid}.
 
 
 We utilise benchmark dataset web service challenge 2009 (WSC09) \cite{kona2009wsc} to perform the evaluation. WSC09 provides problems with five tasks corresponding to variable number of services, and ontologies. Therefore, it is a challenge dataset for measuring the scalability of our quality evaluation model. Table \ref{wsc09datasetTable} presents the features of the WSC’09 dataset. The number of concepts, individuals in the ontology and services in each data set is shown in the second, third, fourth column respectively. Also, we extend all the datasets with QoS attributes from service providers to enable our evaluation. 
@@ -329,12 +341,15 @@ WSC09 05                     & 31044      &62132          &15211    \\ \hline
 \end{tabular}
 \end{table}
 
-We run the experiment on computing grid comprising of 170 NetBSD (Unix operating system) workstations operated by the Sun Grid Engine. The parameters were chosen based on general settings from \cite{shi2001particle} for our PSO-based approach, In particular, PSO population size is 30 with 100 generations. We run 30 times independently for each dataset. We configure weight of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ are set equally to 0.25, and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125 accordingly. However, the settings of these weight values does not impact the method. In general, weight settings are adjusted according to users' preferences.
+The parameters were chosen based on general settings from \cite{shi2001particle} for our PSO-based approach, In particular, PSO population size is 30 with 100 generations. We run 30 times independently for each dataset. We configure weight of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ are set equally to 0.25, and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125 accordingly. The $mt_{p}$ is set to 1 (Exact match) and 0.75 (Plugin). In general, weight settings and parameter match type quality are decided by users' preferences.
 
 
 \section{Results and Analysis}\label{results_analysis}
-\subsection{Comparison Test with QoS Evaluation Model}\label{comparisonTest}
-In this section, we analyse the composition solution generated by using our approach comparing with QoS-aware approach. First, we look at mean value of $Q_{mt}$, $Q_{s}$ and $Q_{QoS}$ at optimum at the 100th generation for two approaches, shown in Table \ref{decisionTable}. The QoS-aware approach record $Q_{mt}$, $Q_{s}$ and utilise fitness function $Fitness = w_1 \hat{A} + w_2 \hat{R} + w_3(1 - \hat{T}) + w_4(1 - \hat{C})$ when $\sum_{i=1}^{4} w_i = 1$, but $MT$ and $S$ are recorded, and $Q_(QoS)$ is normalised from 0 to 0.5 to make it comparable to $Q_{QoS}$ in our approach. We observe an interesting pattern from Table \ref{decisionTable} using statistic analysis: mean value of $Q_{mt}$ and $Q_{s}$ at optimum by our approach is consistently higher than those by QoS-aware approach.  Meanwhile, $Q_{QoS}$ generated by QoS-aware approach can obtain a slightly higher value than that of our approach. In conclusion, we can perceive that our evaluation could find out better functional quality with a reasonable trade off in QoS.
+\subsection{Comparison Test for Comprehensive Quality Evaluation Mode and QoS Evaluation Model}\label{comparisonTest}
+QoS-aware web service composition \cite{da2016particle,da2015graphevol,yu2013adaptive,ma2015hybrid} do consider two semantic matchmaking types (Exact and Plugin) for discovering desired web service, but there is no measurement of matchmaking types and concept similarity, so the weights for $MT$ and $S$ are considered to be 0. Consequently, our evaluation mode become a widely used fitness function \cite{ma2015hybrid,da2016particle}, $Fitness = w_1 \hat{A} + w_2 \hat{R} + w_3(1 - \hat{T}) + w_4(1 - \hat{C})$ when $\sum_{i=1}^{4} w_i = 1$  for QoS-aware web service composition. To compare the composition solution generated by our approach with QoS-aware approach. We look at mean value of $MT$, $S$ and $QoS$ at optimum at the 100th generation for two approaches. In QoS-aware approach, $MT$ and $S$ are recorded, and $QoS$ is normalised from 0 to 0.5 to make it comparable, besides that, all weights in QoS-aware fitness function are set equally to 0.25.
+
+We observe an interesting pattern from Table \ref{decisionTable} using statistic analysis: mean value of $MT$ and $S$ at optimum by our approach is consistently higher than those by QoS-aware approach.  Meanwhile, $QoS$ generated by QoS-aware approach can achieve a more desirable tradeoff in both semantic matchmaking quality and QoS.  
+
 \begin{table}[]
 \footnotesize
 \centering
@@ -343,38 +358,37 @@ In this section, we analyse the composition solution generated by using our appr
 \begin{tabular}{l|l|l|l}
 \hline
 \multicolumn{2}{c|}{WSC09}              & \shortstack{QoS-aware \\ Evaluation} & \shortstack{Comprehensive \\ Quality Evaluation} \\ \hline
-\multirow{3}{*}{Task1}  &$Q_{mt}$   &0.189787 $\pm$ 0.039278686            &0.221862 $\pm$ 0.009582 $\uparrow$ \\ \cline{2-4} 
-                        &$Q_{s}$    &0.884962 $\pm$ 0.014140               &0.894082 $\pm$ 0.009206 $\uparrow$ \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.278730 $\pm$ 0.007786               &0.280222 $\pm$ 0.008212                          \\ \hline
-\multirow{3}{*}{Task2}  &$Q_{mt}$   &0.001795 $\pm$ 0.000719               &0.001977 $\pm$ 0.001566 $\uparrow$ \\ \cline{2-4} 
-                        &$Q_{s}$    &0.906971 $\pm$ 0.005855               &0.923970 $\pm$ 0.006898 $\uparrow$   \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.239979 $\pm$ 0.000578 $\uparrow$    &0.238596 $\pm$ 0.001264 \\ \hline
-\multirow{3}{*}{Task3}  &$Q_{mt}$   &0.158526 $\pm$ 0.014028               &0.245830 $\pm$ 0.007761 $\uparrow$   \\ \cline{2-4} 
-                        &$Q_{s}$    &0.949109 $\pm$ 0.002331               &0.972765 $\pm$ 0.002980 $\uparrow$           \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.247002 $\pm$ 0.000661 $\uparrow$    &0.245631 $\pm$ 0.000431            \\ \hline
-\multirow{3}{*}{Task4}  &$Q_{mt}$   &0.000000 $\pm$ 0.000000               &0.000004 $\pm$ 0.000002 $\uparrow$ \\ \cline{2-4} 
-                        &$Q_{s}$    &0.879514 $\pm$ 0.007456               &0.920733 $\pm$ 0.000001 $\uparrow$ \\ \cline{2-4}
-                        &$Q_{QoS}$  &0.242297 $\pm$ 0.000507 $\uparrow$    &0.236677 $\pm$ 0.002211  \\ \hline
-\multirow{3}{*}{Task5}  &$Q_{mt}$   &  0.000042 $\pm$ 0.000030             &0.000078 $\pm$ 0.000020 $\uparrow$           \\ \cline{2-4} 
-                        &$Q_{s}$    &  0.915933 $\pm$ 0.012888             &0.927678 $\pm$ 0.002578 $\uparrow$                 \\ \cline{2-4}
-                        &$Q_{QoS}$  & 0.238189 $\pm$ 0.000240 $\uparrow$      &  0.237485 $\pm$  0.000328  \\ \hline                                                   
+\multirow{3}{*}{Task1}  &$MT$   &0.189787 $\pm$ 0.039278686            &0.221862 $\pm$ 0.009582 $\uparrow$ \\ \cline{2-4} 
+                        &$S$    &0.884962 $\pm$ 0.014140               &0.894082 $\pm$ 0.009206 $\uparrow$ \\ \cline{2-4}
+                        &$QoS$  &0.278730 $\pm$ 0.007786               &0.280222 $\pm$ 0.008212                          \\ \hline
+\multirow{3}{*}{Task2}  &$MT$   &0.001795 $\pm$ 0.000719               &0.001977 $\pm$ 0.001566 $\uparrow$ \\ \cline{2-4} 
+                        &$S$    &0.906971 $\pm$ 0.005855               &0.923970 $\pm$ 0.006898 $\uparrow$   \\ \cline{2-4}
+                        &$QoS$  &0.239979 $\pm$ 0.000578 $\uparrow$    &0.238596 $\pm$ 0.001264 \\ \hline
+\multirow{3}{*}{Task3}  &$MT$   &0.158526 $\pm$ 0.014028               &0.245830 $\pm$ 0.007761 $\uparrow$   \\ \cline{2-4} 
+                        &$S$    &0.949109 $\pm$ 0.002331               &0.972765 $\pm$ 0.002980 $\uparrow$           \\ \cline{2-4}
+                        &$QoS$  &0.247002 $\pm$ 0.000661 $\uparrow$    &0.245631 $\pm$ 0.000431            \\ \hline
+\multirow{3}{*}{Task4}  &$MT$   &0.000000 $\pm$ 0.000000               &0.000004 $\pm$ 0.000002 $\uparrow$ \\ \cline{2-4} 
+                        &$S$    &0.879514 $\pm$ 0.007456               &0.920733 $\pm$ 0.000001 $\uparrow$ \\ \cline{2-4}
+                        &$QoS$  &0.242297 $\pm$ 0.000507 $\uparrow$    &0.236677 $\pm$ 0.002211  \\ \hline
+\multirow{3}{*}{Task5}  &$MT$   &  0.000042 $\pm$ 0.000030             &0.000078 $\pm$ 0.000020 $\uparrow$           \\ \cline{2-4} 
+                        &$S$    &  0.915933 $\pm$ 0.012888             &0.927678 $\pm$ 0.002578 $\uparrow$                 \\ \cline{2-4}
+                        &$QoS$  & 0.238189 $\pm$ 0.000240 $\uparrow$      &  0.237485 $\pm$  0.000328  \\ \hline                                                   
 \end{tabular}
 \end{table}
 
-Second, to compare the results generated from two evaluation approaches, we demonstrate an example solution that shows the differences in web services composition obtained through two different methods. Fig. \ref{comparisontest} $(1)$ and $(2)$ show two composition weighted graphs as the two optmised solutions to Task 3 with $(1)$ QoS-aware approach and $(2)$ Comprehensive quality-aware method respectively. Two approaches generate exactly the same service workflow structure where those service vertices and edges denoted in red are different. We make a comparison of the quality among these different edges ($e_1$ to $e4$) associated service vertices in terms of quality of semantic matchmaking and QoS attributes in Fig. \ref{comparisontest} $(3)$. We also look at $\Delta Q$ which reveals the amount of variation on quality between two methods, where the positive values means the benefits gained under our approach while the negative values means the trade-off. To demonstrate the benefits of the positive value, we analyse the smallest positive $\Delta Q$ corresponding to $e_4$ and demonstrate how the output and required input are different under two approaches in Fig. \ref{comparisontest} $(4)$. $Ser1640238160$ and $Ser1947554374$ are selected service vertices with output concept-related parameters $Inst795998200$ and $Inst582785907$ corresponding to two concepts $Con103314376$ and $Con2037585750$ respectively, and $Inst658772240$ are the required parameter related to concept $Con2113572083$. There exist $Inst795998200$ $\in$ $Con103314376$ $\sqsubseteq_{2}$ $Inst658772240$ $\in$ $Con2113572083$ and $Inst582785907$ $\in$ $Con2037585750$ $\sqsubseteq_{3}$ $Inst658772240$ $\in$ $Con2113572083$. It is obvious that our approach selects the service providing $Inst795998200$ that are closer to the users' requirements suggesting that our method can produce better semantic matchmaking quality.
-
+To better understand that our evaluation approach could generate solutions having better semantic matchmaking quality with a slight trade-off in $QoS$, we demonstrate an example solution to Task 3. Fig. \ref{comparisontest} $(1)$ and $(2)$ are two weighted DAGs as best solutions found employing QoS-aware approach and Comprehensive quality-aware method respectively. Two approaches generate exactly the same service workflow structure while some service vertices and edges denoted in red are different. We list the semantic matchmaking quality represented by all edges ($e_1$ to $e4$), overall semantic matchmaking quality and QoS in Fig. \ref{comparisontest} $(3)$. To demonstrate how different the semantic matchmaking quality is, we analyse $e_4$ that has the smallest $\Delta Q$, which reveals the gain (positive $\Delta Q$) or loss (negative $\Delta Q$) for the listed qualities using our approach. The $e_4$ has two different source service vertices ($Ser1640238160$ and $Ser1947554374$) and the same $end$ vertices in two solutions. The outputs of two different source service are marked on the related taxonomy in Fig. \ref{comparisontest} $(4)$, $Ser1640238160$ and $Ser1947554374$ are service with output concept-related parameters $Inst795998200$ and $Inst582785907$ corresponding to two concepts $Con103314376$ and $Con2037585750$ respectively, and $Inst658772240$ are the required parameter for the $end$ vertice, which is related to concept $Con2113572083$. There exist $Inst795998200$ $\in$ $Con103314376$ $\sqsubseteq_{2}$ $Inst658772240$ $\in$ $Con2113572083$ and $Inst582785907$ $\in$ $Con2037585750$ $\sqsubseteq_{3}$ $Inst658772240$ $\in$ $Con2113572083$. It is obvious that our approach selects the service providing $Inst795998200$ that are closer to the users' required outputs.
 \begin{figure}[h]
 \centering{
 \fbox{
 \includegraphics[scale=.22]{comparisontest.pdf}}}
- \caption{Example Comparison of solutions to Task 3 under different approaches.}
+ \caption{Example Comparison of solutions to Task 3 using two different evaluation model.}
  \label{comparisontest}
 \end{figure}
 
 \subsection{Comparison Test with GP-based approach}\label{comparisonTestWithGP}
-We compare one GP-based approach  \cite{ma2015hybrid} with our PSO method, where the individuals are tree structure with strict constrains transferred from a DAG employing unfolding techniques. We further mark all the service nodes in the tree representation with all their outgoing edges for considering semantic matchmaking quality, and those edges information are maintained correctly in the crossover and mutation. At last, we evaluate both semantic matchmaking quality and QoS simultaneously using the discussed the comprehensive quality model to investigate the performances of two approaches. To make a fair comparison with our PSO approach considering the same number of evaluations (3000 times), we adjust the parameters settings for GP approach \cite{ma2015hybrid} to 30 individual for 100 generations.
+To evaluate the performance of our proposed PSO-based approach, we compare one GP-based approach  \cite{ma2015hybrid} with our PSO method. We consider the links between child nodes and parent nodes as semantic web service links for measuring  semantic matchmaking quality, and those links information are maintained correctly for the crossover and mutation. Therefore, we evaluate both semantic matchmaking quality and QoS simultaneously using the proposed comprehensive quality model. To make a fair comparison with our PSO-based, we consider the same number of evaluations (3000 times) as that in our PSO-based approach, we set the parameters settings for GP-based approach \cite{ma2015hybrid} using 30 individuals and 100 generations.
 
-The Table \ref{meanFitness} shows the mean fitness values accomplished by two methods and Table \ref{meanTime} shows the average execution time required by them. We employ statistical analysis to test the significant differences in mean fitness value and execution time.  The results show that the PSO-based approach performs better in four of five tasks. However, there is also a trade-off between optimised solution and execution time. We can see the PSO-based approach takes longer execution time, it due to that every individual in each generation must be decoded into a solution from optimised queue, and this process is very time-consuming. However, In GP, the initialisation first population is costly in time as transformation process from a DAG, but following new individuals are generated through mutation and crossover, which demands much less time comparing decoding process.
+The Table \ref{meanFitness} shows the mean fitness values accomplished by two methods. We employ statistical analysis to test the significant differences in mean fitness value. The results show that the PSO-based approach performs better in four of five tasks (all the p-values are consistently smaller than 0.01).
 
 \begin{table}[]
 \centering
@@ -383,13 +397,15 @@ The Table \ref{meanFitness} shows the mean fitness values accomplished by two me
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{c|}{Dataset} & PSO-based approach & GP-based approach  \\ \hline
-WSC09 01                     &0.559207 $\pm$ 0.012780 $\uparrow$      &0.518411 $\pm$ 0.018470               \\ \hline
-WSC09 02                     &0.470083 $\pm$  0.001106   &0.471594 $\pm$  0.002436 $\uparrow$           \\ \hline
-WSC09 03                     & 0.559207 $\pm$ 0.012780 $\pm$ $\uparrow$  &0.552947 $\pm$ 0.007094            \\ \hline
-WSC09 04                     & 0.468942 $\pm$ 0.001670 $\pm$ $\uparrow$  &0.442934 $\pm$ 0.010154            \\ \hline
-WSC09 05                     & 0.469424 $\pm$ 0.000800 $\pm$ $\uparrow$  &0.256425 $\pm$ 0.038916            \\ \hline
+WSC09 01                     &0.559207 $\pm$ 0.012780  $\uparrow$   &0.520659 $\pm$ 0.020758           \\ \hline
+WSC09 02                     &0.470083 $\pm$  0.001106 $\uparrow$   &0.459681 $\pm$  0.002874          \\ \hline
+WSC09 03                     & 0.550396 $\pm$ 0.012780                        &0.567915 $\pm$ 0.023447 $\uparrow$   \\ \hline
+WSC09 04                     & 0.468942 $\pm$ 0.001670  $\uparrow$   &0.431704 $\pm$ 0.009774            \\ \hline
+WSC09 05                     & 0.469424 $\pm$ 0.000800  $\uparrow$   &0.245222 $\pm$ 0.036885            \\ \hline
 \end{tabular}
 \end{table}
+
+At last, We also compare the average fitness value with optimum through the evolutionary process for both two approaches over 30 independent runs. Fig. \ref{psovsgp} is an example of convergence rate for Task 3, where the behaviour of PSO-based approach presents a very clear evidence of fast convergence and reaches a better-optimised solution, while the performance of GP is barely satisfactory, as GP-based method improves its fitness value gradually.
 
 
 \begin{figure}[h]
@@ -399,14 +415,13 @@ WSC09 05                     & 0.469424 $\pm$ 0.000800 $\pm$ $\uparrow$  &0.2564
  \label{psovsgp}
 \end{figure}
 
-At last, We also compare the average fitness value with optimum through the evolutionary process for both two approaches over 30 independent runs. Fig. \ref{psovsgp} is an example of convergence rate from Task 3, where the behaviour of PSO-based approach presents a very clear evidence of fast convergence and reaches a better-optimised solution, while the performance of GP is barely satisfactory, as GP-based method improves its fitness value gradually.
 
 
 \section{Conclusion}\label{conclusion}
-This work introduces a comprehensive evaluation model employed our PSO-based method for QoS-aware automated semantic automated web service composition that combines the quality of semantic matchmaking with QoS. The results show that our approach obtain better functional quality with a reasonable trade-off in QoS. Also, we compare one GP-approach with our PSO-based method to show our performance results in finding better-optimised solution. Future works could investigate other direct or indirect representations of semantic web service composition on semantic web service composition, and look into other EC techniques to evaluate their performance. Also, we could reshape the problem on providing customers with a set of solutions to choose from, rather than a single solution, so research question is redefined as multi-objectives or many objective problems. 
+This work introduces a general comprehensive evaluation model for considering semantic matchmaking quality and QoS. We proposed a PSO-based service composition approach utilising our proposed quality mode that can achieve a desired balance of both quality aspects. Also, we compare one GP-approach with our PSO-based method to show our performance results in finding more optimised solution. Future works can investigate multi-objective EC techniques to produce a set of composition solutions for the situations when the quality preference is not known.
 
 
-\bibliographystyle{IEEEtran}
+\bibliographystyle{splncs03}
 \bibliography{IEEEexample}
 
 \end{document}
