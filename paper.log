@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  23 MAR 2017 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  23 MAR 2017 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -646,65 +646,24 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 356.
 
-
-Overfull \hbox (40.17351pt too wide) in paragraph at lines 382--383
-\OT1/cmr/m/n/10 are as-so-ci-ated with concept-related out-put pa-ram-e-ters $\
-OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 795998200$ and $\OML/cmm/m/it/10 Inst\OT1/c
-mr/m/n/10 582785907$,
- []
-
-
-Overfull \hbox (37.10678pt too wide) in paragraph at lines 382--383
-\OT1/cmr/m/n/10 and these pa-ram-e-ters are cor-re-sponds to two con-cepts $\OM
-L/cmm/m/it/10 Con\OT1/cmr/m/n/10 103314376$ and $\OML/cmm/m/it/10 Con\OT1/cmr/m
-/n/10 2037585750$
- []
-
-
-Overfull \hbox (16.24759pt too wide) in paragraph at lines 382--383
-\OT1/cmr/m/n/10 re-spec-tively marked on the re-lated tax-on-omy in Fig. []5[] 
-$(4)$. In ad-dtion, $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 658772240$
- []
-
-
-Overfull \hbox (2.44482pt too wide) in paragraph at lines 382--383
-\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 2113572083$. There ex-ist $\OML/cmm/m/it/10
- Inst\OT1/cmr/m/n/10 582785907$ $\OMS/cmsy/m/n/10 2$ $\OML/cmm/m/it/10 Con\OT1/
-cmr/m/n/10 2037585750$ $\OMS/cmsy/m/n/10 v[]$ $\OML/cmm/m/it/10 Inst\OT1/cmr/m/
-n/10 658772240$
- []
-
-[14] <comparisontest.pdf, id=507, 1120.185pt x 734.745pt>
+[14] <comparisontest.pdf, id=506, 1120.185pt x 734.745pt>
 File: comparisontest.pdf Graphic file (type pdf)
 
 <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 387.
-(pdftex.def)             Requested size: 246.44145pt x 161.6444pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+Package pdftex.def Info: comparisontest.pdf used on input line 382.
+(pdftex.def)             Requested size: 324.84532pt x 213.07059pt.
+ [15 <./comparisontest.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 397.
+               Default added (so using `htbp') on input line 392.
 
-[15] <psovsgp.pdf, id=521, 631.35875pt x 506.89375pt>
-File: psovsgp.pdf Graphic file (type pdf)
- <use psovsgp.pdf>
-Package pdftex.def Info: psovsgp.pdf used on input line 417.
-(pdftex.def)             Requested size: 157.8393pt x 126.72313pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./paper.bbl [16 <./comparisontest.pdf>] [17 <./psovsgp.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 431.
+(./paper.bbl [16] [17])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
  [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 431.
-
-(./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 431.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 431.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
+ (./paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 416.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 416.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 6FBF8002A435655FF902FC857B66EC2B;109.
 
@@ -714,20 +673,20 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 431.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 416.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8434 strings out of 493681
- 127062 string characters out of 6155713
- 248374 words of memory out of 5000000
- 11563 multiletter control sequences out of 15000+600000
+ 8427 strings out of 493681
+ 126962 string characters out of 6155713
+ 248299 words of memory out of 5000000
+ 11558 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  890 hyphenation exceptions out of 8191
- 42i,24n,39p,2655b,7537s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,24n,39p,2358b,7537s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/pkg/share
@@ -747,10 +706,10 @@ b></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/pkg
 f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/pkg/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti9.pfb></usr/pkg/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmtt9.pfb>
-Output written on paper.pdf (18 pages, 472676 bytes).
+Output written on paper.pdf (18 pages, 424772 bytes).
 PDF statistics:
- 673 PDF objects out of 1000 (max. 8388607)
- 492 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
- 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 652 PDF objects out of 1000 (max. 8388607)
+ 478 compressed objects within 5 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 34 words of extra memory for PDF output out of 10000 (max. 10000000)
 
