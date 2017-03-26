@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  23 MAR 2017 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.19)  26 MAR 2017 13:47
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -508,7 +508,7 @@ Overfull \hbox (2.8494pt too wide) in paragraph at lines 48--49
 [3]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
- <motivation.pdf, id=155, 1322.9425pt x 595.22375pt>
+ <motivation.pdf, id=144, 1322.9425pt x 595.22375pt>
 File: motivation.pdf Graphic file (type pdf)
  <use motivation.pdf>
 Package pdftex.def Info: motivation.pdf used on input line 65.
@@ -517,53 +517,48 @@ Package pdftex.def Info: motivation.pdf used on input line 65.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] <taxonomy.pdf, id=175, 991.705pt x 380.42125pt>
+[4] <taxonomy.pdf, id=156, 991.705pt x 380.42125pt>
 File: taxonomy.pdf Graphic file (type pdf)
  <use taxonomy.pdf>
-Package pdftex.def Info: taxonomy.pdf used on input line 74.
+Package pdftex.def Info: taxonomy.pdf used on input line 76.
 (pdftex.def)             Requested size: 277.6755pt x 106.51721pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1371) has occurred while \output is active []
 
- [5 <./motivation.pdf> <./taxonomy.pdf>]
-Overfull \hbox (4.48901pt too wide) in paragraph at lines 88--90
-[]\OT1/cmr/bx/n/10 Definition 2. \OT1/cmr/m/n/10 A se-man-tic web ser-vice is de-fined as a tu-ple $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 I[]; O[]; QoS[]\OMS/cmsy/m/n/10 g$
- []
-
-[6]
-Overfull \hbox (10.82466pt too wide) in paragraph at lines 115--117
+ [5 <./motivation.pdf> <./taxonomy.pdf>] [6]
+Overfull \hbox (10.82466pt too wide) in paragraph at lines 116--118
 []\OT1/cmr/bx/n/10 Definition 6. $\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 WG\OT1/cmr/m/n/10 )$ is a func-tion that given a $\OML/cmm/m/it/10 WG$\OT1/cmr/m/n/10 , a ag-gre-gated $\OML/cmm/m/it/10 availability$
  []
 
 
-Overfull \hbox (4.53868pt too wide) in paragraph at lines 118--120
+Overfull \hbox (4.53868pt too wide) in paragraph at lines 119--121
 []\OT1/cmr/bx/n/10 Definition 7. $\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 WG\OT1/cmr/m/n/10 )$ is a func-tion that given a $\OML/cmm/m/it/10 WG$\OT1/cmr/m/n/10 , a ag-gre-gated $\OML/cmm/m/it/10 reliability$
  []
 
 
-Overfull \hbox (37.83286pt too wide) in paragraph at lines 125--127
+Overfull \hbox (37.83286pt too wide) in paragraph at lines 126--128
 \OT1/cmr/m/n/10 com-po-si-tion flow of the so-lu-tion, which is de-fined as : $\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 WG\OT1/cmr/m/n/10 )$ $= \OML/cmm/m/it/10 MAX\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 timePath\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 WG\OT1/cmr/m/n/10 )[]$
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7] <semanticLink.pdf, id=274, 504.88625pt x 170.6375pt>
+ [7] <semanticLink.pdf, id=255, 504.88625pt x 170.6375pt>
 File: semanticLink.pdf Graphic file (type pdf)
  <use semanticLink.pdf>
-Package pdftex.def Info: semanticLink.pdf used on input line 149.
+Package pdftex.def Info: semanticLink.pdf used on input line 150.
 (pdftex.def)             Requested size: 191.85875pt x 64.84291pt.
  [8 <./semanticLink.pdf>]
 
-LaTeX Warning: Reference `Quality of Service and Composition Constructs' on page 9 undefined on input line 184.
+LaTeX Warning: Reference `Quality of Service and Composition Constructs' on page 9 undefined on input line 185.
 
-[9] <overview.pdf, id=345, 926.46124pt x 394.47375pt>
+[9] <overview.pdf, id=326, 926.46124pt x 394.47375pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 232.
+Package pdftex.def Info: overview.pdf used on input line 233.
 (pdftex.def)             Requested size: 370.57793pt x 157.7867pt.
 
-Overfull \hbox (30.25438pt too wide) in paragraph at lines 232--233
+Overfull \hbox (30.25438pt too wide) in paragraph at lines 233--234
  [][] 
  []
 
@@ -574,62 +569,30 @@ Missing character: There is no ™ in font cmr10!
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 330.
+               Default added (so using `htbp') on input line 331.
 
 [13]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 356.
+               Default added (so using `htbp') on input line 357.
 
-
-Overfull \hbox (40.17351pt too wide) in paragraph at lines 377--378
-\OT1/cmr/m/n/10 are as-so-ci-ated with concept-related out-put pa-ram-e-ters $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 795998200$ and $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 582785907$,
- []
-
-
-Overfull \hbox (37.10678pt too wide) in paragraph at lines 377--378
-\OT1/cmr/m/n/10 and these pa-ram-e-ters are cor-re-sponds to two con-cepts $\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 103314376$ and $\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 2037585750$
- []
-
-
-Overfull \hbox (16.24759pt too wide) in paragraph at lines 377--378
-\OT1/cmr/m/n/10 re-spec-tively marked on the re-lated tax-on-omy in Fig. []5[] $(4)$. In ad-dtion, $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 658772240$
- []
-
-
-Overfull \hbox (2.44482pt too wide) in paragraph at lines 377--378
-\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 2113572083$. There ex-ist $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 582785907$ $\OMS/cmsy/m/n/10 2$ $\OML/cmm/m/it/10 Con\OT1/cmr/m/n/10 2037585750$ $\OMS/cmsy/m/n/10 v[]$ $\OML/cmm/m/it/10 Inst\OT1/cmr/m/n/10 658772240$
- []
-
-[14] <comparisontest.pdf, id=508, 1120.185pt x 734.745pt>
+[14] <comparisontest.pdf, id=487, 1120.185pt x 734.745pt>
 File: comparisontest.pdf Graphic file (type pdf)
  <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 382.
+Package pdftex.def Info: comparisontest.pdf used on input line 383.
 (pdftex.def)             Requested size: 324.84532pt x 213.07059pt.
-
-Underfull \vbox (badness 7832) has occurred while \output is active []
-
  [15 <./comparisontest.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 392.
+               Default added (so using `htbp') on input line 393.
 
-<psovsgp.pdf, id=545, 631.35875pt x 506.89375pt>
-File: psovsgp.pdf Graphic file (type pdf)
- <use psovsgp.pdf>
-Package pdftex.def Info: psovsgp.pdf used on input line 412.
-(pdftex.def)             Requested size: 157.8393pt x 126.72313pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.bbl [16] [17 <./psovsgp.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 426.
+(/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.bbl [16] [17])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
  [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 426.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
  (/Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 426.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 426.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 417.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 6FBF8002A435655FF902FC857B66EC2B;109.
 
@@ -639,25 +602,25 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 426.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 417.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8415 strings out of 493014
- 128550 string characters out of 6133350
- 249364 words of memory out of 5000000
- 11721 multiletter control sequences out of 15000+600000
+ 8406 strings out of 493014
+ 128407 string characters out of 6133350
+ 249276 words of memory out of 5000000
+ 11715 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,24n,39p,2655b,7522s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,24n,39p,2358b,7522s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.pdf (18 pages, 472080 bytes).
+Output written on /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.pdf (18 pages, 424922 bytes).
 PDF statistics:
- 673 PDF objects out of 1000 (max. 8388607)
- 492 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
- 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 633 PDF objects out of 1000 (max. 8388607)
+ 468 compressed objects within 5 object streams
+ 124 named destinations out of 1000 (max. 500000)
+ 34 words of extra memory for PDF output out of 10000 (max. 10000000)
 
