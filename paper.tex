@@ -67,7 +67,7 @@ The aim of web service composition considered in this paper is to automatically 
  \label{motivation}
 \end{figure}
 
-Although obtaining a correct combination of web service is essential, there are many ways to connect multiple web services chosen from a service repository. These web services provide different QoS in terms of availability, price, reliability and response time. Moreover, valid semantic matches between two connected web services could also have different matchmaking quality. For example, $Generate Map$ service produce $StreetMap$ which is considered to be a valid semantic match to $TouristMap$, while $Bus Service$ produce $BusTicket$ which is considered to be a better valid semantic match to $BusTicket$. The descriptions of these matched resources are captured in a taxonomy depicted in Fig .\ref{taxonomy}, where all the inputs and the outputs related to the web services are described for a travel planning problem. For example, the concept $Map$ and its sub-concept $urbanMap$ are assigned with a $touristMap$ instance and $streetMap$ instance respectively in Fig .\ref{taxonomy}. The valid semantic match is considered that an instance of $urban Map$ can be an instance of $Map$, but not vice versa. To demonstrate the motivation of proposing a comprehensive quality, we give a simple example. The service $GenerateMap$ with a output ($StreetMap$) and a price (``6.72") in the web service composition can be replace by a service $GenerateTouristMap$ with a different output ($TouristMap$) and a different price (``16.87") available in the service repository. This composition solution results in a better semantic matchmaking quality, but price negatively contributes to the QoS. Therefore, we need to measure these changes to the solutions considering matchmaking quality and QoS simultaneously for automatically generated solutions. 
+Although obtaining a correct combination of web service is essential, there are many ways to connect multiple web services chosen from a service repository. These web services provide different QoS in terms of availability, price, reliability and response time. Moreover, valid semantic matches between two connected web services could also have different matchmaking quality. For example, $Generate Map$ service produce $StreetMap$ which is considered to be a valid semantic match to $TouristMap$, while $Bus Service$ produce $BusTicket$ which is considered to be a better valid semantic match to $BusTicket$. The descriptions of these matched resources are captured in a taxonomy depicted in Fig .\ref{taxonomy}, where all the inputs and the outputs related to the web services are described for a travel planning problem. For example, the concept $Map$ and its sub-concept $urbanMap$ are assigned with a $touristMap$ instance and $streetMap$ instance respectively in Fig .\ref{taxonomy}. The valid semantic match is considered that an instance of $urban Map$ can be an instance of $Map$, but not vice versa. To demonstrate the motivation of proposing a comprehensive quality, we give a simple example. The service $GenerateMap$ with a output ($StreetMap$) and a price (``6.72") in the web service composition can be replace by a service $GenerateTouristMap$ with a different output ($TouristMap$) and a different price (``16.87") available in the service repository. This composition solution results in a better semantic matchmaking quality, but price negatively contributes to the QoS. Therefore, to reach the optimal solutions, we need to measure these changes to the solutions considering matchmaking quality and QoS simultaneously for automatically generated solutions. 
 
 
 
@@ -96,9 +96,42 @@ We herein give formal definitions of the concepts regarding the semantic web ser
 We use the returns of $type(a, b)$ to define a full matchmaking considered in the scenario of connecting two services through concept-related output and concept-related input.
 
 \textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \Rightarrow b)$ holds if $type(a, b)$ returns $exact$ or $plugin$. The operator ``$ \Rightarrow$'' means $a$ is passed to $b$, and $b$ is fully satisfied by $a$. The full match is a guarantee of completely valid  ``$ \Rightarrow$'' operation, whereas, partial matches are not considered in this paper.
-
-\textbf{Definition 5.} Given $full match(a \Rightarrow b)$, $q_{sim}(a, b)$ is a function that given a output-related concept of a service and a input-related concept of another service, it returns the concept similarities between them.
 \vspace{0.3cm}
+
+\textbf{QoS calculation Model in a DAG}
+Four most often considered QoS parameters \cite{zeng2003quality} are response time, cost, reliability and availability described as follows:\textit{Response time} ($t_s$) measures the expected delay in seconds between the moment when a request is sent and the moment when the results are received.\textit{Cost} ($c_s$) is the amount of money that a service requester has to pay for executing the web service. \textit{Reliability} ($r_s$) is the probability that a request is correctly responded within the maximum expected time frame, which is expressed as a number between 1 and 0. \textit{Availability} ($a_s$) is the probability that a web service is accessible, which is expressed in the same way as $r_s$. The aggregation value of QoS in a DAG respect to the DAG's structures that determine how services associated with each other in a service composition. The QoS calculation models are described based on QoS aggregation method \cite{da2015graphevol} as follows:
+
+
+$A$, $R$, $C$, $T$ is aggregated $a_s$, $r_s$, $c_s$ and $t_n$ respectively a given $WG$, where  $\{S_1, S_2, ... S_n\} \subset V$, such that: $A=\prod\limits^n_{k=1}a_k
+$; $R=\prod\limits^n_{k=1}r_k$; $C=\sum\limits^n_{k=1}c_k$; $T$ is the time of most time-consumption path of $WG$, so $T = MAX \{timePath_n |n\in\{1,\ldots,m\}\}$.
+
+\section{Comprehensive Quality Model}\label{Comprehensive_Quality_Model}
+
+In this section, we propose a general comprehensive quality model in considering semantic matchmaking quality and QoS simultaneously. This comprehensive model is fully supported by the representations of service composition discussed in this paper, as a weighted DAG model formulated in this section.
+
+
+
+
+\subsection{Comprehensive Quality Model}\label{qualityModel}
+
+\textbf{Semantic matchmaking quality model}. Due to that the discretisational characteristics of different match types and values assigned to matching types driven by the cost of data manipulation \cite{lecue2009optimizing}, match types are considered to be one factor for the quality of matchmaking. For example, Exact matching type demands less time for computation compared to that of Plugin match. Another factor in concept similarity of two matched concepts. For example, two plugin types with different concept similarities: $publication \sqsubseteq printedmaterial$ and $romanticnovel \sqsubseteq printedmaterial$.  
+
+\textbf{Definition 5.} Given $full match(a \Rightarrow b)$, $q_{sim}(a, b)$ is a function that given a output-related concept of a service and a input-related concept of another service, it returns a concept similarity value between them.
+
+The $q_{sim}(a, b)$ is calculated based on the edge counting method defined in the formula (\ref{equation1}) from \cite{shet2012new}, where $N_1$, $N_2$ and $N$ measure the distances from an output-related concept $a$, an input-related concept $b$, a closest common ancestor of these two matched $a$ and $b$ to the top concept of an ontology $O$ respectively. $\lambda$ is set to 0 if we do not measure the similarities of neighbourhood concepts, which is not the matching type considered in this paper. 
+
+\begin{equation}
+s_{p}{=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
+\label{equation1}
+\end{equation}
+
+\textbf{Definition 5.} Given $full match(a \Rightarrow b)$, $sm(a,b)$ is a function that returns a pair of values consisitng of $type(a, b)$ and $q_{sim}(a, b)$ defined in Formula (\ref{equation2}).
+
+
+\begin{equation}
+\label{equation2}
+sm(a, b) \stackrel{.}{=} ( type(a, b), \  q_{sim}(a, b) )
+\end{equation}
 
 \textbf{Weighted DAG Composition Model}. web service composition is considered to be a data workflow, where services are chained together by their inputs and outputs using the two models defined before. Naturally, all these concepts can be captured in a weighted DAG as $WG = (V, E)$ , where:
 
@@ -107,91 +140,36 @@ $V=\{Start, S1, S2...Sn, End\}$ is a set of services, where $Start$ and $End$ ar
 $E = \{e_{1}, e_{2},... e_{m} \}$ is a set of edges, where each edge has a set of incoming outputs $O_{S_{src}}$ from source service $S_{src}$ and a set of outgoing inputs $I_{S_{src}}$ from target service $S_{tar}$. 
 
 $e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \Rightarrow i) \}$
-\vspace{0.5cm}
+\vspace{0.3cm}
 
-\textbf{QoS Model in a Weighted DAG}
-Four most often considered QoS parameters \cite{zeng2003quality} are response time, cost, reliability and availability described as follows:\textit{Response time} ($T$) measures the expected delay in seconds between the moment when a request is sent and the moment when the results are received.\textit{Cost} ($C$) is the amount of money that a service requester has to pay for executing the web service. \textit{Reliability} ($R$) is the probability that a request is correctly responded within the maximum expected time frame. \textit{Availability} ($A$) is the probability that a web service is accessible. The aggregation value of QoS in a DAG respect to the structures of DAG, which reflects how services associated with each other in a service composition. The QoS calculation models are described as follows:
+\textbf{Comprehensive quality model in a weighted DAG}. 
 
-
-\textbf{Definition 6.} $V_{A}(WG)$ is a function that given a $WG$, a aggregated $availability$ value is returned defined as :
-$V_{A}(WG)=\prod\limits^n_{k=1}a_k$, for all $\{S_1, S_2, ... S_n\} \subset V$.
-
-\textbf{Definition 7.} $V_{R}(WG)$ is a function that given a $WG$, a aggregated $reliability$ value is returned defined as :
-$V_{R}(WG)=\prod\limits^n_{k=1}r_k$, for all $\{S_1, S_2, ... S_n\} \subset V$.
-
-\textbf{Definition 8.} $V_{C}(WG)$ is a function that given a $WG$, a aggregated cost value is returned defined as :
-$V_{C}(WG)=\sum\limits^n_{k=1}c_k$, for all $\{S_1, S_2, ... S_n\} \subset V$.
-
-
-\textbf{Definition 9.} $V_{T}(WG)$ is a function that given a $WG$, a aggregated time value is returned, where  $T$ is determined by the most time-consuming path in the composition flow of the solution, which is defined as :
-$V_{T}(WG)$ $=MAX\{timePath(WG)_n$ $|n\in\{1,\ldots,m\}\}$, where m is the number of $timePath$.
-
-\vspace{0.5cm}
-
-\textbf{Composition Problem}
-A set of semantic web services $S$ are chained as a weighted DAG composition model $WG$ when a composition task $Comp.T$ is requested by users. The composition problem considered in this paper to automatically generate $WG$, satisfying the follows:
-
-$\forall WG^{'}$ , $\{q(a \Rightarrow b) \} \cup V_{A}(WG^{'}) \cup V_{R}(WG^{'}) \cup V_{C}(WG^{'}) \cup V_{T}(WG^{'})  \leq \{ q(a \Rightarrow b) \} \cup V_{A}(WG) \cup V_{R}(WG) \cup V_{C}(WG) \cup V_{T}(WG) $ 
-
-
-
-
-
-\section{Comprehensive Quality Model}\label{Comprehensive_Quality_Model}
-In this section, we propose a general comprehensive quality-aware service model in consideration of both semantic matchmaking quality and QoS for semantic web service composition. This model overcome the disadvantages of current prevailing QoS-aware quality model that ignores quality of semantic matchmaking.
-
-
-\subsection{Comprehensive Quality Model}\label{qualityModel}
-
-\textbf{Semantic web Service link}. In Fig. \ref{semanticLink}, $S_{1}$ and $S_{2}$ are linked to together if exists any parameter matchmaking between  Output of $S_1$ and Input of $S_2$.  Therefore, measuring semantic matchmaking quality ($SM$) is to measure the overall quality of semantic web service link ($sm_{L}$), which is aggregated from the quality of parameter matchmaking ($sm_{P}$). This semantic web service link is adopt from \cite{lecue2009optimizing}.
-
-\begin{figure}[h]
-\centering
-\fbox{\includegraphics[scale=.38]{semanticLink.pdf}}
- \caption{ An example of semantic web service link}
- \label{semanticLink}
-\end{figure}
-
-
-\textbf{Semantic web matchmaking quality model}. Due to that the discretisational characteristics of different match types and values assigned to matching types are driven by the cost of data integration and manipulation \cite{lecue2009optimizing}, partial ordering match types are considered to be one factor for quality of parameter matchmaking, denoted as $mt_{p}$,  For example, Exact matching type demands less time for computation compared to that of Plugin match. Another factor in our proposed model is concept similarity, which could be evaluated based on the edge counting method defined in \cite{shet2012new}. This formula (\ref{equation1}) is used to estimate the concept similarity between matching parameters, which is denoted as $s_{p}$. N1 and N2 measure the distances from an output-related concept and an input-related concept to the top node of a taxonomy respectively, and N measure the distances from the closest common ancestor of these two matched input-related and output-related concepts. $\lambda$ is set to 0 if we do not measure the similarities of neighbourhood concepts that is not the matching levels considered in this paper. Consequently, given the quality of parameter matchmaking type and quality of parameter concept similarity, the quality of parameter matchmaking is defined by Formula (\ref{equation2}).
-
-\begin{equation}
-s_{p}{=} \frac{2N \cdot e^{-\lambda L/D} }{N_{1}+N_{2}}
-\label{equation1}
-\end{equation}
-
-\begin{equation}
-\label{equation2}
-sm_{p} \stackrel{.}{=} (mt_ {p}, \  s_ {p})
-\end{equation}
-
-Further more, since semantic web service link represent services connections, where quality of semantic web service link $(sm_{L})$ is considered to be semantic matching quality on service level by the aggregation of parameter matchmaking quality. Therefore, $sm_{L}$ is defined in formula (\ref{equation3}), where $sm_{L}$ and $s_{L}$ are the average value of all involved $mt_{p}$ and $s_{p}$ respectively. 
+Since each $e$ defined in $E$ could have more than one $fullmatch(a \Rightarrow b)$ form a edge $e$. Therefore, semantic matchmaking quality of one $e$, denoted as $sm_e$ is defined in formula (\ref{equation3}), where $type_{e}$ and $sim_{e}$ are the average values of all involved $type(a, b)$ and $q_{sim}(a, b)$ respectively. 
 
 \begin{equation}
 \label{equation3}
-sm_{L} \stackrel{.}{=} (mt_ {L}, \  s_ {L})
+sm_{e} \stackrel{.}{=} (type_ {e}, \  sim_ {e})
 \end{equation}
 
-\textbf{Comprehensive quality model}. The comprehensive quality model consider both semantic matchmaking quality and QoS. The semantic matchmaking quality refers to $sm_{L}$. Consequently, the comprehensive quality model is defined in Formula (\ref{equation4}), which could be further broken down into Formula (\ref{equation5}). 
+The semantic matchmaking quality $SM$ is futher aggregated with considering all $\{e_{1}, e_{2},... e_{m} \}$ in $E$, calculated by following the formula (\ref{eqSM})(\ref{equation6})(\ref{equation7}). Consequently, in Formula \ref{eqCQ}, the comprehensive quality $CQ$ consists of the aggregated semantic matchmaking quality $SM$ and the QoS calculation in DAG discussed before.
+
 \begin{equation}
-\label{equation4}
-cq \stackrel{.}{=} (sm_ {L}, \  QoS_ {s})
+\label{eqSM}
+SM \stackrel{.}{=} (MT, SIM)
 \end{equation}
-\begin{equation}
-\label{equation5}
-cq \stackrel{.}{=} (mt_ {L}, \  s_ {L}, \  a_{s},\  r_{s},\  c_{s},\  t_{s})
-\end{equation}
-
-\textbf{Semantic matchmaking quality aggregation}. The quality aggregation is defined based on the constructs of composition web services in consideration of semantic matchmaking quality and QoS. The quality on composition solution is further calculated by following the formula (\ref{equation6})(\ref{equation7}), and QoS aggregation are discussed in Sect. \ref{Quality of Service and Composition Constructs}
-
 \begin{equation}
 \label{equation6}
-MT {=} \prod_{n=1}^{m} mt_ {L_{n}}
+MT {=} \prod_{n=1}^{m} type_ {e_{n}}
 \end{equation}
 \begin{equation}
 \label{equation7}
-S {=} (\sum_{n=1}^m s_ {L_{n}})/m
+SIM {=} (\sum_{n=1}^m sim_ {e_{n}})/m
 \end{equation}
+\begin{equation}
+\label{eqCQ}
+CQ \stackrel{.}{=} (MT, \  SIM, \  A,\  R,\  C,\  T)
+\end{equation}
+
 
 
 \subsection{Objective Function}
