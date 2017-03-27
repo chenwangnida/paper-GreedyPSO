@@ -218,32 +218,37 @@ Our comprehensive quality evaluation model is considered to be more general. Two
 
 \subsection{An Overview to PSO-based Method}\label{PSO_based_approach}
 
-PSO has shown its promising in solving combinatorial optimisation problems, which is considered to a easier way to maintain the correctness of solutions comparing to GP-based approaches that often require repairing or penalising the solutions \cite{da2016particle}. Therefore, we will employ a PSO-based approach to comprehensive quality-aware automated semantic web service composition. Fig. \ref{overview} shows an overview of our approach with five steps. Step 1: The composition process is triggered by a composition task defined in Subsection \ref{problemDes}. Step 2: This composition task is used to discover all task-related service candidates using a greedy search adopt from \cite{ma2015hybrid}. This algorithm keeps storing and adding outputs of the evocable services as available outputs, and these available outputs are used to discovery new services in service repository and updated themselves. This loop process does not stop until no service is satisfied by the available outputs. During the greedy search, an ontology-based cache is initialised, which stores the concept similarities of inputs and outputs of task-related candidate that demonstrated in SubSect. \ref{indexCache}. Step 3: Particle initialisation and mapping. In the initialisation, each particle's position size is determined by the size of task-related service candidates. Meanwhile, each service candidate are mapped to an index of a particle’s position vector (each vector have a weight value that falls between 0.0 and 1.0). After that, all the services are put in a queue and sorted according to their corresponding weight values in a descending order. This sorted queue is used to construct a weighted DAG. Step 4. Follows the standard PSO steps after step 3. Step 4: The fitness value of the weighted graph is evaluated to update the position of particle under PSO algorithm in Sect. \ref{pso_algorithm}, where the position is mapped to the index of service queue. later on, the updated service queue is used to decode a new weighted graph as the composition solution. Step 5. Lastly, the best position found in the searching space is selected and decode into the final optimised solution. This PSO-based approach is similar to \cite{da2016particle}, but we employ weighted graphs as a different solution presentation with explicit support for the proposed quality model.
+PSO has shown its promising in solving combinatorial optimisation problems, which is considered to an easier way to maintain the correctness of solutions comparing to GP-based approaches that often require repairing or penalising the solutions \cite{da2016particle}. Therefore, we will employ a PSO-based approach to comprehensive quality-aware automated semantic web service composition consisting a forward decoding process. Fig. \ref{overview} shows an overview of our approach consisting of four steps:
+
+Step 1: The composition process is triggered by a composition task, which is clearly defined in Subsection \ref{problemDes}.
+
+Step 2: This composition task is used to discover all task-related service candidates using a greedy search adopted from \cite{ma2015hybrid}. This algorithm keeps adding outputs of the evocable services as available outputs, and these available outputs are used to discovery new services from service repository and be updated with the outputs of these discovered services. This loop process does not stop until no service is satisfied by the available outputs. During this greedy search, an ontology-based cache is initialised, which stores the concept similarities of inputs and outputs of task-related candidate that are further demonstrated in SubSect. \ref{indexCache}. 
+
+Step 3: Particle initialisation and serivce-to-index mapping. In the initialisation, each particle's position size is determined by the size of task-related service candidates. Meanwhile, each service candidate is mapped to an index of a particle’s position vector (each vector have a weight value that falls between 0.0 and 1.0). After that, all the service candidates are put in a queue and sorted according to their corresponding weight values in a descending order. This procedure are a part of  Algorithm \ref{novelSteps} below. This sorted queue is used as one of the input of a forward decoding algorithm \ref{graph_building} to create a weighted graph using ontology-based cache in Step 2. In addition, this forward graph building Algorithm can lead to more services and edges connected to the graph, which should be removed at last.
+
+
+Step 4. Follows left steps of algorithm \ref{novelSteps} as the same as the standard PSO steps, Besides that, particles' fitness is calculated on the decoded weight DAGs. 
+
 
 
 \subsection{Ontology-based Index Cached Optimisation}\label{indexCache}
-our PSO-based approach demands decoding processes from optimised queues to weighted DAGs, the bottlenecks of efficiently generating weighted DAGs lie in building edges and nodes, which are related to the cost of semantic quality calculation and the size of service repository respectively. To effectively construct weighted DAGs, we pre-calculate semantic matchmaking quality. The key idea of the index is to create a map using a pair of keys, output-related concepts and potentially matched input-related concepts with considering different levels of match types, and the map values stored $mt_{p}$ and $mt_{s}$. Meanwhile, this index size could also be reduced by only considering the concepts related in the shrunken service repository, which means the index cache is filtered by those task-relevant web services. This optimised cache also contributes to less and constant time for weighted graphs building through the whole evolutionary process.
-
-
-\subsection{QoS-aware Semantic Web Service Composition Algorithm} \label{pso_algorithm}
+our PSO-based approach demands decoding processes from optimised queues to weighted DAGs, a bottleneck of efficiently constructing weighted DAGs lie in building required information of edges, which is related to the cost of $fullmatch$
+$(a \Rightarrow b)$ identifications and $sim(a, b)$ calculations between input-related and output-related concepts of service candidates. To efficiently construct weighted DAGs, we calculate $sim(a, b)$ of all $fullmatch(a \Rightarrow b)$ interleaving with the greedy search discussed in Sect \ref{PSO_based_approach}. This information is stored in a table structure with special $X$ value if no $fullmatch(a \Rightarrow b)$ is satisfied. Therefore, this optimised cache contributes to less and constant time for weighted DAG building through the evolutionary process.
 
 
 \begin{algorithm}
- \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
  \SetKwFunction{generateWeightedGraph}{generateWeightedGraph}
  \SetKwProg{Procedure}{Procedure}{}{}
  \LinesNumbered
  \SetNlSty{}{}{:}
- \Input{relevant Web services $rws$}
- \Output{Optimised service queue $queue$,Optimised Weighted Graph $OPTWG$}
- Map each relevant service to an index in the particle's position vector\;https://www.facebook.com/
  Randomly initialise each particle in the swarm\;
   \While {max. iterations not met}{
      \ForEach{particles in the swarm}{
-     $queue \leftarrow$ map service in a descending order by particle's position vector\;
-     $WG \leftarrow$ $generateWeightedGraph$()\;
-	 Calculate the $WG$ fitness value\;
+     Map service candidates to particle's position vector\;
+     Create a service queue and sort it by position vectors' weights\;
+     Decode the service into a weighted DAG \;
+	 Calculate the $Weighted DAG$ fitness value\;
      
       \eIf{fitness value better than \emph{pBest}}{    
         Assign current fitness as new \emph{pBest}\;
@@ -255,38 +260,33 @@ our PSO-based approach demands decoding processes from optimised queues to weigh
  	Calculate the velocity of each particle\;
   	Update the position of each particle\;
   }
- \KwRet $OPTWG$\;
- \caption{Steps of the PSO-based Web service composition technique.}
+\caption{Steps of PSO-based service composition technique \cite{da2016particle}.}
 \label{novelSteps}
 \end{algorithm} 
-
-
 \begin{algorithm}
- \setlength\hsize{0.9\linewidth}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
- \SetKwFunction{generateWeightedGraph}{generateWeightedGraph}
+ \SetKwFunction{createWeightedDAG}{createWeightedDAG}
  \SetKwProg{Procedure}{Procedure}{}{}
  \LinesNumbered
  \SetNlSty{}{}{:}
-  \Procedure{\generateWeightedGraph{}}{
- \Input{Task inputs $I$, task outputs $O$, Optimised service queue $queue$, IndexCache $IndexCache$}
- \Output{Weighted Graph $WG$}
- $WG \leftarrow  null$\;
- $WG \leftarrow$ new $endNode$(), new $startNode$()\;
- $OutputSet \leftarrow$ \{$I$\}\;
-  \While {all $O$ $\notin$ $OutputSet$  and $queue !=null$}{
-     \ForEach{$ws$ in $queue$}{
-      \uIf{$ws.inputs$ $\in$ $OutputSet$ }{    
-    		 \ForEach{$I$ in $ws.inputs$}{
-    		$mt_{P}, s_{P} \leftarrow$ query $IndexCache$\;
-     		$mt_{L} \leftarrow$ aggregation($mt_{p}$)\;
- 			$s_{L} \leftarrow$ aggregation($s_{p}$)\;
+  \Procedure{\createWeightedDAG{}}{
+ \Input{ $I_T$, $O_T$, $queue$, $Cache$}
+ \Output{WG}
+ $WG = (V, E)$\;
+ $V \leftarrow$ \{$Start$, $End$ \} \;
+ $OutputSet \leftarrow$ \{$I_{T}$\}\;
+  \While { $O_{T}$ $\notin$ $OutputSet$  and $queue !=null$}{
+     \ForEach{$S$ in $queue$}{
+      \uIf{$fullmatch(a \Rightarrow b)$$\wedge$ $(a \in OutputSet)$ $\wedge$ $(b \in I_{S})$ $\wedge$ $\mid fullmatch(a \Rightarrow b) \mid = \mid I_{S} \mid$}{    
+    		 \ForEach{$fullmatch(a \Rightarrow b)$}{
+    		$sim(a,b) \leftarrow$ query $IndexCache$\;
+ 			$sm(a,b) \leftarrow$ $( type(a,b), sim(a,b))$\;
               }
-        $sm_{L} \leftarrow$ \{ $mt_{L}$,$s_{L}$ \}\;
-        $WG.edge \leftarrow$  $sm_{L} $\;
-        $WG \leftarrow$ new $wsNode$()\;
-         $OutputSet$ add \{$ws.outputs$\}\;    
-       $queue$.remove $ws$\;
+        $sm_{e} \leftarrow$ aggregate \{ $sm(a,b)$ \}\;
+        $E \leftarrow$ add $e$\;
+        $V \leftarrow$ add $S$\;
+        $OutputSet$ add \{$O_{S}$\}\;    
+        $queue$.remove $S$\;
        }	
      }
   }
@@ -294,12 +294,9 @@ our PSO-based approach demands decoding processes from optimised queues to weigh
  remove $dangling edges$\;
  \KwRet $WG$\;
  }
- \caption{Create a composition weighted graph from a queue.}
+ \caption{Create a weighted DAG from a  sorted queue.}
 \label{graph_building}
 \end{algorithm} 
-
-
-The overall algorithm investigated here is made up of the PSO-based web service composition algorithm \ref{novelSteps} and the decoding algorithm \ref{graph_building}. In algorithm \ref{novelSteps}, the idea is to translate the particle location produced by PSO into a service queue as an indirect representation, such that finding the best fitness of the weighted graph is to discover the optimised location of the particle in the search space. In PSO, the dimension of each particle equals to the number of relevant web services. The index of each services is mapped to a separate location component in a particle. Then services queue is sorted by the particles' position vector in the ascending order, from which we decode a weighted graph using Algorithm \ref{graph_building}. It is a simple forward graph building algorithm, and this method can lead to more services and edges connected to the graph that must be removed. Also, semantic quality value are assigned to all the edges, which is calculated from quality aggregation function with given parameter matchmaking quality.
 
 
 \section{Experiment Design}\label{experiment_design}
