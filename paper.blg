@@ -3,49 +3,65 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
 The style file: splncs03.bst
 Database file #1: IEEEexample.bib
-I was expecting a `,' or a `}'---line 353 of file IEEEexample.bib
+Repeated entry---line 269 of file IEEEexample.bib
+ : @inproceedings{shi2001particle
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 347 of file IEEEexample.bib
+ : @article{blum1997fast
+ :                      ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 391 of file IEEEexample.bib
  :   publisher={IEEE}
  :                   @article{blum1997fast,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1031 of file IEEEexample.bib
+Repeated entry---line 391 of file IEEEexample.bib
+ :   publisher={IEEE}@article{blum1997fast
+ :                                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1069 of file IEEEexample.bib
  : @inproceedings{paolucci2002semantic
  :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1183 of file IEEEexample.bib
+ : @article{blum1997fast
+ :                      ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
 You've used 25 entries,
             2785 wiz_defined-function locations,
-            727 strings with 9375 characters,
-and the built_in function-call counts, 15178 in all, are:
-= -- 1318
-> -- 446
-< -- 29
-+ -- 187
-- -- 157
-* -- 929
-:= -- 1922
+            728 strings with 9298 characters,
+and the built_in function-call counts, 15288 in all, are:
+= -- 1327
+> -- 451
+< -- 30
++ -- 189
+- -- 159
+* -- 942
+:= -- 1931
 add.period$ -- 47
 call.type$ -- 25
-change.case$ -- 173
+change.case$ -- 174
 chr.to.int$ -- 0
 cite$ -- 26
-duplicate$ -- 1325
-empty$ -- 1354
-format.name$ -- 179
-if$ -- 3373
+duplicate$ -- 1333
+empty$ -- 1360
+format.name$ -- 182
+if$ -- 3396
 int.to.chr$ -- 0
 int.to.str$ -- 25
-missing$ -- 262
+missing$ -- 264
 newline$ -- 80
 num.names$ -- 52
 pop$ -- 476
 preamble$ -- 1
-purify$ -- 124
+purify$ -- 125
 quote$ -- 0
-skip$ -- 449
+skip$ -- 452
 stack$ -- 0
-substring$ -- 924
-swap$ -- 741
-text.length$ -- 29
+substring$ -- 932
+swap$ -- 754
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 96
@@ -53,4 +69,4 @@ warning$ -- 1
 while$ -- 138
 width$ -- 27
 write$ -- 263
-(There were 2 error messages)
+(There were 6 error messages)

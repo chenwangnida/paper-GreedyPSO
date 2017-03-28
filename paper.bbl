@@ -12,6 +12,10 @@ Bansal, S., Bansal, A., Gupta, G., Blake, M.B.: Generalized semantic web
   service composition. Service Oriented Computing and Applications  10(2),
   111--133 (2016)
 
+\bibitem{blum1997fast}
+Blum, A.L., Furst, M.L.: Fast planning through planning graph analysis.
+  Artificial intelligence  90(1),  281--300 (1997)
+
 \bibitem{boustil2014semantic}
 Boustil, A., Maamri, R., Sahnoun, Z.: A semantic selection approach for
   composite web services using owl-dl and rules. Service Oriented Computing and
@@ -26,11 +30,6 @@ FanJiang, Y.Y., Syu, Y.: Semantic-based automatic service composition with
 \bibitem{fensel2011semantic}
 Fensel, D., Facca, F.M., Simperl, E., Toma, I.: Semantic web services. Springer
   Science \& Business Media (2011)
-
-\bibitem{fukuyama2008fundamentals}
-Fukuyama, Y.: Fundamentals of particle swarm optimization techniques. Modern
-  heuristic optimization techniques: theory and applications to power systems
-  pp. 71--87 (2008)
 
 \bibitem{gupta2015optimization}
 Gupta, I.K., Kumar, J., Rai, P.: Optimization to quality-of-service-driven web
