@@ -1,56 +1,72 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
+The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
 The style file: ../splncs03.bst
 Database file #1: ../IEEEexample.bib
-I was expecting a `,' or a `}'---line 353 of file ../IEEEexample.bib
+Repeated entry---line 269 of file ../IEEEexample.bib
+ : @inproceedings{shi2001particle
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 347 of file ../IEEEexample.bib
+ : @article{blum1997fast
+ :                      ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 391 of file ../IEEEexample.bib
  :   publisher={IEEE}
  :                   @article{blum1997fast,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1031 of file ../IEEEexample.bib
+Repeated entry---line 391 of file ../IEEEexample.bib
+ :   publisher={IEEE}@article{blum1997fast
+ :                                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1069 of file ../IEEEexample.bib
  : @inproceedings{paolucci2002semantic
  :                                    ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1183 of file ../IEEEexample.bib
+ : @article{blum1997fast
+ :                      ,
+I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
-You've used 24 entries,
+You've used 25 entries,
             2785 wiz_defined-function locations,
-            721 strings with 9288 characters,
-and the built_in function-call counts, 14692 in all, are:
-= -- 1273
-> -- 439
-< -- 28
-+ -- 184
-- -- 155
-* -- 905
-:= -- 1860
-add.period$ -- 46
-call.type$ -- 24
-change.case$ -- 169
+            728 strings with 9424 characters,
+and the built_in function-call counts, 15288 in all, are:
+= -- 1327
+> -- 451
+< -- 30
++ -- 189
+- -- 159
+* -- 942
+:= -- 1931
+add.period$ -- 47
+call.type$ -- 25
+change.case$ -- 174
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 1279
-empty$ -- 1308
-format.name$ -- 177
-if$ -- 3263
+cite$ -- 26
+duplicate$ -- 1333
+empty$ -- 1360
+format.name$ -- 182
+if$ -- 3396
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 254
-newline$ -- 77
-num.names$ -- 50
-pop$ -- 462
+int.to.str$ -- 25
+missing$ -- 264
+newline$ -- 80
+num.names$ -- 52
+pop$ -- 476
 preamble$ -- 1
-purify$ -- 121
+purify$ -- 125
 quote$ -- 0
-skip$ -- 431
+skip$ -- 452
 stack$ -- 0
-substring$ -- 887
-swap$ -- 718
-text.length$ -- 28
+substring$ -- 932
+swap$ -- 754
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 92
+type$ -- 96
 warning$ -- 1
-while$ -- 132
-width$ -- 26
-write$ -- 253
-(There were 2 error messages)
+while$ -- 138
+width$ -- 27
+write$ -- 263
+(There were 6 error messages)

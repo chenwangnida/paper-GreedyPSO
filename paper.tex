@@ -57,25 +57,9 @@ In summary, despite a large number of approaches for semantic web service compos
 \section{Motivation and Problem Description}\label{Motivation and Problem Description}
 \subsection{Motivation}\label{Motivation}
 
-The aim of web service composition considered in this paper is to automatically compose optimal solutions in considering both QoS and semantic matchmaking quality based on a user's request. The request is to provide inputs and obtain outputs. The resulting composition of this request is a composition solution with an optimal comprehensive quality in terms of semantic matchmaking quality and QoS. A motivating example of this problem is shown in Fig \ref{motivation}. The figure shows a DAG that represents a solution with four web services involved for a request $R$ as a composition task, where inputs of the task are \{$TravelDepartureDate$, $HomeCity$, $ConferenceCity$, $TravelReturnDate$ \} and outputs are \{$BusTicket$, $FlightTicket$, $TouristMap$, $HotelReservation$ \}. This is a classic example of travel planning problem for people who seek for booking services of airplanes, buses and hotels reservation, and also generating tourist maps for the conference city. The graph also contains edges that marked with connected outputs and inputs of two connected atomic services, which represent valid semantic matches that the outputs of a web service can be passed as the inputs of its successors.
-
-\begin{figure}[h]
-\centering
-\fbox{\includegraphics[scale=.25]{motivation.pdf}}
- \caption{ An example of a web service composition}
- \label{motivation}
-\end{figure}
-
-Although obtaining a correct combination of web service is essential, there are many ways to connect multiple web services chosen from a service repository. These web services provide different QoS in terms of availability, price, reliability and response time. Moreover, valid semantic matches between two connected web services could also have different matchmaking quality. For example, $Generate Map$ service produce $StreetMap$ which is considered to be a valid semantic match to $TouristMap$, but $Bus Service$ produce $BusTicket$ which is considered to be a better valid semantic match to $BusTicket$. The descriptions of these matched resources are captured in a ontology depicted in Fig .\ref{taxonomy}, where all the inputs and the outputs related to the web services are described for the travel planning problem discuss here. For example, the concept $Map$ and its sub-concept $urbanMap$ are assigned with a $touristMap$ instance and $streetMap$ instance respectively in Fig .\ref{taxonomy}. The valid semantic match is considered that an instance of $urban Map$ can be an instance of $Map$, but not vice versa. To demonstrate the motivation of proposing a comprehensive quality, we give a simple example here. The service $GenerateMap$ with a output ($StreetMap$) and a price (``6.72") in the web service composition can be replace by a service $GenerateTouristMap$ with a different output ($TouristMap$) and a different price (``16.87") available in the service repository. This composition solution results in a better semantic matchmaking quality, but price negatively contributes to the QoS. Therefore, to reach the optimal solutions automatically, we need to measure these changes to the solutions considering matchmaking quality and QoS simultaneously. 
-
-
-
-\begin{figure}[h]
-\centering
-\fbox{\includegraphics[scale=.28]{taxonomy.pdf}}
- \caption{ An ontology of a travel planning domain}
- \label{taxonomy}
-\end{figure}
+Our goal in this paper is to develop a PSO-based approach that can automatically produce composition services in the form of graph-based representation (e.g. DAG). The nodes in the DAG represent component services. On the other hand, the edge that connects any two component services in the DAG, e.g. $S_1->S_2$, indicates that the output information from service S1 will subsequently serve as the input information for service S2. Apparently, such output and input information must semantically match to ensure the correct execution of the DAG. Moreover, the overall service inputs and outputs associated with the DAG must satisfy the composition requirements provided by users.
+ 
+In practice, many different DAGs can meet the given requirements but differ significantly in terms of QoS and semantic matchmaking quality. For example, in the classical travel planning context, during the process of building a DAG, a component service needs to be employed to obtain a travel map. Suppose that two optional services can be considered for this purpose. One service S1 can provide a street map at a price of 6.72. The other service S2 can provide a tourist map at a price of 16.87. Because in our DAG a tourist map is more desirable than a street map, service S2 clearly enjoys better semantic matchmaking quality but will have negative impact on the QoS of the DAG (i.e. the price is much higher). It can be easily imagined that similar problems can frequently occur while building the DAG for the travel planning problem or other web service composition problems. Due to this reason, aimed at achieving a good balance in between QoS and semantic matchmaking quality, our PSO-based service composition system will be further guided by a comprehensive quality model to be proposed in Section 4.
 
 \subsection{Problem Formulation}\label{problemDes}
 
@@ -225,10 +209,8 @@ Step 2: This composition task is used to discover all task-related service candi
 
 Step 3 and Step 4: These two steps follow the stardard PSO steps \cite{shi2001particle} except some differences that lie in  particles initialisation and decoding process. These two differences are related to sort a service queue using a serivce-to-index mapping for a particle' position vectors and evaluate the fitness of a particle after decoding this serivce queue into a weighted DAG respectively, which are further addressed in Algorithm \ref{novelSteps} and \ref{graph_building} in SubSect \ref{POS-based_algomargin}.
 
-.
-
 \subsection{PSO-based approach algorithm}\label{POS-based_algomargin}
-The overall algorithm investigated here is made up of the PSO-based web service composition algorithm \ref{novelSteps} and the decoding algorithm \ref{graph_building}. In algorithm \ref{novelSteps}, the  steps $4$, $5$, $6$ and $7$ are different steps from those of stardard PSO. First, each particle's position size is determined by the size of task-related service candidates generated by a greedy search. This greedy search algorithm keeps adding outputs of the evocable services as available outputs, and these available outputs are used to discovery task-related services from service repository and be updated with the outputs of these discovered services. This loop process does not stop until no service is satisfied by the available outputs. Second, each service candidate is mapped to an index of a particle’s position vector, where each vector have a weight value that falls between 0.0 and 1.0. This a service-to-index mapping for position vectors discussed in Step 3 in SubSect \ref{PSO_based_approach}. Third, all the service candidates are put in a queue and sorted according to their corresponding weight values in a descending order. Fourth, this sorted queue is used as one of the input of a forward decoding algorithm \ref{graph_building} to create a weighted DAG, this fitness value of this weighted DAG is the fitness value of the particle.
+The overall algorithm investigated here is made up of the PSO-based web service composition algorithm \ref{novelSteps} and the decoding algorithm \ref{graph_building}. In algorithm \ref{novelSteps}, the  steps $4$, $5$, $6$ and $7$ are different steps from those of stardard PSO. First, each particle's position size is determined by the size of task-related service candidates generated by a greedy search. This greedy search algorithm keeps adding outputs of the evocable services as available outputs, and these available outputs are used to discovery task-related services from service repository and be updated with the outputs of these discovered services. This loop process does not stop until no service is satisfied by the available outputs. Second, each service candidate is mapped to an index of a particle’s position vector, where each vector have a weight value that falls between 0.0 and 1.0. This a service-to-index mapping for position vectors discussed in Step 3 in SubSect \ref{PSO_based_approach}. Third, all the service candidates are put in a queue and sorted according to their corresponding weight values in a descending order. Fourth, this sorted queue is used as one of the input of a forward decoding algorithm \ref{graph_building} to create a weighted DAG, this fitness value of this weighted DAG is the fitness value of the particle calculated by the comprehensive model discussed in Sect \ref{Comprehensive_Quality_Model}.
 \begin{algorithm}
  %\LinesNumbered
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -258,18 +240,7 @@ The overall algorithm investigated here is made up of the PSO-based web service 
 \end{algorithm} 
 
 
-This Algorithm  \ref{graph_building}is a forward graph graph buidling algorithm based on \cite{blum1997fast}. This algorthm take an input of the sorted service queues discussed above, and service queues with diferent order is possible to create different weighted DAGs as composition solutions. In additon. $I_{T}$, $O_{T}$ and $Cache$ are also taken as inputs. Firstly, $Start$ and $End$ are added to V of WG initialization, $OutputSet$ is created with $I_{T}$.  If all the inputs of first $S$ popped from $queue$ can be satisfied by provided outputs of $OutputSet$, this $S$ is added to $V$ and its outputs are added to $OutputSet$. Meanwhile, $sm_{e}$ is calcated based on the aggregation value of $sm(a, b)$
-
-
-
-Otherwise,  next $S$ popped from the $queue$ is to be considered. These steps are not stopped until all  $O_{T}$ can satisfied from $Outputset$ or queue is null.
-
-
-
-
-
-
-can lead to more services and edges connected to the graph, which should be removed at last.
+This Algorithm  \ref{graph_building} is a forward graph graph buidling algorithm based on \cite{blum1997fast}. This algorithm take one input as the sorted service queues from step 5 of Algorithm \ref{novelSteps}. If service queues are sorted with different service order, it is possible to create different corresponding weighted DAGs as composition solutions. In addition. $I_{T}$, $O_{T}$ and $Cache$ are also taken as inputs. Firstly, $Start$ and $End$ are added to V of WG as an initialisation, and a $OutputSet$ is also created with $I_{T}$.  If all the inputs $I_{S}$ of first popped  $S$ from $queue$ can be satisfied by provided outputs of $OutputSet$, this $S$ is added to $V$ and its outputs are added to $OutputSet$. Meanwhile, $e$ is created with its $sm_{e}$ calculated based on the aggregation value of all semantic matchmaking quality from each satisfied input of $S$. These steps are not stopped until all  $O_{T}$ can satisfied from $Outputset$ or queue is null. Consequently, this forward graph building technique could lead to more services and edges connected to the $WG$, which should be removed before $WG$ is returned.
 
 \begin{algorithm}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -289,9 +260,9 @@ can lead to more services and edges connected to the graph, which should be remo
     		 \ForEach{$I_{S}$}{
 		$sm(a \in Outputset, b \in I_{S}) \leftarrow$ query $Cache$\;
               }
-        Calculate $sm_{}$\;
-        $E \leftarrow$ add $e$\;
-        $V \leftarrow$ add $S$\;
+        $e \leftarrow$ calculate aggregated $sm_{e}$\;
+        $E$ add $e$\;
+        $V$ add $S$\;
         $OutputSet$ add \{$O_{S}$\}\;    
         $queue$.remove $S$\;
        }	
@@ -344,17 +315,17 @@ We observe an interesting pattern from Table \ref{decisionTable}. The mean value
 \label{decisionTable}
 \begin{tabular}{l|l|l|l}
 \hline
-\multicolumn{2}{c|}{WSC09}              & QoS Evaluation Model         &\shortstack{Comprehensive \\ Quality Evaluation Model} \\ \hline
-\multirow{2}{*}{Task1}  &$SM$   &0.537375 $\pm$ 0.026709               &0.557972 $\pm$ 0.009394 $\uparrow$ \\ \cline{2-4}
-                        &$QoS$  &0.557460 $\pm$ 0.015572               &0.560444 $\pm$ 0.016424                          \\ \hline
-\multirow{2}{*}{Task2}  &$SM$   &0.454383 $\pm$ 0.003287               &0.462974 $\pm$ 0.004232 $\uparrow$ \\ \cline{2-4} 
-                        &$QoS$  &0.479958 $\pm$ 0.001156 $\uparrow$    &0.477192 $\pm$ 0.002528 \\ \hline
-\multirow{2}{*}{Task3}  &$SM$   &0.553818 $\pm$ 0.008180               &0.609298 $\pm$ 0.005371 $\uparrow$   \\ \cline{2-4} 
-                        &$QoS$  &0.494004 $\pm$ 0.001322 $\uparrow$    &0.491262 $\pm$ 0.000862            \\ \hline
-\multirow{3}{*}{Task4}  &$SM$   &0.439757 $\pm$ 0.003728               &0.460369 $\pm$ 0.000002 $\uparrow$ \\ \cline{2-4} 
-                        &$QoS$  &0.484594 $\pm$ 0.001014 $\uparrow$    &0.473354 $\pm$ 0.004422  \\ \hline
-\multirow{3}{*}{Task5}  &$SM$   &0.457988 $\pm$ 0.006459               &0.463878 $\pm$ 0.001299 $\uparrow$           \\ \cline{2-4} 
-                        &$QoS$  &0.476378 $\pm$ 0.000480 $\uparrow$    &0.474970 $\pm$ 0.000656  \\ \hline                                                   
+\multicolumn{2}{c|}{WSC09}              & QoS Evaluation Model         &\shortstack{Comprehensive Quality \\ Model} \\ \hline
+\multirow{2}{*}{Task1}  &$SM$   &0.5373 $\pm$ 0.0267               &0.5580 $\pm$ 0.0094 $\uparrow$ \\ \cline{2-4}
+                        &$QoS$  &0.5574 $\pm$ 0.0156               &0.5604 $\pm$ 0.0164                          \\ \hline
+\multirow{2}{*}{Task2}  &$SM$   &0.4549 $\pm$ 0.0033               &0.4630 $\pm$ 0.0042 $\uparrow$ \\ \cline{2-4} 
+                        &$QoS$  &0.4800 $\pm$ 0.0012 $\uparrow$    &0.4772 $\pm$ 0.0025 \\ \hline
+\multirow{2}{*}{Task3}  &$SM$   &0.5538 $\pm$ 0.0082               &0.6093 $\pm$ 0.0054 $\uparrow$   \\ \cline{2-4} 
+                        &$QoS$  &0.4940 $\pm$ 0.0013 $\uparrow$    &0.4913 $\pm$ 0.0009            \\ \hline
+\multirow{3}{*}{Task4}  &$SM$   &0.4398 $\pm$ 0.0037               &0.4604 $\pm$ 0.0000 $\uparrow$ \\ \cline{2-4} 
+                        &$QoS$  &0.4845 $\pm$ 0.0010 $\uparrow$    &0.4734 $\pm$ 0.0044  \\ \hline
+\multirow{3}{*}{Task5}  &$SM$   &0.4580 $\pm$ 0.0065               &0.4639 $\pm$ 0.0013 $\uparrow$           \\ \cline{2-4} 
+                        &$QoS$  &0.4764 $\pm$ 0.0005 $\uparrow$    &0.4750 $\pm$ 0.0007  \\ \hline                                                   
 \end{tabular}
 \end{table}
 
@@ -382,12 +353,12 @@ The Table \ref{meanFitness} shows the mean fitness values of 30 independent runs
 \label{meanFitness}
 \begin{tabular}{l|l|l}
 \hline
-\multicolumn{1}{c|}{Dataset} & PSO-based approach & GP-based approach  \\ \hline
-WSC09 01                     &0.559207 $\pm$ 0.012780  $\uparrow$   &0.520659 $\pm$ 0.020758           \\ \hline
-WSC09 02                     &0.470083 $\pm$  0.001106 $\uparrow$   &0.459681 $\pm$  0.002874          \\ \hline
-WSC09 03                     & 0.550396 $\pm$ 0.012780              &0.567915 $\pm$ 0.023447 $\uparrow$   \\ \hline
-WSC09 04                     & 0.468942 $\pm$ 0.001670  $\uparrow$  &0.431704 $\pm$ 0.009774            \\ \hline
-WSC09 05                     & 0.469424 $\pm$ 0.000800  $\uparrow$  &0.245222 $\pm$ 0.036885            \\ \hline
+\multicolumn{1}{c|}{WSC09} & PSO-based approach & GP-based approach  \\ \hline
+Task 1                     &0.559207 $\pm$ 0.012780  $\uparrow$   &0.520659 $\pm$ 0.020758           \\ \hline
+Task 2                     &0.470083 $\pm$  0.001106 $\uparrow$   &0.459681 $\pm$  0.002874          \\ \hline
+Task 3                     & 0.550396 $\pm$ 0.012780              &0.567915 $\pm$ 0.023447 $\uparrow$   \\ \hline
+Task 4                     & 0.468942 $\pm$ 0.001670  $\uparrow$  &0.431704 $\pm$ 0.009774            \\ \hline
+Task 5                     & 0.469424 $\pm$ 0.000800  $\uparrow$  &0.245222 $\pm$ 0.036885            \\ \hline
 \end{tabular}
 \end{table}
 
