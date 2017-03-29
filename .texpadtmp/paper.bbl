@@ -2,11 +2,6 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
-\bibitem{bahadori2009optimal}
-Bahadori, S., Kafi, S., Far, K., Khayyambashi, M.: Optimal web service
-  composition using hybrid ga-tabu search. Journal of Theoretical and Applied
-  Information Technology  9(1),  10--15 (2009)
-
 \bibitem{bansal2016generalized}
 Bansal, S., Bansal, A., Gupta, G., Blake, M.B.: Generalized semantic web
   service composition. Service Oriented Computing and Applications  10(2),
@@ -37,11 +32,6 @@ Gupta, I.K., Kumar, J., Rai, P.: Optimization to quality-of-service-driven web
   Communication and Control (IC4), 2015 International Conference on. pp. 1--6.
   IEEE (2015)
 
-\bibitem{kona2009wsc}
-Kona, S., Bansal, A., Blake, M.B., Bleul, S., Weise, T.: Wsc-2009: a quality of
-  service-oriented web services challenge. In: 2009 IEEE Conference on Commerce
-  and Enterprise Computing. pp. 487--490. IEEE (2009)
-
 \bibitem{lecue2009optimizing}
 L{\'e}cu{\'e}, F.: Optimizing qos-aware semantic web service composition. In:
   International Semantic Web Conference. pp. 375--391. Springer (2009)
@@ -60,10 +50,6 @@ Mier, P.R., Pedrinaci, C., Lama, M., Mucientes, M.: An integrated semantic web
 Moghaddam, M., Davis, J.G.: Service selection in web service composition: A
   comparative review of existing approaches. In: Web Services Foundations, pp.
   321--346. Springer (2014)
-
-\bibitem{o2005review}
-O'Leary, D.: Review: Ontologies: A silver bullet for knowledge management and
-  electronic commerce. The Computer Journal  48(4),  498--498 (2005)
 
 \bibitem{paolucci2002semantic}
 Paolucci, M., Kawamura, T., Payne, T.R., Sycara, K.: Semantic matching of web
