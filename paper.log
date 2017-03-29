@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  29 MAR 2017 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  29 MAR 2017 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -548,18 +548,22 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \hbox (2.8494pt too wide) in paragraph at lines 47--48
 \OT1/cmr/m/n/10 vice com-po-si-tion [[],[],[]] or QoS-aware web ser-vice com-po
 -si-tion [[],[],[],[],[],[]],
  []
 
-[3] [4] [5] [6] [7] <overview.pdf, id=218, 850.17625pt x 330.23375pt>
+[2] [3] [4] [5] [6] [7] <overview.pdf, id=220, 853.1875pt x 341.275pt>
 File: overview.pdf Graphic file (type pdf)
 
 <use overview.pdf>
 Package pdftex.def Info: overview.pdf used on input line 196.
-(pdftex.def)             Requested size: 340.06447pt x 132.09114pt.
+(pdftex.def)             Requested size: 341.26895pt x 136.50757pt.
+
+Overfull \hbox (0.9454pt too wide) in paragraph at lines 196--197
+ [][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -568,37 +572,26 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [9 <./overview.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-Underfull \vbox (badness 3058) has occurred while \output is active []
-
- [11]
+ [9 <./overview.pdf>] [10] [11]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 292.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
+[12]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 315.
 
-[13] <comparisontest.pdf, id=409, 1120.185pt x 734.745pt>
+[13] <comparisontest.pdf, id=404, 1120.185pt x 734.745pt>
 File: comparisontest.pdf Graphic file (type pdf)
 
 <use comparisontest.pdf>
 Package pdftex.def Info: comparisontest.pdf used on input line 344.
 (pdftex.def)             Requested size: 324.84532pt x 213.07059pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14 <./comparisontest.pdf>] (./paper.bbl [15])
+ (./paper.bbl [14 <./comparisontest.pdf>] [15])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
- [16]
+
+[16]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
  (./paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
@@ -618,7 +611,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
 Here is how much of TeX's memory you used:
  8400 strings out of 493681
  126486 string characters out of 6155713
- 245999 words of memory out of 5000000
+ 245007 words of memory out of 5000000
  11543 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  890 hyphenation exceptions out of 8191
@@ -641,10 +634,10 @@ b></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/pkg
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/pkg/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/pkg/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on paper.pdf (16 pages, 352658 bytes).
+Output written on paper.pdf (16 pages, 355333 bytes).
 PDF statistics:
- 543 PDF objects out of 1000 (max. 8388607)
- 403 compressed objects within 5 object streams
+ 536 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
  116 named destinations out of 1000 (max. 500000)
  19 words of extra memory for PDF output out of 10000 (max. 10000000)
 
