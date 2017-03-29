@@ -98,6 +98,11 @@ Shi, Y., et~al.: Particle swarm optimization: developments, applications and
   resources. In: evolutionary computation, 2001. Proceedings of the 2001
   Congress on. vol.~1, pp. 81--86. IEEE (2001)
 
+\bibitem{da2015gp}
+da~Silva, A.S., Ma, H., Zhang, M.: A gp approach to qos-aware web service
+  composition including conditional constraints. In: Evolutionary Computation
+  (CEC), 2015 IEEE Congress on. pp. 2113--2120. IEEE (2015)
+
 \bibitem{da2016genetic}
 da~Silva, A.S., Ma, H., Zhang, M.: Genetic programming for qos-aware web
   service composition and selection. Soft Computing pp. 1--17 (2016)
