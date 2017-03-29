@@ -28,45 +28,45 @@ Repeated entry---line 1199 of file IEEEexample.bib
  :                      ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
-You've used 26 entries,
+You've used 23 entries,
             2785 wiz_defined-function locations,
-            732 strings with 9453 characters,
-and the built_in function-call counts, 15993 in all, are:
-= -- 1395
-> -- 468
-< -- 31
-+ -- 197
-- -- 165
-* -- 983
-:= -- 2016
-add.period$ -- 50
-call.type$ -- 26
-change.case$ -- 182
+            713 strings with 8866 characters,
+and the built_in function-call counts, 14062 in all, are:
+= -- 1225
+> -- 412
+< -- 26
++ -- 174
+- -- 145
+* -- 861
+:= -- 1777
+add.period$ -- 45
+call.type$ -- 23
+change.case$ -- 161
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 1391
-empty$ -- 1424
-format.name$ -- 189
-if$ -- 3559
+cite$ -- 24
+duplicate$ -- 1224
+empty$ -- 1259
+format.name$ -- 167
+if$ -- 3131
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 274
-newline$ -- 83
-num.names$ -- 54
-pop$ -- 496
+int.to.str$ -- 23
+missing$ -- 241
+newline$ -- 74
+num.names$ -- 48
+pop$ -- 443
 preamble$ -- 1
-purify$ -- 130
+purify$ -- 114
 quote$ -- 0
-skip$ -- 476
+skip$ -- 416
 stack$ -- 0
-substring$ -- 986
-swap$ -- 786
-text.length$ -- 31
+substring$ -- 859
+swap$ -- 680
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
+type$ -- 88
 warning$ -- 1
-while$ -- 144
-width$ -- 28
-write$ -- 274
+while$ -- 126
+width$ -- 25
+write$ -- 243
 (There were 6 error messages)

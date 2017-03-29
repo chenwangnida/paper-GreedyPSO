@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  29 MAR 2017 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  29 MAR 2017 19:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -548,71 +548,71 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (2.8494pt too wide) in paragraph at lines 47--48
-\OT1/cmr/m/n/10 vice com-po-si-tion [[],[],[]] or QoS-aware web ser-vice com-po
--si-tion [[],[],[],[],[],[]],
- []
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \vbox (badness 5105) has occurred while \output is active []
 
-[2] [3] [4] [5] [6] [7] <overview.pdf, id=220, 853.1875pt x 341.275pt>
+ [3]
+[4]
+Underfull \vbox (badness 2726) has occurred while \output is active []
+
+ [5]
+[6] [7] <overview.pdf, id=214, 853.1875pt x 341.275pt>
 File: overview.pdf Graphic file (type pdf)
-
-<use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 196.
+ <use overview.pdf>
+Package pdftex.def Info: overview.pdf used on input line 195.
 (pdftex.def)             Requested size: 341.26895pt x 136.50757pt.
 
-Overfull \hbox (0.9454pt too wide) in paragraph at lines 196--197
+Overfull \hbox (0.9454pt too wide) in paragraph at lines 195--196
  [][] 
  []
+
+[8 <./overview.pdf>]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+ [9] [10] [11]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `htbp') on input line 291.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `htbp') on input line 314.
+
+[12] <comparisontest.pdf, id=387, 1120.185pt x 734.745pt>
+File: comparisontest.pdf Graphic file (type pdf)
+
+<use comparisontest.pdf>
+Package pdftex.def Info: comparisontest.pdf used on input line 343.
+(pdftex.def)             Requested size: 324.84532pt x 213.07059pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
- [9 <./overview.pdf>] [10] [11]
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 292.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[12]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 315.
-
-[13] <comparisontest.pdf, id=404, 1120.185pt x 734.745pt>
-File: comparisontest.pdf Graphic file (type pdf)
-
-<use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 344.
-(pdftex.def)             Requested size: 324.84532pt x 213.07059pt.
- (./paper.bbl [14 <./comparisontest.pdf>] [15])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
-
-[16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
+ [13]
+(./paper.bbl [14 <./comparisontest.pdf>] [15])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
+ [16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 356.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 6FBF8002A435655FF902FC857B66EC2B;109.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 356.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8400 strings out of 493681
- 126486 string characters out of 6155713
- 245007 words of memory out of 5000000
- 11543 multiletter control sequences out of 15000+600000
+ 8394 strings out of 493681
+ 126383 string characters out of 6155713
+ 248897 words of memory out of 5000000
+ 11540 multiletter control sequences out of 15000+600000
  9354 words of font info for 34 fonts, out of 8000000 for 9000
  890 hyphenation exceptions out of 8191
  42i,24n,39p,2126b,7550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -634,10 +634,10 @@ b></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/pkg
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/pkg/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/pkg/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on paper.pdf (16 pages, 355333 bytes).
+Output written on paper.pdf (16 pages, 353281 bytes).
 PDF statistics:
- 536 PDF objects out of 1000 (max. 8388607)
- 399 compressed objects within 4 object streams
- 116 named destinations out of 1000 (max. 500000)
+ 526 PDF objects out of 1000 (max. 8388607)
+ 392 compressed objects within 4 object streams
+ 113 named destinations out of 1000 (max. 500000)
  19 words of extra memory for PDF output out of 10000 (max. 10000000)
 
