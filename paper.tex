@@ -26,19 +26,19 @@ Semantic web service composition has been a prevailing research area in recent y
 \end{abstract}
 \section{Introduction}\label{introduction}
 
-\textit{Web service composition} pertains to a chain of multiple web services to provide a value-added composition service that accommodates customers' complex requirements. This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. 
+\textit{Web service composition} pertains to a chain of multiple web services to provide a value-added composition service that accommodates customers' complex requirements. 
+%This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. 
 
-Two most notable challenges for web service composition are ensuring interoperability of services and achieving Quality of Service (QoS) optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge in syntactic and semantic dimensions. The syntactic dimension is covered by the XML-based technologies (such as $WSDL$, $SOAP$). The semantic dimension enables a better collaboration through ontology-based semantics. There are many ontology languages and formats for semantic service descriptions, such as OWL-S, WSML, and SAWSDL \cite{petrie2016web}. The second challenge is related to finding optimised solutions in QoS. This problem gives birth to \textit{QoS-aware service composition} that aims to find composition solutions with optimised QoS.
+Two most notable challenges for web service composition are ensuring interoperability of services and achieving Quality of Service (QoS) optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge in syntactic and semantic dimensions. The syntactic dimension is covered by the XML-based technologies, such as $WSDL$, $SOAP$. The semantic dimension enables a better collaboration through ontology-based semantics, such as OWL-S, WSML, and SAWSDL \cite{petrie2016web}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, the resources of semantic web services are described semantically to enable a better interoperability for chaining web services. The second challenge is related to finding solutions with optimised QoS. This problem gives birth to \textit{QoS-aware service composition} that aims to find composition solutions with optimised QoS.
 
-Existing works on service composition focus mainly on addressing only one challenge above. In these works, huge efforts have been devoted to optimise the quality of compositions under a pre-defined abstract workflow. This is generally considered as a \textit{semi-automated Web service composition} approach \cite{parejo2008qos}. Meanwhile, many research works consider a NP-hard problem of generating a composition plan automatically in discovering and selecting suitable web services \cite{moghaddam2014service}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, the resources of semantic web services are described semantically to enable a better interoperability for chaining web services. In the past few years, substantial works have been done on semantic web service composition \cite{bansal2016generalized,boustil2014semantic,mier2015integrated}. However, few works have enabled truely automatic semantic web service composition, where both QoS and quality of semantic match making will be optimised simultaneously to achieve a desirable balance.
+Existing works on service composition focus mainly on addressing only one challenge above. In these works, huge efforts have been devoted to QoS-aware web service compositions given a pre-defined abstract workflow. This is generally considered as a \textit{semi-automated web service composition} approach \cite{parejo2008qos}. Generating composition plans automatically in discovering and selecting suitable web services is a NP-hard problem \cite{moghaddam2014service}. In the past few years, despite many QoS-aware web service composition works \cite{gupta2015optimization,ma2015hybrid,qi2010combining,da2016particle,da2015graphevol,yu2013adaptive} employ Evolutionary Computation (EC) techniques to automatically generate composition solutions, but few works have enabled an \textit{automatic semantic web service composition}, where both QoS and quality of semantic matchmaking are optimised simultaneously to achieve a desirable balance.  
 
-The overall goal of this paper is to \textit{develop a general comprehensive approach to automated QoS-aware semantic web service composition that satisfactorily optimises both QoS and semantic matchmaking quality}. Particularly, this paper extends existing works of QoS-aware service composition by considering jointly optimise QoS and semantic matchmaking quality using our proposed comprehensive quality model. Particle Swarm Optimisation (PSO) has shown promise in searching for near-optimised service composition solutions \cite{da2016particle}. We will propose a PSO-based service composition approach with explicit support for our proposed quality model. We will achieve three objectives in this work:
+The overall goal of this paper is to \textit{develop a PSO-based approach to automated comprehensive quality-aware semantic web service composition that satisfactorily optimises both QoS and semantic matchmaking quality}. Particularly, this paper extends existing works of QoS-aware service composition by considering jointly optimising QoS and semantic matchmaking quality using our proposed comprehensive quality model. Particle Swarm Optimisation (PSO) has shown promise in searching for near-optimised service composition solutions \cite{da2016particle}. We will propose a PSO-based service composition approach with explicit support for our proposed quality model. We will achieve three objectives in this work:
 
 \begin{enumerate}
- \item To propose a general comprehensive quality model that addresses QoS and semantic matchmaking quality simultaneously with a desirable balance on both sides.
+ \item To propose a comprehensive quality model that addresses QoS and semantic matchmaking quality simultaneously with a desirable balance on both sides.
   
- \item To propose a PSO-based service composition approach using the proposed comprehensive quality model. To do that we optimise a service candidates queue by evaluating the comprehensive quality of its decoded representation.
-  
+ \item To propose a PSO-based service composition approach using the proposed comprehensive quality model. To do that, we aim to find a service candidate queue that can be decoded into a service composition with the near-optimal comprehensive quality.  
  \item To address the effectiveness of our PSO-based approach and a desirable balance achieved using our comprehensive quality model, we first compare our PSO-based approach with one recent GP-based approach \cite{ma2015hybrid} using our proposed quality model, and then compare our proposed quality model with one widely used QoS model using our proposed PSO-based approach.
 \end{enumerate}
 
@@ -163,6 +163,15 @@ Fitness = w_1 \hat{MT} + w_2 \hat{SIM} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \ha
 
 %If the weights for $MT$ and $S$ are put to 0 we obtain the QoS-aware service composition approach \cite{ma2015hybrid,da2016particle,da2015graphevol} as a special case. To adequatley reflect the relevance of semantic quality it is recommended to choose he weights for $MT$ and $S$ strictly larger than 0.
 
+\section{PSO-based Approach to Comprehensive Quality-Aware Automated Semantic Web Service Composition}\label{qswsc_approach}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[scale=.4]{overview.pdf}}
+ \caption{An overview of POS-based approach to comprehensive quality-aware automated semantic web service composition.}
+ \label{overview}
+\end{figure}
+
 \subsection{An Overview to PSO-based Method}\label{PSO_based_approach}
 
 PSO has shown promise in solving combinatorial optimisation problems, and considered an easier way to maintain the correctness of solutions compared to GP-based approaches that often require repairing the solutions \cite{da2016particle}. Therefore, we employ a PSO-based approach to comprehensive quality-aware automated semantic web service composition. Fig. \ref{overview} shows an overview of our approach consisting of four steps: 
@@ -187,9 +196,9 @@ The overall algorithm investigated here is made up of a PSO-based web service co
      Create a service candidates queue and map service candidates to a particle's position vectors\;
      Sort the service queue by position vectors' weights\;
      Create a weighted DAG from the service queue ( Algorithm\ref{graph_building}) \;
-     Calculate the Weighted DAG fitness value\;
+     Calculate the weighted DAG fitness value\;
      
-      \eIf{fitness value better than \emph{pBest}}{    
+      \eIf{fitness value better than pBest}{    
         Assign current fitness as new \emph{pBest}\;
        }{
         Keep previous \emph{pBest}\;
@@ -212,8 +221,8 @@ Algorithm  \ref{graph_building} is a forward graph building algorithm based on \
  \SetKwProg{Procedure}{Procedure}{}{}
  %\LinesNumbered
  \SetNlSty{}{}{:}
-  \Procedure{\createWeightedDAG{}}{
- \Input{ $I_T$, $O_T$, $queue$, $Cache$}
+ % \Procedure{}{
+ \Input{ $I_T$, $O_T$, $queue$, $cache$}
  \Output{WG}
  $WG = (V, E)$\;
  $V \leftarrow$ \{$Start$, $End$ \} \;
@@ -222,7 +231,7 @@ Algorithm  \ref{graph_building} is a forward graph building algorithm based on \
      \ForEach{$S$ in $queue$}{
       \uIf{all $I_{S}$ satisfied by $OutputSet$}{    
     		 \ForEach{$I_{S}$}{
-		$sm(a \in Outputset, b \in I_{S}) \leftarrow$ query $Cache$\;
+		$sm(a \in Outputset, b \in I_{S}) \leftarrow$ query $cache$\;
               }
         $e \leftarrow$ calculate aggregated $sm_{e}$\;
         $E$ add $e$\;
@@ -235,7 +244,7 @@ Algorithm  \ref{graph_building} is a forward graph building algorithm based on \
  remove $dangling nodes$\; 
  remove $dangling edges$\;
  \KwRet $WG$\;
- }
+ %}
  \caption{Create a weighted DAG from a  sorted queue.}
 \label{graph_building}
 \end{algorithm} 
