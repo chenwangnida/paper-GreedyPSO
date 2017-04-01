@@ -100,7 +100,7 @@ type_e =
 sim_e = sim(a,b) = \frac{2N_c}{N_{a}+N_{b}}
 \end{equation}
 
-\noindent with a suitable parameter $p, 0<p< 1$ to chosen, for discussion see Section \ref{PSO_based_approach}.
+\noindent with a suitable parameter $p, 0<p< 1$ to chosen, for discussion see Section \ref{PSO_based_approach}. However, if more than one pair of matched output and input from services $S$ and $S'$ respectively, $type_e$ and $sim_e$ will take on their average values.
 
 %$e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \Rightarrow i) \}$
 
@@ -176,16 +176,16 @@ Fitness = w_1 \hat{MT} + w_2 \hat{SIM} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \ha
 \vspace{-1.0cm}
 \subsection{An Overview to PSO-based Method}\label{PSO_based_approach}
 
-PSO has shown promise in solving combinatorial optimisation problems, and considered an easier way to maintain the correctness of solutions compared to GP-based approaches that often require repairing the solutions \cite{da2016particle}. Therefore, we employ a PSO-based approach to comprehensive quality-aware automated semantic web service composition. Fig. \ref{overview} shows an overview of our approach consisting of four steps: 
+PSO has shown promise in solving combinatorial optimisation problems, and is also considered to be an easy way to maintain the correctness of solutions. For example, GP-based approaches often require repairing the solutions \cite{da2016particle}. Therefore, we employ a PSO-based approach to comprehensive quality-aware automated semantic web service composition. Fig. \ref{overview} shows an overview of our approach consisting of four steps: 
 
 Step 1: The composition process is triggered by a composition task, which is clearly defined in \ref{problemDes}. 
 
-Step 2: This composition task is used to discover all task-related service candidates using a greedy search adopted from \cite{ma2015hybrid}. This greedy search algorithm keeps adding outputs of the invoked services as available outputs (initialised with $I_{T}$) , and these available outputs are used to discover task-related services from a service repository and updated with the outputs of these discovered services. This operation is repeated until no service is satisfied by the available outputs. This greedy search contributes to a shrunken service repository. During the greedy search, an ontology-based cache ($cache$) is initialised that stores the concept similarities of potentially matched inputs and outputs of task-related candidates. This $cache$ is also used to check whether services can be invoked by satisfying their input-related concepts with provided output-related concepts.
+Step 2: This composition task is used to discover all task-related service candidates using a greedy search algorithm adopted from \cite{ma2015hybrid}, which contributes to a shrunken service repository. This greedy search algorithm keeps adding outputs of the invoked services as available outputs (initialised with $I_{T}$) , and these available outputs are used to discover task-related services from a service repository and updated with the outputs of these discovered services. This operation is repeated until no service is satisfied by the available outputs. During the greedy search, an ontology-based cache ($cache$) is initialised that stores the concept similarities of matched inputs and outputs of task-related candidates. This $cache$ is also used to discover services by checking whether $null$ is returned by given two output-related and input-related concepts.
 
-Step 3 and Step 4: These two steps follow the standard PSO steps \cite{shi2001particle} except for some differences in particles mapping and decoding processes. In particular, these two differences are related to sorting a created service queue using serivce-to-index mapping for a particle' position vectors and evaluating the fitness of a particle after decoding this service queue into a weighted DAG respectively. Those differences are further addressed in Algorithms \ref{novelSteps} and \ref{graph_building} in \ref{POS-based_algomargin}.
+Step 3 and Step 4: These two steps follow the standard PSO steps \cite{shi2001particle} except for some differences in particles mapping and decoding processes. In particular, these two differences are related to sorting a created service queue using serivce-to-index mapping for a particle' position vectors and evaluating the fitness of a particle after decoding this service queue into a $WG$ respectively. Those differences are further addressed in Algorithms \ref{novelSteps} and \ref{graph_building} in \ref{POS-based_algomargin}.
 
 \subsection{PSO-based approach algorithm}\label{POS-based_algomargin}
-The overall algorithm investigated here is made up of a PSO-based web service composition algorithm \ref{novelSteps} and a decoding algorithm \ref{graph_building}. In Algorithm \ref{novelSteps}, the  steps $4$, $5$, $6$ and $7$ are different from those of standard PSO: In step 4, the size of task-related service candidates generated by a greedy search determines the size of each particle's position, and each candidate in a created service candidates queue is mapped to an index of a particle’s position vectors, where each vector has a weight value between 0.0 and 1.0. In step 5, all the task-related service candidates in the queue are sorted according to their corresponding weight values in descending order. In step 6, this sorted queue is used as one of the inputs of the forward decoding algorithm \ref{graph_building} to create a weighted DAG. In step 7, this fitness value of this weighted DAG is the fitness value of the particle calculated by the comprehensive model discussed in \ref{Comprehensive_Quality_Model}.
+The overall algorithm investigated here is made up of a PSO-based web service composition algorithm \ref{novelSteps} and a decoding algorithm \ref{graph_building}. In Algorithm \ref{novelSteps}, the  steps $4$, $5$, $6$ and $7$ are different from those of standard PSO: In step 4, the size of task-related service candidates generated by a greedy search determines the size of each particle's position, and each candidate in a created service candidates queue is mapped to an index of a particle’s position vectors, where each vector has a weight value between 0.0 and 1.0. In step 5, service candidates in the queue are sorted according to their corresponding weight values in descending order. In step 6, this sorted queue is used as one of the inputs of the forward decoding algorithm \ref{graph_building} to create a $WG$. In step 7, the fitness value of this $WG$ is the fitness value of the particle calculated by the comprehensive model discussed in \ref{Comprehensive_Quality_Model}.
 \begin{algorithm}
  %\LinesNumbered
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -215,7 +215,7 @@ The overall algorithm investigated here is made up of a PSO-based web service co
 \end{algorithm} 
 
 
-Algorithm  \ref{graph_building} is a forward graph building algorithm based on \cite{blum1997fast}. This algorithm take one input, a sorted service queue from step 5 of Algorithm \ref{novelSteps}. If service queues are sorted resulting in different service order, it is possible to create different corresponding weighted DAGs as composition solutions. In addition. $I_{T}$, $O_{T}$ and $cache$ are also taken as the inputs. Firstly, $Start$ and $End$ are added to $V$ of $WG$ as an initialisation, and $OutputSet$ is also created with $I_{T}$.  If all the inputs $I_{S}$ of the first popped  $S$ from $queue$ can be satisfied by provided outputs from $OutputSet$. This $S$ is added to $V$ and its outputs are added to $OutputSet$, and $S$ is removed from $queue$. Meanwhile, $e$ is created with its $sm_{e}$ calculated based on the aggregation value of all semantic matchmaking qualities from each satisfied input of $S$. These steps are repeated until all  $O_{T}$ can be satisfied by $Outputset$ or the service queue is $null$. Consequently, this forward graph building technique could lead to more services and edges connected to the $WG$, which should be removed before $WG$ is returned.
+Algorithm  \ref{graph_building} is a forward graph building algorithm based on \cite{blum1997fast}. This algorithm take one input, a sorted service queue from step 5 of Algorithm \ref{novelSteps}. If service queues are sorted resulting in different service order, it is possible to create different corresponding $WGs$ as composition solutions. In addition. $I_{T}$, $O_{T}$ and $cache$ are also taken as the inputs. Firstly, $Start$ and $End$ are added to $V$ of $WG$ as an initialisation, and $OutputSet$ is also created with $I_{T}$.  If all the inputs $I_{S}$ of the first popped  $S$ from $queue$ can be satisfied by provided outputs from $OutputSet$. This $S$ is added to $V$ and its outputs are added to $OutputSet$, and $S$ is removed from $queue$. Meanwhile, $e$ is created with $type_e$ and $sim_e$ calculated. These steps are repeated until $O_{T}$ can be satisfied by $Outputset$ or the service queue is $null$. Consequently, this forward graph building technique could lead to more services and edges connected to the $WG$, which should be removed before $WG$ is returned.
 
 \begin{algorithm}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -229,13 +229,10 @@ Algorithm  \ref{graph_building} is a forward graph building algorithm based on \
  $WG = (V, E)$\;
  $V \leftarrow$ \{$Start$, $End$ \} \;
  $OutputSet \leftarrow$ \{$I_{T}$\}\;
-  \While { all $O_{T}$ do not satisfied by $OutputSet$}{
+  \While { $O_{T}$ do not satisfied by $OutputSet$}{
      \ForEach{$S$ in $queue$}{
       \uIf{all $I_{S}$ satisfied by $OutputSet$}{    
-    		 \ForEach{$I_{S}$}{
-		$sm(a \in Outputset, b \in I_{S}) \leftarrow$ query $cache$\;
-              }
-        $e \leftarrow$ calculate aggregated $sm_{e}$\;
+        $e \leftarrow$ calcuate $type_e$, $sim_e$\;
         $E$ add $e$\;
         $V$ add $S$\;
         $OutputSet$ add \{$O_{S}$\}\;    
@@ -251,9 +248,10 @@ Algorithm  \ref{graph_building} is a forward graph building algorithm based on \
 \label{graph_building}
 \end{algorithm} 
 
+\vspace{-1.0cm}
 
 \section{Experiment Study}\label{experiment_design}
-In this section, a quantitative evaluation approach is adopted in our experiment design using an augmented version of Web service challenge 2009 including QoS attributes, which is used in \cite{ma2015hybrid,da2016genetic}. Two objectives of this evaluation are to: $(1)$ measure the effectiveness of our PSO-based approach. 
+In this section, a quantitative evaluation approach is adopted in our experiment using a benchmark dataset, an augmented version of Web service challenge 2009 including QoS attributes, which is used in \cite{ma2015hybrid,da2016genetic}. Two objectives of this evaluation are to: $(1)$ measure the effectiveness of our PSO-based approach. 
 %To do this, we compare our PSO-based method with one existing GP-based approach \cite{ma2015hybrid}. 
 $(2)$ measure the effectiveness of our proposed comprehensive quality model for achieving desirable balance of semantic matchmaking quality and QoS. 
 %To do this, we compare a widely used QoS model in QoS-aware web service composition \cite{ma2015hybrid,da2016particle,da2015graphevol} with our comprehensive quality model using our PSO-based approach.
