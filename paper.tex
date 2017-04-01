@@ -20,18 +20,20 @@ Email: \{chen.wang, hui.ma, aaron.chen\}@ecs.vuw.ac.nz}
 
 \begin{document}
 \maketitle
+\vspace{-0.8cm}
 \begin{abstract}
-Semantic web service composition has been a prevailing research area in recent years. There are two major challenges faced by researchers, semantic matchmaking and Quality of Service (QoS) optimisation. Semantic matchmaking aims to discover interoperable web services that can interact with each other by their resources described semantically. QoS optimisation aims to optimise the non-functional requirements of service users, e.g., minimum cost, maximal reliability. To meet users' requirements, one often needs to consider both semantic matchmaking quality and QoS simultaneously. Existing works on web service composition focus mainly on one single type of requirements. Therefore, we propose a comprehensive quality model considering semantic matchmaking quality and QoS simultaneously with an aim of achieving a more desirable balance on both sides. Further more, we develop a PSO-based service composition approach with explicit support for the comprehensive model. We also conduct experiments to address the effectiveness of our PSO-based approach and a desirable balance achieved using our comprehensive quality model.
+Semantic web service composition has been a prevailing research area in recent years. There are two major challenges faced by researchers, semantic matchmaking and Quality of Service (QoS) optimisation. Semantic matchmaking aims to discover interoperable web services that can interact with each other by their resources described semantically. QoS optimisation aims to optimise the non-functional requirements of service users, e.g., minimum cost, maximal reliability. To meet users' requirements, one often needs to consider both semantic matchmaking quality and QoS simultaneously. Existing works on web service composition focus mainly on one single type of requirements. Therefore, we propose a comprehensive quality model considering semantic matchmaking quality and QoS simultaneously with an aim of achieving a more desirable balance on both sides. Further, we develop a PSO-based service composition approach with explicit support for the comprehensive model. We also conduct experiments to address the effectiveness of our PSO-based approach and a desirable balance achieved using our comprehensive quality model.
 
 %where PSO optimise a queue of task-related services that is decoded into composition solutions. We compare the effectiveness of PSO-based method with one recent GP-based method using the proposed comprehensive quality model, and also compare the effectiveness of our proposed comprehensive quality model with one promising QoS model.
 
 \end{abstract}
+\vspace{-0.8cm}
 \section{Introduction}\label{introduction}
 
 \textit{Web service composition} pertains to a chain of multiple web services to provide a value-added composite service that accommodates customers' complex requirements. 
 %This application is developed by integrating interoperable and collaborative functionalities over heterogeneous systems. 
 
-Two most notable challenges for web service composition are ensuring interoperability of services and achieving Quality of Service (QoS) optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge in syntactic and semantic dimensions. The syntactic dimension is covered by the XML-based technologies, such as $WSDL$, $SOAP$. The semantic dimension enables a better collaboration through ontology-based semantics, such as OWL-S, WSML, and SAWSDL \cite{petrie2016web}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, the resources of semantic web services are described semantically to enable a better interoperability for chaining web services. The second challenge is related to QoS optimisation. This problem gives birth to \textit{QoS-aware service composition} that aims to find composition solutions with optimised QoS.
+Two most notable challenges for web service composition are ensuring interoperability of services and achieving Quality of Service (QoS) optimisation \cite{fensel2011semantic}. \textit{Interoperability} of web services presents challenge in syntactic and semantic dimensions. The syntactic dimension is covered by the XML-based technologies, such as $WSDL$, $SOAP$. The semantic dimension enables a better collaboration through ontology-based semantics, such as OWL-S, WSML, and SAWSDL \cite{petrie2016web}. \textit{Semantic web services composition} is distinguished from the syntactic service composition, the resources of semantic web services are described semantically to enable a better interoperability for chaining web services. Another challenge is related to QoS optimisation. This problem gives birth to \textit{QoS-aware service composition} that aims to find composition solutions with optimised QoS.
 
 Existing works on service composition focus mainly on addressing only one challenge above. In these works, huge efforts have been devoted to QoS-aware web service compositions assuming a pre-defined abstract workflow is given. This is generally considered as a \textit{semi-automated web service composition} approach \cite{parejo2008qos}. Generating composition plans automatically in discovering and selecting suitable web services is a NP-hard problem \cite{moghaddam2014service}. In the past few years, many approaches \cite{gupta2015optimization,ma2015hybrid,qi2010combining,da2016particle,da2015graphevol,yu2013adaptive} to QoS-aware web service composition employ Evolutionary Computation (EC) techniques to automatically generate composition solutions, but few works have enabled an \textit{automatic semantic web service composition}, where both QoS and quality of semantic matchmaking are optimised simultaneously to achieve a desirable balance on both sides.  
 
@@ -43,6 +45,7 @@ The overall goal of this paper is to \textit{develop a PSO-based approach to aut
  \item To propose a PSO-based service composition approach using the proposed comprehensive quality model. To do that, we aim to find a service candidate queue that can be decoded into a service composition with the near-optimal comprehensive quality.  
  \item To address the effectiveness of our PSO-based approach and a desirable balance achieved using our comprehensive quality model, we first compare our PSO-based approach with one recent GP-based approach \cite{ma2015hybrid} using our proposed quality model, and then compare our proposed quality model with one widely used QoS model using our proposed PSO-based approach.
 \end{enumerate}
+\vspace{-0.5cm}
 \section{Related Work} \label{relatedWork}
 Substantial works on web service composition focus on either semantic web service composition \cite{bansal2016generalized,boustil2014semantic,mier2015integrated} or QoS-aware web service composition \cite{gupta2015optimization,ma2015hybrid,qi2010combining,da2016particle,da2015graphevol,yu2013adaptive}, However, only a few researchers address both semantic matchmaking quality and QoS for web service composition problems. To the best of our knowledge, \cite{fanjiang2014semantic,lecue2009optimizing,pop2009immune} reported some attempts on service composition that considers both aspects.
 
@@ -54,6 +57,7 @@ Only a few works \cite{fanjiang2014semantic,lecue2009optimizing,pop2009immune} c
 
 In summary, despite a large number of approaches for semantic web service composition and QoS-aware service composition approaches, there is a lack of a fully automated semantic service composition approach to optimise semantic matchmaking quality and QoS simultaneously. 
 %Therefore, we first propose an automated comprehensive quality-aware semantic web service composition approach. To do that, we will design a comprehensive quality model that considers both QoS and quality of semantic matchmaking between services. We will then propose a PSO-based approach to this semantic service composition using our proposed comprehensive quality model to evaluate candidate solutions.  
+\vspace{-0.3cm}
 
 \section{Motivation and Problem Description}\label{Motivation and Problem Description}\label{Motivation}\label{problemDes}\label{qualityModel}\label{Comprehensive_Quality_Model}\label{qualityModel}
 
@@ -100,7 +104,7 @@ type_e =
 sim_e = sim(a,b) = \frac{2N_c}{N_{a}+N_{b}}
 \end{equation}
 
-\noindent with a suitable parameter $p, 0<p< 1$ to chosen, for discussion see Section \ref{PSO_based_approach}. However, if more than one pair of matched output and input from services $S$ and $S'$ respectively, $type_e$ and $sim_e$ will take on their average values.
+\noindent with a suitable parameter $p, 0<p< 1$ to chosen, for discussion see \ref{PSO_based_approach}. However, if more than one pair of matched output and input exist from services $S$ and $S'$ respectively, $type_e$ and $sim_e$ will take on their average values.
 
 %$e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \Rightarrow i) \}$
 
@@ -149,7 +153,7 @@ The \emph{QoS} of the service composition can be obtained by aggregating the QoS
 \label{equation8}
 Fitness = w_1 \hat{MT} + w_2 \hat{SIM} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{T}) + w_6(1 - \hat{C})
 \end{equation}
-\noindent with $\sum_{k=1}^{6} w_k= 1$. The weights can be adjusted according to users' preferences. Herein, the individual criteria are normalised to a range between 0 to 1, where 1 means the best value and 0 means the worst. For this purpose, we normalise $MT$, $SIM$, $A$, $R$, $T$, and $C$ so that the function value falls within the range from 0 to 1 using formula (\ref{equation9}). To simplify the presentation we also use the notation $(Q_1,Q_2,Q_3,Q_4,Q_5,Q_6) = (MT,SIM,A,R,T,C)$. $MT$ and $S$ have minimum value 0 and maximum value 1. The minimum and maximum value of $A$, $R$, $T$, and $C$ are calculated across all task-related candidates in the service repository $\mathcal{SR}$ using greedy search, for discussion see Section \ref{PSO_based_approach}.
+\noindent with $\sum_{k=1}^{6} w_k= 1$. The weights can be adjusted according to users' preferences. Herein, the individual criteria are normalised to a range between 0 to 1, where 1 means the best value and 0 means the worst. For this purpose, we normalise $MT$, $SIM$, $A$, $R$, $T$, and $C$ so that the function value falls within the range from 0 to 1 using formula (\ref{equation9}). To simplify the presentation we also use the notation $(Q_1,Q_2,Q_3,Q_4,Q_5,Q_6) = (MT,SIM,A,R,T,C)$. $MT$ and $S$ have minimum value 0 and maximum value 1. The minimum and maximum value of $A$, $R$, $T$, and $C$ are calculated across all task-related candidates in the service repository $\mathcal{SR}$ using greedy search, for discussion see \ref{PSO_based_approach}.
 
 \begin{equation}
 \label{equation9}
@@ -176,7 +180,7 @@ Fitness = w_1 \hat{MT} + w_2 \hat{SIM} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \ha
 \vspace{-1.0cm}
 \subsection{An Overview to PSO-based Method}\label{PSO_based_approach}
 
-PSO has shown promise in solving combinatorial optimisation problems, and is also considered to be an easy way to maintain the correctness of solutions. For example, GP-based approaches often require repairing the solutions \cite{da2016particle}. Therefore, we employ a PSO-based approach to comprehensive quality-aware automated semantic web service composition. Fig. \ref{overview} shows an overview of our approach consisting of four steps: 
+PSO has shown promise in solving combinatorial optimisation problems, and is also considered to be an easy way to maintain the correctness of solutions. For example, GP-based approaches often require repairing the solutions \cite{da2016particle}. Therefore, we propose a PSO-based approach to comprehensive quality-aware automated semantic web service composition. Fig. \ref{overview} shows an overview of our approach consisting of four steps: 
 
 Step 1: The composition process is triggered by a composition task, which is clearly defined in \ref{problemDes}. 
 
@@ -184,7 +188,7 @@ Step 2: This composition task is used to discover all task-related service candi
 
 Step 3 and Step 4: These two steps follow the standard PSO steps \cite{shi2001particle} except for some differences in particles mapping and decoding processes. In particular, these two differences are related to sorting a created service queue using serivce-to-index mapping for a particle' position vectors and evaluating the fitness of a particle after decoding this service queue into a $WG$ respectively. Those differences are further addressed in Algorithms \ref{novelSteps} and \ref{graph_building} in \ref{POS-based_algomargin}.
 
-\subsection{PSO-based approach algorithm}\label{POS-based_algomargin}
+\subsection{PSO-based Approach Algorithm}\label{POS-based_algomargin}
 The overall algorithm investigated here is made up of a PSO-based web service composition algorithm \ref{novelSteps} and a decoding algorithm \ref{graph_building}. In Algorithm \ref{novelSteps}, the  steps $4$, $5$, $6$ and $7$ are different from those of standard PSO: In step 4, the size of task-related service candidates generated by a greedy search determines the size of each particle's position, and each candidate in a created service candidates queue is mapped to an index of a particle’s position vectors, where each vector has a weight value between 0.0 and 1.0. In step 5, service candidates in the queue are sorted according to their corresponding weight values in descending order. In step 6, this sorted queue is used as one of the inputs of the forward decoding algorithm \ref{graph_building} to create a $WG$. In step 7, the fitness value of this $WG$ is the fitness value of the particle calculated by the comprehensive model discussed in \ref{Comprehensive_Quality_Model}.
 \begin{algorithm}
  %\LinesNumbered
@@ -197,7 +201,7 @@ The overall algorithm investigated here is made up of a PSO-based web service co
      \ForEach{particles in the swarm}{
      Create a service candidates queue and map service candidates to a particle's position vectors\;
      Sort the service queue by position vectors' weights\;
-     Create a weighted DAG from the service queue ( Algorithm\ref{graph_building}) \;
+     Create a weighted DAG from the service queue (Algorithm\ref{graph_building}) \;
      Calculate the weighted DAG fitness value\;
      
       \eIf{fitness value better than pBest}{    
@@ -215,7 +219,7 @@ The overall algorithm investigated here is made up of a PSO-based web service co
 \end{algorithm} 
 
 
-Algorithm  \ref{graph_building} is a forward graph building algorithm based on \cite{blum1997fast}. This algorithm take one input, a sorted service queue from step 5 of Algorithm \ref{novelSteps}. If service queues are sorted resulting in different service order, it is possible to create different corresponding $WGs$ as composition solutions. In addition. $I_{T}$, $O_{T}$ and $cache$ are also taken as the inputs. Firstly, $Start$ and $End$ are added to $V$ of $WG$ as an initialisation, and $OutputSet$ is also created with $I_{T}$.  If all the inputs $I_{S}$ of the first popped  $S$ from $queue$ can be satisfied by provided outputs from $OutputSet$. This $S$ is added to $V$ and its outputs are added to $OutputSet$, and $S$ is removed from $queue$. Meanwhile, $e$ is created with $type_e$ and $sim_e$ calculated. These steps are repeated until $O_{T}$ can be satisfied by $Outputset$ or the service queue is $null$. Consequently, this forward graph building technique could lead to more services and edges connected to the $WG$, which should be removed before $WG$ is returned.
+Algorithm  \ref{graph_building} is a forward graph building algorithm extended from \cite{blum1997fast}. This algorithm take one input, a sorted service queue from step 5 of Algorithm \ref{novelSteps}. Note that different service queues may lead to different $WGs$. In addition. $I_{T}$, $O_{T}$ and $cache$ are also taken as the inputs. Firstly, $Start$ and $End$ are added to $V$ of $WG$ as an initialisation, and $OutputSet$ is also created with $I_{T}$.  If all the inputs $I_{S}$ of the first popped  $S$ from $queue$ can be satisfied by provided outputs from $OutputSet$. This $S$ is added to $V$ and its outputs are added to $OutputSet$, and $S$ is removed from $queue$. Meanwhile, $e$ is created with $type_e$ and $sim_e$ calculated. These steps are repeated until $O_{T}$ can be satisfied by $Outputset$ or the service queue is $null$. Consequently, this forward graph building technique could lead to more services and edges connected to the $WG$, which should be removed before $WG$ is returned.
 
 \begin{algorithm}
  \SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
@@ -251,27 +255,28 @@ Algorithm  \ref{graph_building} is a forward graph building algorithm based on \
 \vspace{-1.0cm}
 
 \section{Experiment Study}\label{experiment_design}
-In this section, a quantitative evaluation approach is adopted in our experiment using a benchmark dataset, an augmented version of Web service challenge 2009 including QoS attributes, which is used in \cite{ma2015hybrid,da2016genetic}. Two objectives of this evaluation are to: $(1)$ measure the effectiveness of our PSO-based approach. 
+In this section, we employ a quantitative evaluation approach with a benchmark dataset used in \cite{ma2015hybrid,da2016genetic}, an augmented version of Web Service Challenge 2009(wsc09) including QoS attributes. Two objectives of this evaluation are to: $(1)$ measure the effectiveness of our PSO-based approach, see comparision test in \ref{comparisonTestWithGP}.
 %To do this, we compare our PSO-based method with one existing GP-based approach \cite{ma2015hybrid}. 
-$(2)$ measure the effectiveness of our proposed comprehensive quality model for achieving desirable balance of semantic matchmaking quality and QoS. 
+$(2)$ measure the effectiveness of our proposed comprehensive quality to achieve a desirable balance on semantic matchmaking quality and QoS, see comparision test in \ref{comparisonTest}.
 %To do this, we compare a widely used QoS model in QoS-aware web service composition \cite{ma2015hybrid,da2016particle,da2015graphevol} with our comprehensive quality model using our PSO-based approach.
 
 
 %WSC09 is a benchmark dataset consisting of five composition tasks. These tasks are associated with an increasing number of services, and concepts in ontologies. 
 
-The parameters are chosen based on the settings from \cite{shi2001particle} for our PSO-based approach, In particular, PSO population size is 30 with 100 generations. We run 30 times independently for each dataset. We configure the weights of fitness function to properly balance functional side and nonfunctional side. Therefore, $w_{1}$ and $w_{2}$ are set equally to 0.25, and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125. The returned value of $type(a,b)$ is set to 1 ($Exact$) and 0.75 ($Plugin$) according to \cite{lecue2009optimizing}. In general, weight settings and parameter match type quality are decided by users' preferences.
-
+The parameters for the PSO are chosen from the settings from \cite{shi2001particle}, In particular, PSO population size is 30 with 100 generations. We run 30 times independently for each dataset. We configure the weights of fitness function to properly balance semantic matchmaking quality and QoS. Therefore, $w_{1}$ and $w_{2}$ are set equally to 0.25, and $w_{3}$, $w_{4}$, $w_{5}$, $w_{6}$ are all set to 0.125. The $p$ of $type_e$ is set to 0.75 ($plugin match$) according to \cite{lecue2009optimizing}. In general, weight settings and parameter $p$ are decided by users' preferences.
+\vspace{-0.5cm}
 \subsection{Comparison Test for GP-based approach and PSO-based approach}\label{comparisonTestWithGP}
-To evaluate the effectiveness of our proposed PSO-based approach, we compare one recent GP-based approach \cite{ma2015hybrid} with our PSO-based method. The semantic matchmaking quality of this GP-based approach is easy to evaluated considering measuring links between parent nodes and children nodes. Therefore, we evaluate both semantic matchmaking quality and QoS simultaneously for that GP-based approach using the proposed comprehensive quality model. To make a fair comparison, we consider the same number of evaluations (3000 times) used in our PSO-based approach. We set the parameters' settings of that GP-based approach as 30 individuals and 100 generations, it is considered to be proper settings refering to \cite{da2015gp}.
+To evaluate the effectiveness of our proposed PSO-based approach, we compare one recent GP-based approach \cite{ma2015hybrid} with our PSO-based method using our proposed comprehensive quality model. We extend the GP-based approach by measuring the semantic matchmaking quality between parent nodes and children nodes. To make a fair comparison, we use the same number of evaluations (3000 times) for these two approach. We set the parameters' settings of that GP-based approach as 30 individuals and 100 generations, it is considered to be proper settings refering to \cite{da2015gp}.
 
-The first column of Table \ref{meanFitness} shows five tasks from WSC09 Dataset. The second and third column of Table \ref{meanFitness} show the orginal service repository size before the greedy search and shrunk service repository size after the greedy search respectively regarding the five tasks. This greedy search helps reducing the repository size by considering only task-related service candidates, which also contributes to a significant reduced researching space. The fourth and fifth column of Table \ref{meanFitness} show the mean fitness values of 30 independent runs accomplished by two methods. We employ independent-samples T tests to test the significant differences in mean fitness value. The results show that the PSO-based approach outperformes the existing GP-based approach in most cases except task 3 (all the p-values are consistently smaller than 0.01). In task 5, the PSO-based approach performs significantly better than the GP-based approach in finding optimal solutions. It may be that the GP-based approach is stuck in local optima due to the very large search space in Task 5. On the other hand, the decoding process used by the PSO-based approach allows for small changes that more effectively prevent this from happening.
+The first column of Table \ref{meanFitness} shows five tasks from WSC09. The second and third column of Table \ref{meanFitness} show the orginal service repository size before the greedy search and the shrunk service repository size after the greedy search respectively regarding the five tasks. This greedy search helps reducing the original repository size significantly, which contributes to a reduced searching space. The fourth and fifth column of Table \ref{meanFitness} show the mean fitness values of 30 independent runs accomplished by two methods. We employ independent-samples T tests to test the significant differences in mean fitness value. The results show that the PSO-based approach outperformes the existing GP-based approach in most cases except task 3 (all the p-values are consistently smaller than 0.01). In task 5, the PSO-based approach performs significantly better than the GP-based approach in finding optimal solutions. It may be that the GP-based approach is stuck in local optima due to the very large search space in Task 5. On the other hand, the decoding process used by the PSO-based approach allows for small changes that more effectively prevent this from happening.
+\vspace{-0.8cm}
 \begin{table}[]
 \centering
-\caption{Mean fitness results for comparing GP-based approach}
+\caption{Mean fitness values for comparing GP-based approach}
 \label{meanFitness}
 \begin{tabular}{c|c|c|l|l}
 \hline
-\multicolumn{1}{c|}{WSC09} &Original $SR$  &Shrunken $SR$   &PSO-based approach & GP-based approach  \\ \hline
+\multicolumn{1}{c|}{WSC09} &Original $\mathcal{SR}$  &Shrunken $\mathcal{SR}$   &PSO-based approach & GP-based approach  \\ \hline
 Task 1                     &572            &80    &0.5592 $\pm$ 0.0128  $\uparrow$  &0.5207 $\pm$ 0.0208           \\ \hline
 Task 2                     &4129           &140   &0.4701 $\pm$ 0.0011  $\uparrow$  &0.4597 $\pm$ 0.0029          \\ \hline
 Task 3                     &8138           &153   &0.5504 $\pm$ 0.0128              &0.5679 $\pm$ 0.0234 $\uparrow$   \\ \hline
@@ -279,15 +284,14 @@ Task 4                     &8301           &330   &0.4690 $\pm$ 0.0017  $\uparro
 Task 5                     &15211          &237   &0.4694 $\pm$ 0.0008  $\uparrow$  &0.2452 $\pm$ 0.0369            \\ \hline
 \end{tabular}
 \end{table}
-
-
+\vspace{-0.8cm}
 
 \subsection{Comparison Test for Comprehensive Quality Evaluation Model and QoS Evaluation Model}\label{comparisonTest}
 
-Recently, a QoS Evaluation Model, $Fitness = w_1 \hat{A} + w_2 \hat{R} + w_3(1 - \hat{T}) + w_4(1 - \hat{C})$, where $\sum_{i=1}^{4} w_i = 1$, is widely used for QoS-aware web service composition \cite{ma2015hybrid,da2016particle,da2015graphevol}. This QoS evluation model is compared to our proposed comprehensive quality evluation model using our proposed PSO-based approach for measuring the effectiveness of our proposed comprehensive quality model. To analyse the differences in optimal solutions found by these two evaluation models, we recorded and compared the different mean values of $SM$ (consisiting of $MT$ and $S$), $QoS$(consisting of $A$, $R$, $T$ and $C$) after 100 generations. To make a sense of the comparison, all these recorded values are normalised from 0 to 1, and compared using independent-samples T tests in Table \ref{decisionTable}. 
+Recently, a QoS Evaluation Model, $Fitness = w_1 \hat{A} + w_2 \hat{R} + w_3(1 - \hat{T}) + w_4(1 - \hat{C})$, where $\sum_{i=1}^{4} w_i = 1$, is widely used for QoS-aware web service composition \cite{ma2015hybrid,da2016particle,da2015graphevol}. This QoS evaluation model is compared to our proposed comprehensive quality model using our PSO-based approach. To address a desirable balance achieved by our comprehensive quality model, we compare optimal solutions found by these two evaluation models, we record and compare the different mean values of $SM$ ($SM = w_1 \hat{MT} + w_2 \hat{SIM}$, where $\sum_{i=1}^{2} w_i = 1$), $QoS$($QoS = w_1 \hat{A} + w_2 \hat{R} + w_3(1 - \hat{T}) + w_4(1 - \hat{C})$, where $\sum_{i=1}^{4} w_i = 1$) after 100 generations. To make a sense of the comparison, all these recorded values are normalised from 0 to 1, and compared using independent-samples T tests in Table \ref{decisionTable}. 
 
 We observe an interesting pattern from Table \ref{decisionTable}. The mean values of $QoS$ using QoS evaluation model are significantly higher than those using comprehensive quality evaluation model for Tasks 2, 3, 4 and 5. However, the mean value of $SM$ using the comprehensive quality evaluation model are significantly higher than those using the QoS evaluation model, while a slight trade-off in $QoS$ are observed in all tasks.
-
+\vspace{-0.8cm}
 \begin{table}[]
 \footnotesize
 \centering
@@ -308,11 +312,10 @@ We observe an interesting pattern from Table \ref{decisionTable}. The mean value
                         &$QoS$  &0.4764 $\pm$ 0.0005 $\uparrow$    &0.4750 $\pm$ 0.0007  \\ \hline                                                   
 \end{tabular}
 \end{table}
-
+\vspace{-0.8cm}
 \subsection{Further Discussion}\label{discuss1}
-
-
-To determine the importance of achieving a good comprehensive quality at the expense of slightly reduced QoS, we demonstrate the best solutions identified by our approach using task 3 as an example. Fig. \ref{comparisontest} $(1)$ and $(2)$ show two weighted DAGs obtained by employing the QoS evaluation model and the comprehensive quality evaluation model respectively. Both weighted DAGs have exactly the same service workflow structure, but some service vertices and edges denoted in red are different. To better understand these differences, we list the overall semantic matchmaking quality $SM$,  overall $QoS$ and semantic matchmaking quality associated to each edge ($sm_{e_1}$ to $sm_{e_4}$) in Fig. \ref{comparisontest} $(3)$, where $\Delta Q$ reveals the gain (positive $\Delta Q$) or a loss (negative $\Delta Q$) of the listed qualities for our comprehensive quality evalutaion model. Therefore, an overall gain 0.1433 is calculated from a sum of a $SM$ gain (0.1467) and $QoS$ loss (-0.0034). Consequently, our comprehensive evaluation model acheive a desirable trade-off in considering both $SM$ and $QoS$. To explain the value of $SM$ gain, we pick up $e_4$ that is associated with the smallest $\Delta Q$. The $e_4$ of $WG(1)$ using QoS evaluation model and $WG(2)$ using comprehensive quality model has two different source service vertices $Ser1640238160$ and $Ser947554374$ respectively,  and the same $end$ vertices. $Ser1640238160$ and $Ser947554374$ are services with concept-related output parameters $Inst795998200$ and $Inst582785907$ corresponds to two concepts $Con103314376$ and $Con2037585750$ respectively, which are marked on the related taxonomy in Fig. \ref{comparisontest} $(4)$. In addtion, $Inst658772240$ is a required parameter of the $end$ vertice as one of composition task outputs, which is related to concept $Con2113572083$. Obviouly,  $Inst795998200$ is closer to user's required output $Inst658772240$ compared to $Inst582785907$.
+To analyze the effectiveness of achieving a good comprehensive quality at the expense of slightly reduced QoS, we demonstrate two best solutions produced using task 3 as an example. Fig. \ref{comparisontest} $(1)$ and $(2)$ show two $WGs$ obtained by employing the QoS evaluation model and the comprehensive quality evaluation model respectively. Both weighted DAGs have exactly the same service workflow structure, but some service vertices and edges denoted in red are different. To better understand these differences, we list the overall semantic matchmaking quality $SM$,  overall $QoS$ and semantic matchmaking quality associated to each edge ($sm_{e_1}$ to $sm_{e_4}$) in Fig. \ref{comparisontest} $(3)$, where $\Delta Q$ reveals the gain (positive $\Delta Q$) or a loss (negative $\Delta Q$) of the listed qualities for our comprehensive quality evalutaion model. Therefore, an overall gain 0.1433 is calculated from a sum of a $SM$ gain (0.1467) and $QoS$ loss (-0.0034) using comprehensive quality evaluation model. To understand the improvement of semantic matchmaking quality from these numbers, we pick up $e_4$ that is associated with the smallest $\Delta Q$. The $e_4$ of Fig. \ref{comparisontest} $(1)$ and Fig. \ref{comparisontest} $(2)$ has two different source service vertices, $Ser1640238160$ and $Ser947554374$, and the same $end$ vertices. $Ser1640238160$ and $Ser947554374$ are services with concept-related output parameters $Inst795998200$ and $Inst582785907$ corresponds to two concepts $Con103314376$ and $Con2037585750$ respectively in the ontology shown in Fig. \ref{comparisontest} $(4)$. In addtion, $Inst658772240$ is a required parameter of the $end$ vertice, which is related to concept $Con2113572083$. Obviouly,  $Inst795998200$ is closer to user's required output $Inst658772240$ compared to $Inst582785907$.
+\vspace{-0.6cm}
 
 \begin{figure}[h]
 \centering{
@@ -321,12 +324,13 @@ To determine the importance of achieving a good comprehensive quality at the exp
  \caption{An example of comparision to optimal solutions using Task 3 for QoS evaluation model and comprehensive quality evluation model.}
  \label{comparisontest}
 \end{figure}
-
+\vspace{-1.0cm}
 
 \section{Conclusion}\label{conclusion}
-This work introduces a comprehensive evaluation model for considering semantic matchmaking quality and QoS simultaneously. We proposed a PSO-based service composition approach utilising our proposed quality mode that can achieve a desirable trade-off of both quality aspects. In addtion, we compare one recent GP-approach with our PSO-based method to show our performance that results in finding more optimised solutions. Future works can investigate multi-objective EC techniques to produce a set of composition solutions for the situations when the quality preference is not known.
 
+In this work, we propose a PSO-based approach to comprehensive quality-aware semantic web service composition, which produces serivce composition solutions with a desirable balance on both semantic matchmaking quality and QoS. Future works can investigate multi-objective EC techniques to produce a set of composition solutions for the situations when the quality preference is not known.
 
+\vspace{-0.3cm}
 \bibliographystyle{splncs03}
 \bibliography{IEEEexample}
 

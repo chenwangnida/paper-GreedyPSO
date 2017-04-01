@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  1 APR 2017 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (Web2C 2016) (preloaded format=pdflatex 2017.2.3)  2 APR 2017 00:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,17 +552,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
-[5] <overview.pdf, id=183, 853.1875pt x 341.275pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
+<overview.pdf, id=182, 853.1875pt x 341.275pt>
 File: overview.pdf Graphic file (type pdf)
  <use overview.pdf>
-Package pdftex.def Info: overview.pdf used on input line 170.
+Package pdftex.def Info: overview.pdf used on input line 176.
 (pdftex.def)             Requested size: 341.26895pt x 136.50757pt.
 
-Overfull \hbox (0.9454pt too wide) in paragraph at lines 170--171
+Overfull \hbox (0.9454pt too wide) in paragraph at lines 176--177
  [][] 
  []
 
@@ -573,50 +570,47 @@ Missing character: There is no ™ in font cmr10!
  [7] [8]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 264.
+               Default added (so using `htbp') on input line 273.
 
 [9]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 287.
+               Default added (so using `htbp') on input line 295.
 
-[10] <comparisontest.pdf, id=360, 1120.185pt x 734.745pt>
+[10] <comparisontest.pdf, id=361, 1120.185pt x 734.745pt>
 File: comparisontest.pdf Graphic file (type pdf)
 
 <use comparisontest.pdf>
-Package pdftex.def Info: comparisontest.pdf used on input line 316.
+Package pdftex.def Info: comparisontest.pdf used on input line 323.
 (pdftex.def)             Requested size: 324.84532pt x 213.07059pt.
+ (./paper.bbl [11 <./comparisontest.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./paper.bbl [11] [12 <./comparisontest.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
- (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
+(./paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 6FBF8002A435655FF902FC857B66EC2B;109.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 337.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8377 strings out of 493681
- 126190 string characters out of 6155713
- 248873 words of memory out of 5000000
+ 8374 strings out of 493681
+ 126157 string characters out of 6155713
+ 243870 words of memory out of 5000000
  11536 multiletter control sequences out of 15000+600000
  9187 words of font info for 33 fonts, out of 8000000 for 9000
  890 hyphenation exceptions out of 8191
- 42i,21n,39p,2006b,7473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,19n,39p,1877b,7419s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/pkg/share
@@ -635,10 +629,10 @@ b></usr/pkg/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/pkg
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/pkg/share/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/pkg/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on paper.pdf (13 pages, 340381 bytes).
+Output written on paper.pdf (12 pages, 341443 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 101 named destinations out of 1000 (max. 500000)
+ 485 PDF objects out of 1000 (max. 8388607)
+ 359 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
  19 words of extra memory for PDF output out of 10000 (max. 10000000)
 
