@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
+The top-level auxiliary file: /Users/user/Documents/papers/paper-GreedyPSO/.texpadtmp/paper.aux
 The style file: ../splncs03.bst
 Database file #1: ../IEEEexample.bib
 Repeated entry---line 285 of file ../IEEEexample.bib
@@ -30,7 +30,7 @@ I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
 You've used 22 entries,
             2785 wiz_defined-function locations,
-            705 strings with 8604 characters,
+            705 strings with 8596 characters,
 and the built_in function-call counts, 13328 in all, are:
 = -- 1172
 > -- 379
