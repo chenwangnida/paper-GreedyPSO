@@ -56,12 +56,6 @@ Paolucci, M., Kawamura, T., Payne, T.R., Sycara, K.: Semantic matching of web
   services capabilities. In: International Semantic Web Conference. pp.
   333--347. Springer (2002)
 
-\bibitem{parejo2008qos}
-Parejo, J.A., Fernandez, P., Cort{\'e}s, A.R.: Qos-aware services composition
-  using tabu search and hybrid genetic algorithms. Actas de los Talleres de las
-  Jornadas de Ingenier{\'\i}a del Software y Bases de Datos  2(1),  55--66
-  (2008)
-
 \bibitem{petrie2016web}
 Petrie, C.J.: Web Service Composition. Springer (2016)
 
@@ -101,10 +95,8 @@ da~Silva, A.S., Mei, Y., Ma, H., Zhang, M.: Particle swarm optimisation with
 
 \bibitem{da2015graphevol}
 da~Silva, A., Ma, H., Zhang, M.: Graphevol: A graph evolution technique for web
-  service composition. In: Chen, Q., Hameurlain, A., Toumani, F., Wagner, R.,
-  Decker, H. (eds.) Database and Expert Systems Applications, Lecture Notes in
-  Computer Science, vol. 9262, pp. 134--142. Springer International Publishing
-  (2015)
+  service composition. In: Database and Expert Systems Applications, vol. 9262,
+  pp. 134--142. Springer International Publishing (2015)
 
 \bibitem{yu2013adaptive}
 Yu, Y., Ma, H., Zhang, M.: An adaptive genetic programming approach to
