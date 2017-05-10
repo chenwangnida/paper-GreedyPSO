@@ -65,37 +65,26 @@ In summary, despite a large number of approaches for semantic web service compos
 %Therefore, we first propose an automated comprehensive quality-aware semantic web service composition approach. To do that, we will design a comprehensive quality model that considers both QoS and quality of semantic matchmaking between services. We will then propose a PSO-based approach to this semantic service composition using our proposed comprehensive quality model to evaluate candidate solutions.  
 \vspace{-0.3cm}
 
-\section{Problem Description and Comprehensive Quality Model}\label{Motivation and Problem Description}\label{Motivation}\label{problemDes}\label{qualityModel}\label{Comprehensive_Quality_Model}\label{qualityModel}
+\section{Problem Description and Comprehensive Quality Model}\label{Motivation and Problem Description}
 
 Our goal is to develop a PSO-based approach for automatically generating good service compositions. Often, many different service compositions can meet a user request but differ significantly in terms of QoS and semantic matchmaking quality. For example, in the classical travel planning context, some component service must be employed to obtain a travel map. Suppose that two services can be considered for this purpose. One service $S$ can provide a street map at a price of 6.72. The other service $S'$ can provide a tourist map at a price of 16.87. Because in our context a tourist map is more desirable than a street map, $S'$ clearly enjoys better semantic matchmaking quality than $S$ but will have negative impact on the QoS of the service composition (i.e., the price is much higher). One can easily imagine that similar challenges frequently occur when looking for service compositions. Hence, a good balance between QoS and semantic matchmaking quality is called for. We therefore propose a \emph{comprehensive quality model} in considering semantic matchmaking quality and QoS simultaneously.
 
-We consider a \emph{semantic web service} (\emph{service}, for short) as a tuple $S = (I_{S}, O_{S}, QoS_S)$ where $I_{S}$ is the set of service inputs that are consumed by $S$, $O_{S}$ the set of service outputs that are produced by $S$, and $QoS_{S}=\{t_S, c_S, r_S, a_S\}$ the set of non-functional attributes of $S$. The inputs in $I_{S}$ and outputs in $O_{S}$ are parameters that are related to concepts in an ontology $\mathcal{O}$. The attributes $t_S, c_S, r_S, a_S$ refer to the response time, cost, reliability, and availability of service $S$, respectively. These four QoS attributes are most commonly used \cite{zeng2003quality}.
-% \textit{Response time} ($t_S$) measures the expected delay in seconds between the moment when a request is sent and the moment when the results are received. \textit{Cost} ($c_S$) is the amount of money that a service requester has to pay for executing the service. \textit{Reliability} ($r_S$) is the probability that a request is correctly responded within the maximum expected time frame, which is expressed as a number between 1 and 0. Similarly, \textit{availability} ($a_S$) is the probability that a service is accessible. 
+We consider a \emph{semantic web service} (\emph{service}, for short) as a tuple $S = (I_{S}, O_{S}, QoS_S)$ where $I_{S}$ is a set of service inputs that are consumed by $S$, $O_{S}$ is a set of service outputs that are produced by $S$, and $QoS_{S}=\{t_S, c_S, r_S, a_S\}$ is a set of non-functional attributes of $S$. The inputs in $I_{S}$ and outputs in $O_{S}$ are parameters modeled through concepts in a domain-specific ontology $\mathcal{O}$. The attributes $t_S, c_S, r_S, a_S$ refer to the response time, cost, reliability, and availability of service $S$, respectively. These four QoS attributes are most commonly used \cite{zeng2003quality}.
 
-A \emph{service repository} $\mathcal{SR}$ is a finite collection of services with a common ontology $\mathcal{O}$. A \emph{service request} (also called \emph{composition task}) over $\mathcal{SR}$ is a tuple $T=(I_{T}, O_{T})$ where $I_{T}$ is the set of task inputs, and $O_{T}$ the set of task outputs. The inputs in $I_{T}$ and outputs in $O_{T}$ are parameters that are related to concepts in the ontology $\mathcal{O}$.
+A \emph{service repository} $\mathcal{SR}$ is a finite collection of services with a common ontology $\mathcal{O}$. A \emph{service request} (also called \emph{composition task}) over $\mathcal{SR}$ is a tuple $T=(I_{T}, O_{T})$ where $I_{T}$ is a set of task inputs, and $O_{T}$ is a set of task outputs. The inputs in $I_{T}$ and outputs in $O_{T}$ are parameters that are related to concepts in the ontology $\mathcal{O}$.
 
-A service composition is commonly represented as a \emph{directed acyclic graph} (DAG). It nodes correspond to the services in the composition. Two services $S$ and $S'$ are connected by an edge $e$ if some output of $S$ serves as input for $S'$. Apparently, such outputs and inputs must semantically match to ensure the correct execution of the service composition. 
-%Moreover, the overall service inputs and outputs associated with the DAG must satisfy the composition requirements provided by users.
-%To answer a request from a user a suitable service composition is sought. 
-The mechanism to compose services relies on the semantic descriptions of inputs and outputs, which enables inputs of services to be matched by outputs of other services. The following \emph{matchmaking types} are often used to describe the level of a match \cite{paolucci2002semantic}: For concepts $a, b$ in $\mathcal{O}$ the \emph{matchmaking} returns $exact$ if $a$ and $b$ are equivalent ($a \equiv b$), $plugin$ if $a$ is a sub-concept of $b$ ($a \sqsubseteq b$), $subsume$ if $a$ is a super-concept of $b$ ($a \sqsupseteq b$), and $fail$ if none of previous matchmaking types is returned.
-%($a \perp b$)
-In this paper we are only interested in robust compositions where only $exact$ and $plugin$ matches are considered, see \cite{lecue2009optimizing}. 
-%
-As argued in \cite{lecue2009optimizing} $plugin$ matches are less preferable than $exact$ matches due to the overheads associated with data processing. We suggest to consider the semantic similarity of concepts when comparing different $plugin$ matches. For concepts $a, b$ in $\mathcal{O}$ the \emph{semantic similarity} $sim(a, b)$ is calculated based on the edge counting method defined in Eq. (\ref{equation1}) from \cite{shet2012new}, where $N_a$, $N_b$ and $N_c$ measure the distances from concept $a$, concept $b$, and a closest common ancestor $c$ of $a$ and $b$ to the top concept of the ontology $\mathcal{O}$, respectively. 
+A service composition is commonly represented as a \emph{directed acyclic graph} (DAG). Its nodes correspond to the services in the composition. Two services $S$ and $S'$ are connected by an edge $e$ if some outputs of $S$ service serve as inputs for $S'$. Apparently, such outputs and inputs must semantically match to ensure the correct execution of the service composition. The mechanism to compose services relies on the semantic descriptions of inputs and outputs, which enables inputs of services to be matched by outputs of other services. The following \emph{matchmaking types} are often used to describe the level of a match \cite{paolucci2002semantic}: For concepts $a, b$ in $\mathcal{O}$ the \emph{matchmaking} returns $exact$ if $a$ and $b$ are equivalent ($a \equiv b$), $plugin$ if $a$ is a sub-concept of $b$ ($a \sqsubseteq b$), $subsume$ if $a$ is a super-concept of $b$ ($a \sqsupseteq b$), and $fail$ if none of previous matchmaking types is returned.
+
+In this paper we are only interested in robust compositions where only $exact$ and $plugin$ matches are considered, see \cite{lecue2009optimizing}. As argued in \cite{lecue2009optimizing} $plugin$ matches are less preferable than $exact$ matches due to the overheads associated with data processing. We suggest to consider the semantic similarity of concepts when comparing different $plugin$ matches. For concepts $a, b$ in $\mathcal{O}$ the \emph{semantic similarity} $sim(a, b)$ is calculated based on the edge counting method defined in Eq. (\ref{equation1}) from \cite{shet2012new}, where $N_a$, $N_b$ and $N_c$ measure the distances from concept $a$, concept $b$, and the closest common ancestor $c$ of $a$ and $b$ to the top concept of the ontology $\mathcal{O}$, respectively. 
 \vspace{-0.2cm}
 
 \begin{equation}
 sim(a, b){=} \frac{2N_c \cdot e^{-\lambda L/D} }{N_{a}+N_{b}}
 \label{equation1}
 \end{equation}
-\noindent For our purposes, $\lambda$ can be set to 0 as we do not measure the similarities of neighbourhood concepts, which is not the matching type considered in this paper. 
-%Thus, we obtain a combined function for measuring semantic matchmaking quality between two concepts:
+\noindent For our purposes, $\lambda$ can be set to 0 as we do not measure the similarities of neighbourhood concepts, the matching type not considered in this paper. 
 
-%\begin{equation}\label{equation2}sm(a, b) \stackrel{.}{=} ( type(a, b), \  sim(a, b) )\end{equation}
-
-Given a service request $T=(I_T,O_T)$, we represent a service composition solution for $T$ with services $S_1,\ldots,S_n$  by a weighted DAG, $WG=(V,E)$ with node set $V=\{Start, S_1, S_2, \ldots, S_n, End\}$ and edge set $E = \{e_{1}, e_{2},... e_{m} \}$. $Start$ and $End$ are two special services defined as $Start = (\emptyset, I_T, \emptyset )$ and $End  = (O_T, \emptyset, \emptyset)$ that account for the input and output requirements given by the request. 
-%Each edge $e$ between two services $S$ and $S'$ is associated with a set of incoming outputs produced by $S$ and a set of outgoing inputs consumed by $S'$.
-Each edge $e$ from a service $S$ to a service $S'$ means that service $S$ produces an output $a\in O_S$ that is matched ($exact$ or $plugin$) to an input $b\in I_{S'}$ to be consumed by service $S'$ in the composition. Based on the matchmaking type the \emph{semantic matchmaking quality} of edge $e$ can be defined as follows:
+Given a service request $T=(I_T,O_T)$, we represent a service composition solution for $T$ with services $S_1,\ldots,S_n$  by a weighted DAG, $WG=(V,E)$ with node set $V=\{Start, S_1, S_2, \ldots, S_n, End\}$ and edge set $E = \{e_{1}, e_{2},... e_{m} \}$. $Start$ and $End$ are two special services defined as $Start = (\emptyset, I_T, \emptyset )$ and $End  = (O_T, \emptyset, \emptyset)$ that account for the input and output requirements given by the request. Each edge $e$ from a service $S$ to a service $S'$ means that service $S$ produces an output $a\in O_S$ that is matched ($exact$ or $plugin$) to an input $b\in I_{S'}$ to be consumed by service $S'$ in the composition. Based on the matchmaking type, the \emph{semantic matchmaking quality} of edge $e$ can be defined as follows:
 \vspace{-0.2cm}
 \begin{equation}
 \label{equation10}
@@ -110,27 +99,9 @@ type_e =
 sim_e = sim(a,b) = \frac{2N_c}{N_{a}+N_{b}}
 \end{equation}
 
-\noindent with a suitable parameter $p, 0<p< 1$ to chosen, for discussion see Section \ref{PSO_based_approach}. However, if more than one pair of matched output and input exist from services $S$ and $S'$ respectively, $type_e$ and $sim_e$ will take on their average values.
+\noindent with a suitable parameter $p, 0<p< 1$, see Section \ref{experiment_study}. However, if more than one pair of matched output and input exist from service $S$ to service $S'$, $type_e$ and $sim_e$ will take on their average values.
 
-%$e = \{ (O_{S_{src}} \cup I_{S_{src}}) \mid \forall o \in O_{S_{src}}, \exists i \in O_{S_{src}} \wedge fullmatch (o \Rightarrow i) \}$
-
-%\textbf{Definition 4.} Given $(a \in O^{C}_{S_m}) \vee (b \in I^{C}_{S_n}) \wedge (m \neq n) $, a $full match(a \Rightarrow b)$ holds if $type(a, b)$ returns $exact$ or $plugin$. The operator ``$ \Rightarrow$'' means $a$ is passed to $b$, and $b$ is fully satisfied by $a$. The full match is a guarantee of completely valid  ``$ \Rightarrow$'' operation, whereas, partial matches are not considered in this paper.
-
-%\textbf{Semantic matchmaking quality model}. Due to that the discretisational characteristics of different match types and values assigned to matching types driven by the cost of data manipulation \cite{lecue2009optimizing}, match types are considered to be one factor for the quality of matchmaking. For example, Exact matching type demands less time for computation compared to that of Plugin match. Another factor is concept similarity of two matched concepts. For example, two plugin types, $publication \sqsubseteq printedmaterial$ and $romanticnovel \sqsubseteq printedmaterial$, are associated with different similarities.
-
-%\textbf{Definition 5.} Given $full match(a \Rightarrow b)$, $sim(a, b)$ is a function that given a output-related concept $a$ of a service and a input-related concept $b$ of another service, it returns a concept similarity value between $a$ and $b$.
-
-%\textbf{Definition 6.} Given $full match(a \Rightarrow b)$, $sm(a,b)$ is a function for measuring semantic matchmaking quality between two concepts, which returns a pair of values consisting of $type(a, b)$ and $q_{sim}(a, b)$ defined in Eq. (\ref{equation2}).
-
-%\textbf{Weighted DAG composition model}. web service composition is considered to be a data workflow, where services are chained together by their inputs and outputs using the two models defined before. All these concepts are captured and tackled in a weighted DAG as $WG = (V, E)$ , where:
-
-%\textbf{Comprehensive quality model in a weighted DAG}. 
-
-%Since each $e$ defined in $E$ could have more than one $fullmatch(a \Rightarrow b)$ form a edge. Therefore, semantic matchmaking quality of one edge, denoted as $sm_e$ is defined in Eq. (\ref{equation3}), where $type_{e}$ and $sim_{e}$ are the average values of all involved $type(a, b)$ and $q_{sim}(a, b)$ respectively. 
-
-%\begin{equation}\label{equation3}sm_{e} \stackrel{.}{=} (type_ {e}, \  sim_ {e})\end{equation}
-
-The \emph{semantic matchmaking quality} of the service composition can be obtained by aggregating overall edges in $E$ as follows:
+The \emph{semantic matchmaking quality} of the service composition can be obtained by aggregating over all edges in $E$ as follows:
 %\begin{equation}
 %\label{eqSM}
 %SM \stackrel{.}{=} (MT, SIM)
@@ -148,7 +119,7 @@ SIM {=} \frac{1}{m}\sum_{j=1}^m sim_ {e_{j}}
 %\label{eqCQ}
 %CQ \stackrel{.}{=} (MT, \  SIM, \  A,\  R,\  C,\  T)
 %\end{equation}
-The \emph{QoS} of the service composition can be obtained by aggregating the QoS values of the participating services. For a service composition with services $ S_1, S_2, ... S_n$ we obtain the reliability $R=\prod\limits^n_{k=1}r_{S_k}$, the availability $A=\prod\limits^n_{k=1}a_{S_k}$, the cost $C=\sum\limits^n_{k=1}c_{S_k}$, and the response time $T$ is the time of most time-consumption path in the composition, i.e., $$T = MAX \{\sum\limits^{\ell_j}_{k=1}t_{S_k} | \text{ $j\in\{1,\ldots,m\}$ and $\ell_j$ is the length of a path $P_j$}\}.$$
+The \emph{QoS} of the service composition can be obtained by aggregating the QoS values of the participating services \cite{ma2015hybrid}. For a service composition with services $ S_1, S_2, ... S_n$ we obtain the reliability $R=\prod\limits^n_{k=1}r_{S_k}$, the availability $A=\prod\limits^n_{k=1}a_{S_k}$, the cost $C=\sum\limits^n_{k=1}c_{S_k}$, and the response time $T$ is the time of most time-consuming path in the composition, i.e., $$T = MAX \{\sum\limits^{\ell_j}_{k=1}t_{S_k} | \text{ $j\in\{1,\ldots,m\}$ and $\ell_j$ is the length of a path $P_j$}\}.$$
 
 %Consequently, in Eq. \ref{eqCQ}, the comprehensive quality $CQ$ consists of the aggregated semantic matchmaking quality $SM$ and the QoS calculation in DAG discussed before.
 \vspace{-0.1cm}
@@ -159,7 +130,7 @@ The \emph{QoS} of the service composition can be obtained by aggregating the QoS
 Fitness = w_1 \hat{MT} + w_2 \hat{SIM} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{T}) + w_6(1 - \hat{C})
 \end{equation}
 \noindent with $\sum_{k=1}^{6} w_k= 1$. We call this objective function the \emph{comprehensive quality model} for service composition.
-The weights can be adjusted according to users' preferences. Herein, the individual criteria are normalised to a range between 0 to 1, where 1 means the best value and 0 means the worst. For this purpose, we normalise $MT$, $SIM$, $A$, $R$, $T$, and $C$ so that the function value falls within the range from 0 to 1 using Eq. (\ref{equation9}). To simplify the presentation we also use the notation $(Q_1,Q_2,Q_3,Q_4,Q_5,Q_6) = (MT,SIM,A,R,T,C)$. $MT$ and $SIM$ have minimum value 0 and maximum value 1. The minimum and maximum value of $A$, $R$, $T$, and $C$ are calculated across all task-related candidates in the service repository $\mathcal{SR}$ using greedy search, for details see Section \ref{PSO_based_approach}.
+The weights can be adjusted according to users' preferences. We normalise $MT$, $SIM$, $A$, $R$, $T$, and $C$ so that the function value falls within the range from 0 to 1 using Eq. (\ref{equation9}). To simplify the presentation we also use the notation $(Q_1,Q_2,Q_3,Q_4,Q_5,Q_6) = (MT,SIM,A,R,T,C)$. $MT$ and $SIM$ have minimum value 0 and maximum value 1. The minimum and maximum value of $A$, $R$, $T$, and $C$ are calculated across all task-related candidates in the service repository $\mathcal{SR}$ using the greedy search in \cite{ma2015hybrid,da2016genetic}.
 
 \begin{equation}
 \label{equation9}
@@ -171,9 +142,8 @@ The weights can be adjusted according to users' preferences. Herein, the individ
 \end{cases}
 \end{equation}
 
-\noindent To solve the composition task best possible the goal is to find the maximum value of the objective function in Eq. (\ref{equation8}).
+\noindent To solve the composition task satisfactorily our goal is to maximize the objective function in Eq. (\ref{equation8}).
 
-%If the weights for $MT$ and $S$ are put to 0 we obtain the QoS-aware service composition approach \cite{ma2015hybrid,da2016particle,da2015graphevol} as a special case. To adequatley reflect the relevance of semantic quality it is recommended to choose he weights for $MT$ and $S$ strictly larger than 0.
 
 \section{PSO-based Approach to Comprehensive Quality-Aware Automated Semantic Web Service Composition}\label{qswsc_approach}
 \vspace{-0.8cm}
