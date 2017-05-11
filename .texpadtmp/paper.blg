@@ -2,35 +2,35 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/chenwang/Documents/Papers/paper-GreedyPSO/.texpadtmp/paper.aux
 The style file: ../splncs03.bst
-Database file #1: ../IEEEexample.bib
-Repeated entry---line 285 of file ../IEEEexample.bib
+Database file #1: ../bibliography.bib
+Repeated entry---line 285 of file ../bibliography.bib
  : @inproceedings{shi2001particle
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 359 of file ../IEEEexample.bib
+Repeated entry---line 359 of file ../bibliography.bib
  : @article{blum1997fast
  :                      ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 403 of file ../IEEEexample.bib
+I was expecting a `,' or a `}'---line 403 of file ../bibliography.bib
  :   publisher={IEEE}
  :                   @article{blum1997fast,
 I'm skipping whatever remains of this entry
-Repeated entry---line 403 of file ../IEEEexample.bib
+Repeated entry---line 403 of file ../bibliography.bib
  :   publisher={IEEE}@article{blum1997fast
  :                                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1081 of file ../IEEEexample.bib
+Repeated entry---line 1081 of file ../bibliography.bib
  : @inproceedings{paolucci2002semantic
  :                                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1195 of file ../IEEEexample.bib
+Repeated entry---line 1195 of file ../bibliography.bib
  : @article{blum1997fast
  :                      ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in mier2015integrated
 You've used 22 entries,
             2785 wiz_defined-function locations,
-            705 strings with 8604 characters,
+            705 strings with 8605 characters,
 and the built_in function-call counts, 13328 in all, are:
 = -- 1172
 > -- 379
