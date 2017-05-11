@@ -72,54 +72,61 @@ A \emph{service repository} $\mathcal{SR}$ is a finite collection of services wi
 
 A service composition is commonly represented as a \emph{directed acyclic graph} (DAG). Its nodes correspond to the services in the composition. Two services $S$ and $S'$ are connected by an edge $e$ if some outputs of $S$ service serve as inputs for $S'$. Apparently, such outputs and inputs must semantically match to ensure the correct execution of the service composition. The mechanism to compose services relies on the semantic descriptions of inputs and outputs, which enables inputs of services to be matched by outputs of other services. The following \emph{matchmaking types} are often used to describe the level of a match \cite{paolucci2002semantic}: For concepts $a, b$ in $\mathcal{O}$ the \emph{matchmaking} returns $exact$ if $a$ and $b$ are equivalent ($a \equiv b$), $plugin$ if $a$ is a sub-concept of $b$ ($a \sqsubseteq b$), $subsume$ if $a$ is a super-concept of $b$ ($a \sqsupseteq b$), and $fail$ if none of previous matchmaking types is returned.
 
-In this paper we are only interested in robust compositions where only $exact$ and $plugin$ matches are considered, see \cite{lecue2009optimizing}. As argued in \cite{lecue2009optimizing} $plugin$ matches are less preferable than $exact$ matches due to the overheads associated with data processing. We suggest to consider the semantic similarity of concepts when comparing different $plugin$ matches. For concepts $a, b$ in $\mathcal{O}$ the \emph{semantic similarity} $sim(a, b)$ is calculated based on the edge counting method defined in Eq. (\ref{equation1}) from \cite{shet2012new}, where $N_a$, $N_b$ and $N_c$ measure the distances from concept $a$, concept $b$, and the closest common ancestor $c$ of $a$ and $b$ to the top concept of the ontology $\mathcal{O}$, respectively. 
-\vspace{-0.2cm}
-
+In this paper we are only interested in robust compositions where only $exact$ and $plugin$ matches are considered, see \cite{lecue2009optimizing}. As argued in \cite{lecue2009optimizing} $plugin$ matches are less preferable than $exact$ matches due to the overheads associated with data processing. We suggest to consider the semantic similarity of concepts when comparing different $plugin$ matches. For concepts $a, b$ in $\mathcal{O}$ the \emph{semantic similarity} $sim(a, b)$ is calculated based on the edge counting method in a taxonomy like WorldNet or Ontology using Eq. (\ref{equation1}). This method \cite{shet2012new} has the advantages of simple calculation and good performance.  In Eq. (\ref{equation1}), $N_a$, $N_b$ and $N_c$ measure the distances from concept $a$, concept $b$, and the closest common ancestor $c$ of $a$ and $b$ to the top concept of the ontology $\mathcal{O}$, respectively. 
 \begin{equation}
 sim(a, b){=} \frac{2N_c \cdot e^{-\lambda L/D} }{N_{a}+N_{b}}
 \label{equation1}
 \end{equation}
 \noindent For our purposes, $\lambda$ can be set to 0 as we do not measure the similarities of neighbourhood concepts, the matching type not considered in this paper. 
 
-Given a service request $T=(I_T,O_T)$, we represent a service composition solution for $T$ with services $S_1,\ldots,S_n$  by a weighted DAG, $WG=(V,E)$ with node set $V=\{Start, S_1, S_2, \ldots, S_n, End\}$ and edge set $E = \{e_{1}, e_{2},... e_{m} \}$. $Start$ and $End$ are two special services defined as $Start = (\emptyset, I_T, \emptyset )$ and $End  = (O_T, \emptyset, \emptyset)$ that account for the input and output requirements given by the request. Each edge $e$ from a service $S$ to a service $S'$ means that service $S$ produces an output $a\in O_S$ that is matched ($exact$ or $plugin$) to an input $b\in I_{S'}$ to be consumed by service $S'$ in the composition. Based on the matchmaking type ($type_e$), the \emph{semantic similarity} ($sim_e$) of edge $e$ can be defined as follows:
-\vspace{-0.2cm}
-\begin{equation}
-\label{equation10}
+Given a service request $T=(I_T,O_T)$, we represent a service composition solution for $T$ with services $S_1,\ldots,S_n$  by a weighted DAG, $WG=(V,E)$ with node set $V=\{Start, S_1, S_2, \ldots, S_n, End\}$ and edge set $E = \{e_{1}, e_{2},... e_{m} \}$. $Start$ and $End$ are two special services defined as $Start = (\emptyset, I_T, \emptyset )$ and $End  = (O_T, \emptyset, \emptyset)$ that account for the input and output requirements given by the request. Each edge $e$ from a service $S$ to a service $S'$ means that service $S$ produces an output $a\in O_S$ that is matched ($exact$ or $plugin$) to an input $b\in I_{S'}$ to be consumed by service $S'$ in the composition. Based on the matchmaking type ($type_e$), the \emph{semantic similarity} ($sim_e$) of edge $e$ can be defined as follow:
+
+\begin{align*}
 type_e = 
 \begin{cases}
-	1 & \text{ if $a\equiv b$ ($exact$ match)},\\
+	1 & \text{ if $a\equiv b$ ($exact$ match)}\\
 	p & \text{ if $a \sqsubseteq b$ ($plugin$ match)}
 \end{cases}
-\end{equation}
-\begin{equation}
-\label{equation11}
+&&
 sim_e = sim(a,b) = \frac{2N_c}{N_{a}+N_{b}}
-\end{equation}
+\end{align*}
+
+%\begin{equation}
+%\label{equation10}
+%type_e = 
+%\begin{cases}
+%	1 & \text{ if $a\equiv b$ ($exact$ match)},\\
+%	p & \text{ if $a \sqsubseteq b$ ($plugin$ match)}
+%\end{cases}
+%\end{equation}
+%\begin{equation}
+%\label{equation11}
+%sim_e = sim(a,b) = \frac{2N_c}{N_{a}+N_{b}}
+%\end{equation}
 
 \noindent with a suitable parameter $p, 0<p< 1$. $p$ is determined by user's preference, see Section \ref{experiment_design}. However, if more than one pair of matched output and input exist from service $S$ to service $S'$, $type_e$ and $sim_e$ will take on their average values.
 
-The \emph{semantic matchmaking quality} of the service composition can be obtained by aggregating $type_e$ and $sim_e$, respectively, over all edges in $E$ as follows:
-\vspace{-0.2cm}
-\begin{equation}
-\label{equation6}
+The \emph{semantic matchmaking quality} of the service composition can be obtained by aggregating $type_e$ and $sim_e$, respectively, over all edges in $E$ as follow:
+\begin{align*}
 MT {=} \prod_{j=1}^{m} type_ {e_{j}}
-\end{equation}
-\begin{equation}
-\label{equation7}
+&&
 SIM {=} \frac{1}{m}\sum_{j=1}^m sim_ {e_{j}}
-\end{equation}
+\end{align*}
+
+
 %\begin{equation}
-%\label{eqCQ}
-%CQ \stackrel{.}{=} (MT, \  SIM, \  A,\  R,\  C,\  T)
+%\label{equation6}
+%MT {=} \prod_{j=1}^{m} type_ {e_{j}}
+%\end{equation}
+%\begin{equation}
+%\label{equation7}
+%SIM {=} \frac{1}{m}\sum_{j=1}^m sim_ {e_{j}}
 %\end{equation}
 The \emph{QoS} of the service composition can be obtained by aggregating the QoS values of the participating services \cite{ma2015hybrid}. For a service composition with services $ S_1, S_2, ... S_n$ we obtain the reliability $R=\prod\limits^n_{k=1}r_{S_k}$, the availability $A=\prod\limits^n_{k=1}a_{S_k}$, the cost $C=\sum\limits^n_{k=1}c_{S_k}$, and the response time $T$ is the time of most time-consuming path in the composition, i.e., $$T = MAX \{\sum\limits^{\ell_j}_{k=1}t_{S_k} | \text{ $j\in\{1,\ldots,m\}$ and $\ell_j$ is the length of a path $P_j$}\}.$$
 
-%Consequently, in Eq. \ref{eqCQ}, the comprehensive quality $CQ$ consists of the aggregated semantic matchmaking quality $SM$ and the QoS calculation in DAG discussed before.
-\vspace{-0.1cm}
-\noindent When multiple quality criteria are involved into decision making, then the overall fitness of a solution can be defined as a weighted sum of the individual criteria: 
-\vspace{-0.2cm}
+\noindent When multiple quality criteria are involved into decision making, then the overall fitness of a solution can be defined as a weighted sum of the individual criteria in Eq \ref{eq_fitness}, assuming the preference of each quality criterion is known by users. 
 \begin{equation}
-\label{equation8}
+\label{eq_fitness}
 Fitness = w_1 \hat{MT} + w_2 \hat{SIM} + w_3 \hat{A} + w_4 \hat{R} + w_5(1 - \hat{T}) + w_6(1 - \hat{C})
 \end{equation}
 \noindent with $\sum_{k=1}^{6} w_k= 1$. We call this objective function the \emph{comprehensive quality model} for service composition.
@@ -135,7 +142,7 @@ The weights can be adjusted according to users' preferences. $\hat{MT}$, $\hat{S
 \end{cases}
 \end{equation}
 
-\noindent To solve the composition task satisfactorily our goal is to maximize the objective function in Eq. (\ref{equation8}).
+\noindent To solve the composition task satisfactorily our goal is to maximize the objective function in Eq. (\ref{eq_fitness}).
 
 
 \section{PSO-based Approach to Comprehensive Quality-Aware Automated Semantic Web Service Composition}\label{qswsc_approach}
